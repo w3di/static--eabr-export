@@ -1,0 +1,133 @@
+.z-index {
+    &-1 {
+        z-index: 1;
+    }
+
+    &-2 {
+        z-index: 2;
+    }
+
+    &-3 {
+        z-index: 3;
+    }
+}
+
+.order {
+	&-1 {
+		order: 1;
+	}
+	&-2 {
+		order: 2;
+	}
+	&-3 {
+		order: 3;
+	}
+	&-4 {
+		order: 4;
+	}
+	&-5 {
+		order: 5;
+	}
+	&-6 {
+		order: 6;
+	}
+}
+
+.relative {
+    position: relative;
+}
+
+.mb {
+    &-xs {
+        margin-bottom: var(--size-xs);
+    }
+
+    &-s {
+        margin-bottom: var(--size-s);
+    }
+
+    &-m {
+        margin-bottom: var(--size-m);
+    }
+
+    &-l {
+        margin-bottom: var(--size-l);
+    }
+
+    &-xl {
+        margin-bottom: var(--size-xl);
+    }
+
+    &-xxl {
+        margin-bottom: var(--size-xxl);
+    }
+
+    &-xxxl {
+        margin-bottom: var(--size-xxxl);
+    }
+
+    &-search {
+        margin-bottom: var(--margin-search);
+    }
+}
+
+.mt {
+    &-xs {
+        margin-top: var(--size-xs);
+    }
+
+    &-s {
+        margin-top: var(--size-s);
+    }
+
+    &-m {
+        margin-top: var(--size-m);
+    }
+
+    &-l {
+        margin-top: var(--size-l);
+    }
+
+    &-xl {
+        margin-top: var(--size-xl);
+    }
+
+    &-xxl {
+        margin-top: var(--size-xxl);
+    }
+
+    &-xxxl {
+        margin-top: var(--size-xxxl);
+    }
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 1260px) {
+	.order-mob {
+		&-1 {
+			order: 1;
+		}
+		&-2 {
+			order: 2;
+		}
+		&-3 {
+			order: 3;
+		}
+		&-4 {
+			order: 4;
+		}
+		&-5 {
+			order: 5;
+		}
+		&-6 {
+			order: 6;
+		}
+	}
+}

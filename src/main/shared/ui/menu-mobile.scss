@@ -1,0 +1,43 @@
+.mobile-menu {
+	position: fixed;
+	top: 61px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 28px 20px 32px;
+	background-color: var(--white);
+	opacity: 0;
+	visibility: hidden;
+	transition: .2s ease;
+	transform: none !important;
+	pointer-events: auto !important;
+	z-index: 1100;
+}
+
+.mobile-menu.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.mobile-menu__wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+.mobile-menu__link {
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--dark);
+}
+
+.mobile-menu__footer {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	margin-top: auto;
+}

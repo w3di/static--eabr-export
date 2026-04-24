@@ -1,0 +1,22 @@
+.desktop-only {
+    display: block;
+    visibility: visible;
+}
+
+.mobile-visible {
+    display: none;
+    visibility: hidden;
+}
+
+
+@media (max-width: 1260px) {
+    .mobile-visible {
+        display: block;
+        visibility: visible;
+    }
+
+    .mob-hidden {
+        display: none;
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,11 @@
+.main {
+	flex-grow: 1;
+	overflow-x: clip;
+	padding-top: r(105);
+
+	@media screen and (max-width: 1260px) {
+		.main {
+			padding-top: r(60);
+		}
+	}
+}

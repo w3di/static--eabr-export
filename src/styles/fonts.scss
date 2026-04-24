@@ -1,0 +1,37 @@
+// TTNorms
+
+//@font-face {
+//    font-family: 'TTNormsSerif';
+//    src: url('./assets/fonts/ttnormsserif/TT-Norms-Pro-Serif-ExtraBold.woff2') format('woff2'),
+//    url('./assets/fonts/ttnormsserif/TT-Norms-Pro-Serif-ExtraBold.woff') format('woff'),
+//    url('./assets/fonts/ttnormsserif/TT-Norms-Pro-Serif-ExtraBold.ttf') format('truetype');
+//    font-weight: 800;
+//    font-style: normal;
+//}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Brown LL Pan';
+	src: url('./assets/fonts/BrownLLPan-Medium.woff') format('woff'),
+	url('./assets/fonts/BrownLLPan-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Brown LL Pan';
+	src: url('./assets/fonts/BrownLLPan-Regular.woff') format('woff'),
+	url('./assets/fonts/BrownLLPan-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Brown LL Pan';
+	src: url('./assets/fonts/BrownLLPan-Light.woff') format('woff'),
+	url('./assets/fonts/BrownLLPan-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}

@@ -1,0 +1,15 @@
+.social {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.social__link {
+	display: flex;
+	cursor: pointer;
+	transition: .2s ease;
+}
+
+.social__link:hover {
+	opacity: .7;
+}

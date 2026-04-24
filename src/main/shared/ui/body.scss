@@ -1,0 +1,17 @@
+.body {
+	display: flex;
+	line-height: 1.5;
+	font-weight: 400;
+	min-height: 100vh;
+	color: var(--dark);
+	overflow-x: hidden;
+	flex-direction: column;
+	scrollbar-gutter: stable;
+	font-family: var(--font-regular);
+	background-color: var(--white);
+	font-size: calc(var(--base-font-size) * 1px);
+
+	&.fixed {
+		overflow: hidden;
+	}
+}
