@@ -1,3 +1,7 @@
+@import "article-news-line";
+@import "article-news-tile";
+@import "article-video";
+@import "articles-content";
 @import "body";
 @import "burger";
 @import "container";
@@ -6,12 +10,21 @@
 @import "footer";
 @import "grid";
 @import "header";
+@import "intro";
 @import "lang-switcher";
+@import "link-more";
 @import "logo";
 @import "main";
 @import "menu-mobile";
 @import "nav";
+@import "nav-aside";
 @import "page";
+@import "pagination";
+@import "section";
 @import "social";
 @import "stack";
 @import "temp";
+
+@media (max-width: 1260px) {
+
+}

@@ -1,0 +1,21 @@
+.nav-aside {
+	&__item {
+		width: 100%;
+		display: flex;
+		font-size: r(18);
+		min-height: r(54);
+		align-items: center;
+		transition: 0.3s all;
+		padding: r(10) r(10) r(10) r(20);
+		border-left: 2px solid rgba(27, 206, 27, 0.4);
+
+		&:hover {
+			background-color: rgba(27, 206, 27, 0.1);
+		}
+
+		&--active {
+			border-color: rgba(27, 206, 27, 1);
+			background-color: rgba(27, 206, 27, 0.06);
+		}
+	}
+}

@@ -3,9 +3,15 @@
 	overflow-x: clip;
 	padding-top: r(105);
 
-	@media screen and (max-width: 1260px) {
-		.main {
-			padding-top: r(60);
+	@media (max-width: 1260px) {
+		padding-top: r(60);
+	}
+
+	&--regular {
+		padding-bottom: r(150);
+
+		@media (max-width: 1260px) {
+			padding-bottom: r(90);
 		}
 	}
 }

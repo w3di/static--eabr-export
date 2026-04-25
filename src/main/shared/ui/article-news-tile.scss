@@ -1,0 +1,38 @@
+.article-news-tile {
+	height: 100%;
+	display: flex;
+	transition: 0.3s all;
+	border-radius: r(24);
+	flex-direction: column;
+	border: 1px solid #E5EEF2;
+	justify-content: space-between;
+	padding: r(20) r(12) r(12) r(12);
+
+	&:hover {
+		background-color: rgba(27, 206, 27, 0.06);
+	}
+
+	&__date {
+		display: block;
+		font-size: r(24);
+		margin-bottom: r(12);
+		color: rgba(17, 17, 17, 0.4);
+	}
+
+	&__title {
+		flex-grow: 1;
+		font-size: r(20);
+		line-height: 1.2;
+	}
+
+	&__picture {
+		display: block;
+		overflow: hidden;
+		margin-top: r(15);
+		border-radius: r(16);
+
+		img {
+			display: block;
+		}
+	}
+}

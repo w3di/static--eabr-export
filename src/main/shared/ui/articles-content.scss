@@ -1,0 +1,22 @@
+.articles-content {
+	&__filter {
+		margin-bottom: r(15);
+	}
+
+	&__pagination {
+		margin-top: r(40);
+	}
+}
+
+//@media (max-width: 1260px) {
+//	.articles-content {
+//		&__filter {
+//			margin-bottom: r(15);
+//		}
+//
+//		&__pagination {
+//			margin-top: r(40);
+//		}
+//	}
+//}
+//

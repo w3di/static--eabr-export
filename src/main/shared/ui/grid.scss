@@ -1,10 +1,14 @@
 .grid {
-    gap: 16px;
+    gap: r(18);
     width: 100%;
     display: grid;
     grid-auto-flow: dense;
     grid-template-rows: minmax(0, 1fr);
     grid-template-columns: repeat(12, minmax(0, 1fr));
+
+	&--near {
+		gap: r(8);
+	}
 
     &__col {
         &--1 {
