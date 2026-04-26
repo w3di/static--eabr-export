@@ -1,0 +1,22 @@
+.mb {
+	&-20 {
+		margin-bottom: r(20);
+	}
+	&-25 {
+		margin-bottom: r(25);
+	}
+	&-30 {
+		margin-bottom: r(30);
+	}
+}
+
+@media (max-width: 1260px) {
+	.mbm {
+		&-10 {
+			margin-bottom: r(10);
+		}
+		&-20 {
+			margin-bottom: r(20);
+		}
+	}
+}

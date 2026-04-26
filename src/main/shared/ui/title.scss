@@ -1,0 +1,24 @@
+.title {
+	display: block;
+	width: fit-content;
+
+	&--large {
+
+	}
+
+	&--small {
+		font-size: r(34);
+		line-height: 1.2;
+	}
+
+	&--underline {
+		text-decoration: underline;
+		text-underline-offset: 8px;
+		text-decoration-color: #37EE50;
+		text-decoration-thickness: 4px;
+	}
+}
+
+@media (max-width: 1260px) {
+
+}
