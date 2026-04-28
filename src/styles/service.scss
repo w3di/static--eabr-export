@@ -45,6 +45,13 @@
 	display: none;
 }
 
+.fz {
+	&-24 {
+		font-size: r(24);
+		line-height: 1.2;
+	}
+}
+
 @media (max-width: 1260px) {
 	.order-mob {
 		&-1 {
@@ -64,6 +71,13 @@
 		}
 		&-6 {
 			order: 6;
+		}
+	}
+
+	.fz-mob {
+		&-20 {
+			font-size: r(20);
+			line-height: 1.25;
 		}
 	}
 }

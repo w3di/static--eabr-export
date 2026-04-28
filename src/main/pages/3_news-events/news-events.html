@@ -12,7 +12,48 @@
             <section class="section">
                 <%= htmlWebpackPlugin.options.widgets.introBlock %>
             </section>
-            <section class="section section--start">
+            <section class="section section--start relative">
+                <div class="aside-line z-index-2 mobile-visible" data-aside-line="block">
+                    <div class="aside-line__content" data-aside-line="content">
+                        <a href="#aside-contents" class="button-contents" data-fancybox="menu-aside">
+                            <svg class="button-contents__icon">
+                                <use href="./assets/sprite/sprite-svg.svg#icon-contents"></use>
+                            </svg>
+                            <span class="button-contents__text">
+                                Разделы
+                            </span>
+                        </a>
+                        <div class="hidden">
+                            <div class="menu-contents" id="aside-contents">
+                                <div class="menu-contents__head">
+                                    <button class="menu-contents__button" data-fancybox-close>
+                                        <span class="menu-contents__text">
+                                            Закрыть
+                                        </span>
+                                        <svg class="menu-contents__icon">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-close"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <a href="" class="menu-contents__link">
+                                    Новости
+                                </a>
+                                <a href="" class="menu-contents__link">
+                                    События
+                                </a>
+                                <a href="" class="menu-contents__link">
+                                    Видеоматериалы
+                                </a>
+                                <a href="" class="menu-contents__link">
+                                    Творческий конкурс СМИ
+                                </a>
+                                <a href="" class="menu-contents__link">
+                                    Контакты
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="grid">
                         <div class="grid__col grid__col--3 mob-hidden">
@@ -47,16 +88,30 @@
                             </div>
                             <div class="articles-content">
                                 <div class="articles-content__filter">
-                                    <form action="" class="form-search">
-                                        <input type="text" class="form-search__input">
-                                        <button class="form-search__button">
+                                    <form action="" class="filter-articles">
+                                        <div class="filter-articles__vectors order-mob-2 select-app" data-select="block">
+                                            <select data-select="field">
+                                                <option value="" selected>Все направления</option>
+                                                <option value="1">ESG</option>
+                                                <option value="2">ГЧП</option>
+                                                <option value="3">ФЦИ</option>
+                                                <option value="4">ФТС</option>
+                                            </select>
+                                        </div>
+                                        <div class="filter-articles__date input-date order-mob-3" data-datepicker="block">
+                                            <input name="date" type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату">
+                                        </div>
+                                        <div class="filter-articles__search form-search order-mob-1">
+                                            <input type="text" class="form-search__input">
+                                            <button class="form-search__button">
                                             <span class="form-search__text">
                                                 Поиск
                                             </span>
-                                            <svg class="form-search__icon">
-                                                <use href="./assets/sprite/sprite-svg.svg#icon-search"></use>
-                                            </svg>
-                                        </button>
+                                                <svg class="form-search__icon">
+                                                    <use href="./assets/sprite/sprite-svg.svg#icon-search"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                                 <div class="articles-content__main">

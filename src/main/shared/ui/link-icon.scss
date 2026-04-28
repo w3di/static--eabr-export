@@ -1,0 +1,18 @@
+.link-icon {
+	gap: r(12);
+	display: flex;
+	font-size: r(24);
+	line-height: 1.2;
+	align-items: center;
+
+	&__icon {
+		width: r(28);
+		height: r(28);
+		fill: #1BCE1B;
+		flex-shrink: 0;
+	}
+
+	&__text {
+
+	}
+}

@@ -5,9 +5,15 @@
 // import { Fancybox } from "@fancyapps/ui";
 // import "@fancyapps/ui/dist/fancybox/fancybox.css";
 // import {Header} from "../ui/header";
-
 import {MobileMenu} from "../ui/mobileMenu";
 import {Header} from "../ui/header";
+import 'air-datepicker/air-datepicker.css';
+import AirDatepicker from "air-datepicker";
+import SlimSelect from 'slim-select';
+import 'slim-select/scss';
+import {AsideObserver} from "../ui/asideObserver";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import {Fancybox} from "@fancyapps/ui";
 
 class App {
     // private body: Body | null;
@@ -54,6 +60,10 @@ class App {
         // this.initDropNav();
         this.initSwitcher();
         this.initMobileMenu();
+        this.initDatePicker();
+        this.initSelectApp();
+        this.initAsideObserver();
+        this.initModals();
     }
 
     initSwitcher = () => {
@@ -74,6 +84,51 @@ class App {
     initHeader = () => {
         const el: HTMLElement = document.querySelector('[data-header]')
         if (el) new Header(el);
+    }
+
+    initDatePicker = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-datepicker="block"]');
+
+        els.forEach((item) => {
+            const input: HTMLInputElement = item.querySelector('[data-datepicker="field"]');
+
+            new AirDatepicker(input, {
+                range: true,
+                // position: 'bottom right',
+                multipleDatesSeparator: '-',
+                buttons: ['clear'],
+                // inline: true
+            });
+        });
+    }
+
+    initSelectApp = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-select="block"]');
+
+        els.forEach((item) => {
+            const input: HTMLInputElement = item.querySelector('[data-select="field"]');
+
+            new SlimSelect({
+                select: input,
+                settings: {
+                    showSearch: false
+                }
+            })
+        });
+    }
+
+    initAsideObserver = () => {
+        const el: HTMLElement = document.querySelector('[data-aside-line="block"]');
+
+        if (el) new AsideObserver(el);
+    }
+
+    initModals = () => {
+        Fancybox.bind('[data-fancybox="menu-aside"]', {
+            // Your custom options for a specific gallery
+            mainClass: 'fancybox-aside-contents',
+            closeButton: false,
+        });
     }
 }
 

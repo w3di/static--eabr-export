@@ -1,0 +1,30 @@
+.block-links {
+	gap: r(20);
+	display: flex;
+	padding: r(24);
+	border-radius: r(24);
+	background-color: #F8FAFC;
+
+	@media (max-width: 1260px) {
+		padding: r(24) r(16);
+		flex-direction: column;
+	}
+
+	&__title {
+		flex-grow: 1;
+		font-size: r(34);
+		line-height: 1.2;
+	}
+
+	&__content {
+		gap: r(20);
+		width: r(390);
+		display: flex;
+		flex-shrink: 0;
+		flex-direction: column;
+
+		@media (max-width: 1260px) {
+			width: 100%;
+		}
+	}
+}
