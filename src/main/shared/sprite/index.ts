@@ -4,6 +4,7 @@ import './icon-arrow-more.svg';
 import './icon-arrow-right.svg';
 import './icon-close.svg';
 import './icon-contents.svg';
+import './icon-earth.svg';
 import './icon-mail.svg';
 import './icon-phone.svg';
 import './icon-search.svg';

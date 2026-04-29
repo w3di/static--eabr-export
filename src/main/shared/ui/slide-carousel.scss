@@ -1,0 +1,10 @@
+.slide-carousel {
+	img {
+		overflow: hidden;
+		border-radius: r(20);
+
+		@media (max-width: 1260px) {
+			border-radius: 0;
+		}
+	}
+}

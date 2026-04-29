@@ -1,23 +1,9 @@
 .editor {
     display: block;
 
-    &--small {
-        line-height: 1.25;
-        font-size: r(16);
-
-        a {
-            text-decoration: underline;
-            text-underline-offset: 0.2em;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-
-    &--preview {
-        line-height: 1.35;
-        font-size: r(18);
+    &--page {
+        //font-size: r(20);
+		//line-height: 1.25;
 
         h2, h3, h4, h5, h6  {
             font-weight: 700;
@@ -25,17 +11,9 @@
             text-transform: uppercase;
         }
 
-        b {
-            //display: inline-block;
-            a {
-                display: inline-block;
-                color: var(--accent-red);
-
-                &:hover {
-                    color: inherit;
-                }
-            }
-        }
+		b, strong {
+			font-weight: 500;
+		}
 
         a {
             text-decoration: underline;
@@ -46,95 +24,19 @@
         }
     }
 
-    &--picture {
-        font-size: r(16);
-    }
+	&--small {
+		//font-size: r(16);
+		//line-height: 1.2;
 
-    &--toolbar {
-        min-height: r(44);
-    }
+		h2 {
+			font-size: r(34);
+		}
 
-    &--footer {
-        line-height: 1.5;
-        font-size: r(18);
-
-        h2, h3, h4, h5, h6  {
-            font-weight: 700;
-            font-size: inherit;
-            text-transform: uppercase;
-        }
-
-        a {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    &--calendar {
-        line-height: 1.25;
-        font-size: r(16);
-
-        a {
-            text-decoration: underline;
-            text-underline-offset: 0.2em;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-
-
-    &--content {
-        line-height: 1.5;
-        font-size: r(26);
-        font-family: var(--font-regular-serif);
-
-        h2, h3, h4, h5, h6  {
-            font-weight: 700;
-            font-size: inherit;
-            text-transform: uppercase;
-            font-family: var(--font-regular);
-        }
-
-        a {
-            text-decoration: underline;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-
-    &--copyright {
-        line-height: 1.3;
-        font-size: r(14);
-        color: var(--grey-30);
-
-        a {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    &--disabled {
-        color: var(--grey-30);
-    }
-
-    &--form-preview {
-        line-height: 1.3;
-        font-size: r(26);
-    }
-
-    &--topbar {
-        font-size: r(18);
-    }
-
-    &.accent {
-        color: var(--accent-red);
-    }
+		h3 {
+			font-size: r(20);
+			font-weight: 500;
+		}
+	}
 
     & > * {
         margin-bottom: 1em;
@@ -144,9 +46,13 @@
         margin-bottom: 0;
     }
 
-    strong, b {
-        font-weight: 700;
-    }
+    //strong, b {
+    //    font-weight: 700;
+    //}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0.5em;
+	}
 
     p {
         margin-bottom: 1em;
@@ -164,146 +70,5 @@
 
     picture {
         display: block;
-    }
-}
-
-.mode-simple {
-    .editor {
-        &--preview {
-            b {
-                a {
-                    color: var(--grey-90);
-                }
-            }
-        }
-
-        &--content {
-            font-family: var(--font-regular);
-
-            h2, h3, h4, h5, h6  {
-                font-family: var(--font-regular);
-            }
-
-            a {
-                text-decoration: underline;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        &--disabled {
-            color: inherit;
-            text-decoration: line-through;
-        }
-
-        &.accent {
-            color: var(--grey-90);
-        }
-
-    }
-}
-
-@media (max-width: 1900px) {
-    .editor {
-        &--small {
-            font-size: r(12);
-            line-height: 1.35;
-        }
-
-        &--preview {
-            font-size: r(14);
-
-            h2 {
-                font-size: r(26);
-            }
-        }
-
-        &--calendar {
-            font-size: r(12);
-            line-height: 1.35;
-        }
-
-        &--picture {
-            font-size: r(14);
-        }
-
-        &--copyright {
-            font-size: r(12);
-            line-height: 1.35;
-        }
-
-        &--toolbar {
-            min-height: r(36);
-        }
-
-        &--footer {
-            font-size: r(14);
-            line-height: 1.45;
-        }
-
-        &--content {
-            font-size: r(20);
-            line-height: 1.4;
-        }
-
-        &--form-preview {
-            font-size: r(18);
-            line-height: 1.25;
-        }
-
-        &--topbar {
-            font-size: r(16);
-        }
-    }
-}
-
-@media (max-width: 1299px) {
-    .editor {
-        &--footer {
-            font-size: r(14);
-            line-height: 1.4;
-        }
-
-        &--copyright {
-            font-size: r(12);
-            line-height: 1.35;
-        }
-
-        &--content {
-            font-size: r(16);
-            line-height: 1.5;
-        }
-
-        &--comment-mobile {
-            font-size: r(16);
-            line-height: 1.5;
-            font-family: var(--font-regular-serif);
-        }
-
-        &--topbar {
-            font-size: r(14);
-        }
-
-        &--calendar {
-            font-size: r(16);
-            line-height: 1.4;
-        }
-    }
-}
-
-@media (max-width: 1024px) {
-    .editor {
-        &--content {
-            font-size: r(16);
-            line-height: 1.5;
-        }
-    }
-}
-
-.toolbar .editor {
-    &:not(.align-center) {
-        min-height: 2lh;
     }
 }

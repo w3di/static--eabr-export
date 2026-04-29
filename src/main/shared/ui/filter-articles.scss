@@ -12,7 +12,7 @@
 		max-width: r(540);
 
 		@media (max-width: 1260px) {
-			order: 1;
+			//order: 1;
 			width: 100%;
 			max-width: 100%;
 		}
@@ -23,21 +23,21 @@
 		flex-shrink: 0;
 
 		@media (max-width: 1260px) {
-			order: 2;
-			width: 100%;
+			//order: 2;
+			//width: 100%;
 			//flex-grow: 1;
 			//max-width: calc(50% - 10px);
 		}
 	}
 
 	&__date {
-		width: r(220);
+		width: r(80);
 		flex-shrink: 0;
 		//max-width: 50%;
 
 		@media (max-width: 1260px) {
-			order: 3;
-			width: 100%;
+			//order: 3;
+			//width: 100%;
 			//flex-grow: 1;
 			//max-width: calc(50% - 10px);
 		}

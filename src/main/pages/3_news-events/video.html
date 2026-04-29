@@ -82,16 +82,18 @@
                                 </div>
                             </div>
                             <div class="mb-25 mbm-20">
-                                <h1 class="title title--small title--underline">
+                                <h1 class="title title--small title--underline" data-title="block">
                                     Видеоматериалы
                                 </h1>
                             </div>
                             <div class="articles-content">
                                 <div class="articles-content__filter">
                                     <form action="" class="filter-articles">
-                                        <div class="filter-articles__date input-date order-mob-2" data-datepicker="block">
+                                        <div class="filter-articles__date input-date order-mob-3" data-datepicker="block">
+                                            <input type="text" class="input-date__head" data-datepicker="head" value="Дата" readonly>
                                             <input name="date" type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату">
                                         </div>
+                                        <div class="grow mob-hidden"></div>
                                         <div class="filter-articles__search form-search order-mob-1">
                                             <input type="text" class="form-search__input">
                                             <button class="form-search__button">

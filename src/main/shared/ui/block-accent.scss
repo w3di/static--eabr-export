@@ -1,0 +1,9 @@
+.block-accent {
+	padding: r(24);
+	border-radius: r(24);
+	background-color: #F8FAFC;
+
+	@media (max-width: 1260px) {
+		padding: r(24) r(16);
+	}
+}

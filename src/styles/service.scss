@@ -46,10 +46,24 @@
 }
 
 .fz {
+	&-16 {
+		font-size: r(16);
+		line-height: 1.2;
+	}
+
+	&-20 {
+		font-size: r(24);
+		line-height: 1.25;
+	}
+
 	&-24 {
 		font-size: r(24);
 		line-height: 1.2;
 	}
+}
+
+.grow {
+	flex-grow: 1;
 }
 
 @media (max-width: 1260px) {

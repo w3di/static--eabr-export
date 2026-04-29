@@ -11,6 +11,9 @@
 	&-30 {
 		margin-bottom: r(30);
 	}
+	&-35 {
+		margin-bottom: r(35);
+	}
 }
 
 @media (max-width: 1260px) {
@@ -18,8 +21,14 @@
 		&-10 {
 			margin-bottom: r(10);
 		}
+		&-15 {
+			margin-bottom: r(15);
+		}
 		&-20 {
 			margin-bottom: r(20);
+		}
+		&-25 {
+			margin-bottom: r(25);
 		}
 	}
 }

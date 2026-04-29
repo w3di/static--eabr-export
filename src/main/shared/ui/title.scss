@@ -12,10 +12,20 @@
 	}
 
 	&--underline {
-		text-decoration: underline;
-		text-underline-offset: 8px;
-		text-decoration-color: #37EE50;
-		text-decoration-thickness: 4px;
+		& > .title__inner {
+			background-image: linear-gradient(#37EE50, #37EE50);
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+			background-size: 0 4px;
+			padding-bottom: 6px;
+			-webkit-box-decoration-break: clone;
+			box-decoration-break: clone;
+			transition: background-size 0.8s ease 0.2s;
+		}
+
+		&.is-animated > .title__inner {
+			background-size: 100% 4px;
+		}
 	}
 }
 

@@ -14,6 +14,14 @@ import 'slim-select/scss';
 import {AsideObserver} from "../ui/asideObserver";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import {Fancybox} from "@fancyapps/ui";
+import {Title} from "../ui/title";
+import {createPopper} from "@popperjs/core";
+import { Carousel } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/carousel/carousel.css";
+// import { Arrows } from "@fancyapps/ui/dist/carousel/carousel.arrows.js";
+// import "@fancyapps/ui/dist/carousel/carousel.arrows.css";
+import { Thumbs } from "@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js";
+import "@fancyapps/ui/dist/carousel/carousel.thumbs.css";
 
 class App {
     // private body: Body | null;
@@ -64,6 +72,8 @@ class App {
         this.initSelectApp();
         this.initAsideObserver();
         this.initModals();
+        this.initTitle();
+        this.initCarousel();
     }
 
     initSwitcher = () => {
@@ -91,13 +101,53 @@ class App {
 
         els.forEach((item) => {
             const input: HTMLInputElement = item.querySelector('[data-datepicker="field"]');
+            const head: HTMLInputElement = item.querySelector('[data-datepicker="head"]');
 
-            new AirDatepicker(input, {
+            new AirDatepicker(head, {
                 range: true,
-                // position: 'bottom right',
                 multipleDatesSeparator: '-',
                 buttons: ['clear'],
-                // inline: true
+
+                position({$datepicker, $target, $pointer, done}) {
+                    let popper = createPopper($target, $datepicker, {
+                        placement: 'bottom',
+                        modifiers: [
+                            {
+                                name: 'flip',
+                                options: {
+                                    padding: {
+                                        top: 64
+                                    }
+                                }
+                            },
+                            {
+                                name: 'offset',
+                                options: {
+                                    offset: [0, 10]
+                                }
+                            },
+                            {
+                                name: 'arrow',
+                                options: {
+                                    element: $pointer
+                                }
+                            }
+                        ]
+                    })
+                    return function completeHide() {
+                        popper.destroy();
+                        done();
+                    }
+                },
+
+                onSelect({ formattedDate }) {
+                    if (Array.isArray(formattedDate)) {
+                        input.value = formattedDate.join(' - ');
+                    } else {
+                        input.value = formattedDate || '';
+                    }
+                    head.value = 'Дата';
+                },
             });
         });
     }
@@ -129,6 +179,43 @@ class App {
             mainClass: 'fancybox-aside-contents',
             closeButton: false,
         });
+    }
+
+    initTitle = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-title="block"]');
+
+        els.forEach((item) => {
+            new Title(item);
+        });
+    }
+
+    initCarousel = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-carousel="block"]');
+
+        const setCaption = (instance: any, el: HTMLElement) => {
+            const index = instance.page;
+            const slide = instance.slides[index];
+
+            // console.log(instance.slides);
+
+            el.innerHTML = slide.el.getAttribute('data-caption');
+        }
+
+        els.forEach((item) => {
+            const main: HTMLElement = item.querySelector('[data-carousel="main"]');
+            const caption: HTMLElement = item.querySelector('[data-carousel="caption"]');
+
+            new Carousel(main, {
+                Thumbs: {
+                    type: "classic" as const,
+                },
+                Dots: false,
+                on: {
+                    ready: (instance: any) => setCaption(instance, caption),
+                    change: (instance: any) => setCaption(instance, caption),
+                },
+            }, { Thumbs });
+        })
     }
 }
 

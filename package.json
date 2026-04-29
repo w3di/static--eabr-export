@@ -64,6 +64,7 @@
   ],
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
+    "@popperjs/core": "^2.11.8",
     "air-datepicker": "^3.6.0",
     "locomotive-scroll": "^4.1.4",
     "slim-select": "^3.4.3",
