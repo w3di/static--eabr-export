@@ -1,0 +1,42 @@
+.article-intro {
+	height: r(800);
+	position: relative;
+
+	@media (max-width: 1260px) {
+		height: r(660);
+	}
+
+	&__left {
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+	&__right {
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+	&__picture {
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		height: 100%;
+		position: relative;
+	}
+}

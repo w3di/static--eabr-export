@@ -1,0 +1,30 @@
+.link-intro {
+	gap: r(32);
+	display: flex;
+	align-items: center;
+
+	&__text {
+		font-size: r(34);
+	}
+
+	&__icon {
+		width: r(28);
+		height: r(28);
+	}
+
+	&--light {
+		color: #FFFFFF;
+
+		.link-intro__icon {
+			fill: #FFFFFF;
+		}
+	}
+
+	&--dark {
+		color: #111111;
+
+		.link-intro__icon {
+			fill: #111111;
+		}
+	}
+}

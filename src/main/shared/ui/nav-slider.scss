@@ -1,0 +1,24 @@
+.nav-slider{
+	gap: r(32);
+	display: flex;
+
+	&__button {
+		width: r(58);
+		height: r(58);
+		display: flex;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+
+		&.disabled {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+	}
+
+	&__icon {
+		width: 100%;
+		height: 100%;
+		fill: var(--super-blue);
+	}
+}

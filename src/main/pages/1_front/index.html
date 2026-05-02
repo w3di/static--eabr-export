@@ -8,15 +8,36 @@
 <body class="body" id="body" data-body>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
-        <main class="main">
-            <section class="section">
+        <main class="main main--front">
+            <section class="section mb-90 mbm-60">
                 <%= htmlWebpackPlugin.options.widgets.sectionSliderIntro %>
             </section>
-            <section class="section">
-                Секция
+            <section class="section mb-185 mbm-120">
+                <%= htmlWebpackPlugin.options.widgets.sectionFrontNews %>
+            </section>
+            <section class="section mb-160 mbm-120">
+                <%= htmlWebpackPlugin.options.widgets.sectionFrontFocus %>
+            </section>
+            <section class="section mb-190 mbm-120">
+                <div class="container">
+                    Стратегия 2022-2026
+                </div>
+            </section>
+            <section class="section mb-190 mbm-160">
+                <div class="container">
+                    Знаковые проекты
+                </div>
+            </section>
+            <section class="section mb-155 mbm-120">
+                <div class="container">
+                    Наш вклад
+                </div>
+            </section>
+            <section class="section mb-80 mbm-60">
+                <%= htmlWebpackPlugin.options.widgets.sectionFrontDevelopment %>
             </section>
             <section class="section">
-                Секция
+                <%= htmlWebpackPlugin.options.widgets.sectionFrontAnalytics %>
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>

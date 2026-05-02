@@ -14,4 +14,12 @@
 			padding-bottom: r(90);
 		}
 	}
+
+	&--front {
+		padding-bottom: r(115);
+
+		@media (max-width: 1260px) {
+			padding-bottom: r(60);
+		}
+	}
 }

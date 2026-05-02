@@ -1,0 +1,13 @@
+.tag-article {
+	height: r(30);
+	display: flex;
+	padding: 0 r(12);
+	font-size: r(16);
+	line-height: 1.2;
+	width: fit-content;
+	align-items: center;
+	border-radius: r(30);
+	justify-content: center;
+	color: rgba(17, 17, 17, 0.6);
+	background-color: rgba(36, 214, 255, 0.2);
+}

@@ -12,6 +12,10 @@
 	&--fluid {
 		max-width: 100%;
 	}
+
+	&--fill {
+		padding: 0;
+	}
 }
 
 //@media (max-width: 1024px) {

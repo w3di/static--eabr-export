@@ -1,0 +1,21 @@
+.intro-count {
+	text-align: right;
+
+	&__number {
+		line-height: 1.2;
+		font-size: r(120);
+	}
+
+	&__text {
+		font-size: r(24);
+		line-height: 1.2;
+	}
+
+	&--light {
+		color: #ffffff;
+	}
+
+	&--dark {
+		color: #111111;
+	}
+}

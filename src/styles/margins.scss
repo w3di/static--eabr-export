@@ -1,34 +1,17 @@
 .mb {
-	&-15 {
-		margin-bottom: r(15);
-	}
-	&-20 {
-		margin-bottom: r(20);
-	}
-	&-25 {
-		margin-bottom: r(25);
-	}
-	&-30 {
-		margin-bottom: r(30);
-	}
-	&-35 {
-		margin-bottom: r(35);
+	@for $i from 1 through 40 {
+		&-#{$i * 5} {
+			margin-bottom: r($i * 5);
+		}
 	}
 }
 
 @media (max-width: 1260px) {
 	.mbm {
-		&-10 {
-			margin-bottom: r(10);
-		}
-		&-15 {
-			margin-bottom: r(15);
-		}
-		&-20 {
-			margin-bottom: r(20);
-		}
-		&-25 {
-			margin-bottom: r(25);
+		@for $i from 1 through 40 {
+			&-#{$i * 5} {
+				margin-bottom: r($i * 5);
+			}
 		}
 	}
 }

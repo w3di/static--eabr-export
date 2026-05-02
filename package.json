@@ -66,6 +66,7 @@
     "@fancyapps/ui": "^5.0.36",
     "@popperjs/core": "^2.11.8",
     "air-datepicker": "^3.6.0",
+    "animejs": "^4.4.1",
     "locomotive-scroll": "^4.1.4",
     "slim-select": "^3.4.3",
     "swiper": "^11.1.3",

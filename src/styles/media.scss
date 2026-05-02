@@ -3,14 +3,14 @@
     visibility: visible;
 }
 
-.mobile-visible {
+.mob-visible {
     display: none;
     visibility: hidden;
 }
 
 
 @media (max-width: 1260px) {
-    .mobile-visible {
+    .mob-visible {
         display: block;
         visibility: visible;
     }

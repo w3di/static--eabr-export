@@ -1,0 +1,34 @@
+.article-news {
+	height: 100%;
+	display: block;
+	overflow: hidden;
+	border-radius: r(24);
+	background-color: #ffffff;
+	box-shadow: 0 r(4) r(40) 0 rgba(0, 0, 0, 0.12);
+
+	&__picture {
+		display: block;
+
+		img {
+			display: block;
+		}
+	}
+
+	&__content {
+		gap: r(12);
+		display: flex;
+		flex-direction: column;
+		padding: r(16) r(17) r(24);
+	}
+
+	&__toolbar {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	&__editor {
+		line-height: 1.2;
+		font-size: r(20);
+	}
+}

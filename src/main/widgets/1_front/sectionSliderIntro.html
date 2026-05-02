@@ -1,67 +1,204 @@
-<section class="section">
-    <div class="container container--large">
-        <div class="slider-intro swiper-container">
-            <div class="slider-intro__wrapper swiper-wrapper">
-                <div class="slider-intro__slide swiper-slide">
-                    <div class="article-intro">
-                        <div class="article-intro__left">
-
+<div class="container container--large container--fill">
+    <div class="slider-intro swiper" data-slider="intro">
+        <div class="slider-intro__wrapper swiper-wrapper">
+            <div class="slider-intro__slide swiper-slide">
+                <div class="article-intro">
+                    <div class="article-intro__left">
+                        <picture class="article-intro__picture">
+                            <img src="./assets/images/1920x1080-blue.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="article-intro__right" data-clip="right">
+                        <picture class="article-intro__picture">
+                            <img src="./assets/images/1920x1080-green.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="article-intro__content container">
+                        <!--
+                            Цветовые схемы:
+                            intro-content--light
+                            intro-content--dark
+                        -->
+                        <div class="intro-content intro-content--dark">
+                            <div class="intro-content__main">
+                                <h2 class="intro-content__title">
+                                    Евразийский банк развития
+                                </h2>
+                                <div class="intro-content__editor editor-simple">
+                                    <p>
+                                        Многосторонний банк развития, призванный содействовать экономическому росту
+                                        государств-участников
+                                    </p>
+                                </div>
+                                <div class="intro-content__link">
+                                    <!--
+                                        Цветовые схемы:
+                                        link-intro--light
+                                        link-intro--dark
+                                    -->
+                                    <div class="link-intro link-intro--dark">
+                                        <span class="link-intro__text">
+                                            О банке
+                                        </span>
+                                        <svg class="link-intro__icon">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-content__footer">
+                                <div class="grow mob-visible"></div>
+                                <div class="link-intro link-intro--light mob-hidden">
+                                    <span class="link-intro__text">
+                                        О банке
+                                    </span>
+                                    <svg class="link-intro__icon">
+                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
+                                    </svg>
+                                </div>
+                                <!--
+                                    Цветовые схемы:
+                                    intro-count--light
+                                    intro-count--dark
+                                -->
+                                <div class="intro-count intro-count--light">
+                                    <p class="intro-count__number">
+                                        01
+                                    </p>
+                                    <p class="intro-count__text">
+                                        Доступная чистая <br>
+                                        вода и энергия
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="article-intro__right">
-
+                    </div>
+                </div>
+            </div>
+            <div class="slider-intro__slide swiper-slide">
+                <div class="article-intro">
+                    <div class="article-intro__left">
+                        <picture class="article-intro__picture">
+                            <img src="./assets/images/1920x1080-blue.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="article-intro__right" data-clip="right">
+                        <picture class="article-intro__picture">
+                            <img src="./assets/images/1920x1080-green.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="article-intro__content container">
+                        <!--
+                            Цветовые схемы:
+                            intro-content--light
+                            intro-content--dark
+                        -->
+                        <div class="intro-content intro-content--dark">
+                            <div class="intro-content__main">
+                                <h2 class="intro-content__title">
+                                    Евразийский банк развития
+                                </h2>
+                                <div class="intro-content__editor editor-simple">
+                                    <p>
+                                        Многосторонний банк развития, призванный содействовать экономическому росту
+                                        государств-участников
+                                    </p>
+                                </div>
+                                <div class="intro-content__link">
+                                    <!--
+                                        Цветовые схемы:
+                                        link-intro--light
+                                        link-intro--dark
+                                    -->
+                                    <div class="link-intro link-intro--dark">
+                                        <span class="link-intro__text">
+                                            О банке
+                                        </span>
+                                        <svg class="link-intro__icon">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-content__footer">
+                                <div class="grow mob-visible"></div>
+                                <div class="link-intro link-intro--light mob-hidden">
+                                    <span class="link-intro__text">
+                                        О банке
+                                    </span>
+                                    <svg class="link-intro__icon">
+                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
+                                    </svg>
+                                </div>
+                                <!--
+                                    Цветовые схемы:
+                                    intro-count--light
+                                    intro-count--dark
+                                -->
+                                <div class="intro-count intro-count--light">
+                                    <p class="intro-count__number">
+                                        02
+                                    </p>
+                                    <p class="intro-count__text">
+                                        Доступная чистая <br>
+                                        вода и энергия
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="slider-intro__toolbar">
+            <div class="slider-intro__controls">
+                <div class="nav-slider-circle">
+                    <button class="nav-slider-circle__button" data-slider-nav="prev">
+                        <svg class="nav-slider-circle__icon">
+                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-prev"></use>
+                        </svg>
+                    </button>
+                    <button class="nav-slider-circle__button" data-slider-nav="next">
+                        <svg class="nav-slider-circle__icon">
+                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-next"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="slider-intro__pagination">
+                <div class="pagination-line" data-slider-pagination></div>
+            </div>
+        </div>
     </div>
-<!--    <div class="start-section__images" data-images>-->
-        <svg class="svg">
-            <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                <path d="M1,0 H0.177 C0.302,0.011,0.354,0.108,0.354,0.2 C0.354,0.3,0.294,0.401,0.177,0.501 C0.06,0.601,0,0.701,0,0.801 C0,0.894,0.052,0.988,0.154,1 H1 V0"/>
-            </clipPath>
-<!--            <clipPath id="svgPathTab" clipPathUnits="objectBoundingBox">-->
-<!--                <path-->
-<!--                        d="M1,0 H0.35 C0.597,0.011,0.699,0.108,0.699,0.2 C0.699,0.3,0.582,0.401,0.35,0.501 C0.118,0.601,0,0.701,0,0.801 C0,0.894,0.102,0.988,0.303,1 H1 V0"/>-->
-<!--            </clipPath>-->
-<!--            <clipPath id="svgPathMob" clipPathUnits="objectBoundingBox">-->
-<!--                <path d="M1,0 H0.368 C0.628,0.011,0.735,0.108,0.735,0.2 C0.735,0.3,0.612,0.401,0.368,0.501 C0.124,0.601,0,0.701,0,0.801 C0,0.894,0.107,0.988,0.319,1 H1 V0"/>-->
-<!--            </clipPath>-->
-        </svg>
+</div>
+<svg style="height:0; width:0; position:absolute;">
+    <clipPath id="wave" clipPathUnits="objectBoundingBox">
+        <path d="M1,0 H0.5 C0.800,0.450 0.200,0.550 0.5,1 H1 V0"/>
+    </clipPath>
 
+    <clipPath id="waveMobile" clipPathUnits="objectBoundingBox">
+        <path d="M1,0 H0.5 C1.300,0.450 -0.300,0.550 0.5,1 H1 V0"/>
+    </clipPath>
+</svg>
 
-<!--        <svg-->
-<!--                preserveAspectRatio="none"-->
-<!--                baseProfile="full"-->
-<!--                viewBox="0 0 875 617"-->
-<!--                xmlns="http://www.w3.org/2000/svg"-->
-<!--                xmlns:xlink="http://www.w3.org/1999/xlink"-->
-<!--        >-->
+<script>
+    function updateClipPath() {
+        const els = document.querySelectorAll('[data-clip="right"]');
+        const width = window.innerWidth;
 
-<!--            <defs>-->
-<!--                <mask id="pattern">-->
-<!--                    <g transform="scale(2)" >-->
-<!--                        <path d="m43 60.9-20.2 0C17.5 61 16.7 60.6 14 56.3L3.9 38.1C1.6 33 1.5 32.9 4 28.5L14.8 10c0 0 1.3-2.4 2.6-3.1 1.4-0.8 4.6-0.7 4.6-0.7l21.1 0.1c6.1-0.1 5.5 0.7 8.1 4.4L61.6 28.6c1.9 4.3 2.5 4.8 0.4 9.3L51.9 55.7C49.5 61 48.5 60.9 43 60.9Z"-->
-<!--                              style="fill:white;stroke-width:1;stroke:white"/>-->
-<!--                    </g>-->
-<!--                </mask>-->
-<!--            </defs>-->
-<!--        </svg>-->
+        els.forEach((el) => {
+            if (width <= 1260) {
+                el.style.clipPath = 'url(#waveMobile)';
+            } else {
+                el.style.clipPath = 'url(#wave)';
+            }
+        })
+    }
 
-<!--        <svg-->
-<!--             viewBox="0 0 250 250"-->
-<!--             preserveAspectRatio="none"-->
-<!--             xmlns="http://www.w3.org/2000/svg"-->
-<!--        >-->
-<!--            <defs>-->
-<!--                <mask id="cat">-->
-<!--                    <g transform="scale(2)" >-->
-<!--                        <path d="m43 60.9-20.2 0C17.5 61 16.7 60.6 14 56.3L3.9 38.1C1.6 33 1.5 32.9 4 28.5L14.8 10c0 0 1.3-2.4 2.6-3.1 1.4-0.8 4.6-0.7 4.6-0.7l21.1 0.1c6.1-0.1 5.5 0.7 8.1 4.4L61.6 28.6c1.9 4.3 2.5 4.8 0.4 9.3L51.9 55.7C49.5 61 48.5 60.9 43 60.9Z"-->
-<!--                              style="fill:white;stroke-width:1;stroke:white"/>-->
-<!--                    </g>-->
-<!--                </mask>-->
-<!--            </defs>-->
-<!--        </svg>-->
-<!--    </div>-->
-
-</section>
+    let rafId;
+    window.addEventListener('resize', () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateClipPath);
+    });
+    updateClipPath();
+</script>

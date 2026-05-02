@@ -22,6 +22,10 @@ import "@fancyapps/ui/dist/carousel/carousel.css";
 // import "@fancyapps/ui/dist/carousel/carousel.arrows.css";
 import { Thumbs } from "@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js";
 import "@fancyapps/ui/dist/carousel/carousel.thumbs.css";
+import {Slider} from "../ui/slider";
+import { animate, splitText, stagger } from 'animejs';
+import {onVisible} from "../helpers/onvisible";
+import {SpotlightCard} from "../ui/spotlightCard";
 
 class App {
     // private body: Body | null;
@@ -74,6 +78,9 @@ class App {
         this.initModals();
         this.initTitle();
         this.initCarousel();
+        this.initSlider();
+        this.initAnimations();
+        this.initSpotlightCard();
     }
 
     initSwitcher = () => {
@@ -216,6 +223,38 @@ class App {
                 },
             }, { Thumbs });
         })
+    }
+
+    initSlider = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-slider]');
+
+        els.forEach((item) => new Slider(item));
+    }
+
+    initAnimations = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-animate="fadeInSplit"]');
+
+        els.forEach((item) => {
+            const { chars } = splitText(item, { chars: true });
+
+            onVisible(item, () => {
+                animate(chars, {
+                    opacity: { from: 0 },
+                    y:       { from: 40, to: 0 },
+                    duration: 1250,
+                    ease: 'out(3)',
+                    delay: stagger(50),
+                });
+            });
+        });
+    }
+
+    initSpotlightCard = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-spotlight-card="block"]');
+
+        els.forEach((item) => {
+            new SpotlightCard(item);
+        });
     }
 }
 

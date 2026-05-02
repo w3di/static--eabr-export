@@ -1,0 +1,33 @@
+.slider-intro {
+	position: relative;
+
+	&__wrapper {
+
+	}
+
+	&__toolbar {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		gap: r(85);
+		z-index: 1;
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+
+		@media (max-width: 1260px) {
+			gap: r(22);
+		}
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__pagination {
+		//@media (max-width: 1260px) {
+		//	display: none;
+		//}
+	}
+}
