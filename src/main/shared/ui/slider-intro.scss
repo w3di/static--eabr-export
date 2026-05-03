@@ -13,6 +13,7 @@
 		z-index: 1;
 		display: flex;
 		position: absolute;
+		pointer-events: none;
 		flex-direction: column;
 
 		@media (max-width: 1260px) {

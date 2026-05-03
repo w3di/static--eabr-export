@@ -16,6 +16,7 @@ class Slider {
         if (mode === 'intro') this.initSliderIntro(el);
         if (mode === 'slider-cards') this.initSliderCards(el);
         if (mode === 'grid') this.initSliderGrid(el);
+        if (mode === 'regular-full') this.initRegularFullSlider(el);
     }
 
     initSliderIntro(el: HTMLElement) {
@@ -100,6 +101,31 @@ class Slider {
                     }
                 }
             }
+        });
+    }
+
+    initRegularFullSlider(el: HTMLElement) {
+        const pagination = el.querySelector('[data-slider-pagination]');
+        const navPrev = el.querySelector('[data-slider-nav="prev"]');
+        const navNext = el.querySelector('[data-slider-nav="next"]');
+
+        this.sliderInstance = new Swiper(el, {
+            loop: false,
+            autoHeight: true,
+            slidesPerView: 1,
+            modules: [Pagination, Navigation],
+            slideActiveClass: 'active',
+            pagination: {
+                el: pagination,
+                clickable: true,
+                bulletClass: 'pagination-dots__item',
+                bulletActiveClass: 'active',
+            },
+            navigation: {
+                nextEl: navNext,
+                prevEl: navPrev,
+                disabledClass: 'disabled',
+            },
         });
     }
 
