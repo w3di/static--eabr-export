@@ -8,6 +8,13 @@
 	width: fit-content;
 	align-items: center;
 	border-radius: r(54);
+	justify-content: center;
+
+	&--mob-full {
+		@media (max-width: 1260px) {
+			width: 100%;
+		}
+	}
 
 	&:after {
 		content: '';

@@ -1,4 +1,6 @@
+@import "article-card-counter";
 @import "article-card-icon";
+@import "article-card-stat";
 @import "article-cover";
 @import "article-intro";
 @import "article-news";
@@ -8,8 +10,10 @@
 @import "articles-content";
 @import "aside-line";
 @import "block-accent";
+@import "block-counter";
 @import "block-fluid";
 @import "block-links";
+@import "block-quote";
 @import "body";
 @import "breadcrumbs";
 @import "burger";
@@ -30,10 +34,14 @@
 @import "intro";
 @import "intro-content";
 @import "intro-count";
+@import "item-counter";
+@import "item-factoid-circle";
 @import "lang-switcher";
+@import "line";
 @import "link-icon";
 @import "link-intro";
 @import "link-more";
+@import "list-marker";
 @import "logo";
 @import "main";
 @import "menu-contents";

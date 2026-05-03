@@ -1,0 +1,25 @@
+.list-marker {
+	display: flex;
+	list-style-type: disc;
+	flex-direction: column;
+	list-style-position: outside;
+
+	&--regular {
+		gap: r(16);
+		padding-left: r(22);
+
+		.list-marker {
+			&__item {
+				font-size: r(20);
+				line-height: 1.2;
+			}
+		}
+	}
+
+	&__item {
+		&::marker {
+			font-size: 24px;
+			color: var(--green);
+		}
+	}
+}

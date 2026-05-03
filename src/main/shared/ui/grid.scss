@@ -10,6 +10,10 @@
 		gap: r(8);
 	}
 
+	&--center {
+		align-items: center;
+	}
+
     &__col {
         &--1 {
             grid-column: span 1;
