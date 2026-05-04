@@ -139,3 +139,20 @@
 		gap: 40px;
 	}
 }
+
+.footer__arrow {
+	z-index: 3;
+	bottom: r(40);
+	position: fixed;
+	left: calc(50% + (1320px / 2));
+
+	@media screen and (max-width: 1480px) {
+		left: auto;
+		right: r(15);
+		bottom: r(15);
+	}
+
+	@media screen and (max-width: 1260px) {
+		display: none;
+	}
+}

@@ -26,6 +26,7 @@ import {Slider} from "../ui/slider";
 import { animate, splitText, stagger } from 'animejs';
 import {onVisible} from "../helpers/onvisible";
 import {SpotlightCard} from "../ui/spotlightCard";
+import {ButtonReturn} from "../ui/buttonReturn";
 
 class App {
     // private body: Body | null;
@@ -81,6 +82,7 @@ class App {
         this.initSlider();
         this.initAnimations();
         this.initSpotlightCard();
+        this.initReturnButton();
     }
 
     initSwitcher = () => {
@@ -255,6 +257,12 @@ class App {
         els.forEach((item) => {
             new SpotlightCard(item);
         });
+    }
+
+    initReturnButton = () => {
+        const el: HTMLElement = document.querySelector('[data-return-button="block"]');
+
+        if (el) new ButtonReturn(el);
     }
 }
 

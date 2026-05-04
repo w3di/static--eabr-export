@@ -3,6 +3,7 @@ import './icon-arrow-left.svg';
 import './icon-arrow-more.svg';
 import './icon-arrow-more-bold.svg';
 import './icon-arrow-prev.svg';
+import './icon-arrow-return.svg';
 import './icon-arrow-next.svg';
 import './icon-arrow-right.svg';
 import './icon-close.svg';
