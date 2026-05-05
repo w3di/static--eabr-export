@@ -1,6 +1,10 @@
 .block-quote {
-	font-size: r(34);
-	line-height: 1.2;
-	padding-left: r(28);
+	overflow: hidden;
 	border-left: 6px solid #24D6FF;
+
+	&__inner {
+		font-size: r(34);
+		line-height: 1.2;
+		padding-left: r(28);
+	}
 }

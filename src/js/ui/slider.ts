@@ -5,6 +5,7 @@ import Swiper from "swiper";
 import {
     Navigation,
     Pagination,
+    EffectFade,
 } from 'swiper/modules';
 
 class Slider {
@@ -113,8 +114,9 @@ class Slider {
             loop: false,
             autoHeight: true,
             slidesPerView: 1,
-            modules: [Pagination, Navigation],
+            modules: [Pagination, Navigation, EffectFade],
             slideActiveClass: 'active',
+            effect: 'fade',
             pagination: {
                 el: pagination,
                 clickable: true,

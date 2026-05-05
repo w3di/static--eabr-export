@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="./assets/favicons/favicon.ico"/>
 
-<link href="css/main.3296.css" rel="stylesheet"></head>
+<link href="css/main.80bc.css" rel="stylesheet"></head>
 <body class="body" id="body" data-body>
     <div class="page">
         <header class="header" data-header>
@@ -488,27 +488,69 @@
     </div>
 </div>
 <svg style="height:0; width:0; position:absolute;" aria-hidden="true">
-    <clipPath id="wave" clipPathUnits="objectBoundingBox">
-        <path d="M1,0 H0.5 C0.800,0.450 0.200,0.550 0.5,1 H1 V0"/>
+    <clipPath id="wave"  clipPathUnits="userSpaceOnUse">
+<!--        <path d="M1,0 H0.5 C0.800,0.450 0.200,0.550 0.5,1 H1 V0"/>-->
+<!--        <path d="M0.470 0 C0.480 0 0.491 0 0.502 0 L1 0 V1 C1 1 0.741 1 0.572 1 C0.361 1 0.233 0.985 0.134 0.949 C0.035 0.912 -0.091 0.789 0.097 0.665 C0.285 0.541 0.593 0.496 0.823 0.382 C1.053 0.268 1.035 0.155 0.906 0.082 C0.788 0.015 0.613 0.001 0.502 0 L0.470 0 Z"/>-->
+        <path id="wave-path" d=""/>
+
     </clipPath>
 
-    <clipPath id="waveMobile" clipPathUnits="objectBoundingBox">
-        <path d="M1,0 H0.5 C1.300,0.450 -0.300,0.550 0.5,1 H1 V0"/>
+    <clipPath id="waveMobile" clipPathUnits="userSpaceOnUse">
+        <path id="waveMobile-path" d=""/>
     </clipPath>
 </svg>
 
 <script>
+    <!-- Этот скрипт должен быть тут, а не в бандле, чтобы не было лага между загрузкой html и ожиданием js -->
     function updateClipPath() {
         const els = document.querySelectorAll('[data-clip="right"]');
-        const width = window.innerWidth;
+        const isMobile = window.innerWidth <= 1260;
 
         els.forEach((el) => {
-            if (width <= 1260) {
+            const rect = el.getBoundingClientRect();
+            const elWidth = rect.width;
+            const elHeight = rect.height;
+
+            let path;
+
+            if (isMobile) {
+                const scaleY = elHeight / 680;
+                const o = (elWidth / 2) - (243 / 2);
+                const s = scaleY;
+
+                path = `M${o+114.172} ${0.061*s}
+                C${o+116.567} ${-0.014*s} ${o+119.171} ${-0.025*s} ${o+121.949} ${0.057*s}
+                L${elWidth} 0 V${elHeight}
+                C${elWidth} ${elHeight} ${o+179.683} ${680*s} ${o+138.5} ${680*s}
+                C${o+87.202} ${680*s} ${o+56.667} ${667.181*s} ${o+32.588} ${642.575*s}
+                C${o+8.51} ${617.97*s} ${o-22.084} ${534.63*s} ${o+23.523} ${450.496*s}
+                C${o+69.131} ${366.362*s} ${o+143.916} ${335.804*s} ${o+199.721} ${258.813*s}
+                C${o+255.527} ${181.822*s} ${o+251.278} ${104.833*s} ${o+219.834} ${55.224*s}
+                C${o+191.356} ${10.295*s} ${o+148.626} ${0.85*s} ${o+121.949} ${0.057*s}
+                L${o+114.172} ${0.061*s} Z`;
+
+                document.getElementById('waveMobile-path').setAttribute('d', path);
                 el.style.clipPath = 'url(#waveMobile)';
             } else {
+                const scaleY = elHeight / 800;
+                const o = (elWidth / 2) - (425 / 2);
+                const s = scaleY;
+
+                path = `M${o+199.854} ${0.072*s}
+                C${o+204.047} ${-0.016*s} ${o+208.605} ${-0.030*s} ${o+213.467} ${0.068*s}
+                L${elWidth} 0 V${elHeight}
+                C${elWidth} ${elHeight} ${o+314.817} ${800*s} ${o+243} ${800*s}
+                C${o+153.5} ${800*s} ${o+99.193} ${787.862*s} ${o+57.044} ${758.806*s}
+                C${o+14.896} ${729.75*s} ${o-38.658} ${631.335*s} ${o+41.177} ${531.982*s}
+                C${o+121.011} ${432.63*s} ${o+251.92} ${396.545*s} ${o+349.605} ${305.628*s}
+                C${o+447.291} ${214.711*s} ${o+439.853} ${123.795*s} ${o+384.812} ${65.214*s}
+                C${o+334.962} ${12.157*s} ${o+260.164} ${1.003*s} ${o+213.467} ${0.068*s}
+                L${o+199.854} ${0.072*s} Z`;
+
+                document.getElementById('wave-path').setAttribute('d', path);
                 el.style.clipPath = 'url(#wave)';
             }
-        })
+        });
     }
 
     let rafId;
@@ -779,7 +821,7 @@
             <section class="section mb-190 mbm-120">
                 <div class="container">
     <h2 class="title title--small title--underline mb-45 mbm-35" data-title="block">
-        Стратегия 2022-2026
+        Стратегия <br class="mob-visible"> 2022-2026
     </h2>
     <div class="grid mb-45 mbm-40">
         <div class="grid__col grid__col--4 order-mob-2">
@@ -790,7 +832,7 @@
                             Инвестиций в ключевые Мегапроекты
                         </p>
                         <p class="article-card-counter__number">
-                            <strong>$1,2</strong> млрд
+                            <strong>$<span data-animate="counter">1,2</span></strong> млрд
                         </p>
                     </article>
                 </div>
@@ -800,7 +842,7 @@
                             Инвестиций в Армении, Кыргызстане и Таджикистане
                         </p>
                         <p class="article-card-counter__number">
-                            <strong>$500</strong> млн
+                            <strong>$<span data-animate="counter">500</span></strong> млн
                         </p>
                     </article>
                 </div>
@@ -809,7 +851,7 @@
         <div class="grid__col grid__col--4 order-mob-1">
             <article class="article-card-stat">
                 <p class="article-card-stat__number">
-                    <strong>$10,9</strong> млрд
+                    <strong>$<span data-animate="counter">10,9</span></strong> млрд
                 </p>
                 <img class="article-card-stat__icon" src="./assets/images/icon-stat-green.svg" alt="Декоративная иконка" aria-hidden="true">
                 <p class="article-card-stat__text">
@@ -901,22 +943,22 @@
             <div class="swiper-slide slider-regular-full__slide">
                 <article class="article-project-slide">
                     <picture class="article-project-slide__picture">
-                        <img src="./assets/images/1920x1080.svg" alt="Расширение и модернизация Международного аэропорта Алматы">
+                        <img src="./assets/images/1920x1080-green.svg" alt="Расширение и модернизация Международного аэропорта Алматы">
                     </picture>
                     <div class="article-project-slide__content">
                         <div class="article-project-slide__item">
                             <img class="article-project-slide__icon" src="./assets/images/icon-project-1.svg" alt="#" aria-hidden="true">
                             <p class="article-project-slide__role">
-                                Транспорт
+                                Строительство
                             </p>
                         </div>
                         <div class="article-project-slide__block">
                             <h3 class="article-project-slide__title">
-                                Расширение
+                                2 Расширение
                                 и модернизация Международного аэропорта Алматы
                             </h3>
                             <p class="article-project-slide__price">
-                                $38,88 млн
+                                $16,82 млн
                             </p>
                             <p class="article-project-slide__caption">
                                 Сумма финансирования Банка
@@ -928,22 +970,22 @@
             <div class="swiper-slide slider-regular-full__slide">
                 <article class="article-project-slide">
                     <picture class="article-project-slide__picture">
-                        <img src="./assets/images/1920x1080.svg" alt="Расширение и модернизация Международного аэропорта Алматы">
+                        <img src="./assets/images/1920x1080-blue.svg" alt="Расширение и модернизация Международного аэропорта Алматы">
                     </picture>
                     <div class="article-project-slide__content">
                         <div class="article-project-slide__item">
                             <img class="article-project-slide__icon" src="./assets/images/icon-project-1.svg" alt="#" aria-hidden="true">
                             <p class="article-project-slide__role">
-                                Транспорт
+                                Производство
                             </p>
                         </div>
                         <div class="article-project-slide__block">
                             <h3 class="article-project-slide__title">
-                                Расширение
+                                3 Расширение
                                 и модернизация Международного аэропорта Алматы
                             </h3>
                             <p class="article-project-slide__price">
-                                $38,88 млн
+                                $78,98 млн
                             </p>
                             <p class="article-project-slide__caption">
                                 Сумма финансирования Банка
@@ -996,7 +1038,7 @@
     <div class="grid mb-45">
         <div class="grid__col grid__col--6 grid__col-mob--4 mbm-15">
             <article class="item-counter">
-                <strong class="item-counter__number">
+                <strong class="item-counter__number" data-animate="counter">
                     319
                 </strong>
                 <span class="item-counter__text">
@@ -1006,8 +1048,8 @@
         </div>
         <div class="grid__col grid__col--6 grid__col-mob--4">
             <article class="item-counter">
-                <strong class="item-counter__number">
-                    $19,1
+                <strong class="item-counter__number" >
+                    $<span data-animate="counter">19,1</span>
                 </strong>
                 <span class="item-counter__text">
                     Накопленный портфель <br> инвестиций ЕАБР в экономику
@@ -1056,7 +1098,7 @@
             <div class="item-factoid-circle">
                 <div class="item-factoid-circle__circle">
                     <span class="item-factoid-circle__number">
-                        $63,5
+                        $<span data-animate="counter">63,5</span>
                     </span>
                     <span class="item-factoid-circle__text">
                         млрд
@@ -1065,12 +1107,14 @@
             </div>
         </div>
         <div class="grid__col grid__col--4">
-            <blockquote class="block-quote">
-                Общая сумма <br>
-                инвестиционных <br>
-                проектов <br>
-                с участием ЕАБР
-            </blockquote>
+            <div class="block-quote">
+                <blockquote class="block-quote__inner" data-animate="quote">
+                    Общая сумма <br>
+                    инвестиционных <br>
+                    проектов <br>
+                    с участием ЕАБР
+                </blockquote>
+            </div>
         </div>
     </div>
 </div>
@@ -1318,5 +1362,5 @@
 
 
     </div>
-<script defer src="js/bundle.1593.js"></script></body>
+<script defer src="js/bundle.49e8.js"></script></body>
 </html>

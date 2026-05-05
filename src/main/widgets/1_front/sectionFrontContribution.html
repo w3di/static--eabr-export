@@ -17,7 +17,7 @@
     <div class="grid mb-45">
         <div class="grid__col grid__col--6 grid__col-mob--4 mbm-15">
             <article class="item-counter">
-                <strong class="item-counter__number">
+                <strong class="item-counter__number" data-animate="counter">
                     319
                 </strong>
                 <span class="item-counter__text">
@@ -27,8 +27,8 @@
         </div>
         <div class="grid__col grid__col--6 grid__col-mob--4">
             <article class="item-counter">
-                <strong class="item-counter__number">
-                    $19,1
+                <strong class="item-counter__number" >
+                    $<span data-animate="counter">19,1</span>
                 </strong>
                 <span class="item-counter__text">
                     Накопленный портфель <br> инвестиций ЕАБР в экономику
@@ -77,7 +77,7 @@
             <div class="item-factoid-circle">
                 <div class="item-factoid-circle__circle">
                     <span class="item-factoid-circle__number">
-                        $63,5
+                        $<span data-animate="counter">63,5</span>
                     </span>
                     <span class="item-factoid-circle__text">
                         млрд
@@ -86,12 +86,14 @@
             </div>
         </div>
         <div class="grid__col grid__col--4">
-            <blockquote class="block-quote">
-                Общая сумма <br>
-                инвестиционных <br>
-                проектов <br>
-                с участием ЕАБР
-            </blockquote>
+            <div class="block-quote">
+                <blockquote class="block-quote__inner" data-animate="quote">
+                    Общая сумма <br>
+                    инвестиционных <br>
+                    проектов <br>
+                    с участием ЕАБР
+                </blockquote>
+            </div>
         </div>
     </div>
 </div>

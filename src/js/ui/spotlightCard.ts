@@ -36,15 +36,24 @@ class SpotlightCard {
     private setStaticSpotlight = () => {
         if (!this.isMobile()) return;
         this.spotlight.style.background = `radial-gradient(circle at 80% 70%, ${this.spotlightColor}, transparent 30%)`;
-        this.spotlight.style.opacity = '0.7';
+        this.spotlight.style.opacity = '0.9';
     };
+
+    // private handleMouseMove = (e: MouseEvent) => {
+    //     if (this.isMobile()) return;
+    //     const rect = this.el.getBoundingClientRect();
+    //     const x = e.clientX - rect.left;
+    //     const y = e.clientY - rect.top;
+    //     this.spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, ${this.spotlightColor}, transparent 30%)`;
+    // };
 
     private handleMouseMove = (e: MouseEvent) => {
         if (this.isMobile()) return;
         const rect = this.el.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        this.spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, ${this.spotlightColor}, transparent 30%)`;
+        const radius = Math.max(rect.width, rect.height) * 0.3; // или фиксированное число, например 300px
+        this.spotlight.style.background = `radial-gradient(circle ${radius}px at ${x}px ${y}px, ${this.spotlightColor}, transparent)`;
     };
 
     private handleShow = () => {

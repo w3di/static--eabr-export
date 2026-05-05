@@ -18,8 +18,6 @@ import {Title} from "../ui/title";
 import {createPopper} from "@popperjs/core";
 import { Carousel } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/carousel/carousel.css";
-// import { Arrows } from "@fancyapps/ui/dist/carousel/carousel.arrows.js";
-// import "@fancyapps/ui/dist/carousel/carousel.arrows.css";
 import { Thumbs } from "@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js";
 import "@fancyapps/ui/dist/carousel/carousel.thumbs.css";
 import {Slider} from "../ui/slider";
@@ -27,6 +25,7 @@ import { animate, splitText, stagger } from 'animejs';
 import {onVisible} from "../helpers/onvisible";
 import {SpotlightCard} from "../ui/spotlightCard";
 import {ButtonReturn} from "../ui/buttonReturn";
+import {Counter} from "../ui/counter";
 
 class App {
     // private body: Body | null;
@@ -83,6 +82,8 @@ class App {
         this.initAnimations();
         this.initSpotlightCard();
         this.initReturnButton();
+        this.initCounters();
+        this.initAnimationQuote();
     }
 
     initSwitcher = () => {
@@ -234,9 +235,9 @@ class App {
     }
 
     initAnimations = () => {
-        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-animate="fadeInSplit"]');
+        const elsSplit: NodeListOf<HTMLElement> = document.querySelectorAll('[data-animate="fadeInSplit"]');
 
-        els.forEach((item) => {
+        elsSplit.forEach((item) => {
             const { chars } = splitText(item, { chars: true });
 
             onVisible(item, () => {
@@ -247,6 +248,30 @@ class App {
                     ease: 'out(3)',
                     delay: stagger(50),
                 });
+            });
+        });
+    }
+
+    initAnimationQuote = () => {
+        const els: NodeListOf<HTMLElement> = document.querySelectorAll('[data-animate="quote"]');
+
+        els.forEach((item) => {
+            onVisible(item, () => {
+                animate(item, {
+                    translateX: ['-100%', '0%'],
+                    duration: 800,
+                    ease: 'easeOutExpo',
+                });
+            });
+        });
+    }
+
+    initCounters = () => {
+        const elsSplit: NodeListOf<HTMLElement> = document.querySelectorAll('[data-animate="counter"]');
+
+        elsSplit.forEach((item) => {
+            onVisible(item, () => {
+                new Counter(item, { duration: 3000 });
             });
         });
     }
