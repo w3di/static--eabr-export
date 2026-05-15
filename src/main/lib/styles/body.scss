@@ -1,0 +1,40 @@
+html {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(17, 17, 17, .25) transparent;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(17, 17, 17, .25);
+	border-radius: 3px;
+
+	&:hover {
+		background: rgba(17, 17, 17, .45);
+	}
+}
+
+.body {
+	display: flex;
+	line-height: 1.5;
+	font-weight: 400;
+	min-height: 100vh;
+	color: var(--dark);
+	overflow-x: clip;
+	flex-direction: column;
+	scrollbar-gutter: stable;
+	font-family: var(--font-regular);
+	background-color: var(--white);
+	font-size: calc(var(--base-font-size) * 1px);
+
+	&.fixed {
+		overflow: hidden;
+	}
+}

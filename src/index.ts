@@ -1,9 +1,16 @@
-import {App} from "./js/app/app";
-import "./main/shared/sprite";
-import "./main/shared/libs/";
-import "./style.scss";
+import { App } from './main/lib/logic/app/app';
+import { I18n } from './main/lib/logic/i18n/i18n';
+import './main/lib/sprite';
+import 'the-new-css-reset/css/reset.css';
+import './style.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
-    // @ts-ignore
-    window.app = new App();
+declare global {
+  interface Window {
+    app: App;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await new I18n().init();
+  window.app = new App();
 });

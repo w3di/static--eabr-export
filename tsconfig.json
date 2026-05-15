@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
     "outDir": "./docs/",
-    "noImplicitAny": true,
+    "strict": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "ES2017",
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "skipLibCheck": true
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "moduleResolution": "node"
     }
   }
 }

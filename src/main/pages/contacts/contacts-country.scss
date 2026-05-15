@@ -1,0 +1,150 @@
+.contacts-country-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: r(15);
+	align-items: start;
+
+	@media (max-width: 1260px) {
+		grid-template-columns: 1fr;
+		gap: r(12);
+	}
+}
+
+.contacts-country-col {
+	display: flex;
+	flex-direction: column;
+	gap: r(15);
+
+	@media (max-width: 1260px) {
+		gap: r(12);
+	}
+}
+
+.contacts-country {
+	display: block;
+	box-sizing: border-box;
+	padding: r(24) r(28) r(32);
+	background: var(--white);
+	border: 1px solid #E5EEF2;
+	border-radius: r(32);
+
+	&__toggle {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: r(32);
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__brand {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: r(32);
+	}
+
+	&__flag {
+		flex-shrink: 0;
+		width: r(40);
+		height: r(40);
+		border-radius: 50%;
+		background: #d9e3e8 center / cover no-repeat;
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08);
+	}
+
+	&__name {
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+	}
+
+	&__arrow {
+		flex-shrink: 0;
+		width: r(24);
+		height: r(24);
+		fill: rgba(0, 0, 0, .4);
+		transition: transform .35s ease;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-rows: 0fr;
+		visibility: hidden;
+		transition:
+			grid-template-rows .35s ease,
+			visibility 0s linear .35s;
+	}
+
+	&__inner {
+		min-height: 0;
+		overflow: hidden;
+		margin-inline: r(-8);
+		padding-inline: r(8);
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: r(20);
+		padding-top: r(24);
+		padding-bottom: r(8);
+	}
+
+	&__title {
+		font-size: r(34);
+		line-height: r(41);
+		color: var(--dark);
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: r(20);
+	}
+
+	&__toggle:checked ~ &__wrapper {
+		grid-template-rows: 1fr;
+		visibility: visible;
+		transition:
+			grid-template-rows .35s ease,
+			visibility 0s linear 0s;
+	}
+
+	&__toggle:checked ~ &__head &__arrow {
+		transform: rotate(180deg);
+	}
+
+	&__toggle:focus-visible ~ &__head {
+		outline: 2px solid #1BCE1B;
+		outline-offset: 4px;
+		border-radius: r(8);
+	}
+}
+
+@media (max-width: 1260px) {
+	.contacts-country {
+		padding: r(24) r(16);
+
+		&__head,
+		&__brand {
+			gap: r(12);
+		}
+
+		&__title {
+			font-size: r(28);
+			line-height: r(34);
+		}
+
+		&__body {
+			padding-top: r(16);
+		}
+	}
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Открытые вакансии - Работайте с нами - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const routes = htmlWebpackPlugin.options.routes;
+    const navItems = [
+        { href: routes.careers,           label: 'Что мы предлагаем',              i18n: 'careers.nav.offer' },
+        { href: routes.careersAbout,      label: 'О банке',                        i18n: 'careers.nav.about' },
+        { href: routes.careersJobs,       label: 'Открытые вакансии',              i18n: 'careers.nav.jobs', active: true },
+        { href: routes.careersInternship, label: 'Стажировка и&nbsp;практика',     i18n: 'careers.nav.internship' }
+    ];
+
+    // Top row (2): wide
+    const offersTop = [
+        { icon: 'icon-job-1', title: 'Возможности для&nbsp;профессионального роста и&nbsp;развития' },
+        { icon: 'icon-job-2', title: 'Работа над&nbsp;значимыми и&nbsp;масштабными проектами' }
+    ];
+
+    // Bottom row (3): narrow
+    const offersBottom = [
+        { icon: 'icon-job-3', title: 'Сильная команда и&nbsp;экспертиза' },
+        { icon: 'icon-job-4', title: 'Стабильность и&nbsp;прозрачные условия' },
+        { icon: 'icon-job-5', title: 'Современная рабочая среда' }
+    ];
+    const allOffers = offersTop.concat(offersBottom);
+
+    const steps = [
+        { num: '01', label: 'Отклик на&nbsp;вакансию' },
+        { num: '02', label: 'Интервью с&nbsp;рекрутером' },
+        { num: '03', label: 'Интервью с&nbsp;руководителем&nbsp;/ командой' },
+        { num: '04', label: 'Финальное решение и&nbsp;оффер' }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span>ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="careers.breadcrumbHome">Главная</span> / <span data-i18n="careers.breadcrumbParent">Работайте с&nbsp;нами</span> / <strong data-i18n="careersJobs.breadcrumbCurrent">Открытые вакансии</strong>
+                                </div>
+                            </div>
+                            <div class="mb-20 mbm-15">
+                                <h1 class="title title--underline is-animated">
+                                    <span class="title__inner" data-i18n="careersJobs.title">Открытые вакансии</span>
+                                </h1>
+                            </div>
+
+                            <p class="fz-24 fz-mob-20 mb-50 mbm-30" style="color: var(--dark);" data-i18n="careersJobs.subtitle">
+                                Присоединяйтесь к&nbsp;команде ЕАБР&nbsp;— мы&nbsp;ищем людей, которые хотят развиваться, брать ответственность и&nbsp;работать над&nbsp;значимыми проектами
+                            </p>
+
+                            <div class="mb-50 mbm-30">
+                                <h2 class="title title--small title--underline is-animated mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="careersJobs.aboutTitle">Про команду:</span>
+                                </h2>
+                                <div class="hr-image-card">
+                                    <div class="hr-image-card__media" style="background-image: url('./assets/images/hr-jobs-hero.png')"></div>
+                                    <div class="hr-image-card__card">
+                                        <p data-i18n="careersJobs.aboutText">
+                                            ЕАБР&nbsp;— это команда профессионалов, которая реализует проекты, влияющие на&nbsp;развитие региона. Мы&nbsp;ценим инициативу, ответственность и&nbsp;готовность работать на&nbsp;результат. Здесь есть возможность расти, развивать экспертизу и&nbsp;участвовать в&nbsp;задачах, которые имеют реальное значение.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-50 mbm-30">
+                                <h2 class="title title--small title--underline is-animated mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="careersJobs.perksTitle">Почему к&nbsp;нам:</span>
+                                </h2>
+                                <div class="hr-perks-grid">
+                                    <% offersTop.forEach(function(p, i) { %>
+                                    <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
+                                        <div class="hr-perk__icon">
+                                            <svg aria-hidden="true">
+                                                <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                            </svg>
+                                        </div>
+                                        <h3 class="hr-perk__title" data-i18n="careersJobs.perks.<%= i %>"><%= p.title %></h3>
+                                    </article>
+                                    <% }); %>
+
+                                    <div class="hr-perks-grid__row-3">
+                                        <% offersBottom.forEach(function(p, i) { %>
+                                        <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
+                                            <div class="hr-perk__icon">
+                                                <svg aria-hidden="true">
+                                                    <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                                </svg>
+                                            </div>
+                                            <h3 class="hr-perk__title" data-i18n="careersJobs.perks.<%= i + 2 %>"><%= p.title %></h3>
+                                        </article>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-50 mbm-30">
+                                <h2 class="title title--small title--underline is-animated mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="careersJobs.processTitle">Как проходит отбор:</span>
+                                </h2>
+                                <div class="hr-steps-scroll">
+                                    <ol class="hr-steps">
+                                        <% steps.forEach(function(s, i) { %>
+                                        <li class="hr-step-item">
+                                            <span class="hr-step-item__dot"></span>
+                                            <span class="hr-step-item__num"><%= s.num %></span>
+                                            <span class="hr-step-item__label" data-i18n="careersJobs.steps.<%= i %>"><%= s.label %></span>
+                                        </li>
+                                        <% }); %>
+                                    </ol>
+                                </div>
+                                <div style="margin-top: 32px;">
+                                    <a href="#" class="btn-pill">
+                                        <span data-i18n="careersJobs.cta">Смотреть вакансии</span>
+                                        <svg class="btn-pill__icon" viewBox="0 0 20 20" aria-hidden="true">
+                                            <path d="M6 4h10v10h-2V7.41L4.7 16.71l-1.41-1.41L12.59 6H6V4z" fill="#111"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <p class="fz-24 fz-mob-20 hr-outro" style="color: var(--dark);" data-i18n="careersJobs.outro">
+                                Не&nbsp;нашли подходящую вакансию? Вы&nbsp;можете направить своё резюме на&nbsp;<a href="mailto:cv@eabr.org">cv@eabr.org</a>, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами при&nbsp;появлении релевантных возможностей.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>

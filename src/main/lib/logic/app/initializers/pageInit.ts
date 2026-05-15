@@ -1,0 +1,52 @@
+import { IslamicForm } from '../../../../pages/islamic-finance/logic/islamicForm';
+import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
+import { NavDrawer } from '../../ui/navDrawer';
+import { StepsLineFill } from '../../ui/stepsLineFill';
+import { CityMapPins } from '../../ui/cityMapPins';
+
+class PageInit {
+  constructor() {
+    this.islamicForm();
+    this.countryAccordions();
+    this.navDrawers();
+    this.stepsLineFill();
+    this.cityMapPins();
+  }
+
+  private stepsLineFill() {
+    document
+      .querySelectorAll<HTMLElement>('.hr-steps')
+      .forEach((el) => new StepsLineFill(el));
+  }
+
+  private cityMapPins() {
+    const desktopPins = Array.from(
+      document.querySelectorAll<HTMLElement>('.hr-pin.mob-hidden'),
+    );
+    if (desktopPins.length) new CityMapPins(desktopPins, 'mouseenter');
+
+    const mobilePins = Array.from(
+      document.querySelectorAll<HTMLElement>('.hr-pin.mob-visible'),
+    );
+    if (mobilePins.length) new CityMapPins(mobilePins, 'click');
+  }
+
+  private islamicForm() {
+    const el = document.querySelector<HTMLFormElement>('[data-isl-form]');
+    if (el) new IslamicForm(el);
+  }
+
+  private countryAccordions() {
+    document
+      .querySelectorAll<HTMLInputElement>('.contacts-country__toggle')
+      .forEach((el) => new CountryAccordion(el));
+  }
+
+  private navDrawers() {
+    document
+      .querySelectorAll<HTMLElement>('.nav-drawer')
+      .forEach((el) => new NavDrawer(el));
+  }
+}
+
+export { PageInit };

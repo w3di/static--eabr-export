@@ -1,0 +1,54 @@
+// Groups
+@import "article";
+@import "block";
+@import "button";
+@import "hr";
+@import "intro";
+@import "item";
+@import "link";
+@import "menu";
+@import "nav";
+@import "pagination";
+@import "slider";
+
+// Standalone
+@import "articles-content";
+@import "aside-line";
+@import "body";
+@import "breadcrumbs";
+@import "burger";
+@import "container";
+@import "date-content";
+@import "editor";
+@import "editor-simple";
+@import "f-carousel";
+@import "filter-articles";
+@import "footer";
+@import "form-search";
+@import "grid";
+@import "header";
+@import "input-date";
+@import "lang-switcher";
+@import "line";
+@import "list-marker";
+@import "logo";
+@import "main";
+@import "page";
+@import "radiogroup";
+@import "section";
+@import "section-cover";
+@import "select-app";
+@import "slide-carousel";
+@import "social";
+@import "stack";
+@import "tag-article";
+@import "temp";
+@import "time-post";
+@import "title";
+
+[data-animate="fadeInText"] {
+  visibility: hidden;
+}
+
+@media (max-width: 1260px) {
+}

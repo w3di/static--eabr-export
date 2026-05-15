@@ -1,42 +1,63 @@
 import fs from 'fs';
 import path from 'path';
-import {BuildPaths} from "../types/config";
-import {TemplateStringType} from "./buildPagesList";
+import _ from 'lodash';
+import { BuildPaths } from '../types/config';
+import { TemplateStringType } from './buildPagesList';
+import { ROUTES } from '../../../src/main/lib/logic/routes';
 
-const getWidgets = (paths: BuildPaths) => {
-    const resolvedPath = paths.htmlWidgets;
-    const fileContents: TemplateStringType = {};
+const fileContents: TemplateStringType = {};
 
-    const readFilesRecursively = (dir: string) => {
-        const files: string[] = fs.readdirSync(dir);
+const renderWidget = (filePath: string): string => {
+  const raw = fs.readFileSync(filePath, 'utf8');
+  if (!raw.includes('<%')) return raw;
+  const compiled = _.template(raw);
+  return compiled({
+    routes: ROUTES,
+    htmlWebpackPlugin: { options: { routes: ROUTES } },
+  });
+};
 
-        files.forEach((filename: string): void => {
-            const filePath: string = path.join(dir, filename);
-            const fileStat: fs.Stats = fs.statSync(filePath);
+const registerWidgetsIn = (dir: string) => {
+  if (!fs.existsSync(dir)) return;
+  const files: string[] = fs.readdirSync(dir);
 
-            if (fileStat.isDirectory()) {
-                readFilesRecursively(filePath);
-            } else {
-                const extension = path.extname(filename);
+  files.forEach((filename: string): void => {
+    const filePath: string = path.join(dir, filename);
+    const fileStat: fs.Stats = fs.statSync(filePath);
 
-                if (extension === '.html') {
-                    const key: string = filename.split('.').shift();
+    if (fileStat.isDirectory()) {
+      registerWidgetsIn(filePath);
+    } else {
+      const extension = path.extname(filename);
 
-                    Object.defineProperty(fileContents, key, {
-                        get() {
-                            return fs.readFileSync(filePath);
-                        },
-                    });
-                }
-            }
+      if (extension === '.html') {
+        const key = filename.split('.').shift()!;
+
+        Object.defineProperty(fileContents, key, {
+          configurable: true,
+          get() {
+            return renderWidget(filePath);
+          },
         });
-
-        return fileContents;
-    };
-
-    return readFilesRecursively(resolvedPath);
+      }
+    }
+  });
 };
 
-export {
-    getWidgets,
+const getWidgets = (paths: BuildPaths): TemplateStringType => {
+  registerWidgetsIn(paths.htmlWidgets);
+
+  const pagesDir = paths.htmlPages;
+  if (fs.existsSync(pagesDir)) {
+    fs.readdirSync(pagesDir).forEach((page) => {
+      const componentsDir = path.join(pagesDir, page, 'components');
+      if (fs.existsSync(componentsDir)) {
+        registerWidgetsIn(componentsDir);
+      }
+    });
+  }
+
+  return fileContents;
 };
+
+export { getWidgets };

@@ -1,0 +1,173 @@
+.contrib-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: r(18);
+}
+
+.contrib-card {
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: r(10);
+	padding: r(16);
+	background: linear-gradient(0deg, rgba(229, 238, 242, .12), rgba(229, 238, 242, .12)), var(--white);
+	border: 1px solid #E5EEF2;
+	border-radius: r(24);
+	min-height: r(218);
+
+	&__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: r(24);
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: r(80);
+		height: r(80);
+		background: rgba(0, 0, 0, .04);
+		border-radius: r(12);
+
+		svg {
+			width: r(60);
+			height: r(60);
+		}
+	}
+
+	&__title {
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+		font-weight: 400;
+	}
+
+	&__text {
+		font-size: r(20);
+		line-height: r(24);
+		color: var(--dark);
+		margin: 0;
+	}
+
+	// Color variants
+	&--blue {
+		.contrib-card__icon { background: rgba(0, 50, 175, .1); svg { fill: #0032AF; } }
+	}
+
+	&--sky {
+		.contrib-card__icon { background: rgba(0, 151, 216, .1); svg { fill: #0097D8; } }
+	}
+
+	&--mint {
+		.contrib-card__icon { background: rgba(8, 221, 122, .1); svg { fill: #08DD7A; } }
+	}
+
+	&--teal {
+		.contrib-card__icon { background: rgba(10, 170, 155, .1); svg { fill: #0AAA9B; } }
+	}
+
+	&--purple {
+		.contrib-card__icon { background: rgba(130, 70, 255, .1); svg { fill: #8246FF; } }
+	}
+
+	&--green {
+		.contrib-card__icon { background: rgba(27, 206, 27, .1); svg { fill: var(--green); } }
+	}
+}
+
+.contrib-quote {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: r(12);
+	padding: r(24);
+	background: #F2FDF2;
+	border-left: 3px solid var(--green);
+	border-radius: r(24);
+
+	&__title {
+		font-size: r(34);
+		line-height: r(41);
+		color: var(--dark);
+		margin: 0;
+	}
+
+	&__text {
+		font-size: r(20);
+		line-height: r(24);
+		color: var(--dark);
+		margin: 0;
+	}
+}
+
+.contrib-quote-stack {
+	display: flex;
+	flex-direction: column;
+	gap: r(12);
+}
+
+@media (max-width: 1260px) {
+	.our-contribution-page {
+		.hr-reps__title {
+			font-size: r(24);
+			line-height: r(29);
+		}
+
+		.hr-about-text {
+			font-size: r(16);
+			line-height: r(19);
+		}
+	}
+
+	.contrib-grid {
+		grid-template-columns: 1fr;
+		gap: r(8);
+	}
+
+	.contrib-card {
+		padding: r(16);
+
+		&__head {
+			gap: r(14);
+		}
+
+		&__icon {
+			width: r(74);
+			height: r(74);
+
+			svg {
+				width: r(55.5);
+				height: r(55.5);
+			}
+		}
+
+		&__title {
+			font-size: r(20);
+			line-height: r(24);
+			font-weight: 500;
+		}
+
+		&__text {
+			font-size: r(18);
+			line-height: r(22);
+		}
+	}
+
+	.contrib-quote {
+		padding: r(24) r(20);
+
+		&__title {
+			font-size: r(28);
+			line-height: r(34);
+		}
+
+		&__text {
+			font-size: r(18);
+			line-height: r(22);
+		}
+	}
+}

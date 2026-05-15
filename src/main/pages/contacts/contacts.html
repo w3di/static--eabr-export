@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    // ====== ДАННЫЕ АККОРДЕОНОВ СТРАН ======
+    // Чтобы изменить контент — правьте этот массив. Поля title/address/phone/fax/email необязательны.
+    const countries = [
+        {
+            id: 'am',
+            name: 'Армения',
+            flag: 'flag-am.svg',
+            open: true,
+            title: 'Представительство в г. Ереване',
+            address: 'Республика Армения, 0010, г. Ереван, ул. В. Саргсяна, д. 26/1, Бизнес-центр «Эребуни-Плаза», оф. 811',
+            phone: '+374 (10) 54 01 02',
+            fax: '+374 (10) 54 13 52',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'by',
+            name: 'Беларусь',
+            flag: 'flag-extra.svg',
+            title: 'Представительство в г. Минске',
+            address: 'Республика Беларусь, г. Минск, пр. Победителей, д. 7а',
+            phone: '+375 (17) 000 00 00',
+            fax: '+375 (17) 000 00 00',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'kz',
+            name: 'Казахстан',
+            flag: 'flag-by.svg',
+            title: 'Представительство в г. Астане',
+            address: 'Республика Казахстан, г. Астана, пр. Мангилик Ел, д. 55/15',
+            phone: '+7 (727) 244 40 44',
+            fax: '+7 (727) 244 65 70',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'kg',
+            name: 'Кыргызстан',
+            flag: 'flag-kz.svg',
+            title: 'Представительство в г. Бишкеке',
+            address: 'Кыргызская Республика, г. Бишкек',
+            phone: '+996 (000) 000 000',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'ru',
+            name: 'Россия',
+            flag: 'flag-ru.svg',
+            title: 'Представительство в г. Москве',
+            address: 'Российская Федерация, г. Москва',
+            phone: '+7 (495) 000 00 00',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'tj',
+            name: 'Таджикистан',
+            flag: 'flag-tj.svg',
+            title: 'Представительство в г. Душанбе',
+            address: 'Республика Таджикистан, г. Душанбе',
+            phone: '+992 (00) 000 00 00',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'uz',
+            name: 'Узбекистан',
+            flag: 'flag-uz.svg',
+            title: 'Представительство в г. Ташкенте',
+            address: 'Республика Узбекистан, г. Ташкент',
+            phone: '+998 (71) 000 00 00',
+            email: 'info@eabr.org'
+        },
+        {
+            id: 'ae',
+            name: 'ОАЭ',
+            flag: 'flag-ae.svg',
+            title: 'Представительство в г. Абу-Даби',
+            address: 'Объединённые Арабские Эмираты, г. Абу-Даби',
+            phone: '+971 (0) 000 00 00',
+            email: 'info@eabr.org'
+        }
+    ];
+
+    function telHref(s) { return 'tel:' + s.replace(/[^+0-9]/g, ''); }
+    const colA = countries.slice(0, 4);
+    const colB = countries.slice(4);
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+        <main class="main main--regular" style="background: #F3F3F3;">
+            <section class="section section--start relative" style="background: #F3F3F3; padding-top: 20px; padding-bottom: 60px;">
+                <div class="container">
+                    <div class="mb-25 mbm-15">
+                        <div class="breadcrumbs">
+                            <span data-i18n="contacts.breadcrumbHome">Главная</span> / <strong data-i18n="contacts.breadcrumbCurrent">Контакты</strong>
+                        </div>
+                    </div>
+                    <div class="mb-30 mbm-20">
+                        <h1 class="title title--small title--underline">
+                            <span class="title__inner" data-i18n="contacts.title">Контакты</span>
+                        </h1>
+                    </div>
+
+                    <div class="grid mb-20 mbm-15">
+                        <div class="grid__col grid__col--12 grid__col-mob--4">
+                            <article class="contacts-card">
+                                <div class="contacts-card__col">
+                                    <h2 class="contacts-card__title" data-i18n="contacts.hqTitle">
+                                        Штаб-квартира в&nbsp;г.&nbsp;Алматы:
+                                    </h2>
+                                    <div class="contacts-card__map">
+                                        <iframe
+                                            src="https://yandex.ru/map-widget/v1/?ll=76.962767%2C43.226969&z=16&pt=76.962767,43.226969,pm2rdm"
+                                            frameborder="0"
+                                            allowfullscreen="true">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div class="contacts-card__col contacts-card__col--list">
+                                    <div class="contacts-card__list">
+                                        <span class="link-icon">
+                                            <svg class="link-icon__icon" aria-hidden="true">
+                                                <use href="./assets/sprite/sprite-svg.svg#icon-pin"></use>
+                                            </svg>
+                                            <span class="link-icon__text" data-i18n="contacts.hqAddress">
+                                                Республика Казахстан, 050051,<br>г.&nbsp;Алматы, пр.&nbsp;Достык, д.&nbsp;220
+                                            </span>
+                                        </span>
+                                        <a href="tel:+77272444044" class="link-icon">
+                                            <svg class="link-icon__icon" aria-hidden="true">
+                                                <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                            </svg>
+                                            <span class="link-icon__text">+7 (727) 244 40 44</span>
+                                        </a>
+                                        <a href="tel:+77272446570" class="link-icon">
+                                            <svg class="link-icon__icon" aria-hidden="true">
+                                                <use href="./assets/sprite/sprite-svg.svg#icon-fax"></use>
+                                            </svg>
+                                            <span class="link-icon__text" data-i18n="contacts.hqFaxLabel">факс: +7 (727) 244 65 70</span>
+                                        </a>
+                                        <a href="mailto:info@eabr.org" class="link-icon">
+                                            <svg class="link-icon__icon" aria-hidden="true">
+                                                <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                            </svg>
+                                            <span class="link-icon__text">info@eabr.org</span>
+                                        </a>
+                                    </div>
+                                    <p class="contacts-card__note">
+                                        <span data-i18n="contacts.hqNote">Для&nbsp;обращений по&nbsp;вопросам обработки персональных данных:</span>
+                                        <a href="mailto:dpo@eabr.org">dpo@eabr.org</a>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="grid mb-30 mbm-20">
+                        <div class="grid__col grid__col--12 grid__col-mob--4">
+                            <article class="contacts-card contacts-card--simple">
+                                <h2 class="contacts-card__title" data-i18n="contacts.pressTitle">Контакты пресс-центра ЕАБР:</h2>
+                                <div class="contacts-card__list">
+                                    <a href="tel:+77272444044" class="link-icon">
+                                        <svg class="link-icon__icon" aria-hidden="true">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                        </svg>
+                                        <span class="link-icon__text" data-i18n="contacts.pressPhoneText">+7 (727) 244 40 44, доб. 2160</span>
+                                    </a>
+                                    <a href="mailto:pressa@eabr.org" class="link-icon">
+                                        <svg class="link-icon__icon" aria-hidden="true">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                        </svg>
+                                        <span class="link-icon__text">pressa@eabr.org</span>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="contacts-country-grid">
+                        <% [colA, colB].forEach(function(col) { %>
+                        <div class="contacts-country-col">
+                            <% col.forEach(function(c) { %>
+                            <div class="contacts-country">
+                                    <input type="checkbox" id="country-<%= c.id %>" class="contacts-country__toggle"<%= c.open ? ' checked' : '' %>>
+                                    <label for="country-<%= c.id %>" class="contacts-country__head">
+                                        <span class="contacts-country__brand">
+                                            <span class="contacts-country__flag" style="background-image: url('./assets/images/flags/<%= c.flag %>')"></span>
+                                            <span class="contacts-country__name" data-i18n="contacts.countries.<%= c.id %>"><%= c.name %></span>
+                                        </span>
+                                        <svg class="contacts-country__arrow" aria-hidden="true">
+                                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                        </svg>
+                                    </label>
+                                    <div class="contacts-country__wrapper">
+                                        <div class="contacts-country__inner">
+                                            <div class="contacts-country__body">
+                                                <% if (c.title) { %><h3 class="contacts-country__title" data-i18n="contacts.repTitle.<%= c.id %>"><%= c.title %></h3><% } %>
+                                                <div class="contacts-country__list">
+                                                    <% if (c.address) { %>
+                                                    <span class="link-icon">
+                                                        <svg class="link-icon__icon" aria-hidden="true">
+                                                            <use href="./assets/sprite/sprite-svg.svg#icon-pin"></use>
+                                                        </svg>
+                                                        <span class="link-icon__text" data-i18n="contacts.address.<%= c.id %>"><%= c.address %></span>
+                                                    </span>
+                                                    <% } %>
+                                                    <% if (c.phone) { %>
+                                                    <a href="<%= telHref(c.phone) %>" class="link-icon">
+                                                        <svg class="link-icon__icon" aria-hidden="true">
+                                                            <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                                        </svg>
+                                                        <span class="link-icon__text"><%= c.phone %></span>
+                                                    </a>
+                                                    <% } %>
+                                                    <% if (c.fax) { %>
+                                                    <a href="<%= telHref(c.fax) %>" class="link-icon">
+                                                        <svg class="link-icon__icon" aria-hidden="true">
+                                                            <use href="./assets/sprite/sprite-svg.svg#icon-fax"></use>
+                                                        </svg>
+                                                        <span class="link-icon__text"><span data-i18n="contacts.faxPrefix">факс:</span> <%= c.fax %></span>
+                                                    </a>
+                                                    <% } %>
+                                                    <% if (c.email) { %>
+                                                    <a href="mailto:<%= c.email %>" class="link-icon">
+                                                        <svg class="link-icon__icon" aria-hidden="true">
+                                                            <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                                        </svg>
+                                                        <span class="link-icon__text"><%= c.email %></span>
+                                                    </a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <% }); %>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>

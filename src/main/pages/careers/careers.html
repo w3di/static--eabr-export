@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Работайте с нами - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    // Порядок: левая колонка (1, 3), правая колонка (2, 4) — grid заполняет по строкам
+    const checks = [
+        'талантливых',
+        'целеустремленных',
+        'честных',
+        'уверенных в успехе профессионалов'
+    ];
+
+    const advantages = [
+        {
+            image: './assets/images/hr-team-1.png',
+            title: 'Сильная команда',
+            text: 'Мы инвестируем в людей: создаём среду, где работают профессионалы, готовые расти и достигать результатов вместе.'
+        },
+        {
+            image: './assets/images/hr-team-2.png',
+            title: 'Карьерный рост и развитие',
+            text: 'Обучение, международные проекты и реальные задачи — всё, чтобы вы раскрыли свой потенциал и двигались вперёд.'
+        },
+        {
+            image: './assets/images/hr-team-3.png',
+            title: 'Расширенный соцпакет',
+            text: 'Медицинское страхование (включая семью), страхование жизни, отпуск, пенсионные программы и компенсация фитнеса.'
+        }
+    ];
+
+    const values = [
+        'Ответственность',
+        'Командность',
+        'Профессионализм',
+        'Интернационализм',
+        'Развитие',
+        'Пассионарность'
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span>ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <a href="<%= htmlWebpackPlugin.options.routes.careers %>" class="nav-drawer__item nav-drawer__item--active" data-i18n="careers.nav.offer">Что мы предлагаем</a>
+                    <a href="<%= htmlWebpackPlugin.options.routes.careersAbout %>" class="nav-drawer__item" data-i18n="careers.nav.about">О банке</a>
+                    <a href="<%= htmlWebpackPlugin.options.routes.careersJobs %>" class="nav-drawer__item" data-i18n="careers.nav.jobs">Открытые вакансии</a>
+                    <a href="<%= htmlWebpackPlugin.options.routes.careersInternship %>" class="nav-drawer__item" data-i18n="careers.nav.internship">Стажировка и&nbsp;практика</a>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular careers-page">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <a href="<%= htmlWebpackPlugin.options.routes.careers %>" class="nav-aside__item nav-aside__item--active" data-i18n="careers.nav.offer">Что мы предлагаем</a>
+                                <a href="<%= htmlWebpackPlugin.options.routes.careersAbout %>" class="nav-aside__item" data-i18n="careers.nav.about">О банке</a>
+                                <a href="<%= htmlWebpackPlugin.options.routes.careersJobs %>" class="nav-aside__item" data-i18n="careers.nav.jobs">Открытые вакансии</a>
+                                <a href="<%= htmlWebpackPlugin.options.routes.careersInternship %>" class="nav-aside__item" data-i18n="careers.nav.internship">Стажировка и&nbsp;практика</a>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="careers.breadcrumbHome">Главная</span> / <span data-i18n="careers.breadcrumbParent">Работайте с&nbsp;нами</span> / <strong data-i18n="careers.breadcrumbCurrent">Что мы предлагаем</strong>
+                                </div>
+                            </div>
+                            <div class="mb-25 mbm-20">
+                                <h1 class="title title--underline is-animated">
+                                    <span class="title__inner" data-i18n="careers.title">Что мы предлагаем</span>
+                                </h1>
+                            </div>
+
+                            <div class="mb-30 mbm-20">
+                                <h2 class="fz-24 fz-mob-20" style="margin-bottom: 24px;" data-i18n="careers.acceptIntro">
+                                    Мы рады принять в нашу команду
+                                </h2>
+                                <ul class="hr-checks">
+                                    <% checks.forEach(function(text, i) { %>
+                                    <li class="hr-checks__item">
+                                        <img class="hr-checks__icon" src="./assets/images/icon-check.svg" alt="" aria-hidden="true">
+                                        <span data-i18n="careers.checks.<%= i %>"><%= text %></span>
+                                    </li>
+                                    <% }); %>
+                                </ul>
+                            </div>
+
+                            <div class="mb-30 mbm-20">
+                                <h2 class="title title--small title--underline is-animated mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="careers.advantagesTitle">Наши преимущества:</span>
+                                </h2>
+                                <div class="hr-spotlight">
+                                    <div class="hr-spotlight__swiper swiper" data-slider="spotlight">
+                                        <div class="swiper-wrapper">
+                                            <% advantages.forEach(function(s, i) { %>
+                                            <div class="hr-spotlight__slide swiper-slide">
+                                                <div class="hr-spotlight__media" style="background-image: url('<%= s.image %>')"></div>
+                                                <div class="hr-spotlight__card">
+                                                    <h3 class="hr-spotlight__title" data-i18n="careers.advantages.<%= i %>.title"><%= s.title %></h3>
+                                                    <p class="hr-spotlight__text" data-i18n="careers.advantages.<%= i %>.text"><%= s.text %></p>
+                                                </div>
+                                            </div>
+                                            <% }); %>
+                                        </div>
+                                        <div class="hr-spotlight__controls">
+                                            <div class="hr-spotlight__dots" data-slider-pagination></div>
+                                            <div class="hr-spotlight__nav">
+                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--prev" data-slider-nav="prev" aria-label="Назад">
+                                                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                                                        <path d="M5 10h12M12 5l5 5-5 5" stroke="#24D6FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </button>
+                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--next" data-slider-nav="next" aria-label="Вперёд">
+                                                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                                                        <path d="M5 10h12M12 5l5 5-5 5" stroke="#24D6FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="careers-values">
+                                <h2 class="title title--small title--underline is-animated mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="careers.valuesTitle">Культура Банка базируется на&nbsp;шести корпоративных ценностях:</span>
+                                </h2>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <% values.forEach(function(text, i) { %>
+                                    <div class="hr-step <%= i % 2 === 0 ? 'hr-step--accent' : '' %>">
+                                        <div class="hr-step__num"><%= i + 1 %></div>
+                                        <div class="hr-step__text" data-i18n="careers.values.<%= i %>"><%= text %></div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>

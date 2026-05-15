@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Стажировка и практика - Работайте с нами - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const routes = htmlWebpackPlugin.options.routes;
+    const navItems = [
+        { href: routes.careers,           label: 'Что мы предлагаем',          i18n: 'careers.nav.offer' },
+        { href: routes.careersAbout,      label: 'О банке',                    i18n: 'careers.nav.about' },
+        { href: routes.careersJobs,       label: 'Открытые вакансии',          i18n: 'careers.nav.jobs' },
+        { href: routes.careersInternship, label: 'Стажировка и&nbsp;практика', i18n: 'careers.nav.internship', active: true }
+    ];
+
+    const perks = [
+        {
+            icon: 'icon-perk-1',
+            title: 'Менторская поддержка:',
+            text: 'Каждому стажеру предоставляется опытный наставник, который поможет адаптироваться к&nbsp;рабочей среде и&nbsp;успешно выполнять свои обязанности.'
+        },
+        {
+            icon: 'icon-perk-2',
+            title: 'Международный опыт:',
+            text: 'Мы&nbsp;активно ведем проекты в&nbsp;различных регионах присутствия ЕАБР. Стажеры имеют возможность получить опыт работы в&nbsp;международном контексте и&nbsp;развить свои навыки в&nbsp;межкультурном взаимодействии.'
+        },
+        {
+            icon: 'icon-perk-3',
+            title: 'Карьерные перспективы:',
+            text: 'ЕАБР является престижной организацией в&nbsp;банковском секторе. Стажерская программа в&nbsp;ЕАБР откроет профессиональные перспективы и&nbsp;усилит опыт, позволит создать ценные связи, расширить свою профессиональную сеть и&nbsp;повысить шансы на&nbsp;будущие карьерные возможности в&nbsp;финансовой сфере'
+        },
+        {
+            icon: 'icon-perk-4',
+            title: 'Профессиональное развитие:',
+            text: 'Возможность начать карьеру под&nbsp;руководством опытных профессионалов и&nbsp;участвовать в&nbsp;различных инвестиционных проектах. Это позволит расширить свои знания и&nbsp;сформировать профессиональные навыки в&nbsp;области финансового сектора.'
+        }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span>ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="careers.breadcrumbHome">Главная</span> / <span data-i18n="careers.breadcrumbParent">Работайте с&nbsp;нами</span> / <strong data-i18n="careersInternship.breadcrumbCurrent">Стажировка и&nbsp;практика</strong>
+                                </div>
+                            </div>
+                            <div class="mb-25 mbm-20">
+                                <h1 class="title title--underline is-animated">
+                                    <span class="title__inner" data-i18n="careersInternship.title">Стажировка и&nbsp;практика</span>
+                                </h1>
+                            </div>
+
+                            <div class="hr-internship-intro mb-30 mbm-30">
+                                <p data-i18n="careersInternship.intro">
+                                    Стажёрская программа в&nbsp;Евразийском банке развития предоставляет отличную возможность для&nbsp;молодых специалистов развиваться в&nbsp;области международного банковского сектора, получить ценный опыт, расширить свои карьерные возможности, познакомиться с&nbsp;деятельностью одной из&nbsp;крупнейших международных финансовых организаций, непосредственно принять участие в&nbsp;развитии интеграционных процессов на&nbsp;евразийском пространстве.
+                                </p>
+                            </div>
+
+                            <!-- Desktop: 2x2 grid -->
+                            <div class="hr-perks mob-hidden mb-40 mbm-30">
+                                <% perks.forEach(function(p, i) { %>
+                                <article class="hr-perk" data-spotlight-card="block" data-spotlight-color="rgba(180, 130, 255, 0.2)">
+                                    <div class="hr-perk__icon">
+                                        <svg aria-hidden="true">
+                                            <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                        </svg>
+                                    </div>
+                                    <h3 class="hr-perk__title" data-i18n="careersInternship.perks.<%= i %>.title"><%= p.title %></h3>
+                                    <p class="hr-perk__text" data-i18n="careersInternship.perks.<%= i %>.text"><%= p.text %></p>
+                                </article>
+                                <% }); %>
+                            </div>
+
+                            <!-- Mobile: slider -->
+                            <div class="mob-visible mb-40 mbm-30">
+                                <div class="hr-perks-swiper swiper" data-slider="perks">
+                                    <div class="swiper-wrapper">
+                                        <% perks.forEach(function(p, i) { %>
+                                        <div class="swiper-slide">
+                                            <article class="hr-perk" data-spotlight-card="block" data-spotlight-color="rgba(180, 130, 255, 0.2)">
+                                                <div class="hr-perk__icon">
+                                                    <svg aria-hidden="true">
+                                                        <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                                    </svg>
+                                                </div>
+                                                <h3 class="hr-perk__title" data-i18n="careersInternship.perks.<%= i %>.title"><%= p.title %></h3>
+                                                <p class="hr-perk__text" data-i18n="careersInternship.perks.<%= i %>.text"><%= p.text %></p>
+                                            </article>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                    <div class="hr-perks-swiper__dots" data-slider-pagination></div>
+                                </div>
+                            </div>
+
+                            <div class="hr-info mb-30 mbm-20">
+                                <p data-i18n="careersInternship.info.0">Также в&nbsp;Евразийском банке развития предусмотрено привлечение студентов, выпускников и&nbsp;магистрантов ВУЗов для&nbsp;прохождения практики в&nbsp;подразделениях Банка.</p>
+                                <p data-i18n="careersInternship.info.1">Мы&nbsp;не&nbsp;проводим массовый набор молодых специалистов, только что&nbsp;закончивших учебу. Приём на&nbsp;практику осуществляется в&nbsp;отдельных случаях при&nbsp;возникновении потребности в&nbsp;дополнительных ресурсах.</p>
+                            </div>
+
+                            <div class="mb-30 mbm-20">
+                                <h2 style="font-size: 28px; line-height: 34px; margin-bottom: 16px;" data-i18n="careersInternship.formTitle">
+                                    Если Вы&nbsp;хотите пройти практику в&nbsp;ЕАБР
+                                </h2>
+                                <p class="hr-internship-form" data-i18n="careersInternship.formText">
+                                    Заполните приложенный ниже Запрос и&nbsp;направьте его на&nbsp;адрес <a href="mailto:cv@eabr.org">cv@eabr.org</a> или заполните онлайн форму, прикрепив к&nbsp;ней заполненную форму Запроса и&nbsp;резюме. В&nbsp;случае заинтересованности мы&nbsp;свяжемся с&nbsp;Вами.
+                                </p>
+                            </div>
+
+                            <blockquote class="hr-quote" data-animate="fadeInText" data-i18n="careersInternship.quote">
+                                Мы&nbsp;создаём возможности для&nbsp;молодых специалистов стать частью команды международной финансовой организации, призванной содействовать экономическому росту государств-участников.
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>

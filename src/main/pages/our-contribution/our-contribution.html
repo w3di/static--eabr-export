@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наш вклад - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const cards = [
+        {
+            mod: 'blue', icon: 'icon-contrib-1', spotlight: 'rgba(0, 50, 175, 0.2)',
+            title: 'Развитие инфраструктуры',
+            text: 'Поддержка транспортной, логистической, энергетической и&nbsp;коммунальной инфраструктуры, повышающей связанность стран-участниц и&nbsp;создающей базу для&nbsp;экономического роста.'
+        },
+        {
+            mod: 'sky', icon: 'icon-contrib-2', spotlight: 'rgba(0, 151, 216, 0.2)',
+            title: 'Укрепление промышленного потенциала',
+            text: 'Инвестиции в&nbsp;обрабатывающую промышленность и&nbsp;технологические проекты, направленные на&nbsp;модернизацию производств, развитие цепочек добавленной стоимости и&nbsp;повышение конкурентоспособности экономики.'
+        },
+        {
+            mod: 'mint', icon: 'icon-contrib-3', spotlight: 'rgba(8, 221, 122, 0.2)',
+            title: 'Качественный рост агропромышленного комплекса (АПК)',
+            text: 'Финансирование проектов в&nbsp;АПК, ориентированных на&nbsp;повышение производительности, внедрение современных технологий переработки и&nbsp;обеспечение продовольственной безопасности.'
+        },
+        {
+            mod: 'teal', icon: 'icon-contrib-4', spotlight: 'rgba(10, 170, 155, 0.2)',
+            title: 'Энергоэффективность и&nbsp;ресурсосбережение',
+            text: 'Поддержка проектов, направленных на&nbsp;снижение энергоемкости экономики, модернизацию инфраструктуры и&nbsp;рациональное использование природных ресурсов.'
+        },
+        {
+            mod: 'purple', icon: 'icon-contrib-5', spotlight: 'rgba(130, 70, 255, 0.2)',
+            title: 'Поддержка экспорта',
+            text: 'Поддержка транспортной, логистической, энергетической и&nbsp;коммунальной инфраструктуры, повышающей связанность стран-участниц и&nbsp;создающей базу для&nbsp;экономического роста.'
+        },
+        {
+            mod: 'green', icon: 'icon-contrib-6', spotlight: 'rgba(27, 206, 27, 0.2)',
+            title: '“Чистая энергия”',
+            text: 'Поддержка транспортной, логистической, энергетической и&nbsp;коммунальной инфраструктуры, повышающей связанность стран-участниц и&nbsp;создающей базу для&nbsp;экономического роста.'
+        }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+        <main class="main main--regular our-contribution-page">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="mb-25 mbm-15">
+                        <div class="breadcrumbs">
+                            <span data-i18n="ourContribution.breadcrumbHome">Главная</span> / <strong data-i18n="ourContribution.breadcrumbCurrent">Наш&nbsp;вклад</strong>
+                        </div>
+                    </div>
+
+                    <div class="mb-25 mbm-20">
+                        <h1 class="title title--underline">
+                            <span class="title__inner" data-i18n="ourContribution.title">Наш&nbsp;вклад</span>
+                        </h1>
+                    </div>
+
+                    <div class="mb-30 mbm-20">
+                        <h2 class="hr-reps__title" style="margin: 0 0 12px;" data-i18n="ourContribution.introTitle">ЕАБР: масштабируя инвестиции в&nbsp;развитие</h2>
+                        <p class="hr-about-text" data-i18n="ourContribution.introText">
+                            Евразийский банк развития&nbsp;— это больше, чем финансовый институт. Как многосторонний банк развития ЕАБР выступает драйвером экономического роста для&nbsp;стран-участниц, содействуя укреплению и&nbsp;расширению экономических связей, развитию национальных экономик через эффективные инвестиции в&nbsp;качественные проекты, которые меняют жизнь 200&nbsp;миллионов жителей Евразийского региона к&nbsp;лучшему.
+                        </p>
+                    </div>
+
+                    <h2 class="hr-reps__title mb-25 mbm-20" style="margin-top:0;" data-i18n="ourContribution.cardsTitle">
+                        Инвестиционная деятельность Банка сфокусирована на&nbsp;приоритетных задачах развития стран&nbsp;участниц:
+                    </h2>
+
+                    <div class="contrib-grid mb-40 mbm-25">
+                        <% cards.forEach(function(c, i) { %>
+                        <article class="contrib-card contrib-card--<%= c.mod %>" data-spotlight-card="block" data-spotlight-color="<%= c.spotlight %>">
+                            <div class="contrib-card__head">
+                                <div class="contrib-card__icon">
+                                    <svg aria-hidden="true">
+                                        <use href="./assets/sprite/sprite-svg.svg#<%= c.icon %>"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="contrib-card__title" data-i18n="ourContribution.cards.<%= i %>.title"><%= c.title %></h3>
+                            </div>
+                            <p class="contrib-card__text" data-i18n="ourContribution.cards.<%= i %>.text"><%= c.text %></p>
+                        </article>
+                        <% }); %>
+                    </div>
+
+                    <div class="contrib-quote-stack">
+                        <div class="contrib-quote">
+                            <h3 class="contrib-quote__title" data-i18n="ourContribution.quotes.0.title">Наши результаты</h3>
+                            <p class="contrib-quote__text" data-i18n="ourContribution.quotes.0.text">
+                                &mdash;&nbsp;это конкретные проекты на&nbsp;карте Евразии. Это и&nbsp;современные гидроэлектростанции, солнечные и&nbsp;ветряные электростанции, обеспечивающие чистой энергией целые страны, и&nbsp;международные транспортные коридоры, сокращающие время транспортировки грузов, и&nbsp;инновационные производства, выпускающие востребованную продукцию, энергоэффективное освещение городов, повышающее безопасность на&nbsp;дорогах и&nbsp;др.
+                            </p>
+                        </div>
+                        <div class="contrib-quote">
+                            <h3 class="contrib-quote__title" data-i18n="ourContribution.quotes.1.title">Каждый наш проект</h3>
+                            <p class="contrib-quote__text" data-i18n="ourContribution.quotes.1.text">
+                                &mdash;&nbsp;это шаг к&nbsp;более интегрированному, технологичному и&nbsp;устойчивому будущему для&nbsp;всех стран-участниц. ЕАБР остается надежным партнером, чей вклад измеряется не&nbsp;только в&nbsp;объемах инвестиций, но&nbsp;и&nbsp;в&nbsp;созданных возможностях для&nbsp;долгосрочного процветания Евразии.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>

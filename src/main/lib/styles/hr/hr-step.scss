@@ -1,0 +1,35 @@
+.hr-step {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: r(20);
+	padding: r(20);
+	border-radius: r(32);
+	background: #F3F3F3;
+	border-left: 3px solid rgba(17, 17, 17, .4);
+
+	&__num {
+		flex-shrink: 0;
+		min-width: r(20);
+		font-size: r(34);
+		line-height: r(41);
+		color: rgba(0, 0, 0, .4);
+	}
+
+	&__text {
+		flex: 1;
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+	}
+
+	&--accent {
+		background: #F2FCF2;
+		border-left-color: var(--green);
+	}
+
+	&--accent &__num {
+		color: var(--green);
+	}
+}

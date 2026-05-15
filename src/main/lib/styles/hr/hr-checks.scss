@@ -1,0 +1,29 @@
+.hr-checks {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	gap: r(24) r(118);
+
+	&__item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: r(10);
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		width: r(28);
+		height: r(28);
+		fill: #1BCE1B;
+	}
+}
+
+@media (max-width: 1260px) {
+	.hr-checks {
+		grid-template-columns: 1fr;
+		gap: r(18);
+	}
+}

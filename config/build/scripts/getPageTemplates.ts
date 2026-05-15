@@ -1,17 +1,19 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import {TemplatePageType, TemplateStringType} from "./buildPagesList";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { TemplatePageType, TemplateStringType } from './buildPagesList';
+import { ROUTES } from '../../../src/main/lib/logic/routes';
 
 const createPluginInstance = (
-    data: TemplatePageType,
-    path: string,
-    widgets: TemplateStringType,
+  data: TemplatePageType,
+  path: string,
+  widgets: TemplateStringType,
 ): HtmlWebpackPlugin => {
-    return new HtmlWebpackPlugin({
-        template: path + '/' + data.path,
-        filename: data.name,
-        inject: 'body',
-        widgets,
-    });
-}
+  return new HtmlWebpackPlugin({
+    template: path + '/' + data.path,
+    filename: data.name,
+    inject: 'body',
+    widgets,
+    routes: ROUTES,
+  });
+};
 
 export default createPluginInstance;

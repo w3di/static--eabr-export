@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="careersAbout.pageTitle">О банке - Работайте с нами - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const routes = htmlWebpackPlugin.options.routes;
+    const navItems = [
+        { href: routes.careers,           label: 'Что мы предлагаем',    key: 'careers.nav.offer' },
+        { href: routes.careersAbout,      label: 'О банке',              key: 'careers.nav.about', active: true },
+        { href: routes.careersJobs,       label: 'Открытые вакансии',    key: 'careers.nav.jobs' },
+        { href: routes.careersInternship, label: 'Стажировка и&nbsp;практика', key: 'careers.nav.internship' }
+    ];
+
+    // Pins on the map: top/left = pointer tip position as % of .hr-map (mobile)
+    const pins = [
+        { key: 'spb',       name: 'Санкт-Петербург', top: '6.0%',  left: '18%' },
+        { key: 'moscow',    name: 'Москва',          top: '10.8%', left: '31.0%' },
+        { key: 'minsk',     name: 'Минск',           top: '13.8%', left: '8.8%' },
+        { key: 'astana',    name: 'Астана',          top: '14.5%', left: '72%' },
+        { key: 'almaty',    name: 'Алматы',          top: '20.7%', left: '78.4%', hq: true },
+        { key: 'bishkek',   name: 'Бишкек',          top: '25.5%', left: '82.2%' },
+        { key: 'yerevan',   name: 'Ереван',          top: '26.9%', left: '34.8%' },
+        { key: 'dushanbe',  name: 'Душанбе',         top: '29.8%', left: '75.8%' },
+        { key: 'tashkent',  name: 'Ташкент',         top: '23.4%', left: '58.3%' },
+        { key: 'abudhabi',  name: 'Абу-Даби',        top: '40.6%', left: '53.1%' }
+    ];
+
+    // Desktop pins: positions in px from Figma 1440-wide design. Tip-y in viewport = top + 11.
+    // .hr-about-main starts after the 104px header, so CSS top = Figma frame_top + 37 - 104 (= -67).
+    // left uses calc((100vw - 1440px)/2 + Xpx), same coordinate system as the map image.
+    const pinsDesktop = [
+        { key: 'spb',      name: 'Санкт-Петербург', top: 457,  left: 570 },
+        { key: 'moscow',   name: 'Москва',          top: 585,  left: 734 },
+        { key: 'yerevan',  name: 'Ереван',          top: 867,  left: 772 },
+        { key: 'minsk',    name: 'Минск',           top: 596,  left: 501 },
+        { key: 'dushanbe', name: 'Душанбе',         top: 900,  left: 1147 },
+        { key: 'bishkek',  name: 'Бишкек',          top: 839,  left: 1234 },
+        { key: 'tashkent', name: 'Ташкент',         top: 848,  left: 1089 },
+        { key: 'almaty',   name: 'Алматы',          top: 770,  left: 1256, hq: true },
+        { key: 'astana',   name: 'Астана',          top: 652,  left: 1158 },
+        { key: 'abudhabi', name: 'Абу-Даби',        top: 1136, left: 929 }
+    ];
+
+    // Алфавитный порядок: Армения, Беларусь, Казахстан, Кыргызстан, Россия, Таджикистан, Узбекистан
+    const flags = [
+        'flag-am.svg',
+        'flag-by.svg',
+        'flag-kz.svg',
+        'flag-kg.svg',
+        'flag-ru.svg',
+        'flag-tj.svg',
+        'flag-uz.svg'
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span>ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.key %>"><%= it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular hr-about-main">
+            <img class="hr-about-main__map mob-hidden" src="./assets/images/map-eurasia.png" alt="" aria-hidden="true">
+            <img class="hr-about-main__map hr-about-main__map--mob hr-about-main__map--overlay mob-visible" src="./assets/images/map-eurasia.png" alt="" aria-hidden="true">
+            <% pinsDesktop.forEach(function(p) { %>
+            <div class="hr-pin mob-hidden" tabindex="0" role="button" style="top: <%= p.top %>px; left: calc((100vw - 1440px) / 2 + <%= p.left %>px);"<% if (p.key === 'almaty') { %> data-pin-default="true"<% } %>>
+                <div class="hr-pin__label">
+                    <div class="hr-pin__media"<% if (p.img) { %> style="background-image: url('<%= p.img %>')"<% } %>></div>
+                    <span class="hr-pin__name" data-i18n="careersAbout.cities.<%= p.key %>"><%= p.name %></span>
+                    <% if (p.hq) { %>
+                    <span class="hr-pin__sub" data-i18n="careersAbout.hq">штаб-квартира</span>
+                    <span class="hr-pin__role" data-i18n="careersAbout.hqRole">Штаб-квартира</span>
+                    <% } %>
+                </div>
+            </div>
+            <% }); %>
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.key %>"><%= it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs" data-i18n="careersAbout.breadcrumb">
+                                    Главная / Работайте с&nbsp;нами / <strong>О&nbsp;банке</strong>
+                                </div>
+                            </div>
+                            <div class="mb-25 mbm-20">
+                                <h1 class="title title--underline is-animated">
+                                    <span class="title__inner" data-i18n="careersAbout.title">О&nbsp;банке</span>
+                                </h1>
+                            </div>
+
+                            <div class="hr-about-text mb-30 mbm-20">
+                                <p data-i18n="careersAbout.intro">
+                                    ЕАБР&nbsp;— многосторонний банк развития, призванный содействовать экономическому росту государств-участников, расширению торгово-экономических связей между ними и&nbsp;развитию интеграционных процессов на&nbsp;евразийском пространстве путем осуществления инвестиционной деятельности.
+                                </p>
+                            </div>
+
+                            <div class="hr-map">
+                                <% pins.forEach(function(p) { %>
+                                <div class="hr-pin mob-visible" tabindex="0" role="button" style="top: <%= p.top %>; left: <%= p.left %>;"<% if (p.key === 'almaty') { %> data-pin-default="true"<% } %>>
+                                    <div class="hr-pin__label">
+                                        <div class="hr-pin__media"<% if (p.img) { %> style="background-image: url('<%= p.img %>')"<% } %>></div>
+                                        <span class="hr-pin__name" data-i18n="careersAbout.cities.<%= p.key %>"><%= p.name %></span>
+                                        <% if (p.hq) { %>
+                                        <span class="hr-pin__sub" data-i18n="careersAbout.hq">штаб-квартира</span>
+                                        <span class="hr-pin__role" data-i18n="careersAbout.hqRole">Штаб-квартира</span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <% }); %>
+
+                                <!-- Countries flags card -->
+                                <div class="hr-flags-card mob-hidden" style="top: 36%; left: 0;">
+                                    <h3 class="hr-flags-card__title" data-i18n="careersAbout.flagsTitle">Страны присутствия:</h3>
+                                    <div class="hr-flags-card__list">
+                                        <% flags.forEach(function(f) { %>
+                                        <span class="hr-flags-card__flag" style="background-image: url('./assets/images/flags/<%= f %>')"></span>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                                <div class="hr-flags-card mob-visible" style="top: 15%; left: 3%;">
+                                    <h3 class="hr-flags-card__title" data-i18n="careersAbout.flagsTitle">Страны присутствия:</h3>
+                                    <div class="hr-flags-card__list">
+                                        <% flags.forEach(function(f) { %>
+                                        <span class="hr-flags-card__flag" style="background-image: url('./assets/images/flags/<%= f %>')"></span>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                                <div class="hr-reps mob-hidden" style="left: 0; top: 74%;">
+                                    <h2 class="hr-reps__title" data-i18n="careersAbout.repsTitle">Представительства:</h2>
+                                    <p class="hr-reps__text" data-i18n="careersAbout.repsText">
+                                        Штаб-квартира в&nbsp;Казахстане, Алматы 8&nbsp;региональных представительств в&nbsp;7&nbsp;государствах-участниках
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="hr-reps mob-visible">
+                                <h2 class="hr-reps__title" data-i18n="careersAbout.repsTitle">Представительства:</h2>
+                                <p class="hr-reps__text" data-i18n="careersAbout.repsTextMob">
+                                    Штаб-квартира в&nbsp;Казахстане, Алматы<br>
+                                    8&nbsp;региональных представительств в&nbsp;7&nbsp;государствах-участниках
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
+    </div>
+</body>
+</html>
