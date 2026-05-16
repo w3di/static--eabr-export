@@ -13,7 +13,7 @@ const onVisible = (
     },
     {
       threshold: 0.1,
-      rootMargin: '-100px',
+      rootMargin: '-100px 0px',
       ...options,
     },
   );
