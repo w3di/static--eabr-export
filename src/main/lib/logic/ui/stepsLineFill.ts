@@ -4,6 +4,7 @@ class StepsLineFill {
   private el: HTMLElement;
   private wrapper: HTMLElement;
   private items: HTMLElement[];
+  private scrollContainer: HTMLElement | Window;
   private rafId: number | null = null;
   private state: PinState | null = null;
   private stepsHeight = 0;
@@ -15,9 +16,13 @@ class StepsLineFill {
     if (!parent) throw new Error('StepsLineFill: no parent');
     this.wrapper = parent;
     this.items = Array.from(el.querySelectorAll<HTMLElement>('.hr-step-item'));
+    this.scrollContainer =
+      document.querySelector<HTMLElement>('.page') ?? window;
 
     this.measure();
-    window.addEventListener('scroll', this.schedule, { passive: true });
+    this.scrollContainer.addEventListener('scroll', this.schedule, {
+      passive: true,
+    });
     window.addEventListener('resize', this.onResize);
     this.update();
   }

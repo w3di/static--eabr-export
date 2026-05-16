@@ -1,63 +1,62 @@
 <header class="header" data-header>
     <div class="container">
         <div class="header__wrapper">
-            <a href="#" class="logo">
-                <img src="./assets/images/logo-main.svg" alt="">
+            <a href="#" class="logo" data-i18n-aria-label="a11y.logoHome" aria-label="Евразийский банк развития — на главную">
+                <img src="/assets/images/logo-main.svg" alt="" aria-hidden="true">
             </a>
             <div class="header__menu">
                 <div class="header__top mob-hidden">
-                    <a href="#" class="header__link accent">Аналитика</a>
-                    <a href="#" class="header__link">Новости и события</a>
-                    <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="header__link">Контакты</a>
-                    <div class="lang-switcher" data-switcher>
+                    <a href="#" class="header__link accent" data-i18n="nav.topAnalytics">Аналитика</a>
+                    <a href="#" class="header__link" data-i18n="nav.topNews">Новости и события</a>
+                    <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="header__link" data-i18n="nav.topContacts">Контакты</a>
+                    <div class="lang-switcher" data-switcher data-i18n-aria-label="a11y.langSwitcher" aria-label="Выбор языка">
                         <div class="lang-switcher__header">
-                            <a href="#" class="lang-switcher__link">
-                                <span>РУС</span>
+                            <a href="#" class="lang-switcher__link" tabindex="-1" aria-hidden="true">
+                                <span data-i18n="a11y.currentLangAbbr">РУС</span>
                                 <svg class="">
-                                    <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                    <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                 </svg>
                             </a>
                         </div>
-                        <div class="lang-switcher__dropdown">
-                            <a href="#" class="lang-switcher__link" data-i18n-lang="ru">РУС</a>
-                            <a href="#" class="lang-switcher__link" data-i18n-lang="en">EN</a>
-                            <a href="#" class="lang-switcher__link" data-i18n-lang="zh">中文</a>
-                            <a href="#" class="lang-switcher__link" data-i18n-lang="ar">الفصحى</a>
+                        <div class="lang-switcher__dropdown" role="menu">
+                            <a href="#" class="lang-switcher__link" role="menuitem" data-i18n-lang="ru" lang="ru" hreflang="ru">РУС</a>
+                            <a href="#" class="lang-switcher__link" role="menuitem" data-i18n-lang="en" lang="en" hreflang="en">EN</a>
+                            <a href="#" class="lang-switcher__link" role="menuitem" data-i18n-lang="zh" lang="zh-Hans" hreflang="zh-Hans">中文</a>
                         </div>
                     </div>
                 </div>
 
                 <nav class="nav mob-hidden">
                     <a href="#" class="nav__link" data-nav-link="0">
-                        <span>О банке</span>
+                        <span data-i18n="nav.about">О банке</span>
                         <svg class="">
-                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                         </svg>
                     </a>
                     <a href="#" class="nav__link" data-nav-link="7">
-                        <span>Наша деятельность</span>
+                        <span data-i18n="nav.activity">Наша деятельность</span>
                         <svg class="">
-                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                         </svg>
                     </a>
                     <a href="#" class="nav__link" data-nav-link="13">
-                        <span>Инвесторам</span>
+                        <span data-i18n="nav.investors">Инвесторам</span>
                         <svg class="">
-                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                         </svg>
                     </a>
                     <a href="#" class="nav__link" >
-                        <span>Наш вклад</span>
+                        <span data-i18n="nav.impact">Наш вклад</span>
                     </a>
                     <a href="#" class="nav__link" data-nav-link="20">
-                        <span>Работайте с нами</span>
+                        <span data-i18n="nav.careers">Работайте с нами</span>
                         <svg class="">
-                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                         </svg>
                     </a>
                     <a href="#" class="nav__search">
                         <svg class="">
-                            <use href="./assets/sprite/sprite-svg.svg#icon-search"></use>
+                            <use href="/assets/sprite/sprite-svg.svg#icon-search"></use>
                         </svg>
                     </a>
                 </nav>
@@ -66,79 +65,79 @@
                 <div class="header__item" data-dropdown="0">
                     <div class="header__info">
                         <a href="#" class="header__title">
-                            <span>О банке</span>
+                            <span data-i18n="nav.about">О банке</span>
                             <svg class="">
-                                <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                             </svg>
                         </a>
                         <nav class="header__nav">
-                            <a href="#" class="header__link">Общая информация</a>
-                            <a href="#" class="header__link">Приоритеты и ценности</a>
-                            <a href="#" class="header__link">Стратегия</a>
-                            <a href="#" class="header__link">Государства участники</a>
-                            <a href="#" class="header__link">Ключевые документы</a>
-                            <a href="#" class="header__link">Комплаенс</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutGeneral">Общая информация</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutValues">Приоритеты и ценности</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutStrategy">Стратегия</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutStates">Государства участники</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutDocuments">Ключевые документы</a>
+                            <a href="#" class="header__link" data-i18n="nav.aboutCompliance">Комплаенс</a>
                         </nav>
                     </div>
                     <picture class="header__picture">
-                        <img src="./assets/images/pic-1.jpg" alt="">
+                        <img src="/assets/images/pic-1.jpg" alt="" aria-hidden="true">
                     </picture>
                 </div>
                 <div class="header__item" data-dropdown="7">
                     <div class="header__info">
                         <a href="#" class="header__title">
-                            <span>Наша деятельность</span>
+                            <span data-i18n="nav.activity">Наша деятельность</span>
                             <svg class="">
-                                <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                             </svg>
                         </a>
                         <nav class="header__nav">
-                            <a href="#" class="header__link">Проекты</a>
-                            <a href="#" class="header__link">Фонд цифровых инициатив </a>
-                            <a href="#" class="header__link">Аналитика </a>
-                            <a href="#" class="header__link">ESG</a>
-                            <a href="#" class="header__link">ГЧП</a>
+                            <a href="#" class="header__link" data-i18n="nav.activityProjects">Проекты</a>
+                            <a href="#" class="header__link" data-i18n="nav.activityFci">Фонд цифровых инициатив </a>
+                            <a href="#" class="header__link" data-i18n="nav.activityAnalytics">Аналитика </a>
+                            <a href="#" class="header__link" data-i18n="nav.activityEsg">ESG</a>
+                            <a href="#" class="header__link" data-i18n="nav.activityPpp">ГЧП</a>
                         </nav>
                     </div>
                     <picture class="header__picture">
-                        <img src="./assets/images/pic-1.jpg" alt="">
+                        <img src="/assets/images/pic-1.jpg" alt="" aria-hidden="true">
                     </picture>
                 </div>
                 <div class="header__item" data-dropdown="13">
                     <div class="header__info">
                         <a href="/investors/" class="header__title">
-                            <span>Инвесторам</span>
+                            <span data-i18n="nav.investors">Инвесторам</span>
                             <svg class="">
-                                <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                             </svg>
                         </a>
                         <nav class="header__nav">
-                            <a href="/investors/transactions-history/" class="header__link">История сделок</a>
-                            <a href="/investors/debt-instruments/" class="header__link">Долговые инструменты</a>
-                            <a href="/investors/information-disclosure/" class="header__link">Раскрытие информации</a>
-                            <a href="/investors/ratings/" class="header__link">Рейтинги</a>
-                            <a href="/investors/treasury-operations/" class="header__link">Казначейские операции</a>
+                            <a href="/investors/transactions-history/" class="header__link" data-i18n="nav.investorsTransactions">История сделок</a>
+                            <a href="/investors/debt-instruments/" class="header__link" data-i18n="nav.investorsDebt">Долговые инструменты</a>
+                            <a href="/investors/information-disclosure/" class="header__link" data-i18n="nav.investorsDisclosure">Раскрытие информации</a>
+                            <a href="/investors/ratings/" class="header__link" data-i18n="nav.investorsRatings">Рейтинги</a>
+                            <a href="/investors/treasury-operations/" class="header__link" data-i18n="nav.investorsTreasury">Казначейские операции</a>
                         </nav>
                     </div>
                     <picture class="header__picture">
-                        <img src="./assets/images/pic-1.jpg" alt="">
+                        <img src="/assets/images/pic-1.jpg" alt="" aria-hidden="true">
                     </picture>
                 </div>
                 <div class="header__item" data-dropdown="20">
                     <div class="header__info">
                         <a href="#" class="header__title">
-                            <span>Работайте с нами</span>
+                            <span data-i18n="nav.careers">Работайте с нами</span>
                             <svg class="">
-                                <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                             </svg>
                         </a>
                         <nav class="header__nav">
-                            <a href="/work-in-eabr/" class="header__link">Карьера в банке</a>
-                            <a href="/procurement/" class="header__link">Поставщикам</a>
+                            <a href="/work-in-eabr/" class="header__link" data-i18n="nav.careersJobs">Карьера в банке</a>
+                            <a href="/procurement/" class="header__link" data-i18n="nav.careersProcurement">Поставщикам</a>
                         </nav>
                     </div>
                     <picture class="header__picture">
-                        <img src="./assets/images/pic-1.jpg" alt="">
+                        <img src="/assets/images/pic-1.jpg" alt="" aria-hidden="true">
                     </picture>
                 </div>
 
@@ -146,7 +145,7 @@
             <div class="header__meta">
                 <div class="lang-switcher" data-switcher>
                     <div class="lang-switcher__header">
-                        <a href="#" class="lang-switcher__link">
+                        <a href="#" class="lang-switcher__link" tabindex="-1" aria-hidden="true">
                             <span>РУС</span>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.95 7.68461L9.00005 13.0154L4.05005 7.68461" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -157,16 +156,15 @@
                         <a href="#" class="lang-switcher__link" data-i18n-lang="ru">РУС</a>
                         <a href="#" class="lang-switcher__link" data-i18n-lang="en">EN</a>
                         <a href="#" class="lang-switcher__link" data-i18n-lang="zh">中文</a>
-                        <a href="#" class="lang-switcher__link" data-i18n-lang="ar">الفصحى</a>
                     </div>
                 </div>
-                <a href="/search/" class="header__search">
+                <a href="/search/" class="header__search" data-i18n-aria-label="a11y.searchLink" aria-label="Поиск">
                     <svg class="header__search-icon" aria-hidden="true">
-                        <use href="./assets/sprite/sprite-svg.svg#icon-search"></use>
+                        <use href="/assets/sprite/sprite-svg.svg#icon-search"></use>
                     </svg>
                 </a>
-                <div class="burger" data-burger>
-                    <div class="burger__item"></div>
+                <div class="burger" data-burger role="button" tabindex="0" aria-expanded="false" data-i18n-aria-label="a11y.burgerOpen" aria-label="Открыть меню">
+                    <div class="burger__item" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
@@ -176,100 +174,100 @@
             <nav class="nav">
                 <div class="nav__link">
                             <span class="nav__wrapper">
-                                <span>О банке</span>
+                                <span data-i18n="nav.about">О банке</span>
                                     <svg class="" aria-hidden="true">
-                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                     </svg>
                                 </span>
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="/about/" class="nav__link">Общая информация</a>
+                            <a href="/about/" class="nav__link" data-i18n="nav.aboutGeneral">Общая информация</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/about/line-of-activity/" class="nav__link">Приоритеты и ценности</a>
+                            <a href="/about/line-of-activity/" class="nav__link" data-i18n="nav.aboutValues">Приоритеты и ценности</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/about/" class="nav__link">Стратегия</a>
+                            <a href="/about/" class="nav__link" data-i18n="nav.aboutStrategy">Стратегия</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/about/states-participants/" class="nav__link">Государства участники</a>
+                            <a href="/about/states-participants/" class="nav__link" data-i18n="nav.aboutStates">Государства участники</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/about/documents/" class="nav__link">Ключевые документы</a>
+                            <a href="/about/documents/" class="nav__link" data-i18n="nav.aboutDocuments">Ключевые документы</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/about/compliance" class="nav__link">Комплаенс</a>
+                            <a href="/about/compliance" class="nav__link" data-i18n="nav.aboutCompliance">Комплаенс</a>
                         </li>
                     </ul>
                 </div>
                 <div class="nav__link">
                             <span class="nav__wrapper">
-                                <span>Наша деятельность</span>
+                                <span data-i18n="nav.activity">Наша деятельность</span>
                                     <svg class="" aria-hidden="true">
-                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                     </svg>
                                 </span>
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="/projects/eabr/" class="nav__link">Проекты</a>
+                            <a href="/projects/eabr/" class="nav__link" data-i18n="nav.activityProjects">Проекты</a>
                         </li>
                         <li class="nav__item">
-                            <a href="https://fci.eabr.org/" class="nav__link">Фонд цифровых инициатив </a>
+                            <a href="https://fci.eabr.org/" class="nav__link" data-i18n="nav.activityFci">Фонд цифровых инициатив </a>
                         </li>
                         <li class="nav__item">
-                            <a href="/analytics/" class="nav__link">Аналитика </a>
+                            <a href="/analytics/" class="nav__link" data-i18n="nav.activityAnalytics">Аналитика </a>
                         </li>
                         <li class="nav__item">
-                            <a href="/sustainability/" class="nav__link">ESG</a>
+                            <a href="/sustainability/" class="nav__link" data-i18n="nav.activityEsg">ESG</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/public-private-partnership/" class="nav__link">ГЧП</a>
+                            <a href="/public-private-partnership/" class="nav__link" data-i18n="nav.activityPpp">ГЧП</a>
                         </li>
                     </ul>
                 </div>
                 <div class="nav__link">
                             <span class="nav__wrapper">
-                                <span>Инвесторам</span>
+                                <span data-i18n="nav.investors">Инвесторам</span>
                                     <svg class="" aria-hidden="true">
-                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                     </svg>
                                 </span>
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="/investors/transactions-history/" class="nav__link">История сделок</a>
+                            <a href="/investors/transactions-history/" class="nav__link" data-i18n="nav.investorsTransactions">История сделок</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/investors/debt-instruments/" class="nav__link">Долговые инструменты</a>
+                            <a href="/investors/debt-instruments/" class="nav__link" data-i18n="nav.investorsDebt">Долговые инструменты</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/investors/information-disclosure/" class="nav__link">Раскрытие информации</a>
+                            <a href="/investors/information-disclosure/" class="nav__link" data-i18n="nav.investorsDisclosure">Раскрытие информации</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/investors/ratings/" class="nav__link">Рейтинги</a>
+                            <a href="/investors/ratings/" class="nav__link" data-i18n="nav.investorsRatings">Рейтинги</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/investors/treasury-operations/" class="nav__link">Казначейские операции</a>
+                            <a href="/investors/treasury-operations/" class="nav__link" data-i18n="nav.investorsTreasury">Казначейские операции</a>
                         </li>
                     </ul>
                 </div>
                 <a href="/impact/" class="nav__link">
                             <span class="nav__wrapper">
-                        <span>Наш вклад</span>
+                        <span data-i18n="nav.impact">Наш вклад</span>
                             </span>
                 </a>
                 <div class="nav__link">
                             <span class="nav__wrapper">
-                                <span>Работайте с нами</span>
+                                <span data-i18n="nav.careers">Работайте с нами</span>
                                     <svg class="" aria-hidden="true">
-                                        <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                     </svg>
                                 </span>
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="/work-in-eabr/" class="nav__link">Карьера в банке</a>
+                            <a href="/work-in-eabr/" class="nav__link" data-i18n="nav.careersJobs">Карьера в банке</a>
                         </li>
                         <li class="nav__item">
-                            <a href="/procurement/" class="nav__link">Поставщикам</a>
+                            <a href="/procurement/" class="nav__link" data-i18n="nav.careersProcurement">Поставщикам</a>
                         </li>
                     </ul>
                 </div>
@@ -277,25 +275,25 @@
 
 
 
-            <a href="/analytics/" class="mobile-menu__link">Аналитика</a>
+            <a href="/analytics/" class="mobile-menu__link" data-i18n="nav.topAnalytics">Аналитика</a>
 
-            <a href="/press/releases/" class="mobile-menu__link">Новости и события</a>
+            <a href="/press/releases/" class="mobile-menu__link" data-i18n="nav.topNews">Новости и события</a>
 
-            <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="mobile-menu__link">Контакты</a>
+            <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="mobile-menu__link" data-i18n="nav.topContacts">Контакты</a>
         </div>
         <div class="mobile-menu__footer">
             <div class="social">
-                <a href="https://www.linkedin.com/company/eurasian-development-bank/" class="social__link">
-                    <img src="./assets/images/logo-linkedin.svg" alt="">
+                <a href="https://www.linkedin.com/company/eurasian-development-bank/" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialLinkedin" aria-label="ЕАБР в LinkedIn">
+                    <img src="/assets/images/logo-linkedin.svg" alt="" aria-hidden="true">
                 </a>
-                <a href="https://t.me/eabr_bank" class="social__link">
-                    <img src="./assets/images/logo-tg.svg" alt="">
+                <a href="https://t.me/eabr_bank" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialTelegram" aria-label="ЕАБР в Telegram">
+                    <img src="/assets/images/logo-tg.svg" alt="" aria-hidden="true">
                 </a>
-                <a href="https://www.facebook.com/eabr.org/" class="social__link">
-                    <img src="./assets/images/logo-facebook.svg" alt="">
+                <a href="https://www.facebook.com/eabr.org/" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialFacebook" aria-label="ЕАБР в Facebook">
+                    <img src="/assets/images/logo-facebook.svg" alt="" aria-hidden="true">
                 </a>
-                <a href="https://www.youtube.com/user/infoEABR" class="social__link">
-                    <img src="./assets/images/logo-yt.svg" alt="">
+                <a href="https://www.youtube.com/user/infoEABR" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialYoutube" aria-label="ЕАБР на YouTube">
+                    <img src="/assets/images/logo-yt.svg" alt="" aria-hidden="true">
                 </a>
             </div>
             <a href="mailto:info@eabr.org" class="mobile-menu__link">info@eabr.org</a>

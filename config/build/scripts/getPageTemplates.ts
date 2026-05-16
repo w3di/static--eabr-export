@@ -7,9 +7,14 @@ const createPluginInstance = (
   path: string,
   widgets: TemplateStringType,
 ): HtmlWebpackPlugin => {
+  const filename =
+    data.name === 'index.html'
+      ? 'index.html'
+      : data.name.replace(/\.html$/, '/index.html');
+
   return new HtmlWebpackPlugin({
     template: path + '/' + data.path,
-    filename: data.name,
+    filename,
     inject: 'body',
     widgets,
     routes: ROUTES,

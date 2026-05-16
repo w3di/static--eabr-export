@@ -49,6 +49,11 @@
 	display: flex;
 	width: 18px;
 	height: 18px;
+	transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.nav__link.active svg {
+	transform: rotate(180deg);
 }
 
 @media screen and (max-width: 1260px) {

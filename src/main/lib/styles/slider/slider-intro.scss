@@ -1,10 +1,6 @@
 .slider-intro {
 	position: relative;
 
-	&__wrapper {
-
-	}
-
 	&__toolbar {
 		left: 0;
 		right: 0;
@@ -24,11 +20,5 @@
 	&__controls {
 		display: flex;
 		justify-content: center;
-	}
-
-	&__pagination {
-		//@media (max-width: 1260px) {
-		//	display: none;
-		//}
 	}
 }

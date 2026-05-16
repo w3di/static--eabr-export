@@ -17,8 +17,23 @@
 		flex-shrink: 0;
 		width: r(28);
 		height: r(28);
-		fill: #1BCE1B;
+
+		path {
+			stroke-dasharray: 100;
+			stroke-dashoffset: 100;
+		}
+
+		&.is-drawn path {
+			animation: hr-check-draw 2.2s cubic-bezier(.55, 0, .25, 1) infinite;
+		}
 	}
+}
+
+@keyframes hr-check-draw {
+	0%   { stroke-dashoffset: 100; }
+	35%  { stroke-dashoffset: 0; }
+	75%  { stroke-dashoffset: 0; }
+	100% { stroke-dashoffset: 100; }
 }
 
 @media (max-width: 1260px) {

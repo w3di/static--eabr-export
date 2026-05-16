@@ -5,6 +5,8 @@ import path from 'path';
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
   return {
     port: options.port,
+    host: '0.0.0.0',
+    allowedHosts: 'all',
     open: true,
     hot: true,
     client: {

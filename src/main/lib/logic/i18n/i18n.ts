@@ -3,9 +3,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { ru } from './locales/ru';
 import { en } from './locales/en';
 import { zh } from './locales/zh';
-import { ar } from './locales/ar';
 
-const SUPPORTED = ['ru', 'en', 'zh', 'ar'] as const;
+const SUPPORTED = ['ru', 'en', 'zh'] as const;
 type Lang = (typeof SUPPORTED)[number];
 
 class I18n {
@@ -22,7 +21,6 @@ class I18n {
           ru: { translation: ru },
           en: { translation: en },
           zh: { translation: zh },
-          ar: { translation: ar },
         },
         detection: {
           order: ['cookie', 'navigator'],
@@ -45,7 +43,8 @@ class I18n {
   };
 
   private apply = () => {
-    document.documentElement.lang = i18next.language;
+    const lang = i18next.language as Lang;
+    document.documentElement.lang = lang;
 
     document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
@@ -53,19 +52,43 @@ class I18n {
       el.innerHTML = i18next.t(key);
     });
 
-    document
-      .querySelectorAll<HTMLElement>('[data-i18n-placeholder]')
-      .forEach((el) => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (!key) return;
-        el.setAttribute('placeholder', i18next.t(key));
-      });
+    const ATTR_MAP: Array<[string, string]> = [
+      ['data-i18n-placeholder', 'placeholder'],
+      ['data-i18n-aria-label', 'aria-label'],
+      ['data-i18n-alt', 'alt'],
+      ['data-i18n-title', 'title'],
+    ];
+
+    ATTR_MAP.forEach(([dataAttr, htmlAttr]) => {
+      document
+        .querySelectorAll<HTMLElement>(`[${dataAttr}]`)
+        .forEach((el) => {
+          const key = el.getAttribute(dataAttr);
+          if (!key) return;
+          el.setAttribute(htmlAttr, i18next.t(key));
+        });
+    });
+
+    this.refreshSwitcherState();
+  };
+
+  private refreshSwitcherState = () => {
+    const current = i18next.language;
+    document.querySelectorAll<HTMLElement>('[data-i18n-lang]').forEach((el) => {
+      const lang = el.getAttribute('data-i18n-lang');
+      const isActive = lang === current;
+      el.classList.toggle('active', isActive);
+      if (isActive) {
+        el.setAttribute('aria-current', 'true');
+      } else {
+        el.removeAttribute('aria-current');
+      }
+    });
   };
 
   private bindSwitcher = () => {
     document.querySelectorAll<HTMLElement>('[data-i18n-lang]').forEach((el) => {
       const lang = el.getAttribute('data-i18n-lang') as Lang;
-      if (lang === i18next.language) el.classList.add('active');
 
       el.addEventListener('click', (e) => {
         e.preventDefault();
@@ -74,6 +97,7 @@ class I18n {
         }
       });
     });
+    this.refreshSwitcherState();
   };
 }
 

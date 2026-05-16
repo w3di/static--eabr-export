@@ -10,7 +10,9 @@ class AsideObserver {
   }
 
   init() {
-    window.addEventListener('scroll', () => {
+    const scrollContainer =
+      document.querySelector<HTMLElement>('.page') ?? window;
+    scrollContainer.addEventListener('scroll', () => {
       const top = this.el.getBoundingClientRect().top;
       this.el.classList.toggle('active', top < 0);
     });

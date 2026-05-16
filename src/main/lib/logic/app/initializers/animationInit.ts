@@ -8,6 +8,17 @@ class AnimationInit {
     this.fadeInText();
     this.quote();
     this.counters();
+    this.drawCheck();
+  }
+
+  private drawCheck() {
+    document
+      .querySelectorAll<HTMLElement>('[data-animate="drawCheck"]')
+      .forEach((item, i) => {
+        onVisible(item, () => {
+          setTimeout(() => item.classList.add('is-drawn'), i * 120);
+        });
+      });
   }
 
   private fadeInSplit() {

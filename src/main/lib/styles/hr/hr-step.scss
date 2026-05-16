@@ -1,3 +1,9 @@
+.hr-values {
+	display: flex;
+	flex-direction: column;
+	gap: r(8);
+}
+
 .hr-step {
 	box-sizing: border-box;
 	display: flex;
@@ -22,6 +28,7 @@
 		font-size: r(24);
 		line-height: r(29);
 		color: var(--dark);
+		text-align: left;
 	}
 
 	&--accent {
@@ -31,5 +38,71 @@
 
 	&--accent &__num {
 		color: var(--green);
+	}
+
+	&--toggle {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: r(10);
+		width: 100%;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+		appearance: none;
+		border: none;
+		border-left: 3px solid rgba(17, 17, 17, .4);
+
+		&.hr-step--accent {
+			border-left-color: var(--green);
+		}
+	}
+
+	&--toggle &__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: r(20);
+	}
+
+	&__body {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.35s ease;
+	}
+
+	&__desc {
+		overflow: hidden;
+		font-size: r(18);
+		line-height: r(22);
+		color: rgba(17, 17, 17, .8);
+		opacity: 0;
+		transition: opacity 0.25s ease;
+		text-align: left;
+	}
+
+	&.is-open &__body {
+		grid-template-rows: 1fr;
+	}
+
+	&.is-open &__desc {
+		opacity: 1;
+		transition: opacity 0.35s ease 0.1s;
+	}
+
+	@media (hover: hover) {
+		&--toggle:hover &__body {
+			grid-template-rows: 1fr;
+		}
+
+		&--toggle:hover &__desc {
+			opacity: 1;
+			transition: opacity 0.35s ease 0.1s;
+		}
+	}
+
+	&--toggle:focus-visible {
+		outline: 2px solid var(--green);
+		outline-offset: 4px;
 	}
 }

@@ -1,4 +1,3 @@
-declare module 'locomotive-scroll';
 declare module 'lodash';
 
 declare module '*.css';

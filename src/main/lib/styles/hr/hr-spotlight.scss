@@ -81,7 +81,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: r(16);
+		gap: r(44);
 	}
 
 	&__btn {
@@ -91,13 +91,13 @@
 		width: r(58);
 		height: r(58);
 		border-radius: 50%;
-		background: var(--white);
-		border: 2px solid var(--super-blue);
+		background: transparent;
+		border: none;
 		cursor: pointer;
-		transition: opacity .2s ease;
+		transition: background-color .45s cubic-bezier(.4, 0, .2, 1);
 
 		&:hover {
-			opacity: .7;
+			background: rgba(36, 214, 255, .1);
 		}
 
 		&:focus-visible {
@@ -111,9 +111,9 @@
 		}
 
 		svg {
-			width: r(20);
-			height: r(20);
-			fill: var(--super-blue);
+			width: r(17);
+			height: r(30);
+			fill: none;
 		}
 
 		&--prev svg {

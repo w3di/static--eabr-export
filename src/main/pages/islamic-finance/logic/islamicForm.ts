@@ -15,6 +15,7 @@ class IslamicForm {
   private form: HTMLFormElement;
   private fields: IslFields;
   private consent: HTMLInputElement;
+  private submit: HTMLButtonElement;
   private counter: HTMLElement | null;
 
   constructor(form: HTMLFormElement) {
@@ -27,6 +28,7 @@ class IslamicForm {
       desc: form.querySelector('#isl-desc')!,
     };
     this.consent = form.querySelector('input[type="checkbox"]')!;
+    this.submit = form.querySelector('.isl-submit')!;
     this.counter = form.querySelector('[data-isl-counter]');
 
     this.bind();
@@ -38,11 +40,15 @@ class IslamicForm {
     this.fields.desc.addEventListener('input', this.autoGrowDesc);
     this.fields.phone.addEventListener('input', this.onPhoneInput);
     Object.values(this.fields).forEach((f) => {
-      f.addEventListener('input', () => FieldError.clear(f));
+      f.addEventListener('input', () => {
+        FieldError.clear(f);
+        this.updateReadyState();
+      });
     });
     this.consent.addEventListener('change', this.onConsentChange);
     this.consent.addEventListener('keydown', this.onConsentKeydown);
     this.autoGrowDesc();
+    this.updateReadyState();
   };
 
   private focusFirstError = () => {
@@ -76,7 +82,19 @@ class IslamicForm {
     this.form
       .querySelector('.isl-form__bottom')
       ?.classList.remove('isl-form__bottom--consent-error');
-    this.form.classList.toggle('isl-form--ready', this.consent.checked);
+    this.updateReadyState();
+  };
+
+  private hasAllFieldsFilled = (): boolean => {
+    return Object.values(this.fields).every(
+      (f) => f.value.trim().length > 0,
+    );
+  };
+
+  private updateReadyState = () => {
+    const isReady = this.consent.checked && this.hasAllFieldsFilled();
+    this.form.classList.toggle('isl-form--ready', isReady);
+    this.submit.disabled = !isReady;
   };
 
   private onPhoneInput = () => {
@@ -131,16 +149,6 @@ class IslamicForm {
       return;
     }
 
-    const data = {
-      email: this.fields.email.value.trim(),
-      phone: PhoneFormatter.normalize(this.fields.phone.value),
-      name: this.fields.name.value.trim(),
-      sum: Number(this.fields.sum.value.replace(/[\s,]/g, '')),
-      description: this.fields.desc.value.trim(),
-      consent: true,
-    };
-
-    console.log('Заявка:', data);
     this.form.classList.add('isl-form--submitted');
   };
 }

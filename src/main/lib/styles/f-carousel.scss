@@ -1,70 +1,69 @@
 .carousel-content {
-	position: relative;
+  position: relative;
 
-	&__main {
-		position: relative;
-	}
+  &__main {
+    position: relative;
+  }
 
-	&__caption {
-		color: rgba(0, 0, 0, 0.4);
+  &__caption {
+    color: rgba(0, 0, 0, 0.4);
 
-		@media (max-width: 1260px) {
-			padding: 0 r(20);
-		}
-	}
+    @media (max-width: 1260px) {
+      padding: 0 r(20);
+    }
+  }
 }
 
 .f-carousel {
-	position: relative;
+  position: relative;
 
-	--f-button-width: 58px;
-	--f-button-height: 58px;
-	--f-button-bg: rgba(255, 255, 255, 0.6);
-	--f-button-svg-width: 28px;
-	--f-button-svg-height: 28px;
-	--f-button-hover-bg: rgba(255, 255, 255, 0.4);
-	--f-button-active-bg: rgba(255, 255, 255, 0.8);
-	--f-button-svg-stroke-width: 2px;
+  --f-button-width: 58px;
+  --f-button-height: 58px;
+  --f-button-bg: rgba(255, 255, 255, 0.6);
+  --f-button-svg-width: 28px;
+  --f-button-svg-height: 28px;
+  --f-button-hover-bg: rgba(255, 255, 255, 0.4);
+  --f-button-active-bg: rgba(255, 255, 255, 0.8);
+  --f-button-svg-stroke-width: 2px;
 
-	@media (max-width: 1260px) {
-		--f-button-width: 32px;
-		--f-button-height: 32px;
-		--f-button-svg-width: 22px;
-		--f-button-svg-height: 22px;
-	}
+  @media (max-width: 1260px) {
+    --f-button-width: 32px;
+    --f-button-height: 32px;
+    --f-button-svg-width: 22px;
+    --f-button-svg-height: 22px;
+  }
 
-	&__thumbs {
-		--f-thumb-gap: 6px;
-		--f-thumb-width: 60px;
-		--f-thumb-height: 60px;
+  &__thumbs {
+    --f-thumb-gap: 6px;
+    --f-thumb-width: 60px;
+    --f-thumb-height: 60px;
 
-		@media (max-width: 1260px) {
-			--f-thumb-gap: 4px;
-			--f-thumb-width: 32px;
-			--f-thumb-height: 32px;
-		}
-	}
+    @media (max-width: 1260px) {
+      --f-thumb-gap: 4px;
+      --f-thumb-width: 32px;
+      --f-thumb-height: 32px;
+    }
+  }
 }
 
 .f-button {
-	border-radius: r(100);
+  border-radius: r(100);
 
-	svg {
-		stroke: #111111;
-	}
+  svg {
+    stroke: #111111;
+  }
 }
 
-
 .f-thumbs {
-	left: 3%;
-	right: 3%;
-	z-index: 1;
-	bottom: r(20);
-	position: absolute;
+  left: 3%;
+  right: 3%;
+  z-index: 1;
+  bottom: r(20);
+  position: absolute;
 
-	&__slide {
-		&__button {
-			border: 2px solid #ffffff;
-		}
-	}
+  &__slide {
+    &__button {
+      border: 2px solid #ffffff;
+    }
+  }
 }

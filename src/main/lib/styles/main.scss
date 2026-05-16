@@ -1,11 +1,6 @@
 .main {
 	flex-grow: 1;
 	overflow: clip;
-	padding-top: r(105);
-
-	@media (max-width: 1260px) {
-		padding-top: r(60);
-	}
 
 	&--regular {
 		padding-bottom: r(150);

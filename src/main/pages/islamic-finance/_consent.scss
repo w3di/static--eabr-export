@@ -74,6 +74,11 @@
 
 	&:hover { opacity: .85; }
 
+	&:disabled {
+		opacity: .6 !important;
+		cursor: default;
+	}
+
 	&:focus-visible {
 		outline: 2px solid #1BCE1B;
 		outline-offset: 4px;
@@ -89,7 +94,7 @@
 
 	.isl-section-title {
 		font-size: r(34);
-		line-height: r(41);
+		line-height: r(48);
 	}
 
 	.isl-haram-card {

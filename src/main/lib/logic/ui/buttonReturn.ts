@@ -8,10 +8,15 @@ class ButtonReturn {
   }
 
   init = () => {
-    window.addEventListener('scroll', () => {
+    const scrollContainer =
+      document.querySelector<HTMLElement>('.page') ?? window;
+    scrollContainer.addEventListener('scroll', () => {
       const height =
         window.innerHeight || document.documentElement.clientHeight;
-      const scroll = window.scrollY;
+      const scroll =
+        scrollContainer instanceof Window
+          ? window.scrollY
+          : scrollContainer.scrollTop;
 
       this.show(scroll > height);
     });

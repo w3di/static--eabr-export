@@ -2,13 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Контакты - Евразийский банк развития</title>
+    <title data-i18n="contacts.pageTitle">Контакты - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
 <%
-    // ====== ДАННЫЕ АККОРДЕОНОВ СТРАН ======
-    // Чтобы изменить контент — правьте этот массив. Поля title/address/phone/fax/email необязательны.
     const countries = [
         {
             id: 'am',
@@ -24,7 +22,7 @@
         {
             id: 'by',
             name: 'Беларусь',
-            flag: 'flag-extra.svg',
+            flag: 'flag-by.svg',
             title: 'Представительство в г. Минске',
             address: 'Республика Беларусь, г. Минск, пр. Победителей, д. 7а',
             phone: '+375 (17) 000 00 00',
@@ -34,7 +32,7 @@
         {
             id: 'kz',
             name: 'Казахстан',
-            flag: 'flag-by.svg',
+            flag: 'flag-kz.svg',
             title: 'Представительство в г. Астане',
             address: 'Республика Казахстан, г. Астана, пр. Мангилик Ел, д. 55/15',
             phone: '+7 (727) 244 40 44',
@@ -44,7 +42,7 @@
         {
             id: 'kg',
             name: 'Кыргызстан',
-            flag: 'flag-kz.svg',
+            flag: 'flag-kg.svg',
             title: 'Представительство в г. Бишкеке',
             address: 'Кыргызская Республика, г. Бишкек',
             phone: '+996 (000) 000 000',
@@ -127,7 +125,7 @@
                                     <div class="contacts-card__list">
                                         <span class="link-icon">
                                             <svg class="link-icon__icon" aria-hidden="true">
-                                                <use href="./assets/sprite/sprite-svg.svg#icon-pin"></use>
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-pin"></use>
                                             </svg>
                                             <span class="link-icon__text" data-i18n="contacts.hqAddress">
                                                 Республика Казахстан, 050051,<br>г.&nbsp;Алматы, пр.&nbsp;Достык, д.&nbsp;220
@@ -135,19 +133,19 @@
                                         </span>
                                         <a href="tel:+77272444044" class="link-icon">
                                             <svg class="link-icon__icon" aria-hidden="true">
-                                                <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-phone"></use>
                                             </svg>
                                             <span class="link-icon__text">+7 (727) 244 40 44</span>
                                         </a>
                                         <a href="tel:+77272446570" class="link-icon">
                                             <svg class="link-icon__icon" aria-hidden="true">
-                                                <use href="./assets/sprite/sprite-svg.svg#icon-fax"></use>
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-fax"></use>
                                             </svg>
                                             <span class="link-icon__text" data-i18n="contacts.hqFaxLabel">факс: +7 (727) 244 65 70</span>
                                         </a>
                                         <a href="mailto:info@eabr.org" class="link-icon">
                                             <svg class="link-icon__icon" aria-hidden="true">
-                                                <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-mail"></use>
                                             </svg>
                                             <span class="link-icon__text">info@eabr.org</span>
                                         </a>
@@ -168,13 +166,13 @@
                                 <div class="contacts-card__list">
                                     <a href="tel:+77272444044" class="link-icon">
                                         <svg class="link-icon__icon" aria-hidden="true">
-                                            <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-phone"></use>
                                         </svg>
                                         <span class="link-icon__text" data-i18n="contacts.pressPhoneText">+7 (727) 244 40 44, доб. 2160</span>
                                     </a>
                                     <a href="mailto:pressa@eabr.org" class="link-icon">
                                         <svg class="link-icon__icon" aria-hidden="true">
-                                            <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-mail"></use>
                                         </svg>
                                         <span class="link-icon__text">pressa@eabr.org</span>
                                     </a>
@@ -191,11 +189,11 @@
                                     <input type="checkbox" id="country-<%= c.id %>" class="contacts-country__toggle"<%= c.open ? ' checked' : '' %>>
                                     <label for="country-<%= c.id %>" class="contacts-country__head">
                                         <span class="contacts-country__brand">
-                                            <span class="contacts-country__flag" style="background-image: url('./assets/images/flags/<%= c.flag %>')"></span>
+                                            <span class="contacts-country__flag" style="background-image: url('/assets/images/flags/<%= c.flag %>')"></span>
                                             <span class="contacts-country__name" data-i18n="contacts.countries.<%= c.id %>"><%= c.name %></span>
                                         </span>
                                         <svg class="contacts-country__arrow" aria-hidden="true">
-                                            <use href="./assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
                                         </svg>
                                     </label>
                                     <div class="contacts-country__wrapper">
@@ -206,7 +204,7 @@
                                                     <% if (c.address) { %>
                                                     <span class="link-icon">
                                                         <svg class="link-icon__icon" aria-hidden="true">
-                                                            <use href="./assets/sprite/sprite-svg.svg#icon-pin"></use>
+                                                            <use href="/assets/sprite/sprite-svg.svg#icon-pin"></use>
                                                         </svg>
                                                         <span class="link-icon__text" data-i18n="contacts.address.<%= c.id %>"><%= c.address %></span>
                                                     </span>
@@ -214,7 +212,7 @@
                                                     <% if (c.phone) { %>
                                                     <a href="<%= telHref(c.phone) %>" class="link-icon">
                                                         <svg class="link-icon__icon" aria-hidden="true">
-                                                            <use href="./assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                                            <use href="/assets/sprite/sprite-svg.svg#icon-phone"></use>
                                                         </svg>
                                                         <span class="link-icon__text"><%= c.phone %></span>
                                                     </a>
@@ -222,7 +220,7 @@
                                                     <% if (c.fax) { %>
                                                     <a href="<%= telHref(c.fax) %>" class="link-icon">
                                                         <svg class="link-icon__icon" aria-hidden="true">
-                                                            <use href="./assets/sprite/sprite-svg.svg#icon-fax"></use>
+                                                            <use href="/assets/sprite/sprite-svg.svg#icon-fax"></use>
                                                         </svg>
                                                         <span class="link-icon__text"><span data-i18n="contacts.faxPrefix">факс:</span> <%= c.fax %></span>
                                                     </a>
@@ -230,7 +228,7 @@
                                                     <% if (c.email) { %>
                                                     <a href="mailto:<%= c.email %>" class="link-icon">
                                                         <svg class="link-icon__icon" aria-hidden="true">
-                                                            <use href="./assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                                            <use href="/assets/sprite/sprite-svg.svg#icon-mail"></use>
                                                         </svg>
                                                         <span class="link-icon__text"><%= c.email %></span>
                                                     </a>
@@ -248,7 +246,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>

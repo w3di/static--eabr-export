@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Исламские финансы - Евразийский банк развития</title>
+    <title data-i18n="islamicFinance.pageTitle">Исламские финансы - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -18,52 +18,52 @@
         },
         {
             title: 'Запрет определенных видов деятельности (харам)',
-            text: 'Инвестиции и&nbsp;финансы&nbsp;– в&nbsp;ограниченные сектора: без&nbsp;алкоголя, свинины, азартных игр, оружия, табака и&nbsp;т.д.'
+            text: 'Инвестиции и&nbsp;финансы&nbsp;– в&nbsp;ограниченные сектора: без&nbsp;алкоголя, свинины, азартных игр, оружия, табака и&nbsp;т.&nbsp;д.'
         },
         {
             title: 'Разделение прибыли и&nbsp;убытков',
-            text: 'Партнерство, сотрудничество, разделение прибылей и&nbsp;убытков'
+            text: 'Партнерство, сотрудничество, разделение прибылей и&nbsp;убытков.'
         }
     ];
 
     const products = [
         {
             icon: 'icon-isl-1',
-            title: 'Мурабаха<br>(Продажа с&nbsp;наценкой):',
-            text: 'Банк покупает товар и&nbsp;перепродает клиенту с&nbsp;согласованной маржой в&nbsp;рассрочку. Право собственности на&nbsp;товар сразу переходит клиенту.'
+            title: 'Мурабаха<br>(продажа с&nbsp;наценкой)',
+            text: 'Банк покупает товар и&nbsp;перепродает клиенту с&nbsp;согласованной маржой в&nbsp;рассрочку. Право собственности на&nbsp;товар сразу переходит к&nbsp;клиенту.'
         },
         {
             icon: 'icon-isl-2',
-            title: 'Иджара (лизинг):',
-            text: 'Аренда имущества с&nbsp;возможностью последующего выкупа, при&nbsp;которой Банк будет являться владельцем имущества до&nbsp;полной оплаты клиентом.'
+            title: 'Иджара (лизинг)',
+            text: 'Аренда имущества с&nbsp;возможностью последующего выкупа, при&nbsp;которой Банк будет являться его&nbsp;владельцем до&nbsp;полной оплаты клиентом.'
         },
         {
             icon: 'icon-isl-4',
-            title: 'Мудараба:',
-            text: 'Форма партнёрства, где&nbsp;одна сторона предоставляет капитал, а&nbsp;другая&nbsp;— управление и&nbsp;труд. Прибыль делится по&nbsp;согласованной пропорции, при&nbsp;этом убытки несет только инвестор.'
+            title: 'Мудараба',
+            text: 'Форма партнерства, где&nbsp;одна сторона предоставляет капитал, а&nbsp;другая&nbsp;— управление и&nbsp;труд. Прибыль делится по&nbsp;согласованной пропорции, при&nbsp;этом убытки несет только инвестор.'
         },
         {
             icon: 'icon-isl-3',
-            title: 'Вакала<br>(агентский договор):',
-            text: 'Клиент передает средства банку-агенту для&nbsp;инвестирования в&nbsp;конкретные проекты за&nbsp;заранее оговорённое вознаграждение.'
+            title: 'Вакала<br>(агентский договор)',
+            text: 'Клиент передает средства банку-агенту для&nbsp;инвестирования в&nbsp;конкретные проекты за&nbsp;заранее оговоренное вознаграждение.'
         },
         {
             icon: 'icon-isl-5',
-            title: 'Гибридные контракты:',
-            text: 'Сделка, предусматривающая разные виды контрактов исламского финансирования (например: аренда с&nbsp;переходом права собственности или&nbsp;партнерство с&nbsp;агентским управлением).'
+            title: 'Гибридные контракты',
+            text: 'Сделка, предусматривающая разные виды контрактов исламского финансирования (например, аренда с&nbsp;переходом права собственности или&nbsp;партнерство с&nbsp;агентским управлением).'
         },
         {
             icon: 'icon-isl-6',
-            title: 'Истисна:',
+            title: 'Истисна',
             text: 'Вид купли-продажи с&nbsp;условием изготовления товара, где&nbsp;банк обязуется профинансировать создание или&nbsp;производство актива (недвижимость, оборудование, инфраструктура) по&nbsp;заказу клиента.'
         }
     ];
 %>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
-        <main class="main main--regular">
+        <main class="main main--regular isl-main">
             <section class="section section--start relative isl-section" style="background: #F3F3F3; padding-bottom: 60px;">
-                <img class="isl-section__pattern" src="./assets/images/isl-pattern.png" alt="" aria-hidden="true">
+                <img class="isl-section__pattern" src="/assets/images/isl-pattern.webp" alt="" aria-hidden="true">
                 <div class="container">
                     <div class="mb-25 mbm-15">
                         <div class="breadcrumbs">
@@ -94,7 +94,7 @@
                         <article class="isl-prod-card">
                             <div class="isl-prod-card__icon">
                                 <svg aria-hidden="true">
-                                    <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                    <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                 </svg>
                             </div>
                             <h3 class="isl-prod-card__title" data-i18n="islamicFinance.products.<%= i %>.title"><%= p.title %></h3>
@@ -109,18 +109,18 @@
                             <p class="isl-info__text" data-i18n="islamicFinance.committeeText">
                                 который отвечает за&nbsp;проверку соответствия продуктов и&nbsp;услуг нормам шариата. Шариатским консультантом является компания Dar&nbsp;Al&nbsp;Sharia.
                             </p>
-                            <div class="isl-info__media" style="background-image: url('./assets/images/isl-dar-al-sharia.png');"></div>
+                            <div class="isl-info__media" style="background-image: url('/assets/images/isl-dar-al-sharia.webp');"></div>
                         </div>
                         <div class="isl-info__right">
                             <h3 class="isl-info__heading" data-i18n="islamicFinance.associationsTitle">Банк является членом международных ассоциаций</h3>
                             <div class="isl-assoc">
                                 <div class="isl-assoc__col isl-assoc__col--wide">
                                     <span class="isl-assoc__name">AAOIFI</span>
-                                    <div class="isl-assoc__media isl-assoc__media--short" style="background-image: url('./assets/images/isl-aaoifi.png');"></div>
+                                    <div class="isl-assoc__media isl-assoc__media--short" style="background-image: url('/assets/images/isl-aaoifi.webp');"></div>
                                 </div>
                                 <div class="isl-assoc__col isl-assoc__col--narrow">
                                     <span class="isl-assoc__name">IFSB</span>
-                                    <div class="isl-assoc__media" style="background-image: url('./assets/images/isl-ifsb.png');"></div>
+                                    <div class="isl-assoc__media" style="background-image: url('/assets/images/isl-ifsb.webp');"></div>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                             </div>
                             <div class="isl-field">
                                 <label class="isl-field__label" for="isl-phone" data-i18n="islamicFinance.fields.phone">Контактный телефон</label>
-                                <input id="isl-phone" class="isl-field__input" type="tel" placeholder="+7 (000) 000 - 00 - 00" data-i18n-placeholder="islamicFinance.placeholders.phone">
+                                <input id="isl-phone" class="isl-field__input" type="tel" placeholder="+7 (000) 000-00-00" data-i18n-placeholder="islamicFinance.placeholders.phone">
                             </div>
                         </div>
                         <div class="isl-form__row">
@@ -154,7 +154,7 @@
                                 <span data-i18n="islamicFinance.fields.desc">Суть проекта (кратко)</span>
                                 <span data-isl-counter>0/300</span>
                             </label>
-                            <textarea id="isl-desc" class="isl-field__textarea" rows="1" maxlength="300" placeholder="Кратко опишите Ваш проект (цель, идея, ожидаемый результат)" data-i18n-placeholder="islamicFinance.placeholders.desc"></textarea>
+                            <textarea id="isl-desc" class="isl-field__textarea" rows="1" maxlength="300" placeholder="Кратко опишите ваш проект (цель, идея, ожидаемый результат)" data-i18n-placeholder="islamicFinance.placeholders.desc"></textarea>
                         </div>
                         <div class="isl-form__success" data-i18n="islamicFinance.success">
                             Заявка успешно отправлена. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.
@@ -175,7 +175,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>

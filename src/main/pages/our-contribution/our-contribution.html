@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Наш вклад - Евразийский банк развития</title>
+    <title data-i18n="ourContribution.pageTitle">Наш вклад - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -74,7 +74,7 @@
                             <div class="contrib-card__head">
                                 <div class="contrib-card__icon">
                                     <svg aria-hidden="true">
-                                        <use href="./assets/sprite/sprite-svg.svg#<%= c.icon %>"></use>
+                                        <use href="/assets/sprite/sprite-svg.svg#<%= c.icon %>"></use>
                                     </svg>
                                 </div>
                                 <h3 class="contrib-card__title" data-i18n="ourContribution.cards.<%= i %>.title"><%= c.title %></h3>
@@ -102,7 +102,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>

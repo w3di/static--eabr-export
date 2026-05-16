@@ -15,7 +15,6 @@
         { href: routes.careersInternship, label: 'Стажировка и&nbsp;практика', key: 'careers.nav.internship' }
     ];
 
-    // Pins on the map: top/left = pointer tip position as % of .hr-map (mobile)
     const pins = [
         { key: 'spb',       name: 'Санкт-Петербург', top: '6.0%',  left: '18%' },
         { key: 'moscow',    name: 'Москва',          top: '10.8%', left: '31.0%' },
@@ -29,9 +28,6 @@
         { key: 'abudhabi',  name: 'Абу-Даби',        top: '40.6%', left: '53.1%' }
     ];
 
-    // Desktop pins: positions in px from Figma 1440-wide design. Tip-y in viewport = top + 11.
-    // .hr-about-main starts after the 104px header, so CSS top = Figma frame_top + 37 - 104 (= -67).
-    // left uses calc((100vw - 1440px)/2 + Xpx), same coordinate system as the map image.
     const pinsDesktop = [
         { key: 'spb',      name: 'Санкт-Петербург', top: 457,  left: 570 },
         { key: 'moscow',   name: 'Москва',          top: 585,  left: 734 },
@@ -45,7 +41,6 @@
         { key: 'abudhabi', name: 'Абу-Даби',        top: 1136, left: 929 }
     ];
 
-    // Алфавитный порядок: Армения, Беларусь, Казахстан, Кыргызстан, Россия, Таджикистан, Узбекистан
     const flags = [
         'flag-am.svg',
         'flag-by.svg',
@@ -61,16 +56,16 @@
 
         <div class="nav-drawer">
             <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
-            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
                 <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                     <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
                     <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </label>
             <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
-            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
                 <label for="nav-drawer-toggle" class="nav-drawer__close">
-                    <span>ЗАКРЫТЬ</span>
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
                     <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
@@ -84,8 +79,8 @@
         </div>
 
         <main class="main main--regular hr-about-main">
-            <img class="hr-about-main__map mob-hidden" src="./assets/images/map-eurasia.png" alt="" aria-hidden="true">
-            <img class="hr-about-main__map hr-about-main__map--mob hr-about-main__map--overlay mob-visible" src="./assets/images/map-eurasia.png" alt="" aria-hidden="true">
+            <img class="hr-about-main__map mob-hidden" src="/assets/images/map-eurasia.webp" alt="" aria-hidden="true">
+            <img class="hr-about-main__map hr-about-main__map--mob hr-about-main__map--overlay mob-visible" src="/assets/images/map-eurasia.webp" alt="" aria-hidden="true">
             <% pinsDesktop.forEach(function(p) { %>
             <div class="hr-pin mob-hidden" tabindex="0" role="button" style="top: <%= p.top %>px; left: calc((100vw - 1440px) / 2 + <%= p.left %>px);"<% if (p.key === 'almaty') { %> data-pin-default="true"<% } %>>
                 <div class="hr-pin__label">
@@ -141,12 +136,11 @@
                                 </div>
                                 <% }); %>
 
-                                <!-- Countries flags card -->
                                 <div class="hr-flags-card mob-hidden" style="top: 36%; left: 0;">
                                     <h3 class="hr-flags-card__title" data-i18n="careersAbout.flagsTitle">Страны присутствия:</h3>
                                     <div class="hr-flags-card__list">
                                         <% flags.forEach(function(f) { %>
-                                        <span class="hr-flags-card__flag" style="background-image: url('./assets/images/flags/<%= f %>')"></span>
+                                        <span class="hr-flags-card__flag" style="background-image: url('/assets/images/flags/<%= f %>')"></span>
                                         <% }); %>
                                     </div>
                                 </div>
@@ -154,7 +148,7 @@
                                     <h3 class="hr-flags-card__title" data-i18n="careersAbout.flagsTitle">Страны присутствия:</h3>
                                     <div class="hr-flags-card__list">
                                         <% flags.forEach(function(f) { %>
-                                        <span class="hr-flags-card__flag" style="background-image: url('./assets/images/flags/<%= f %>')"></span>
+                                        <span class="hr-flags-card__flag" style="background-image: url('/assets/images/flags/<%= f %>')"></span>
                                         <% }); %>
                                     </div>
                                 </div>
@@ -179,7 +173,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>

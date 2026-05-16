@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Работайте с нами - Евразийский банк развития</title>
+    <title data-i18n="careers.pageTitle">Работайте с нами - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
 <%
-    // Порядок: левая колонка (1, 3), правая колонка (2, 4) — grid заполняет по строкам
     const checks = [
         'талантливых',
         'целеустремленных',
@@ -17,29 +16,47 @@
 
     const advantages = [
         {
-            image: './assets/images/hr-team-1.png',
+            image: '/assets/images/hr-team-1.webp',
             title: 'Сильная команда',
             text: 'Мы инвестируем в людей: создаём среду, где работают профессионалы, готовые расти и достигать результатов вместе.'
         },
         {
-            image: './assets/images/hr-team-2.png',
+            image: '/assets/images/hr-team-2.webp',
             title: 'Карьерный рост и развитие',
             text: 'Обучение, международные проекты и реальные задачи — всё, чтобы вы раскрыли свой потенциал и двигались вперёд.'
         },
         {
-            image: './assets/images/hr-team-3.png',
+            image: '/assets/images/hr-team-3.webp',
             title: 'Расширенный соцпакет',
             text: 'Медицинское страхование (включая семью), страхование жизни, отпуск, пенсионные программы и компенсация фитнеса.'
         }
     ];
 
     const values = [
-        'Ответственность',
-        'Командность',
-        'Профессионализм',
-        'Интернационализм',
-        'Развитие',
-        'Пассионарность'
+        {
+            title: 'Ответственность',
+            text: 'Мы&nbsp;признаём, что&nbsp;ответственность за&nbsp;взятые обязательства&nbsp;— это основа надёжной репутации и&nbsp;международного авторитета ЕАБР. Каждый из&nbsp;нас готов отвечать за&nbsp;свои действия перед Обществом, Коллегами, Партнёрами, Акционерами. Мы&nbsp;всегда помним о&nbsp;последствиях наших решений и&nbsp;делаем то, что&nbsp;идёт на&nbsp;пользу стран, в&nbsp;которых мы&nbsp;работаем.'
+        },
+        {
+            title: 'Командность',
+            text: 'Мы&nbsp;работаем как единая команда. Уважаем коллег, делимся знаниями и&nbsp;поддерживаем друг друга для&nbsp;достижения общих целей.'
+        },
+        {
+            title: 'Профессионализм',
+            text: 'Мы&nbsp;стремимся к&nbsp;высочайшему качеству работы, постоянно развиваем компетенции и&nbsp;применяем лучшие международные практики.'
+        },
+        {
+            title: 'Интернационализм',
+            text: 'Мы&nbsp;объединяем людей разных культур и&nbsp;стран, ценим многообразие и&nbsp;строим единое евразийское пространство.'
+        },
+        {
+            title: 'Развитие',
+            text: 'Мы&nbsp;непрерывно учимся, внедряем инновации и&nbsp;помогаем расти как сотрудникам, так и&nbsp;экономикам государств-участников.'
+        },
+        {
+            title: 'Пассионарность',
+            text: 'Мы&nbsp;привержены делу, проявляем инициативу и&nbsp;вкладываем энергию в&nbsp;значимые проекты, меняющие будущее региона.'
+        }
     ];
 %>
     <div class="page">
@@ -47,16 +64,16 @@
 
         <div class="nav-drawer">
             <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
-            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
                 <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                     <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
                     <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </label>
             <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
-            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
                 <label for="nav-drawer-toggle" class="nav-drawer__close">
-                    <span>ЗАКРЫТЬ</span>
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
                     <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
@@ -102,7 +119,9 @@
                                 <ul class="hr-checks">
                                     <% checks.forEach(function(text, i) { %>
                                     <li class="hr-checks__item">
-                                        <img class="hr-checks__icon" src="./assets/images/icon-check.svg" alt="" aria-hidden="true">
+                                        <svg class="hr-checks__icon" data-animate="drawCheck" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M4 12.5 L10 18.5 L20 6" fill="none" stroke="#1BCE1B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+                                        </svg>
                                         <span data-i18n="careers.checks.<%= i %>"><%= text %></span>
                                     </li>
                                     <% }); %>
@@ -129,14 +148,14 @@
                                         <div class="hr-spotlight__controls">
                                             <div class="hr-spotlight__dots" data-slider-pagination></div>
                                             <div class="hr-spotlight__nav">
-                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--prev" data-slider-nav="prev" aria-label="Назад">
-                                                    <svg viewBox="0 0 20 20" aria-hidden="true">
-                                                        <path d="M5 10h12M12 5l5 5-5 5" stroke="#24D6FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--prev" data-slider-nav="prev" data-i18n-aria-label="a11y.sliderPrev" aria-label="Предыдущий слайд">
+                                                    <svg viewBox="0 0 17 30" fill="none" aria-hidden="true">
+                                                        <path d="M1 1L15 15L1 29" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
                                                     </svg>
                                                 </button>
-                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--next" data-slider-nav="next" aria-label="Вперёд">
-                                                    <svg viewBox="0 0 20 20" aria-hidden="true">
-                                                        <path d="M5 10h12M12 5l5 5-5 5" stroke="#24D6FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <button type="button" class="hr-spotlight__btn hr-spotlight__btn--next" data-slider-nav="next" data-i18n-aria-label="a11y.sliderNext" aria-label="Следующий слайд">
+                                                    <svg viewBox="0 0 17 30" fill="none" aria-hidden="true">
+                                                        <path d="M1 1L15 15L1 29" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
                                                     </svg>
                                                 </button>
                                             </div>
@@ -149,12 +168,17 @@
                                 <h2 class="title title--small title--underline is-animated mb-30 mbm-20">
                                     <span class="title__inner" data-i18n="careers.valuesTitle">Культура Банка базируется на&nbsp;шести корпоративных ценностях:</span>
                                 </h2>
-                                <div style="display: flex; flex-direction: column; gap: 8px;">
-                                    <% values.forEach(function(text, i) { %>
-                                    <div class="hr-step <%= i % 2 === 0 ? 'hr-step--accent' : '' %>">
-                                        <div class="hr-step__num"><%= i + 1 %></div>
-                                        <div class="hr-step__text" data-i18n="careers.values.<%= i %>"><%= text %></div>
-                                    </div>
+                                <div class="hr-values" data-careers-values>
+                                    <% values.forEach(function(v, i) { %>
+                                    <button type="button" class="hr-step hr-step--toggle <%= i % 2 === 0 ? 'hr-step--accent' : '' %>" data-careers-value aria-expanded="false">
+                                        <span class="hr-step__head">
+                                            <span class="hr-step__num"><%= i + 1 %></span>
+                                            <span class="hr-step__text" data-i18n="careers.values.<%= i %>.title"><%= v.title %></span>
+                                        </span>
+                                        <span class="hr-step__body">
+                                            <span class="hr-step__desc" data-i18n="careers.values.<%= i %>.text"><%= v.text %></span>
+                                        </span>
+                                    </button>
                                     <% }); %>
                                 </div>
                             </div>
@@ -164,7 +188,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>

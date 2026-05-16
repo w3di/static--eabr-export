@@ -23,6 +23,10 @@
 	}
 }
 
+.main.main--regular.isl-main {
+	padding-bottom: 0;
+}
+
 .isl-lead {
 	font-size: r(24);
 	line-height: r(29);
@@ -30,7 +34,7 @@
 	margin: 0 0 r(40);
 
 	&__hl {
-		color: var(--green);
+		color: #FF605A;
 	}
 }
 

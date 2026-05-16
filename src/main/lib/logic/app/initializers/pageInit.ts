@@ -3,6 +3,7 @@ import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccord
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
+import { ValuesAccordion } from '../../ui/valuesAccordion';
 
 class PageInit {
   constructor() {
@@ -11,6 +12,13 @@ class PageInit {
     this.navDrawers();
     this.stepsLineFill();
     this.cityMapPins();
+    this.valuesAccordions();
+  }
+
+  private valuesAccordions() {
+    document
+      .querySelectorAll<HTMLElement>('[data-careers-values]')
+      .forEach((el) => new ValuesAccordion(el));
   }
 
   private stepsLineFill() {

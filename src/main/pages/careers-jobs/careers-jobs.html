@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Открытые вакансии - Работайте с нами - Евразийский банк развития</title>
+    <title data-i18n="careersJobs.pageTitle">Открытые вакансии - Работайте с нами - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -15,13 +15,11 @@
         { href: routes.careersInternship, label: 'Стажировка и&nbsp;практика',     i18n: 'careers.nav.internship' }
     ];
 
-    // Top row (2): wide
     const offersTop = [
         { icon: 'icon-job-1', title: 'Возможности для&nbsp;профессионального роста и&nbsp;развития' },
         { icon: 'icon-job-2', title: 'Работа над&nbsp;значимыми и&nbsp;масштабными проектами' }
     ];
 
-    // Bottom row (3): narrow
     const offersBottom = [
         { icon: 'icon-job-3', title: 'Сильная команда и&nbsp;экспертиза' },
         { icon: 'icon-job-4', title: 'Стабильность и&nbsp;прозрачные условия' },
@@ -41,16 +39,16 @@
 
         <div class="nav-drawer">
             <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
-            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
                 <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                     <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
                     <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </label>
             <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
-            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
                 <label for="nav-drawer-toggle" class="nav-drawer__close">
-                    <span>ЗАКРЫТЬ</span>
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
                     <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
@@ -96,7 +94,7 @@
                                     <span class="title__inner" data-i18n="careersJobs.aboutTitle">Про команду:</span>
                                 </h2>
                                 <div class="hr-image-card">
-                                    <div class="hr-image-card__media" style="background-image: url('./assets/images/hr-jobs-hero.png')"></div>
+                                    <div class="hr-image-card__media" style="background-image: url('/assets/images/hr-jobs-hero.webp')"></div>
                                     <div class="hr-image-card__card">
                                         <p data-i18n="careersJobs.aboutText">
                                             ЕАБР&nbsp;— это команда профессионалов, которая реализует проекты, влияющие на&nbsp;развитие региона. Мы&nbsp;ценим инициативу, ответственность и&nbsp;готовность работать на&nbsp;результат. Здесь есть возможность расти, развивать экспертизу и&nbsp;участвовать в&nbsp;задачах, которые имеют реальное значение.
@@ -114,7 +112,7 @@
                                     <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
                                         <div class="hr-perk__icon">
                                             <svg aria-hidden="true">
-                                                <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                                <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                             </svg>
                                         </div>
                                         <h3 class="hr-perk__title" data-i18n="careersJobs.perks.<%= i %>"><%= p.title %></h3>
@@ -126,7 +124,7 @@
                                         <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
                                             <div class="hr-perk__icon">
                                                 <svg aria-hidden="true">
-                                                    <use href="./assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
+                                                    <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                                 </svg>
                                             </div>
                                             <h3 class="hr-perk__title" data-i18n="careersJobs.perks.<%= i + 2 %>"><%= p.title %></h3>
@@ -170,7 +168,6 @@
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>
-        <%= htmlWebpackPlugin.options.widgets.tempLinks %>
     </div>
 </body>
 </html>
