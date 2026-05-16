@@ -9,6 +9,15 @@ class AnimationInit {
     this.quote();
     this.counters();
     this.drawCheck();
+    this.titleUnderline();
+  }
+
+  private titleUnderline() {
+    document
+      .querySelectorAll<HTMLElement>('.title--underline, .isl-section-title')
+      .forEach((item) => {
+        onVisible(item, () => item.classList.add('is-animated'));
+      });
   }
 
   private drawCheck() {

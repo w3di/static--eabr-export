@@ -51,9 +51,14 @@
 		background-image: linear-gradient(90deg, #37EE50 0%, #86F290 100%);
 		background-repeat: no-repeat;
 		background-position: 0 100%;
-		background-size: 100% r(4);
+		background-size: 0 r(4);
 		-webkit-box-decoration-break: clone;
 		box-decoration-break: clone;
+		transition: background-size 0.8s ease 0.2s;
+	}
+
+	&.is-animated &__text {
+		background-size: 100% r(4);
 	}
 }
 

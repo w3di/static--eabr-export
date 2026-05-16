@@ -10,10 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
   },
+  "include": ["src/**/*", "config/**/*", "webpack.config.ts", "global.d.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
       "moduleResolution": "node"
-    }
+    },
+    "files": true
   }
 }

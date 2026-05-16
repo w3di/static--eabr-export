@@ -1,4 +1,5 @@
 declare module 'lodash';
+declare module 'svg-sprite-loader/plugin';
 
 declare module '*.css';
 declare module '*.scss';

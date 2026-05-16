@@ -96,6 +96,7 @@
   gap: r(40);
   padding-left: r(24);
   box-sizing: border-box;
+  pointer-events: none;
 
   &::before {
     content: '';

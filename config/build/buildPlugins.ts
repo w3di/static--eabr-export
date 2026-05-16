@@ -13,19 +13,14 @@ export function buildPlugins({
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:4].css',
     }),
-    new webpack.ProgressPlugin(),
-    // @ts-expect-error svg-sprite-loader plugin types are incompatible with webpack 5
     new SpriteLoaderPlugin(),
     new CopyPlugin({
       patterns: [
         {
           from: paths.assets,
           to: paths.buildAssets,
+          globOptions: { ignore: ['**/.DS_Store'] },
         },
-        // {
-        //     from: paths.favicons,
-        //     to: paths.buildFavicons,
-        // },
       ],
     }),
     new WatchExternalFilesPlugin({
