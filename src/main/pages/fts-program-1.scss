@@ -3,11 +3,14 @@
 	flex: 1 0 auto;
 	padding: r(30) 0 r(80);
 	background: #FFFFFF;
+
+	.title--underline,
+	.title--underline > .title__inner {
+		line-height: 1.4;
+	}
 }
 
 .prg-crumbs {
-	margin-bottom: r(36);
-	padding-left: r(304);
 	font-size: r(16);
 	line-height: r(19);
 	color: rgba(0, 0, 0, 0.4);
@@ -133,10 +136,9 @@
 .prg-list__dash {
 	flex: 0 0 r(20);
 	width: r(20);
-	height: r(4);
-	background: #1BCE1B;
-	border-radius: r(2);
-	margin-top: r(10);
+	height: 0;
+	border-top: r(2) solid #1BCE1B;
+	margin-top: r(12);
 }
 
 .prg-list__text {
@@ -193,8 +195,6 @@
 	}
 
 	.prg-crumbs {
-		padding-left: 0;
-		margin-bottom: r(50);
 		font-size: r(16);
 		line-height: r(19);
 	}
