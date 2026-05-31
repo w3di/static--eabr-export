@@ -54,3 +54,14 @@
 		position: relative;
 	}
 }
+
+@media (max-width: 1260px) {
+	.button-arrow {
+		gap: r(16);
+		padding: 0 r(24);
+		height: r(48);
+
+		&__text { font-size: r(18); }
+		&__icon { width: r(18); height: r(18); }
+	}
+}

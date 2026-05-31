@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все проекты | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const projectCards = [
+        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/projects/fts-project-1.png' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/projects/fts-project-2.png' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/projects/fts-project-3.png' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/projects/fts-project-4.png' },
+        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/projects/mega-project.png' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/projects/hero-banner.jpg' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/hr-team-1.webp' },
+        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/hr-team-2.webp' },
+        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/hr-team-3.webp' }
+    ];
+
+    const pages = [1, 2, 3, 4, '...', 10];
+    const currentPage = 2;
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <main class="ap">
+            <section class="ap-hero" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/projects/hero-banner.jpg');">
+                <div class="container">
+                    <div class="ap-hero__inner">
+                        <h1 class="ap-hero__title">Все проекты</h1>
+                        <h2 class="ap-hero__subtitle">Евразийский банк развития (ЕАБР)</h2>
+                        <p class="ap-hero__lead">ЕАБР многосторонний банк развития, призванный содействовать экономическому росту государств-участников, расширению торгово-экономических связей между ними и&nbsp;развитию интеграционных процессов на&nbsp;евразийском пространстве путем осуществления инвестиционной деятельности.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ap-search">
+                <div class="container">
+                    <nav class="ap-crumbs">Главная / Проекты / <span>Все проекты</span></nav>
+
+                    <div class="ap-search__row">
+                        <div class="ap-search__field">
+                            <div class="ap-search__field-inner">
+                                <svg class="ap-search__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                    <circle cx="14" cy="14" r="9" stroke="rgba(0,0,0,0.4)" stroke-width="2"/>
+                                    <path d="M21 21L27 27" stroke="rgba(0,0,0,0.4)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span class="ap-search__placeholder">Найти проект</span>
+                            </div>
+                        </div>
+                        <a href="#" class="ap-search__btn">Отправить проект на&nbsp;рассмотрение</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ap-projects">
+                <div class="container">
+                    <div class="ap-projects__bar">
+                        <div class="ap-projects__left">
+                            <h2 class="ap-projects__title">ПРОЕКТЫ</h2>
+                            <div class="ap-view">
+                                <span class="ap-view__label">Вид:</span>
+                                <div class="ap-view__tabs" data-tabs data-active="0">
+                                    <span class="ap-view__pill" aria-hidden="true"></span>
+                                    <button class="ap-view__tab ap-view__tab--active" type="button" data-tab="0">Карточки</button>
+                                    <button class="ap-view__tab" type="button" data-tab="1">Таблица</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="ap-mobile-filter-btn mob-visible" type="button" aria-label="Фильтры">
+                            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                                <path d="M15.9987 9.3335L2.66537 9.3335M15.9987 22.6668L29.332 22.6668M25.332 13.3335C23.1229 13.3335 21.332 11.5426 21.332 9.3335C21.332 7.12436 23.1229 5.3335 25.332 5.3335C27.5412 5.3335 29.332 7.12436 29.332 9.3335C29.332 11.5426 27.5412 13.3335 25.332 13.3335ZM6.66537 26.6668C8.8745 26.6668 10.6654 24.876 10.6654 22.6668C10.6654 20.4577 8.8745 18.6668 6.66537 18.6668C4.45623 18.6668 2.66537 20.4577 2.66537 22.6668C2.66537 24.876 4.45623 26.6668 6.66537 26.6668Z" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <div class="ap-filters">
+                            <%
+                                const industryItems = ['Все отрасли','Металлургия','Полезные ископаемые','Транспорт','Энергетика','Финансы','Инфраструктура'];
+                                const projectTypeItems = ['Все типы','Кредитная линия','Гарантия','Инвестиция','Софинансирование'];
+                            %>
+
+                            <div class="ap-filter-wrap" data-dropdown-wrap>
+                                <button class="ap-filter" type="button" data-dropdown-toggle>
+                                    <span>Тип проекта</span>
+                                    <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                                        <path d="M1 1L7 7L13 1" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="ap-dropdown ap-dropdown--list">
+                                    <ul class="ap-dropdown__list">
+                                        <% projectTypeItems.forEach(function(t, i) { %>
+                                        <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %>"><%= t %></li>
+                                        <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="ap-filter-wrap ap-filter-wrap--date input-date" data-datepicker="block" data-datepicker-inline-label="Год">
+                                <input type="text" class="ap-filter ap-filter--date input-date__head" data-datepicker="head" value="Год" readonly>
+                                <input type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату">
+                            </div>
+
+                            <div class="ap-filter-wrap" data-dropdown-wrap>
+                                <button class="ap-filter" type="button" data-dropdown-toggle>
+                                    <span>Отрасль</span>
+                                    <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                                        <path d="M1 1L7 7L13 1" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="ap-dropdown ap-dropdown--list">
+                                    <ul class="ap-dropdown__list">
+                                        <% industryItems.forEach(function(t, i) { %>
+                                        <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %><%= i === 2 ? ' ap-dropdown__item--active' : '' %>"><%= t %></li>
+                                        <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="ap-cards">
+                        <% projectCards.forEach(function(p) { %>
+                        <article class="ap-card">
+                            <a href="<%= htmlWebpackPlugin.options.routes.projectDetail %>" class="ap-card__photo" style="background-image: url('<%= p.image %>');">
+                                <span class="ap-card__arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 16 16" fill="none">
+                                        <path d="M3 13L13 3M13 3H5M13 3V11" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="ap-card__body">
+                                <div class="ap-card__info">
+                                    <h3 class="ap-card__title"><%= p.title %></h3>
+                                    <div class="ap-card__sums">
+                                        <div class="ap-card__sum">
+                                            <div class="ap-card__sum-val ap-card__sum-val--dark">
+                                                <span class="ap-card__sum-num"><%= p.sum.num %></span><span class="ap-card__sum-unit"><%= p.sum.unit %></span>
+                                            </div>
+                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--dark">сумма проекта</div>
+                                        </div>
+                                        <div class="ap-card__sum">
+                                            <div class="ap-card__sum-val ap-card__sum-val--green">
+                                                <span class="ap-card__sum-num"><%= p.bank.num %></span><span class="ap-card__sum-unit"><%= p.bank.unit %></span>
+                                            </div>
+                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--green">сумма участия банка</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ap-card__meta">
+                                    <div class="ap-card__meta-left">
+                                        <div class="ap-card__country">
+                                            <span class="ap-card__flag" style="background-image: url('<%= p.flag %>');"></span>
+                                            <span><%= p.country %></span>
+                                        </div>
+                                        <div class="ap-card__year"><%= p.year %></div>
+                                    </div>
+                                    <div class="ap-card__awards">
+                                        <div class="ap-card__award ap-card__award--ij" aria-label="IJ Global">IJ</div>
+                                        <svg class="ap-card__award ap-card__award--esg" viewBox="0 0 60 60" fill="none" aria-label="ESG">
+                                            <circle cx="30" cy="30" r="29" fill="#FFFFFF" stroke="#E5EEF2"/>
+                                            <path d="M30 18C24 18 19 22 19 28C19 33 23 37 28 38L28 42L24 42L24 44L36 44L36 42L32 42L32 38C37 37 41 33 41 28C41 22 36 18 30 18Z" fill="#1BCE1B"/>
+                                            <path d="M30 22V35M26 27L30 22L34 27" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <% }); %>
+                    </div>
+
+                    <nav class="ap-pagination" aria-label="Pagination">
+                        <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
+                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                <path d="M8 1L1 8L8 15" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Назад</span>
+                        </button>
+                        <ul class="ap-pagination__list">
+                            <% pages.forEach(function(p) { %>
+                            <li class="ap-pagination__item<%= p === currentPage ? ' ap-pagination__item--active' : '' %><%= p === '...' ? ' ap-pagination__item--gap' : '' %>">
+                                <% if (p === '...') { %><span>...</span><% } else { %><a href="#"><%= p %></a><% } %>
+                            </li>
+                            <% }); %>
+                        </ul>
+                        <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
+                            <span>Далее</span>
+                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                <path d="M1 1L8 8L1 15" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </nav>
+                </div>
+            </section>
+
+            <%= htmlWebpackPlugin.options.widgets.industriesBlock %>
+
+            <section class="ap-analytics">
+                <div class="container">
+                    <h2 class="title title--small title--underline ap-analytics__heading">
+                        <span class="title__inner">Аналитика</span>
+                    </h2>
+
+                    <%
+                        const analyticsBooks = [
+                            { title: 'Макроэкономический обзор ЕАБР. Сентябрь 2025', date: '16 сентября 2025', cover: 'linear-gradient(135deg, #1BCE1B 0%, #37EE50 100%)' },
+                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #0097D8 0%, #24D6FF 100%)' },
+                            { title: 'Китай и&nbsp;Евразийский регион: анализ инвестиционных потоков на&nbsp;основе&nbsp;...', date: '25 декабря 2025', cover: 'linear-gradient(135deg, #2C3142 0%, #4A5070 100%)' },
+                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #A0EDFF 0%, #D9F8FF 100%)' }
+                        ];
+                    %>
+
+                    <div class="ap-analytics__list swiper" data-slider="analytics">
+                        <div class="ap-analytics__wrapper swiper-wrapper">
+                            <% analyticsBooks.forEach(function(b) { %>
+                            <a href="#" class="ap-book swiper-slide">
+                                <div class="ap-book__cover" style="background: <%= b.cover %>;"></div>
+                                <div class="ap-book__body">
+                                    <h3 class="ap-book__title"><%= b.title %></h3>
+                                    <div class="ap-book__date"><%= b.date %></div>
+                                </div>
+                            </a>
+                            <% }); %>
+                        </div>
+                        <div class="ap-analytics__dots" data-slider-pagination aria-hidden="true"></div>
+                    </div>
+
+                    <a href="#" class="ap-analytics__btn">
+                        <span>Смотреть все</span>
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="M5 15L15 5M15 5H7M15 5V13" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <section class="ap-news">
+                <div class="container">
+                    <h2 class="title title--small title--underline ap-news__heading">
+                        <span class="title__inner">Новости</span>
+                    </h2>
+                    <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                </div>
+            </section>
+        </main>
+
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

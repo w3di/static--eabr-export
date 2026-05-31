@@ -1,5 +1,6 @@
 import { IslamicForm } from '../../../../pages/islamic-finance/logic/islamicForm';
 import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
+import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
@@ -13,6 +14,14 @@ class PageInit {
     this.stepsLineFill();
     this.cityMapPins();
     this.valuesAccordions();
+    this.filterDropdowns();
+  }
+
+  private filterDropdowns() {
+    const wraps = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-dropdown-wrap]'),
+    );
+    if (wraps.length) new FilterDropdowns(wraps);
   }
 
   private valuesAccordions() {

@@ -1,0 +1,28 @@
+.fts-aside {
+	display: flex;
+	flex-direction: column;
+}
+
+.fts-aside__item {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	gap: r(10);
+	padding: r(16) r(22);
+	font-size: r(18);
+	line-height: r(22);
+	color: var(--dark);
+	text-decoration: none;
+	border-left: r(2) solid rgba(27, 206, 27, 0.4);
+	transition: 0.15s ease;
+	min-height: r(54);
+
+	&:hover {
+		background: rgba(27, 206, 27, 0.03);
+	}
+
+	&--active {
+		background: rgba(27, 206, 27, 0.06);
+		border-left-color: #1BCE1B;
+	}
+}

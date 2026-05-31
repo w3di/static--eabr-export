@@ -7,7 +7,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     port: options.port,
     host: '0.0.0.0',
     allowedHosts: 'all',
-    open: true,
+    open: false,
     hot: true,
     client: {
       overlay: true,

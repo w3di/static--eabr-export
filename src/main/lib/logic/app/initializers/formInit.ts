@@ -44,13 +44,29 @@ class FormInit {
             };
           },
 
-          onSelect({ formattedDate }) {
+          onSelect({ formattedDate, datepicker }) {
+            let date = '';
+            let isComplete = false;
             if (Array.isArray(formattedDate)) {
-              input.value = formattedDate.join(' - ');
-            } else {
-              input.value = formattedDate || '';
+              if (formattedDate.length === 2 && formattedDate[0] && formattedDate[1]) {
+                const [from, to] = formattedDate;
+                date = from === to ? from : `${from} - ${to}`;
+                isComplete = true;
+              } else if (formattedDate[0]) {
+                date = formattedDate[0];
+              }
+            } else if (formattedDate) {
+              date = formattedDate;
+              isComplete = true;
             }
-            head.value = 'Дата';
+            input.value = date;
+            const inlineLabel = item.dataset.datepickerInlineLabel;
+            if (inlineLabel) {
+              head.value = date || inlineLabel;
+            } else {
+              head.value = 'Дата';
+            }
+            if (isComplete) datepicker.hide();
           },
         });
       });

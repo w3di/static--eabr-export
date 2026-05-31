@@ -15,6 +15,11 @@
 		line-height: 1.2;
 	}
 
+	&--xs {
+		font-size: r(28);
+		line-height: r(34);
+	}
+
 	&--underline {
 		& > .title__inner {
 			background-image: linear-gradient(90deg, #37EE50 0%, #86F290 100%);
@@ -39,6 +44,11 @@
 		line-height: r(41);
 
 		&--small {
+			font-size: r(28);
+			line-height: r(34);
+		}
+
+		&--xs {
 			font-size: r(28);
 			line-height: r(34);
 		}

@@ -1,0 +1,107 @@
+<%
+    const sharedProjects = [
+        {
+            image: '/assets/images/projects/fts-project-1.png',
+            title: 'Производство молочной и&nbsp;мясной продукции полного цикла в&nbsp;Армении',
+            amountNum: '388', amountUnit: 'млн&nbsp;$',
+            bankNum: '300',   bankUnit: 'млн&nbsp;$',
+            country: 'Армения',
+            flag: '/assets/images/flags/flag-am.svg',
+            year: '2024'
+        },
+        {
+            image: '/assets/images/projects/fts-project-2.png',
+            title: 'Расширение и&nbsp;модернизация Международного аэропорта Алматы',
+            amountNum: '388', amountUnit: 'млн&nbsp;$',
+            bankNum: '300',   bankUnit: 'млн&nbsp;$',
+            country: 'Казахстан',
+            flag: '/assets/images/flags/flag-kz.svg',
+            year: '2024'
+        },
+        {
+            image: '/assets/images/projects/fts-project-3.png',
+            title: 'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
+            amountNum: '388', amountUnit: 'млн&nbsp;$',
+            bankNum: '300',   bankUnit: 'млн&nbsp;$',
+            country: 'Кыргызстан',
+            flag: '/assets/images/flags/flag-kg.svg',
+            year: '2024'
+        },
+        {
+            image: '/assets/images/projects/fts-project-4.png',
+            title: 'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
+            amountNum: '388', amountUnit: 'млн&nbsp;$',
+            bankNum: '300',   bankUnit: 'млн&nbsp;$',
+            country: 'Армения',
+            flag: '/assets/images/flags/flag-am.svg',
+            year: '2024'
+        }
+    ];
+%>
+<div class="fts-projects">
+    <div class="swiper fts-projects__swiper" data-slider="fts">
+        <div class="swiper-wrapper">
+            <% sharedProjects.forEach(function(p, i) { %>
+            <article class="swiper-slide fts-project<%= i === 0 ? ' fts-project--full' : '' %>">
+                <div class="fts-project__photo" style="background-image: url('<%= p.image %>');">
+                    <a href="#" class="fts-project__arrow" aria-label="Подробнее о&nbsp;проекте">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="fts-project__body">
+                    <h3 class="fts-project__title" data-i18n="shared.projects.<%= i %>.title"><%- p.title %></h3>
+                    <div class="fts-project__amounts">
+                        <div class="fts-project__amount">
+                            <span class="fts-project__amount-value fts-project__amount-value--dark">
+                                <span class="fts-project__amount-num" data-i18n="shared.projects.<%= i %>.amountNum"><%- p.amountNum %></span><span class="fts-project__amount-unit" data-i18n="shared.projects.<%= i %>.amountUnit"><%- p.amountUnit %></span>
+                            </span>
+                            <span class="fts-project__amount-label fts-project__amount-label--dark" data-i18n="shared.projectsLabels.amount">сумма проекта</span>
+                        </div>
+                        <div class="fts-project__amount">
+                            <span class="fts-project__amount-value fts-project__amount-value--green">
+                                <span class="fts-project__amount-num" data-i18n="shared.projects.<%= i %>.bankNum"><%- p.bankNum %></span><span class="fts-project__amount-unit" data-i18n="shared.projects.<%= i %>.bankUnit"><%- p.bankUnit %></span>
+                            </span>
+                            <span class="fts-project__amount-label fts-project__amount-label--green" data-i18n="shared.projectsLabels.bankShare">сумма участия банка</span>
+                        </div>
+                    </div>
+                    <div class="fts-project__meta">
+                        <div class="fts-project__meta-info">
+                            <div class="fts-project__country">
+                                <span class="fts-project__flag" style="background-image: url('<%= p.flag %>');"></span>
+                                <span data-i18n="shared.projects.<%= i %>.country"><%- p.country %></span>
+                            </div>
+                            <span class="fts-project__year" data-i18n="shared.projects.<%= i %>.year"><%- p.year %></span>
+                        </div>
+                        <div class="fts-project__awards">
+                            <img class="fts-project__award fts-project__award--ij" src="/assets/images/awards/ij-global.png" alt="IJ Global Awards 2021" loading="lazy">
+                            <img class="fts-project__award fts-project__award--esg" src="/assets/images/awards/esg.png" alt="ESG" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+        </div>
+    </div>
+    <div class="fts-controls">
+        <div class="fts-controls__nav">
+            <button type="button" class="fts-controls__btn" data-fts-track-prev data-i18n-aria-label="a11y.sliderPrev" aria-label="Предыдущий">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M15 6l-6 6 6 6" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button type="button" class="fts-controls__btn" data-fts-track-next data-i18n-aria-label="a11y.sliderNext" aria-label="Следующий">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <a href="#" class="button-arrow button-arrow--mob-full">
+            <span class="button-arrow__text" data-i18n="shared.projectsAllLink">Смотреть все проекты</span>
+            <svg class="button-arrow__icon" aria-hidden="true">
+                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+            </svg>
+        </a>
+    </div>
+</div>

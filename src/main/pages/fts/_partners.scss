@@ -1,0 +1,46 @@
+.fts-partners {
+	display: flex;
+	flex-wrap: wrap;
+	gap: r(12);
+
+	&__cell {
+		position: relative;
+		box-sizing: border-box;
+		flex: 0 0 r(214);
+		width: r(214);
+		height: r(124);
+		border: 1px solid #E5EEF2;
+		border-radius: r(20);
+		background: var(--white);
+
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: r(196);
+			max-height: r(94);
+			width: auto;
+			height: auto;
+			object-fit: contain;
+		}
+	}
+}
+
+@media (max-width: 1260px) {
+	.fts-partners {
+		gap: r(4);
+
+		&__cell {
+			flex: 0 0 calc(50% - #{r(2)});
+			width: auto;
+			height: r(108);
+			border-radius: r(16);
+
+			img {
+				max-width: 80%;
+				max-height: r(72);
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+<%
+    const sharedNews = [
+        {
+            image: '/assets/images/projects/fts-project-2.png',
+            date:  '28 ноября 2025',
+            tag:   'Машиностроение',
+            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
+        },
+        {
+            image: '/assets/images/projects/fts-project-1.png',
+            date:  '28 ноября 2025',
+            tag:   'АПК',
+            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
+        },
+        {
+            image: '/assets/images/projects/fts-project-3.png',
+            date:  '28 ноября 2025',
+            tag:   'Энергетика',
+            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
+        },
+        {
+            image: '/assets/images/projects/fts-project-4.png',
+            date:  '28 ноября 2025',
+            tag:   'Инфраструктура',
+            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
+        }
+    ];
+%>
+<div class="fts-news-slider">
+    <div class="swiper fts-news-slider__swiper" data-slider="news">
+        <div class="swiper-wrapper">
+            <% sharedNews.forEach(function(n, i) { %>
+            <a href="#" class="swiper-slide fts-news__card">
+                <div class="fts-news__media" style="background-image: url('<%= n.image %>');"></div>
+                <div class="fts-news__body">
+                    <div class="fts-news__meta">
+                        <time class="fts-news__date" data-i18n="shared.news.<%= i %>.date"><%- n.date %></time>
+                        <span class="fts-news__tag" data-i18n="shared.news.<%= i %>.tag"><%- n.tag %></span>
+                    </div>
+                    <p class="fts-news__title" data-i18n="shared.news.<%= i %>.title"><%- n.title %></p>
+                </div>
+            </a>
+            <% }); %>
+        </div>
+    </div>
+    <div class="fts-controls fts-controls--news">
+        <div class="fts-controls__nav">
+            <button type="button" class="fts-controls__btn" data-news-prev data-i18n-aria-label="a11y.sliderPrev" aria-label="Предыдущий">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M15 6l-6 6 6 6" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button type="button" class="fts-controls__btn" data-news-next data-i18n-aria-label="a11y.sliderNext" aria-label="Следующий">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="#24D6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <a href="#" class="button-arrow button-arrow--mob-full">
+            <span class="button-arrow__text" data-i18n="shared.newsAllLink">Смотреть все новости</span>
+            <svg class="button-arrow__icon" aria-hidden="true">
+                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+            </svg>
+        </a>
+    </div>
+</div>

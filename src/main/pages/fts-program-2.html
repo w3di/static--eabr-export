@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Программа II — Расширение инвестиционной деятельности | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const sideMenu = [
+        { label: 'Продукты',                       href: '#' },
+        { label: 'Проекты',                        href: htmlWebpackPlugin.options.routes.projects },
+        { label: 'Мегапроекты',                    href: '#' },
+        { label: 'Фонд технического содействия',   href: htmlWebpackPlugin.options.routes.fts, active: true },
+        { label: 'Фонд цифровых инициатив',        href: '#' },
+        { label: 'Международное сотрудничество',   href: '#' },
+        { label: 'Аналитика',                      href: '#' },
+        { label: 'ESG',                            href: '#' },
+        { label: 'ГЧП',                            href: '#' },
+        { label: 'Исламские финансы',              href: htmlWebpackPlugin.options.routes.islamicFinance }
+    ];
+
+    const initiativesList = [
+        'Институциональному развитию и&nbsp;совершенствованию регулирования;',
+        'Повышению инвестиционной привлекательности отраслей и&nbsp;регионов;',
+        'Развитию финансовой инфраструктуры;',
+        'Подготовке прикладных исследований и&nbsp;аналитики;',
+        'Развитию компетенций и&nbsp;профессионального потенциала;',
+        'Технологическому развитию и&nbsp;внедрению лучших международных практик;',
+        'Укреплению интеграционного сотрудничества в&nbsp;Евразийском регионе.'
+    ];
+
+    const additionalTerms = [
+        'Наличие связи с&nbsp;планируемым инвестиционным проектом',
+        'Соответствие проектов ряду критериев: реалистичность ожидаемых результатов, проработанность бюджета и&nbsp;графика реализации, инвестиционная перспектива проекта, его&nbsp;влияние на&nbsp;экономику, интеграционные эффекты, связь с&nbsp;нацпроектом, госпрограммами или&nbsp;стратегией развития',
+        'Софинансирование со&nbsp;стороны Бенефициара проекта ФТС рассматривается как&nbsp;преимущество'
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <main class="prg">
+            <div class="container">
+                <nav class="prg-crumbs">Главная / Наша&nbsp;деятельность / Фонд&nbsp;технического&nbsp;содействия / <span>Программа&nbsp;II</span></nav>
+
+                <div class="prg-layout">
+                    <aside class="prg-side">
+                        <ul class="prg-side__list">
+                            <% sideMenu.forEach(function(item) { %>
+                            <li class="prg-side__item<%= item.active ? ' prg-side__item--active' : '' %>">
+                                <a href="<%= item.href %>" class="prg-side__link"><%= item.label %></a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </aside>
+
+                    <article class="prg-main">
+                        <div class="prg-head">
+                            <div class="prg-head__kicker">Программа&nbsp;II</div>
+                            <h1 class="title title--small title--underline prg-head__title">
+                                <span class="title__inner">Расширение инвестиционной деятельности</span>
+                            </h1>
+                        </div>
+
+                        <p class="prg-lead">Направлена на&nbsp;развитие институциональной среды и&nbsp;создание условий для&nbsp;расширения инвестиционной деятельности в&nbsp;странах-участницах Банка.</p>
+
+                        <h2 class="prg-subtitle">В&nbsp;рамках программы реализуются инициативы, способствующие:</h2>
+
+                        <ul class="prg-list">
+                            <% initiativesList.forEach(function(item) { %>
+                            <li class="prg-list__item">
+                                <span class="prg-list__dash" aria-hidden="true"></span>
+                                <span class="prg-list__text"><%= item %></span>
+                            </li>
+                            <% }); %>
+                        </ul>
+
+                        <div class="prg-note">
+                            Программа&nbsp;II ориентирована на&nbsp;проекты, создающие долгосрочные условия для&nbsp;привлечения инвестиций и&nbsp;устойчивого развития экономики. Особое внимание уделяется инициативам с&nbsp;высоким эффектом развития, возможностью масштабирования и&nbsp;потенциалом формирования новых инвестиционных направлений.
+                        </div>
+
+                        <div class="prg-section">
+                            <h2 class="title title--small title--underline prg-section__title">
+                                <span class="title__inner">Дополнительные условия предоставления ТС:</span>
+                            </h2>
+
+                            <ul class="prg-list">
+                                <% additionalTerms.forEach(function(item) { %>
+                                <li class="prg-list__item">
+                                    <span class="prg-list__dash" aria-hidden="true"></span>
+                                    <span class="prg-list__text"><%= item %></span>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+.fts-projects {
+	position: relative;
+
+	&__swiper {
+		overflow: hidden;
+		width: 100%;
+		min-height: r(651);
+	}
+
+	.swiper-wrapper {
+		align-items: flex-end;
+		min-height: r(651);
+	}
+}
+
+@media (max-width: 1260px) {
+	.fts-projects {
+		&__swiper,
+		.swiper-wrapper {
+			min-height: r(540);
+		}
+	}
+}
+
+.fts-project {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: r(388);
+	border-radius: r(24);
+	overflow: hidden;
+	background: var(--white);
+	cursor: pointer;
+
+	&__photo {
+		position: relative;
+		width: 100%;
+		padding-top: 74.7%;
+		background-size: cover;
+		background-position: center;
+		background-color: #E4FAFF;
+		border: r(2) solid #E4FAFF;
+		border-bottom: 0;
+		border-radius: r(24) r(24) 0 0;
+		box-sizing: border-box;
+		transition: padding-top 0.4s ease;
+	}
+
+	&__arrow {
+		position: absolute;
+		top: r(18);
+		right: r(18);
+		width: r(46);
+		height: r(46);
+		border-radius: 50%;
+		background: var(--white);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		svg { width: r(16); height: r(16); }
+	}
+
+	&__body {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		padding: r(24) r(20);
+		background: #F0FCFF;
+		border: r(2) solid #E4FAFF;
+		border-top: 0;
+		border-radius: 0 0 r(24) r(24);
+		transition: background 0.3s ease;
+	}
+
+	&__title {
+		font-size: r(20);
+		line-height: r(24);
+		color: #000;
+		font-weight: 400;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__amounts {
+		display: flex;
+		justify-content: space-between;
+		gap: r(12);
+		margin-top: r(12);
+	}
+
+	&__amount {
+		display: flex;
+		flex-direction: column;
+		gap: r(2);
+		min-width: 0;
+	}
+
+	&__amount-value {
+		display: flex;
+		align-items: baseline;
+		gap: 0;
+		font-size: r(48);
+		line-height: r(58);
+		font-weight: 500;
+		white-space: nowrap;
+
+		&--dark  { color: rgba(17, 17, 17, 0.6); }
+		&--green { color: #1BCE1B; }
+	}
+
+	&__amount-num { font-weight: 500; }
+	&__amount-unit { font-size: r(20); line-height: r(24); font-weight: 500; }
+
+	&__amount-label {
+		font-size: r(16);
+		line-height: r(19);
+
+		&--dark  { color: rgba(17, 17, 17, 0.6); }
+		&--green { color: #1BCE1B; }
+	}
+
+	&__meta {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: r(16);
+		margin-top: r(20);
+	}
+
+	&__meta-info {
+		display: flex;
+		flex-direction: column;
+		gap: r(4);
+	}
+
+	&__country {
+		display: inline-flex;
+		align-items: center;
+		gap: r(12);
+		font-size: r(16);
+		line-height: r(19);
+		color: rgba(17, 17, 17, 0.6);
+	}
+
+	&__flag {
+		width: r(24);
+		height: r(24);
+		border-radius: 50%;
+		background-size: cover;
+		background-position: center;
+		background-color: #DDD;
+		border: 1px solid #ECEEF0;
+		flex-shrink: 0;
+	}
+
+	&__year {
+		padding-left: r(36);
+		font-size: r(16);
+		line-height: r(19);
+		color: rgba(17, 17, 17, 0.6);
+	}
+
+	&__awards {
+		display: inline-flex;
+		gap: r(16);
+		flex-shrink: 0;
+	}
+
+	&__award {
+		width: r(60);
+		height: r(60);
+		object-fit: contain;
+		background: var(--white);
+		box-sizing: border-box;
+
+		&--ij {
+			border: 1px solid #EDF5F8;
+			border-radius: r(12);
+		}
+
+		&--esg {
+			border: 1px solid #E5EEF2;
+			border-radius: 50%;
+		}
+	}
+
+	&:not(.swiper-slide-active):not(.swiper-slide-duplicate-active):not(.fts-project--full) {
+		.fts-project__amounts,
+		.fts-project__year,
+		.fts-project__awards,
+		.fts-project__arrow {
+			display: none;
+		}
+	}
+
+	&.swiper-slide-active,
+	&.swiper-slide-duplicate-active,
+	&--full {
+		cursor: default;
+
+		.fts-project__photo {
+			padding-top: 86.6%;
+		}
+
+		.fts-project__body {
+			background: #E4FAFF;
+		}
+	}
+}
+
+@media (max-width: 1260px) {
+	.fts-projects-section {
+		margin-top: r(82);
+	}
+
+	.fts-project {
+		width: 100%;
+
+		&__photo {
+			padding-top: 70.6%;
+		}
+
+		&__title { font-size: r(18); line-height: r(22); }
+		&__amount-value { font-size: r(42); line-height: r(50); }
+		&__amount-num { font-weight: 500; }
+		&__amount-unit { font-size: r(18); line-height: r(22); }
+		&__body { padding: r(20) r(14) r(16); }
+	}
+}

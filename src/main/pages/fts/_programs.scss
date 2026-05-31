@@ -1,0 +1,68 @@
+.fts-programs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: r(12) r(8);
+}
+
+.fts-program {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: r(16);
+	padding: r(32);
+	background: #F4F6F7;
+	border-left: r(3) solid rgba(0, 0, 0, 0.4);
+	border-radius: r(24);
+	text-decoration: none;
+	color: inherit;
+	transition: 0.2s ease;
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: r(16);
+	}
+
+	&__title {
+		font-size: r(34);
+		line-height: r(41);
+		color: #1BCE1B;
+		font-weight: 400;
+	}
+
+	&__arrow {
+		width: r(32);
+		height: r(32);
+		flex-shrink: 0;
+		fill: #D5D5D5;
+	}
+
+	&__text {
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+		margin: 0;
+	}
+
+	&:hover {
+		background: #ECEFF1;
+	}
+}
+
+@media (max-width: 1260px) {
+	.fts-programs {
+		grid-template-columns: 1fr;
+		gap: r(12);
+	}
+
+	.fts-program {
+		padding: r(24);
+		gap: r(16);
+		border-left-color: #1BCE1B;
+
+		&__title { font-size: r(34); line-height: r(41); }
+		&__text  { font-size: r(20); line-height: r(24); }
+		&__arrow { width: r(32); height: r(32); }
+	}
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Программа I — Подготовка инвестиционных проектов | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const sideMenu = [
+        { label: 'Продукты',                       href: '#' },
+        { label: 'Проекты',                        href: htmlWebpackPlugin.options.routes.projects },
+        { label: 'Мегапроекты',                    href: '#' },
+        { label: 'Фонд технического содействия',   href: htmlWebpackPlugin.options.routes.fts, active: true },
+        { label: 'Фонд цифровых инициатив',        href: '#' },
+        { label: 'Международное сотрудничество',   href: '#' },
+        { label: 'Аналитика',                      href: '#' },
+        { label: 'ESG',                            href: '#' },
+        { label: 'ГЧП',                            href: '#' },
+        { label: 'Исламские финансы',              href: htmlWebpackPlugin.options.routes.islamicFinance }
+    ];
+
+    const cofinanceList = [
+        'Разработку технико-экономических обоснований, в&nbsp;т.ч. предварительных;',
+        'Подготовку финансовых моделей и&nbsp;бизнес-планов;',
+        'Юридический, технический и&nbsp;финансовый консалтинг;',
+        'Структурирование проектов ГЧП;',
+        'ESG-оценку и&nbsp;верификацию;',
+        'Маркетинговые исследования;',
+        'Обучение команд, участвующих в&nbsp;реализации проекта и&nbsp;др.'
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <main class="prg">
+            <div class="container">
+                <nav class="prg-crumbs">Главная / Наша&nbsp;деятельность / Фонд&nbsp;технического&nbsp;содействия / <span>Программа&nbsp;I</span></nav>
+
+                <div class="prg-layout">
+                    <aside class="prg-side">
+                        <ul class="prg-side__list">
+                            <% sideMenu.forEach(function(item) { %>
+                            <li class="prg-side__item<%= item.active ? ' prg-side__item--active' : '' %>">
+                                <a href="<%= item.href %>" class="prg-side__link"><%= item.label %></a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </aside>
+
+                    <article class="prg-main">
+                        <div class="prg-head">
+                            <div class="prg-head__kicker">Программа&nbsp;I</div>
+                            <h1 class="title title--small title--underline prg-head__title">
+                                <span class="title__inner">Подготовка инвестиционных проектов</span>
+                            </h1>
+                        </div>
+
+                        <p class="prg-lead">Направлена на&nbsp;поддержку подготовки инвестиционных проектов, планируемых к&nbsp;реализации при&nbsp;участии ЕАБР.</p>
+
+                        <h2 class="prg-subtitle">Основная задача программы:</h2>
+
+                        <blockquote class="prg-quote">
+                            Повысить готовность инвестиционных сделок к&nbsp;финансированию Банком и&nbsp;его&nbsp;партнерами.
+                        </blockquote>
+
+                        <h2 class="prg-subtitle">В&nbsp;рамках программы ФТС может софинансировать:</h2>
+
+                        <ul class="prg-list">
+                            <% cofinanceList.forEach(function(item) { %>
+                            <li class="prg-list__item">
+                                <span class="prg-list__dash" aria-hidden="true"></span>
+                                <span class="prg-list__text"><%= item %></span>
+                            </li>
+                            <% }); %>
+                        </ul>
+
+                        <div class="prg-note">
+                            Программа ориентирована на&nbsp;проекты с&nbsp;высоким социально-экономическим и&nbsp;интеграционным эффектом для&nbsp;региона. «Взращивание» инвестиционных проектов позволяет повысить качество их&nbsp;подготовки, ускорить принятие инвестиционных решений и&nbsp;создать условия для&nbsp;дальнейшего финансирования, включая необходимую мобилизацию средств.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

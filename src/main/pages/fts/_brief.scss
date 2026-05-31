@@ -1,0 +1,58 @@
+.fts-brief {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: r(44);
+	align-items: start;
+	margin-top: r(20);
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 0;
+	}
+
+	&__value {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		height: r(120);
+		font-size: r(100);
+		line-height: r(120);
+		font-weight: 500;
+		color: #1BCE1B;
+		text-align: center;
+	}
+
+	&__sup {
+		font-size: r(48);
+		line-height: 1;
+		font-weight: 500;
+		margin-left: r(2);
+	}
+
+	&__label {
+		font-size: r(24);
+		line-height: r(29);
+		color: var(--dark);
+		text-align: center;
+	}
+
+	&__note {
+		font-size: r(16);
+		line-height: r(19);
+		color: var(--dark);
+		text-align: center;
+		margin-top: r(6);
+	}
+}
+
+@media (max-width: 1260px) {
+	.fts-brief {
+		grid-template-columns: 1fr;
+		gap: r(32);
+
+		&__label { font-size: r(24); line-height: r(29); }
+	}
+}

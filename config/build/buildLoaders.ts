@@ -11,7 +11,7 @@ export function buildLoaders(): webpack.RuleSetRule[] {
   const slyleLoader = {
     test: /\.scss|css$/i,
     use: [
-      // options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      
       MiniCssExtractPlugin.loader,
       'css-loader',
       {

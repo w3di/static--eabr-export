@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="fts.pageTitle">Фонд технического содействия (ФТС) - Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const routes = htmlWebpackPlugin.options.routes;
+
+    const navItems = [
+        { href: '#', label: 'Продукты',                                  i18n: 'fts.nav.products' },
+        { href: routes.fts, label: 'Фонд технического содействия (ФТС)', i18n: 'fts.nav.fts', active: true },
+        { href: '#', label: 'Проекты',                                   i18n: 'fts.nav.projects' },
+        { href: '#', label: 'Мегапроекты',                               i18n: 'fts.nav.mega' },
+        { href: '#', label: 'Фонд цифровых инициатив',                   i18n: 'fts.nav.fdi' },
+        { href: '#', label: 'Международное сотрудничество',              i18n: 'fts.nav.intl' },
+        { href: '#', label: 'Аналитика',                                 i18n: 'fts.nav.analytics' },
+        { href: '#', label: 'ESG',                                       i18n: 'fts.nav.esg' },
+        { href: '#', label: 'ГЧП',                                       i18n: 'fts.nav.ppp' },
+        { href: routes.islamicFinance, label: 'Исламские финансы',       i18n: 'fts.nav.islamic' }
+    ];
+
+    const focusItems = [
+        'Снижение барьеров для&nbsp;запуска инвестиционных проектов;',
+        'Повышение качества предпроектной подготовки;',
+        'Развитие механизмов государственно-частного партнерства;',
+        'Поддержку реформ и&nbsp;институционального развития;',
+        'Создание условий для&nbsp;устойчивого экономического роста и&nbsp;интеграционного сотрудничества в&nbsp;Евразийском регионе.'
+    ];
+
+    const briefStats = [
+        { value: '2008', label: 'Год создания' },
+        { value: '140',  label: 'Число реализованных проектов' },
+        { value: '$45<span class="fts-brief__sup">млн</span>', label: 'объем утвержденного финансирования по&nbsp;проектам на&nbsp;стадии реализации', note: '(*по&nbsp;состоянию на&nbsp;31.12.2025)' }
+    ];
+
+    const programs = [
+        { title: 'Программа I',  text: 'Подготовка инвестиционных проектов',          href: htmlWebpackPlugin.options.routes.ftsProgram1 },
+        { title: 'Программа II', text: 'Расширение инвестиционной деятельности',      href: htmlWebpackPlugin.options.routes.ftsProgram2 }
+    ];
+
+    const conditions = [
+        'Соответствие Проекта ФТС стратегическим целям Банка в&nbsp;стране планируемой реализации',
+        'Отрасль Проекта ФТС&nbsp;– одна из&nbsp;приоритетных для&nbsp;Банка в&nbsp;регионе операций',
+        'Успешное двухэтапное рассмотрение Проекта ФТС органами управления Банка'
+    ];
+
+    const partners = [
+        { name: 'WFP',   image: '/assets/images/partners/wfp.png' },
+        { name: 'UNDP',  image: '/assets/images/partners/undp.png' },
+        { name: 'CAREC', image: '/assets/images/partners/carec.png' },
+        { name: 'ESCAP', image: '/assets/images/partners/escap.png' },
+        { name: 'OSCE',  image: '/assets/images/partners/osce.png' },
+        { name: 'UNIDO', image: '/assets/images/partners/unido.png' },
+        { name: 'UNFPA', image: '/assets/images/partners/unfpa.png' }
+    ];
+
+    const faq = [
+        {
+            q: 'Какие виды технического содействия предоставляет ФТС ЕАБР?',
+            a: '<p>Фонд технического содействия (ФТС) ЕАБР поддерживает инициативы, направленные на&nbsp;подготовку инвестиционных проектов, развитие институциональной среды и&nbsp;повышение инвестиционной привлекательности стран-участниц Банка.</p><p>За&nbsp;счет грантовых средств для&nbsp;компаний частного сектора ФТС может софинансировать:</p><ol class="fts-faq__list"><li><span>1.</span> Разработку ТЭО, финансовых моделей и&nbsp;бизнес-планов;</li><li><span>2.</span> Юридический, технический и&nbsp;финансовый консалтинг;</li><li><span>3.</span> Структурирование проектов ГЧП;</li><li><span>4.</span> ESG-верификацию;</li><li><span>5.</span> Маркетинговые исследования;</li><li><span>6.</span> Мероприятия по&nbsp;снижению проектных рисков;</li><li><span>7.</span> Обучение персонала, участвующего в&nbsp;реализации инвестиционных проектов.</li></ol><p>Поддержка ФТС проектов государственного сектора заключается в:</p><ol class="fts-faq__list"><li><span>1.</span> Институциональном развитии;</li><li><span>2.</span> Прикладных исследованиях;</li><li><span>3.</span> Повышении эффективности финансовой инфраструктуры;</li><li><span>4.</span> Программах повышения инвестиционной привлекательности;</li><li><span>5.</span> Обучении, развитии компетенций и&nbsp;обмене опытом;</li><li><span>6.</span> Технологическом развитии и&nbsp;интеграционном сотрудничестве.</li></ol>'
+        },
+        {
+            q: 'Кто может получить техническое содействие?',
+            a: '<p>Получателями технического содействия могут выступать:</p><ol class="fts-faq__list"><li><span>1.</span> Компании и&nbsp;инвесторы, реализующие инвестиционные проекты в&nbsp;странах-участницах Банка;</li><li><span>2.</span> Государственные органы и&nbsp;ведомства;</li><li><span>3.</span> Институты развития;</li><li><span>4.</span> Партнерские организации, участвующие в&nbsp;подготовке и&nbsp;развитии инвестиционных инициатив.</li></ol><p>Для&nbsp;бизнеса ключевым условием является наличие инвестиционного проекта на&nbsp;стадии подготовки и&nbsp;готовность к&nbsp;совместной проработке проекта с&nbsp;ЕАБР, включая возможное софинансирование предпроектной подготовки.</p><p>В&nbsp;случае государственного сектора приоритет отдается инициативам, способствующим институциональному развитию, повышению эффективности экономики и&nbsp;созданию благоприятных условий для&nbsp;инвестиций.</p>'
+        },
+        {
+            q: 'Какие преимущества техническое содействие дает частному сектору?',
+            a: '<p>ФТС позволяет бизнесу начать взаимодействие с&nbsp;Евразийский банк развития еще на&nbsp;этапе подготовки проекта&nbsp;— до&nbsp;привлечения кредитного финансирования.</p><p>Основные преимущества для&nbsp;бизнеса:</p><ol class="fts-faq__list"><li><span>1.</span> Снижение затрат на&nbsp;предпроектную подготовку;</li><li><span>2.</span> Доступ к&nbsp;международной отраслевой и&nbsp;финансовой эеспертизе;</li><li><span>3.</span> Повышение качества проектной документации;</li><li><span>4.</span> Снижение технических, финансовых и&nbsp;юридических рисков;</li><li><span>5.</span> Возможность структурировать инвестиционный проект в&nbsp;соответствии с&nbsp;требованиями международных финансовых организаций;</li><li><span>6.</span> Поддержка в&nbsp;отборе консультантов и&nbsp;мониторинге промежуточных результатов;</li><li><span>7.</span> Ускорение запуска инвестиционного проекта.</li></ol><p>ФТС особенно востребован для&nbsp;сложных инфраструктурных, промышленных, ESG-&nbsp;и&nbsp;ГЧП-проектов, где качественная подготовка существенно влияет на&nbsp;возможность дальнейшего привлечения финансирования.</p>'
+        },
+        {
+            q: 'Какие преимущества техническое содействие дает государственному сектору?',
+            a: '<p>ФТС помогает государственным органам и&nbsp;институтам развития реализовывать проекты, направленные на&nbsp;повышение инвестиционной привлекательности, совершенствование регулирования и&nbsp;развитие отраслевой экспертизы.</p><p>Преимущества для&nbsp;государственного сектора включают:</p><ol class="fts-faq__list"><li><span>1.</span> Доступ к&nbsp;международной экспертизе и&nbsp;лучшим практикам;</li><li><span>2.</span> Разработку стратегий, реформ и&nbsp;программ развития, включая пилотные инициативы;</li><li><span>3.</span> Повышение качества подготовки государственных инвестиционных проектовм;</li><li><span>4.</span> Развитие компетенций через обучение и&nbsp;практико-ориентированные программы;</li><li><span>5.</span> Ускорение запуска проектов за&nbsp;счет сопровождения со&nbsp;стороны ЕАБР.</li></ol><p>Дополнительно ФТС способствует формированию устойчивых механизмов взаимодействия между государством, бизнесом и&nbsp;международными партнерами.</p>'
+        },
+        {
+            q: 'Какие преимущества ФТС предоставляет софинансирующим организациям и&nbsp;донорам?',
+            a: '<p>стратегически значимые проекты совместно с&nbsp;ЕАБР, консолидируя экспертизу Банка и&nbsp;партнера. Сотрудничество возможно, как в&nbsp;рамках финансирования отдельных проектов, так и&nbsp;через участие в&nbsp;формировании общего пула средств Фонда по&nbsp;приоритетным направлениям или&nbsp;секторам.</p><p>Преимущества для&nbsp;партнеров:</p><ol class="fts-faq__list"><li><span>1.</span> региональное присутствие Банка и&nbsp;широкая сеть контактов</li><li><span>2.</span> Доступ к&nbsp;качественному потоку проектов в&nbsp;странах Евразийского региона;</li><li><span>3.</span> Профессиональное структурирование и&nbsp;сопровождение инициатив;</li><li><span>4.</span> Прозрачный мониторинг реализации и&nbsp;оценки результатов;</li><li><span>5.</span> Возможность масштабировать эффекты развития через совместное финансирование;</li><li><span>6.</span> Использование экспертизы ЕАБР в&nbsp;сфере подготовки инвестиционных проектов и&nbsp;институционального развития.</li></ol>'
+        }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular fts-main">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside fts-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="fts-aside__item<%= it.active ? ' fts-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%= it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="fts.breadcrumbHome">Главная</span> / <span data-i18n="fts.breadcrumbActivity">Наша&nbsp;деятельность</span> / <strong data-i18n="fts.breadcrumbCurrent">Фонд технического содействия</strong>
+                                </div>
+                            </div>
+
+                            <div class="mb-20 mbm-20 fts-title">
+                                <h1 class="fts-title__h title title--underline">
+                                    <span class="title__inner" data-i18n="fts.title">Фонд технического содействия (ФТС)</span>
+                                </h1>
+                            </div>
+
+                            <div class="fts-hero mb-40 mbm-30">
+                                <div class="fts-hero__card" data-i18n="fts.lead">
+                                    Фонд технического содействия (ФТС)&nbsp;— специализированный инструмент Банка, направленный на&nbsp;создание благоприятных условий для&nbsp;реализации инвестиционных проектов в&nbsp;странах-участницах Банка. Фонд финансирует подготовку инвестиционных инициатив, институциональное развитие, и&nbsp;меры для&nbsp;повышение инвестиционной привлекательности региона операций.<br><br>Средства ФТС формируются за&nbsp;счет отчислений из&nbsp;чистой прибыли Банка и&nbsp;донорских взносов.
+                                </div>
+                                <aside class="fts-hero__stats">
+                                    <div class="fts-hero__stat">
+                                        <p class="fts-hero__stat-label" data-i18n="fts.hero.stat0Label">На&nbsp;сегодняшний день под&nbsp;управлением Фонда находится около</p>
+                                        <p class="fts-hero__stat-num"><span data-i18n="fts.hero.stat0Value">$80</span><span class="fts-hero__stat-unit" data-i18n="fts.hero.stat0Unit">млн</span></p>
+                                    </div>
+                                    <div class="fts-hero__stat">
+                                        <p class="fts-hero__stat-label" data-i18n="fts.hero.stat1Label">а&nbsp;портфель включает более</p>
+                                        <p class="fts-hero__stat-num" data-i18n="fts.hero.stat1Value">60</p>
+                                        <p class="fts-hero__stat-sub" data-i18n="fts.hero.stat1Sub">Проектов технического содействия на&nbsp;стадии реализации</p>
+                                    </div>
+                                </aside>
+                            </div>
+
+                            <div class="mb-25 mbm-25">
+                                <h2 class="fts-h2 mb-25 mbm-15">
+                                    <span data-i18n="fts.goalTitle">Цель фонда:</span>
+                                </h2>
+                                <div class="fts-callout" data-i18n="fts.goalText">
+                                    Цель ФТС&nbsp;— содействовать подготовке качественных инвестиционных проектов и&nbsp;развитию институциональной среды, способствующей росту инвестиционной активности в&nbsp;странах-участницах Евразийский банк развития.
+                                </div>
+                            </div>
+
+                            <div class="mb-40 mbm-30">
+                                <h2 class="fts-h2 mb-25 mbm-20">
+                                    <span data-i18n="fts.focusTitle">Фонд ориентирован на:</span>
+                                </h2>
+                                <ul class="fts-bullets">
+                                    <% focusItems.forEach(function(t, i) { %>
+                                    <li class="fts-bullets__item">
+                                        <span class="fts-bullets__dash" aria-hidden="true"></span>
+                                        <span data-i18n="fts.focusItems.<%= i %>"><%= t %></span>
+                                    </li>
+                                    <% }); %>
+                                </ul>
+                                <p class="fts-note" data-i18n="fts.focusNote">
+                                    ФТС выступает не&nbsp;только источником финансирования, но&nbsp;и&nbsp;инструментом структурирования проектов, привлечения экспертизы и&nbsp;формирования долгосрочных инвестиционных инициатив.
+                                </p>
+                            </div>
+
+                            <div class="mb-40 mbm-30">
+                                <h2 class="fts-h2 mb-20 mbm-20">
+                                    <span data-i18n="fts.briefTitle">Краткая информация о&nbsp;Фонде:</span>
+                                </h2>
+                                <div class="fts-brief">
+                                    <% briefStats.forEach(function(s, i) { %>
+                                    <div class="fts-brief__item">
+                                        <div class="fts-brief__value" data-i18n="fts.briefStats.<%= i %>.value"><%- s.value %></div>
+                                        <div class="fts-brief__label" data-i18n="fts.briefStats.<%= i %>.label"><%- s.label %></div>
+                                        <% if (s.note) { %>
+                                        <div class="fts-brief__note" data-i18n="fts.briefStats.<%= i %>.note"><%- s.note %></div>
+                                        <% } %>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <div class="mb-40 mbm-30 fts-projects-section">
+                                <h2 class="title title--small title--underline mb-30 mbm-20">
+                                    <span class="title__inner mob-hidden" data-i18n="fts.projectsTitle">Проекты технического содействия</span>
+                                    <span class="title__inner mob-visible" data-i18n="fts.projectsTitleMob">Проекты</span>
+                                </h2>
+                                <%= htmlWebpackPlugin.options.widgets.projectsBlock %>
+                            </div>
+
+                            <div class="mb-40 mbm-30">
+                                <h2 class="title title--xs title--underline mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.programsTitle">Основные инструменты деятельности Фонда:</span>
+                                </h2>
+                                <div class="fts-programs">
+                                    <% programs.forEach(function(p, i) { %>
+                                    <a href="<%= p.href %>" class="fts-program">
+                                        <div class="fts-program__head">
+                                            <span class="fts-program__title" data-i18n="fts.programs.<%= i %>.title"><%- p.title %></span>
+                                            <svg class="fts-program__arrow" aria-hidden="true">
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+                                            </svg>
+                                        </div>
+                                        <p class="fts-program__text" data-i18n="fts.programs.<%= i %>.text"><%- p.text %></p>
+                                    </a>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--xs title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.conditionsTitle">Условия предоставления технического содействия:</span>
+                                </h2>
+                                <ul class="fts-bullets fts-bullets--wide-gap mb-20 mbm-15">
+                                    <% conditions.forEach(function(t, i) { %>
+                                    <li class="fts-bullets__item">
+                                        <span class="fts-bullets__dash" aria-hidden="true"></span>
+                                        <span data-i18n="fts.conditions.<%= i %>"><%- t %></span>
+                                    </li>
+                                    <% }); %>
+                                </ul>
+                                <p class="fts-note fts-note--small" data-i18n="fts.conditionsNote">
+                                    Примечание: Отбор проектов ФТС осуществляется на&nbsp;конкурентной основе
+                                </p>
+                            </div>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--xs title--underline mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.partnersTitle">Наши партнеры</span>
+                                </h2>
+                                <div class="fts-partners">
+                                    <% partners.forEach(function(p) { %>
+                                    <div class="fts-partners__cell" title="<%= p.name %>">
+                                        <img src="<%= p.image %>" alt="<%= p.name %>" loading="lazy">
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-30 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.newsTitle">Новости</span>
+                                </h2>
+                                <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                            </div>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.faqTitle">Часто задаваемые вопросы</span>
+                                </h2>
+                                <div class="fts-faq">
+                                    <% faq.forEach(function(f, i) { %>
+                                    <details class="fts-faq__item"<%= i === 0 ? ' open' : '' %>>
+                                        <summary class="fts-faq__summary">
+                                            <span class="fts-faq__q" data-i18n="fts.faq.<%= i %>.q"><%- f.q %></span>
+                                            <span class="fts-faq__toggle" aria-hidden="true">
+                                                <svg viewBox="0 0 24 24" fill="none">
+                                                    <path d="M6 6L18 18M18 6L6 18" stroke="#1BCE1B" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </span>
+                                        </summary>
+                                        <div class="fts-faq__wrap">
+                                            <div class="fts-faq__a" data-i18n="fts.faq.<%= i %>.a"><%- f.a %></div>
+                                        </div>
+                                    </details>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.formTitle">Связаться с&nbsp;нами</span>
+                                </h2>
+                                <form class="fts-form" autocomplete="off" novalidate>
+                                    <div class="fts-form__row">
+                                        <div class="fts-form__field">
+                                            <label class="fts-form__label" for="fts-name" data-i18n="fts.fields.name">Имя или название организации</label>
+                                            <input id="fts-name" type="text" class="fts-form__input" placeholder="Укажите полностью имя или&nbsp;название" data-i18n-placeholder="fts.placeholders.name">
+                                        </div>
+                                        <div class="fts-form__field">
+                                            <label class="fts-form__label" for="fts-email" data-i18n="fts.fields.email">Электронная почта</label>
+                                            <input id="fts-email" type="email" class="fts-form__input" placeholder="name@example.com" data-i18n-placeholder="fts.placeholders.email">
+                                        </div>
+                                    </div>
+                                    <div class="fts-form__field">
+                                        <div class="fts-form__label-row">
+                                            <label class="fts-form__label" for="fts-message" data-i18n="fts.fields.message">Текст сообщения</label>
+                                            <span class="fts-form__counter" data-fts-counter>0/1000</span>
+                                        </div>
+                                        <textarea id="fts-message" class="fts-form__textarea" rows="1" maxlength="1000" placeholder="" data-i18n-placeholder="fts.placeholders.message"></textarea>
+                                    </div>
+                                    <div class="fts-form__row">
+                                        <div class="fts-form__field">
+                                            <label class="fts-form__label" for="fts-phone" data-i18n="fts.fields.phone">Контактный телефон</label>
+                                            <input id="fts-phone" type="tel" class="fts-form__input" placeholder="+7 (000) 000 - 00 - 00" data-i18n-placeholder="fts.placeholders.phone">
+                                        </div>
+                                        <div class="fts-form__field">
+                                            <span class="fts-form__label" data-i18n="fts.fields.file">Прикрепить файл</span>
+                                            <label class="fts-form__file">
+                                                <input type="file" hidden>
+                                                <span class="fts-form__file-text" data-i18n="fts.fields.fileBtn">Выбрать файл</span>
+                                                <span class="fts-form__file-plus" aria-hidden="true">
+                                                    <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8.5 1V16M16 8.5H1" stroke="#111111" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="fts-form__bottom">
+                                        <label class="fts-form__consent">
+                                            <input type="checkbox" checked>
+                                            <span class="fts-form__consent-box" aria-hidden="true">
+                                                <svg viewBox="0 0 14 14" fill="none">
+                                                    <path d="M3 7.5l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span data-i18n="fts.consent">Я&nbsp;соглашаюсь на&nbsp;сбор и&nbsp;обработку персональных данных</span>
+                                        </label>
+                                        <button type="submit" class="fts-form__submit" data-i18n="fts.submit">Отправить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>
