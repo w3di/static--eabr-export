@@ -1,3 +1,5 @@
+import { filterState } from '../../../lib/logic/ui/filterState';
+
 class FilterDropdowns {
   private wraps: HTMLElement[];
   private defaults = new WeakMap<HTMLElement, string>();
@@ -9,6 +11,7 @@ class FilterDropdowns {
       this.bindToggle(wrap);
       this.bindListItems(wrap);
       this.bindSum(wrap);
+      this.applyInitial(wrap);
     });
     document.addEventListener('click', () => this.closeAll());
     this.bindTabs();
@@ -21,16 +24,29 @@ class FilterDropdowns {
         const tabs = Array.from(
           container.querySelectorAll<HTMLElement>('[data-tab]'),
         );
+        const key = container.dataset.filterKey;
+        const apply = (idx: string) => {
+          container.dataset.active = idx;
+          tabs.forEach((t) =>
+            t.classList.toggle(
+              'ap-view__tab--active',
+              t.dataset.tab === idx,
+            ),
+          );
+        };
+
+        if (key) {
+          const initial = filterState.get(key);
+          if (initial !== null && tabs.some((t) => t.dataset.tab === initial)) {
+            apply(initial);
+          }
+        }
+
         tabs.forEach((tab) => {
           tab.addEventListener('click', () => {
             const idx = tab.dataset.tab || '0';
-            container.dataset.active = idx;
-            tabs.forEach((t) =>
-              t.classList.toggle(
-                'ap-view__tab--active',
-                t.dataset.tab === idx,
-              ),
-            );
+            apply(idx);
+            if (key) filterState.set(key, idx === '0' ? null : idx);
           });
         });
       });
@@ -77,20 +93,32 @@ class FilterDropdowns {
     panel.addEventListener('click', (e) => e.stopPropagation());
   }
 
-  private bindListItems(wrap: HTMLElement) {
-    wrap.querySelectorAll<HTMLElement>('.ap-dropdown__item').forEach((item) => {
-      item.addEventListener('click', () => {
-        wrap
-          .querySelectorAll<HTMLElement>('.ap-dropdown__item--active')
-          .forEach((el) => el.classList.remove('ap-dropdown__item--active'));
-        item.classList.add('ap-dropdown__item--active');
+  private selectItem(wrap: HTMLElement, item: HTMLElement) {
+    wrap
+      .querySelectorAll<HTMLElement>('.ap-dropdown__item--active')
+      .forEach((el) => el.classList.remove('ap-dropdown__item--active'));
+    item.classList.add('ap-dropdown__item--active');
 
-        const isHead = item.classList.contains('ap-dropdown__item--head');
-        if (isHead) {
-          const def = this.defaults.get(wrap);
-          if (def) this.setLabel(wrap, def);
-        } else {
-          this.setLabel(wrap, (item.textContent || '').trim());
+    const isHead = item.classList.contains('ap-dropdown__item--head');
+    if (isHead) {
+      const def = this.defaults.get(wrap);
+      if (def) this.setLabel(wrap, def);
+    } else {
+      this.setLabel(wrap, (item.textContent || '').trim());
+    }
+  }
+
+  private bindListItems(wrap: HTMLElement) {
+    const key = wrap.dataset.filterKey;
+    const items = Array.from(
+      wrap.querySelectorAll<HTMLElement>('.ap-dropdown__item'),
+    );
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        this.selectItem(wrap, item);
+        if (key) {
+          const isHead = item.classList.contains('ap-dropdown__item--head');
+          filterState.set(key, isHead ? null : String(idx));
         }
         this.closeAll();
       });
@@ -105,15 +133,18 @@ class FilterDropdowns {
 
     const fromInput = fields[0];
     const toInput = fields[1];
+    const key = wrap.dataset.filterKey;
 
     apply.addEventListener('click', () => {
       const from = fromInput.value.trim();
       const to = toInput.value.trim();
       if (from || to) {
         this.setLabel(wrap, `${from || '0'} — ${to || '∞'} млн.$`);
+        if (key) filterState.set(key, `${from || ''}-${to || ''}`);
       } else {
         const def = this.defaults.get(wrap);
         if (def) this.setLabel(wrap, def);
+        if (key) filterState.set(key, null);
       }
       this.closeAll();
     });
@@ -123,7 +154,38 @@ class FilterDropdowns {
       toInput.value = '';
       const def = this.defaults.get(wrap);
       if (def) this.setLabel(wrap, def);
+      if (key) filterState.set(key, null);
     });
+  }
+
+  private applyInitial(wrap: HTMLElement) {
+    const key = wrap.dataset.filterKey;
+    if (!key) return;
+
+    const initial = filterState.get(key);
+    if (initial === null) return;
+
+    const items = Array.from(
+      wrap.querySelectorAll<HTMLElement>('.ap-dropdown__item'),
+    );
+
+    if (items.length) {
+      const idx = parseInt(initial, 10);
+      if (!isNaN(idx) && items[idx]) {
+        this.selectItem(wrap, items[idx]);
+      }
+      return;
+    }
+
+    const fields = wrap.querySelectorAll<HTMLInputElement>('.ap-sum__input');
+    if (fields.length >= 2) {
+      const [from, to] = initial.split('-');
+      if (from) fields[0].value = from;
+      if (to) fields[1].value = to;
+      if (from || to) {
+        this.setLabel(wrap, `${from || '0'} — ${to || '∞'} млн.$`);
+      }
+    }
   }
 
   private closeAll() {

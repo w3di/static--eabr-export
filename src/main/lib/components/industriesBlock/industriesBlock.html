@@ -1,17 +1,12 @@
 <%
-    const industries = [
-        { label: 'Металлургия',                       image: '/assets/images/industries/metallurgy.webp' },
-        { label: 'Машиностроение',                    image: '/assets/images/industries/machinery.webp' },
-        { label: 'Транспорт',                         image: '/assets/images/industries/transport.webp' },
-        { label: 'Финансовый<br>сектор',              image: '/assets/images/industries/finance.webp' },
-        { label: 'Горнодобывающая<br>промышленность', image: '/assets/images/industries/mining.webp' },
-        { label: 'Энергетика',                        image: '/assets/images/industries/energy.webp' },
-        { label: 'Иная<br>инфраструктура',            image: '/assets/images/industries/other-infra.webp' },
-        { label: 'Химическая<br>промышленность',      image: '/assets/images/industries/chemistry.webp' },
-        { label: 'Строительство',                     image: '/assets/images/industries/construction.webp' },
-        { label: 'АПК',                               image: '/assets/images/industries/agro.webp' },
-        { label: 'Цифровые проекты',                  image: '/assets/images/industries/digital.webp' }
-    ];
+    const industries = (htmlWebpackPlugin.options.industries || []).map(function(it) {
+        return {
+            slug: it.slug,
+            href: '/' + it.slug + '/',
+            label: it.labelHtml || it.label,
+            image: it.image,
+        };
+    });
 
     const industriesCount = industries.length;
     let industriesCols = 4;
@@ -36,7 +31,7 @@
         </h2>
         <div class="prj-industries__grid" style="--cols: <%= industriesCols %>;">
             <% industries.forEach(function(it, i) { %>
-            <a href="#" class="prj-industry<%= industriesTallIndexes.indexOf(i) >= 0 ? ' prj-industry--tall' : '' %>" style="background-image: url('<%= it.image %>');">
+            <a href="<%= it.href %>" class="prj-industry<%= industriesTallIndexes.indexOf(i) >= 0 ? ' prj-industry--tall' : '' %>" style="background-image: url('<%= it.image %>');">
                 <div class="prj-industry__shade"></div>
                 <span class="prj-industry__label"><%= it.label %></span>
             </a>

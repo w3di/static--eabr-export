@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { BuildPaths } from '../types/config';
 import { TemplateStringType } from './buildPagesList';
 import { ROUTES } from '../../../src/main/lib/logic/routes';
+import { INDUSTRIES } from '../../../src/main/data/industries';
 
 const fileContents: TemplateStringType = {};
 
@@ -13,7 +14,10 @@ const renderWidget = (filePath: string): string => {
   const compiled = _.template(raw);
   return compiled({
     routes: ROUTES,
-    htmlWebpackPlugin: { options: { routes: ROUTES } },
+    industries: INDUSTRIES,
+    htmlWebpackPlugin: {
+      options: { routes: ROUTES, industries: INDUSTRIES },
+    },
   });
 };
 

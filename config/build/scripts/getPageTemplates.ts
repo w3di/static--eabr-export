@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { TemplatePageType, TemplateStringType } from './buildPagesList';
 import { ROUTES } from '../../../src/main/lib/logic/routes';
+import { INDUSTRIES } from '../../../src/main/data/industries';
 
 const createPluginInstance = (
   data: TemplatePageType,
@@ -18,6 +19,7 @@ const createPluginInstance = (
     inject: 'body',
     widgets,
     routes: ROUTES,
+    industries: INDUSTRIES,
   });
 };
 

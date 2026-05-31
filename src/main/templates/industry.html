@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Все проекты | Евразийский банк развития</title>
+    <title><%= htmlWebpackPlugin.options.industry.label %> | Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
 <%
+    const industry = htmlWebpackPlugin.options.industry;
     const projectCards = [
         { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' },
         { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
@@ -18,28 +19,39 @@
         { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
         { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' }
     ];
-
+    const heroImage = industry.hero || industry.image;
 %>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
 
         <main class="ap">
-            <section class="ap-hero" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/projects/ap-hero.webp');">
+            <section class="ap-hero ap-hero--industry" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= heroImage %>');">
                 <div class="container">
-                    <div class="ap-hero__inner">
-                        <h1 class="ap-hero__title">Все проекты</h1>
-                        <h2 class="ap-hero__subtitle">Евразийский банк развития (ЕАБР)</h2>
-                        <p class="ap-hero__lead">ЕАБР многосторонний банк развития, призванный содействовать экономическому росту государств-участников, расширению торгово-экономических связей между ними и&nbsp;развитию интеграционных процессов на&nbsp;евразийском пространстве путем осуществления инвестиционной деятельности.</p>
+                    <h1 class="ap-hero__title"><%= industry.title %></h1>
+                    <% if (industry.stats && industry.stats.length) { %>
+                    <div class="ap-hero__stats">
+                        <% industry.stats.forEach(function(s) { %>
+                        <div class="ap-hero__stat">
+                            <div class="ap-hero__stat-num">
+                                <span class="ap-hero__stat-num-val"><%= s.num %></span><% if (s.unit) { %><span class="ap-hero__stat-num-unit">&nbsp;<%= s.unit %></span><% } %>
+                            </div>
+                            <div class="ap-hero__stat-info">
+                                <div class="ap-hero__stat-lbl"><%= s.label %></div>
+                                <div class="ap-hero__stat-date"><%= s.date %></div>
+                            </div>
+                        </div>
+                        <% }); %>
                     </div>
+                    <% } %>
                 </div>
             </section>
 
             <section class="ap-search">
                 <div class="container">
-                    <nav class="ap-crumbs">Главная / Проекты / <span>Все проекты</span></nav>
+                    <nav class="ap-crumbs">Главная / Проекты / <span><%= industry.label %></span></nav>
 
                     <div class="ap-search__row">
-                        <div class="ap-search__field">
+                        <label class="ap-search__field">
                             <div class="ap-search__field-inner">
                                 <svg class="ap-search__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                                     <circle cx="14" cy="14" r="9" stroke="rgba(0,0,0,0.4)" stroke-width="2"/>
@@ -47,7 +59,7 @@
                                 </svg>
                                 <input type="search" class="ap-search__input" placeholder="Найти проект" autocomplete="off" data-filter-key="q">
                             </div>
-                        </div>
+                        </label>
                         <a href="#" class="button-arrow ap-search__btn">
                             <span class="button-arrow__text">Отправить проект на&nbsp;рассмотрение</span>
                             <svg class="button-arrow__icon" aria-hidden="true">
@@ -80,7 +92,6 @@
 
                         <div class="ap-filters">
                             <%
-                                const industryItems = ['Все отрасли','Металлургия','Полезные ископаемые','Транспорт','Энергетика','Финансы','Инфраструктура'];
                                 const projectTypeItems = ['Все типы','Кредитная линия','Гарантия','Инвестиция','Софинансирование'];
                             %>
 
@@ -104,23 +115,6 @@
                                 <input type="text" class="ap-filter ap-filter--date input-date__head" data-datepicker="head" value="Год" readonly>
                                 <input type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату">
                             </div>
-
-                            <div class="ap-filter-wrap" data-dropdown-wrap data-filter-key="industry">
-                                <button class="ap-filter" type="button" data-dropdown-toggle>
-                                    <span>Отрасль</span>
-                                    <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
-                                        <path d="M1 1L7 7L13 1" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <div class="ap-dropdown ap-dropdown--list">
-                                    <ul class="ap-dropdown__list">
-                                        <% industryItems.forEach(function(t, i) { %>
-                                        <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %><%= i === 2 ? ' ap-dropdown__item--active' : '' %>"><%= t %></li>
-                                        <% }); %>
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -187,8 +181,6 @@
                     </nav>
                 </div>
             </section>
-
-            <%= htmlWebpackPlugin.options.widgets.industriesBlock %>
 
             <section class="ap-analytics">
                 <div class="container">

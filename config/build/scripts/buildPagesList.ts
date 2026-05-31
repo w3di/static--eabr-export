@@ -1,7 +1,9 @@
+import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import getPageTemplates from '../scripts/getPageTemplates';
 import getIncludesPages from '../scripts/getIncludesPages';
+import getIndustryPlugins from './getIndustryPlugins';
 import { getWidgets } from './getWidgets';
 import { BuildPaths } from '../types/config';
 
@@ -29,6 +31,9 @@ export function buildPagesList(
     );
     pagesArray.push(item);
   });
+
+  const templatesDir = path.resolve(paths.htmlPages, '..', 'templates');
+  pagesArray.push(...getIndustryPlugins(templatesDir, widgets));
 
   return pagesArray;
 }

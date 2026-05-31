@@ -2,6 +2,8 @@ import { IslamicForm } from '../../../../pages/islamic-finance/logic/islamicForm
 import { FtsForm } from '../../../../pages/fts/logic/ftsForm';
 import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
 import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
+import { SearchFilter } from '../../../../pages/all-projects/logic/searchFilter';
+import { PaginationState } from '../../../../pages/all-projects/logic/paginationState';
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
@@ -18,7 +20,21 @@ class PageInit {
     this.cityMapPins();
     this.valuesAccordions();
     this.filterDropdowns();
+    this.searchFilters();
+    this.paginationState();
     this.faqAccordions();
+  }
+
+  private searchFilters() {
+    document
+      .querySelectorAll<HTMLInputElement>('input[data-filter-key]')
+      .forEach((el) => new SearchFilter(el));
+  }
+
+  private paginationState() {
+    document
+      .querySelectorAll<HTMLElement>('.ap-pagination')
+      .forEach((el) => new PaginationState(el));
   }
 
   private faqAccordions() {
