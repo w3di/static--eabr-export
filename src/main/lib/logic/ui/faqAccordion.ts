@@ -7,8 +7,8 @@ class FaqAccordion {
 
   constructor(item: HTMLDetailsElement) {
     this.item = item;
-    this.summary = item.querySelector<HTMLElement>('.fts-faq__summary')!;
-    this.wrap = item.querySelector<HTMLElement>('.fts-faq__wrap')!;
+    this.summary = item.querySelector<HTMLElement>(':scope > summary')!;
+    this.wrap = item.querySelector<HTMLElement>(':scope > div')!;
 
     if (item.open) item.classList.add('is-open');
 

@@ -12,6 +12,7 @@ import { perksConfig } from './configs/perks';
 import { ftsConfig } from './configs/fts';
 import { newsConfig } from './configs/news';
 import { analyticsConfig } from './configs/analytics';
+import { pbGalleryConfig } from './configs/pbGallery';
 
 class Slider {
   private instance: Swiper | null = null;
@@ -40,6 +41,9 @@ class Slider {
         break;
       case 'analytics':
         this.initMobileOnly(el, analyticsConfig);
+        break;
+      case 'pb-gallery':
+        this.initMobileOnly(el, pbGalleryConfig);
         break;
       case 'fts':
         this.instance = new Swiper(el, ftsConfig(el));

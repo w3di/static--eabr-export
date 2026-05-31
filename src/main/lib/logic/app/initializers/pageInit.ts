@@ -9,6 +9,8 @@ import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
 import { ValuesAccordion } from '../../ui/valuesAccordion';
 import { FaqAccordion } from '../../ui/faqAccordion';
+import { PhotoCarousel } from '../../ui/photoCarousel';
+import { PosterVideo } from '../../ui/posterVideo';
 
 class PageInit {
   constructor() {
@@ -23,6 +25,20 @@ class PageInit {
     this.searchFilters();
     this.paginationState();
     this.faqAccordions();
+    this.photoCarousels();
+    this.posterVideos();
+  }
+
+  private photoCarousels() {
+    document
+      .querySelectorAll<HTMLElement>('[data-pc]')
+      .forEach((el) => new PhotoCarousel(el));
+  }
+
+  private posterVideos() {
+    document
+      .querySelectorAll<HTMLElement>('[data-pv]')
+      .forEach((el) => new PosterVideo(el));
   }
 
   private searchFilters() {
@@ -39,7 +55,7 @@ class PageInit {
 
   private faqAccordions() {
     document
-      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item')
+      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item')
       .forEach((el) => new FaqAccordion(el));
   }
 

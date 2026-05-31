@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Расширение и модернизация Международного аэропорта Алматы | ЕАБР</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const stats = [
+        { num: '1,8', unit: 'млн чел.', label: 'население Алматинской агломерации' },
+        { num: '66', unit: 'км', label: 'протяжённость трассы' },
+        { num: '400', unit: 'млн.', label: 'ежегодный прирост ВВП в&nbsp;экономике Казахстана' },
+        { num: '2000', unit: '', label: 'новых рабочих мест' }
+    ];
+
+    const sdgIcons = [
+        { num: 11, image: '/assets/images/sdg/sdg-8.webp' },
+        { num: 9, image: '/assets/images/sdg/sdg-9.webp' }
+    ];
+
+    const tasks = [
+        { num: '1', title: 'Задача&nbsp;1.', body: 'Развитие всех видов физической инфраструктуры' },
+        { num: '1.2', title: 'Задача&nbsp;1.2.', body: 'Развитие транспортной инфраструктуры, обеспечивающей связанность стран и&nbsp;регионов' }
+    ];
+
+    const cooperationCards = [
+        'Развитие трансграничной инфраструктуры',
+        'Укрепление производственных связей между странами-участницами Банка'
+    ];
+
+    const syndicateLogos = [
+        { kind: 'ebrd', logo: '/assets/images/awards/ebrd-logo.webp', alt: 'European Bank for Reconstruction and Development', amount: '350', unit: 'млн&nbsp;$' },
+        { kind: 'isdb', logo: '/assets/images/awards/isdb-logo.webp', alt: 'Islamic Development Bank',                         amount: '100', unit: 'млн&nbsp;$' }
+    ];
+
+    const gallery = [
+        { image: '/assets/images/projects/bakad-g-4.webp', area: 'main' },
+        { image: '/assets/images/projects/bakad-g-1.webp', area: 'tr' },
+        { image: '/assets/images/projects/bakad-g-3.webp', area: 'mr' },
+        { image: '/assets/images/projects/bakad-g-5.webp', area: 'bl' },
+        { image: '/assets/images/projects/bakad-g-2.webp', area: 'bm' },
+        { image: '/assets/images/projects/bakad-g-6.webp', area: 'br' }
+    ];
+
+    const carouselSlides = [
+        '/assets/images/projects/bakad-pc-1.webp',
+        '/assets/images/projects/bakad-pc-2.webp',
+        '/assets/images/projects/bakad-pc-3.webp',
+        '/assets/images/projects/bakad-pc-4.webp',
+        '/assets/images/projects/bakad-pc-5.webp'
+    ];
+
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <main class="pb">
+            <section class="pb-hero" style="background-image: url('/assets/images/projects/bakad-airport.webp');">
+                <div class="container pb-hero__container">
+                    <div class="pb-info">
+                        <div class="pb-info__top">
+                            <div class="pb-info__country">
+                                <span class="pb-info__flag" style="background-image: url('/assets/images/flags/flag-kz.svg');"></span>
+                                <span class="pb-info__country-name">Казахстан</span>
+                            </div>
+                            <button type="button" class="pb-info__print">
+                                <svg class="pb-info__print-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M4.61493 9.88946V1.7998H19.3873V9.88946M6.02127 17.9791H17.9799M1.80078 10.2412H22.2008V19.386C22.2008 20.9401 20.941 22.1998 19.387 22.1998H4.61457C3.06056 22.1998 1.80078 20.9401 1.80078 19.386V10.2412Z" stroke="#1BCE1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="pb-info__print-text">Распечатать</span>
+                            </button>
+                        </div>
+
+                        <h1 class="pb-info__title">Расширение и&nbsp;модернизация Международного аэропорта Алматы</h1>
+
+                        <div class="pb-info__meta">
+                            <div class="pb-info__meta-col">
+                                <div class="pb-info__meta-label">Отрасль:</div>
+                                <div class="pb-info__meta-value">Транспортная инфраструктура</div>
+                            </div>
+                        </div>
+
+                        <div class="pb-info__row">
+                            <div class="pb-info__meta-col">
+                                <div class="pb-info__meta-label">Тип финансирования:</div>
+                                <div class="pb-info__meta-value">Проектное финансирование</div>
+                            </div>
+                            <div class="pb-info__meta-col pb-info__meta-col--year">
+                                <div class="pb-info__meta-label">Год:</div>
+                                <div class="pb-info__meta-value">2024</div>
+                            </div>
+                            <img class="pb-info__esg pb-info__esg--mob" src="/assets/images/awards/esg-icon.webp" alt="ESG" loading="lazy">
+                        </div>
+
+                        <div class="pb-info__nums">
+                            <div class="pb-num">
+                                <div class="pb-num__big"><span class="pb-num__pre">~$</span>750<span class="pb-num__unit">млн</span></div>
+                                <div class="pb-num__lbl">Сумма проекта</div>
+                            </div>
+                            <div class="pb-num">
+                                <div class="pb-num__big"><span class="pb-num__pre">$</span>135<span class="pb-num__unit">млн</span></div>
+                                <div class="pb-num__lbl">Участие ЕАБР</div>
+                            </div>
+                            <img class="pb-info__esg pb-info__esg--desk" src="/assets/images/awards/esg-icon.webp" alt="ESG" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="pb-awards">
+                        <img class="pb-awards__item" src="/assets/images/awards/ef-impact-2021.webp" alt="Environmental Finance IMPACT Awards 2021 — Winner: Impact project / investment of the year — energy" loading="lazy">
+                        <img class="pb-awards__item" src="/assets/images/awards/pfi-2020.webp" alt="PFI Awards 2020" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-overview">
+                <div class="container">
+                    <nav class="pb-crumbs">Главная&nbsp;/&nbsp;Проекты&nbsp;/&nbsp;<span>Расширение и&nbsp;модернизация Международного аэропорта Алматы</span></nav>
+
+                    <h2 class="pb-h1 pb-overview__title title title--underline">
+                        <span class="title__inner">Общая информация о&nbsp;проекте</span>
+                    </h2>
+
+                    <div class="pb-overview__grid">
+                        <div class="pb-overview__left">
+                            <div class="pb-overview__photo" style="background-image: url('/assets/images/projects/bakad-map.webp');"></div>
+                            <p class="pb-overview__caption">Проектом предусмотрено создание ключевого участка транзитного транспортного коридора Европа&nbsp;— Западный Китай, имеющего важнейшее значение для&nbsp;развития региональных транспортных потоков государств Евразийского пространства. Проект включает строительство: 20&nbsp;мостов, 8&nbsp;развязок, 22&nbsp;путепроводов</p>
+                        </div>
+                        <div class="pb-overview__text">
+                            <p>Большая Алматинская кольцевая автодорога (БАКАД)&nbsp;— крупнейший инфраструктурный проект в&nbsp;Казахстане за&nbsp;периметром нефтегазового сектора. Это первый в&nbsp;Казахстане и&nbsp;крупнейший в&nbsp;Центральной Азии проект строительства автомобильной дороги с&nbsp;применением механизмов государственно-частного партнёрства (ГЧП).</p>
+                            <p>Реализуется в&nbsp;формате концессии сроком на&nbsp;20&nbsp;лет, частный партнёр&nbsp;— турецко-корейский консорциум в&nbsp;составе: Alsim Alarko Sanayi Tesisleri ve&nbsp;Ticaret A.Ş., Makyol Insaat Sanayi Turizm ve&nbsp;Ticaret A.Ş., Korea Expressway Corporation, SK&nbsp;Engineering &amp; Construction Co.&nbsp;Ltd.</p>
+                            <p>Финансирование частному партнёру предоставлено синдикатом многосторонних банков развития: Европейский банк реконструкции и&nbsp;развития (организатор, A-loan), Bank of&nbsp;China, PGGM (B-loans), Исламский банк развития, ЕАБР</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-goals">
+                <div class="container">
+                    <h2 class="pb-h1 title title--underline">
+                        <span class="title__inner">Цели и&nbsp;задачи проекта</span>
+                    </h2>
+                    <p class="pb-goals__sub">Вклад в&nbsp;задачи Страновой стратегии ЕАБР по&nbsp;Республике Казахстан на&nbsp;2022–2026&nbsp;гг.</p>
+                    <div class="pb-goals__row">
+                        <% tasks.forEach(function(t, i) { %>
+                        <div class="pb-task pb-task--<%= i === 0 ? 'sm' : 'lg' %>">
+                            <div class="pb-task__title"><%= t.title %></div>
+                            <div class="pb-task__body"><%= t.body %></div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-impact">
+                <div class="container">
+                    <h2 class="pb-h2 title title--underline">
+                        <span class="title__inner">Вклад в&nbsp;развитие</span>
+                    </h2>
+                    <p class="pb-impact__sub">Улучшение транспортной доступности для</p>
+                    <div class="pb-impact__grid">
+                        <% stats.forEach(function(s) { %>
+                        <div class="pb-stat">
+                            <div class="pb-stat__num"><%= s.num %><% if (s.unit) { %><span class="pb-stat__unit"><%= s.unit %></span><% } %></div>
+                            <div class="pb-stat__lbl"><%= s.label %></div>
+                        </div>
+                        <% }); %>
+                    </div>
+                    <div class="pb-sdg-row">
+                        <h2 class="pb-h2 pb-sdg-row__title">Цели в&nbsp;области устойчивого развития:</h2>
+                        <div class="pb-sdg-row__icons">
+                            <% sdgIcons.forEach(function(g) { %>
+                            <span class="pb-sdg-icon" style="background-image: url('<%= g.image %>');"></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-coop">
+                <div class="container">
+                    <div class="pb-coop__cols">
+                        <div class="pb-coop__col">
+                            <h2 class="pb-h2 pb-coop__title pb-coop__title--desk title title--underline">
+                                <span class="title__inner">Межстрановая кооперация</span>
+                            </h2>
+                            <div class="pb-coop__title pb-coop__title--mob">
+                                <h2 class="pb-h2 title title--underline"><span class="title__inner">Межстрановая</span></h2>
+                                <h2 class="pb-h2 title title--underline"><span class="title__inner">кооперация</span></h2>
+                            </div>
+                            <div class="pb-coop__cards">
+                                <% cooperationCards.forEach(function(c) { %>
+                                <div class="pb-coop__card"><%= c %></div>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <div class="pb-coop__col">
+                            <h2 class="pb-h2 pb-coop__title pb-coop__title--desk title title--underline">
+                                <span class="title__inner">Мобилизация инвестиций</span>
+                            </h2>
+                            <div class="pb-coop__title pb-coop__title--mob">
+                                <h2 class="pb-h2 title title--underline"><span class="title__inner">Мобилизация</span></h2>
+                                <h2 class="pb-h2 title title--underline"><span class="title__inner">инвестиций</span></h2>
+                            </div>
+                            <p class="pb-coop__sub">Участие синдиката МБР:</p>
+                            <div class="pb-coop__logos">
+                                <% syndicateLogos.forEach(function(l) { %>
+                                <div class="pb-logo pb-logo--<%= l.kind %>">
+                                    <img class="pb-logo__img" src="<%= l.logo %>" alt="<%= l.alt %>" loading="lazy">
+                                    <div class="pb-logo__num"><%= l.amount %><span class="pb-logo__unit"><%= l.unit %></span></div>
+                                </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-gallery">
+                <div class="container">
+                    <h2 class="pb-h1 title title--underline">
+                        <span class="title__inner">Фотоматериалы</span>
+                    </h2>
+                    <div class="pb-gallery__swiper swiper" data-slider="pb-gallery">
+                        <div class="pb-gallery__grid swiper-wrapper">
+                            <% gallery.forEach(function(g) { %>
+                            <div class="pb-gallery__cell pb-gallery__cell--<%= g.area %> swiper-slide">
+                                <span class="pb-gallery__img" style="background-image: url('<%= g.image %>');"></span>
+                                <img class="pb-gallery__mark" src="/assets/images/projects/bakad-watermark.webp" alt="" loading="lazy">
+                            </div>
+                            <% }); %>
+                        </div>
+                        <div class="pb-gallery__pagination" data-slider-pagination></div>
+                    </div>
+                    <p class="pb-copyright pb-gallery__copyright">Копирайт фото такое-то взято оттуда</p>
+                </div>
+            </section>
+
+            <section class="pb-video">
+                <div class="container">
+                    <h2 class="pb-h1 title title--underline">
+                        <span class="title__inner">Видеоматериалы</span>
+                    </h2>
+                    <div class="pb-video__frame" data-pv>
+                        <video class="pb-video__el" data-pv-el poster="/assets/video/bakad-video-poster.webp" preload="metadata" playsinline>
+                            <source src="/assets/video/bakad-video.mp4" type="video/mp4">
+                        </video>
+                        <button type="button" class="pb-video__btn pb-video__btn--play" data-pv-play aria-label="Воспроизвести">
+                            <svg viewBox="0 0 91 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.31 7.56224C2.46754 6.23772 2.93189 4.96822 3.66615 3.85466C4.4004 2.74109 5.38431 1.81417 6.53965 1.14758C7.695 0.480994 8.98991 0.0931199 10.3215 0.014797C11.653 -0.0635258 12.9845 0.169862 14.21 0.696405C20.405 3.34474 34.2883 9.6389 51.905 19.8064C69.5275 29.9797 81.9233 38.8639 87.3075 42.8947C91.9042 46.3422 91.9158 53.1789 87.3133 56.6381C81.9817 60.6456 69.7375 69.4131 51.905 79.7147C34.055 90.0164 20.335 96.2347 14.1983 98.8481C8.91333 101.106 2.99834 97.6814 2.31 91.9822C1.505 85.3206 0 70.1947 0 49.7664C0 29.3497 1.49917 14.2297 2.31 7.56224Z" fill="white"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="pb-video__btn pb-video__btn--pause" data-pv-pause aria-label="Пауза">
+                            <svg viewBox="0 0 91 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="10" y="0" width="24" height="100" rx="6" fill="white"/>
+                                <rect x="57" y="0" width="24" height="100" rx="6" fill="white"/>
+                            </svg>
+                        </button>
+                        <img class="pb-video__mark" src="/assets/images/projects/bakad-watermark.webp" alt="" loading="lazy">
+                    </div>
+                    <p class="pb-copyright">Копирайт фото такое-то взято оттуда</p>
+                </div>
+            </section>
+
+            <section class="pb-news">
+                <%= htmlWebpackPlugin.options.widgets.newsCarousel %>
+            </section>
+
+            <section class="pb-photo-carousel" data-pc>
+                <div class="pb-pc__stage" data-pc-stage style="background-image: url('<%= carouselSlides[0] %>');"></div>
+                <button type="button" class="pb-pc__arrow pb-pc__arrow--prev" data-pc-prev aria-label="Назад">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="pb-pc__arrow pb-pc__arrow--next" data-pc-next aria-label="Вперёд">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="pb-pc__thumbs" data-pc-thumbs>
+                    <% carouselSlides.forEach(function(src, i) { %>
+                    <button type="button" class="pb-pc__thumb<%= i === 0 ? ' is-active' : '' %>" data-pc-thumb data-pc-src="<%= src %>" style="background-image: url('<%= src %>');" aria-label="Фото <%= i + 1 %>"></button>
+                    <% }); %>
+                </div>
+                <div class="pb-pc__footer">
+                    <div class="container">
+                        <p class="pb-copyright">Копирайт фото такое-то взято оттуда</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>
