@@ -1,20 +1,35 @@
 import { IslamicForm } from '../../../../pages/islamic-finance/logic/islamicForm';
+import { FtsForm } from '../../../../pages/fts/logic/ftsForm';
 import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
 import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
 import { ValuesAccordion } from '../../ui/valuesAccordion';
+import { FaqAccordion } from '../../ui/faqAccordion';
 
 class PageInit {
   constructor() {
     this.islamicForm();
+    this.ftsForm();
     this.countryAccordions();
     this.navDrawers();
     this.stepsLineFill();
     this.cityMapPins();
     this.valuesAccordions();
     this.filterDropdowns();
+    this.faqAccordions();
+  }
+
+  private faqAccordions() {
+    document
+      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item')
+      .forEach((el) => new FaqAccordion(el));
+  }
+
+  private ftsForm() {
+    const el = document.querySelector<HTMLFormElement>('[data-fts-form]');
+    if (el) new FtsForm(el);
   }
 
   private filterDropdowns() {

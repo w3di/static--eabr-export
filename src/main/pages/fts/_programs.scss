@@ -5,6 +5,7 @@
 }
 
 .fts-program {
+	position: relative;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -15,9 +16,15 @@
 	border-radius: r(24);
 	text-decoration: none;
 	color: inherit;
-	transition: 0.2s ease;
+	overflow: hidden;
+	transition:
+		transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+		border-left-color 0.3s ease,
+		background-color 0.3s ease;
 
 	&__head {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -29,6 +36,7 @@
 		line-height: r(41);
 		color: #1BCE1B;
 		font-weight: 400;
+		transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	&__arrow {
@@ -36,9 +44,13 @@
 		height: r(32);
 		flex-shrink: 0;
 		fill: #D5D5D5;
+		transition:
+			fill 0.3s ease,
+			transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	&__text {
+		position: relative;
 		font-size: r(24);
 		line-height: r(29);
 		color: var(--dark);
@@ -46,7 +58,19 @@
 	}
 
 	&:hover {
+		transform: translateY(r(-4));
+		border-left-color: #1BCE1B;
 		background: #ECEFF1;
+		box-shadow: 0 r(20) r(40) rgba(27, 206, 27, 0.15);
+	}
+
+	&:hover &__title {
+		transform: translateX(r(4));
+	}
+
+	&:hover &__arrow {
+		fill: #1BCE1B;
+		transform: translate(r(4), r(-4)) rotate(45deg);
 	}
 }
 

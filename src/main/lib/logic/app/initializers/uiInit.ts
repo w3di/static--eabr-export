@@ -4,7 +4,6 @@ import { AsideObserver } from '../../ui/asideObserver';
 import { ButtonReturn } from '../../ui/buttonReturn';
 import { Title } from '../../ui/title';
 import { SpotlightCard } from '../../ui/spotlightCard';
-import { FtsCounter } from '../../ui/ftsCounter';
 
 class UiInit {
   constructor() {
@@ -15,18 +14,6 @@ class UiInit {
     this.title();
     this.spotlightCards();
     this.switcher();
-    this.ftsCounter();
-  }
-
-  private ftsCounter() {
-    document
-      .querySelectorAll<HTMLElement>('[data-fts-counter]')
-      .forEach((counter) => {
-        const textarea = counter
-          .closest('.fts-form__field')
-          ?.querySelector<HTMLTextAreaElement>('textarea');
-        if (textarea) new FtsCounter(textarea, counter);
-      });
   }
 
   private header() {

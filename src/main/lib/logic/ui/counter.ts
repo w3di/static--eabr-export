@@ -1,10 +1,12 @@
 interface CounterOptions {
   duration?: number;
+  from?: number;
 }
 
 class Counter {
   private readonly el: HTMLElement;
   private readonly target: number;
+  private readonly from: number;
   private readonly decimals: number;
   private readonly duration: number;
   private raf: number | null = null;
@@ -16,6 +18,17 @@ class Counter {
     const raw = el.textContent!.trim().replace(',', '.');
     this.target = parseFloat(raw);
     this.decimals = raw.includes('.') ? raw.split('.')[1].length : 0;
+
+    const fromAttr = el.dataset.counterFrom;
+    if (typeof options.from === 'number') {
+      this.from = options.from;
+    } else if (fromAttr === 'now') {
+      this.from = new Date().getFullYear();
+    } else if (fromAttr) {
+      this.from = parseFloat(fromAttr);
+    } else {
+      this.from = 0;
+    }
 
     this.animate();
   }
@@ -30,12 +43,13 @@ class Counter {
   }
 
   private animate(): void {
-    this.el.textContent = this.format(0);
+    this.el.textContent = this.format(this.from);
     const start = performance.now();
 
     const tick = (now: number): void => {
       const t = Math.min((now - start) / this.duration, 1);
-      this.el.textContent = this.format(this.ease(t) * this.target);
+      const value = this.from + (this.target - this.from) * this.ease(t);
+      this.el.textContent = this.format(value);
       if (t < 1) this.raf = requestAnimationFrame(tick);
     };
 

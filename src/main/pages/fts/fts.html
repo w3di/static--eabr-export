@@ -31,9 +31,9 @@
     ];
 
     const briefStats = [
-        { value: '2008', label: 'Год создания' },
-        { value: '140',  label: 'Число реализованных проектов' },
-        { value: '$45<span class="fts-brief__sup">млн</span>', label: 'объем утвержденного финансирования по&nbsp;проектам на&nbsp;стадии реализации', note: '(*по&nbsp;состоянию на&nbsp;31.12.2025)' }
+        { num: '2008', label: 'Год создания', animate: true, from: 'now' },
+        { num: '140',  label: 'Число реализованных проектов', animate: true },
+        { prefix: '$', num: '45', unit: 'млн', label: 'объем утвержденного финансирования по&nbsp;проектам на&nbsp;стадии реализации', note: '(*по&nbsp;состоянию на&nbsp;31.12.2025)', animate: true }
     ];
 
     const programs = [
@@ -139,11 +139,11 @@
                                 <aside class="fts-hero__stats">
                                     <div class="fts-hero__stat">
                                         <p class="fts-hero__stat-label" data-i18n="fts.hero.stat0Label">На&nbsp;сегодняшний день под&nbsp;управлением Фонда находится около</p>
-                                        <p class="fts-hero__stat-num"><span data-i18n="fts.hero.stat0Value">$80</span><span class="fts-hero__stat-unit" data-i18n="fts.hero.stat0Unit">млн</span></p>
+                                        <p class="fts-hero__stat-num"><span class="fts-hero__stat-currency">$</span><span data-animate="counter">80</span><span class="fts-hero__stat-unit" data-i18n="fts.hero.stat0Unit">млн</span></p>
                                     </div>
                                     <div class="fts-hero__stat">
                                         <p class="fts-hero__stat-label" data-i18n="fts.hero.stat1Label">а&nbsp;портфель включает более</p>
-                                        <p class="fts-hero__stat-num" data-i18n="fts.hero.stat1Value">60</p>
+                                        <p class="fts-hero__stat-num"><span data-animate="counter">60</span></p>
                                         <p class="fts-hero__stat-sub" data-i18n="fts.hero.stat1Sub">Проектов технического содействия на&nbsp;стадии реализации</p>
                                     </div>
                                 </aside>
@@ -182,7 +182,11 @@
                                 <div class="fts-brief">
                                     <% briefStats.forEach(function(s, i) { %>
                                     <div class="fts-brief__item">
-                                        <div class="fts-brief__value" data-i18n="fts.briefStats.<%= i %>.value"><%- s.value %></div>
+                                        <div class="fts-brief__value">
+                                            <% if (s.prefix) { %><span class="fts-brief__pre"><%= s.prefix %></span><% } %>
+                                            <span<%= s.animate ? ' data-animate="counter"' : '' %><%= s.from ? ' data-counter-from="' + s.from + '"' : '' %>><%= s.num %></span>
+                                            <% if (s.unit) { %><span class="fts-brief__sup"><%= s.unit %></span><% } %>
+                                        </div>
                                         <div class="fts-brief__label" data-i18n="fts.briefStats.<%= i %>.label"><%- s.label %></div>
                                         <% if (s.note) { %>
                                         <div class="fts-brief__note" data-i18n="fts.briefStats.<%= i %>.note"><%- s.note %></div>
@@ -206,7 +210,7 @@
                                 </h2>
                                 <div class="fts-programs">
                                     <% programs.forEach(function(p, i) { %>
-                                    <a href="<%= p.href %>" class="fts-program">
+                                    <a href="<%= p.href %>" class="fts-program" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.25)">
                                         <div class="fts-program__head">
                                             <span class="fts-program__title" data-i18n="fts.programs.<%= i %>.title"><%- p.title %></span>
                                             <svg class="fts-program__arrow" aria-hidden="true">
@@ -250,10 +254,7 @@
                             </div>
 
                             <div class="mb-60 mbm-30">
-                                <h2 class="title title--small title--underline mb-30 mbm-20">
-                                    <span class="title__inner" data-i18n="fts.newsTitle">Новости</span>
-                                </h2>
-                                <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                                <%= htmlWebpackPlugin.options.widgets.newsCarousel %>
                             </div>
 
                             <div class="mb-60 mbm-30">
@@ -283,7 +284,7 @@
                                 <h2 class="title title--small title--underline mb-25 mbm-20">
                                     <span class="title__inner" data-i18n="fts.formTitle">Связаться с&nbsp;нами</span>
                                 </h2>
-                                <form class="fts-form" autocomplete="off" novalidate>
+                                <form class="fts-form" data-fts-form autocomplete="off" novalidate>
                                     <div class="fts-form__row">
                                         <div class="fts-form__field">
                                             <label class="fts-form__label" for="fts-name" data-i18n="fts.fields.name">Имя или название организации</label>
@@ -309,8 +310,8 @@
                                         <div class="fts-form__field">
                                             <span class="fts-form__label" data-i18n="fts.fields.file">Прикрепить файл</span>
                                             <label class="fts-form__file">
-                                                <input type="file" hidden>
-                                                <span class="fts-form__file-text" data-i18n="fts.fields.fileBtn">Выбрать файл</span>
+                                                <input type="file" hidden data-fts-file>
+                                                <span class="fts-form__file-text" data-fts-file-text data-i18n="fts.fields.fileBtn">Выбрать файл</span>
                                                 <span class="fts-form__file-plus" aria-hidden="true">
                                                     <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8.5 1V16M16 8.5H1" stroke="#111111" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -319,6 +320,7 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="fts-form__success" data-i18n="fts.success">Сообщение успешно отправлено. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</div>
                                     <div class="fts-form__bottom">
                                         <label class="fts-form__consent">
                                             <input type="checkbox" checked>
@@ -329,6 +331,7 @@
                                             </span>
                                             <span data-i18n="fts.consent">Я&nbsp;соглашаюсь на&nbsp;сбор и&nbsp;обработку персональных данных</span>
                                         </label>
+                                        <span class="fts-form__consent-error" data-i18n="fts.consentError">* Подтвердите согласие</span>
                                         <button type="submit" class="fts-form__submit" data-i18n="fts.submit">Отправить</button>
                                     </div>
                                 </form>

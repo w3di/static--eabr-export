@@ -4,21 +4,10 @@
 	&__swiper {
 		overflow: hidden;
 		width: 100%;
-		min-height: r(651);
 	}
 
 	.swiper-wrapper {
-		align-items: flex-end;
-		min-height: r(651);
-	}
-}
-
-@media (max-width: 1260px) {
-	.fts-projects {
-		&__swiper,
-		.swiper-wrapper {
-			min-height: r(540);
-		}
+		align-items: center;
 	}
 }
 
@@ -90,6 +79,9 @@
 		justify-content: space-between;
 		gap: r(12);
 		margin-top: r(12);
+		max-height: r(200);
+		overflow: hidden;
+		transition: opacity 0.3s ease, max-height 0.4s ease, margin-top 0.4s ease;
 	}
 
 	&__amount {
@@ -158,16 +150,25 @@
 	}
 
 	&__year {
+		display: block;
 		padding-left: r(36);
 		font-size: r(16);
 		line-height: r(19);
 		color: rgba(17, 17, 17, 0.6);
+		max-height: r(40);
+		overflow: hidden;
+		transition: opacity 0.3s ease, max-height 0.3s ease;
 	}
 
 	&__awards {
 		display: inline-flex;
 		gap: r(16);
 		flex-shrink: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	&__arrow {
+		transition: opacity 0.3s ease;
 	}
 
 	&__award {
@@ -188,17 +189,27 @@
 		}
 	}
 
-	&:not(.swiper-slide-active):not(.swiper-slide-duplicate-active):not(.fts-project--full) {
-		.fts-project__amounts,
-		.fts-project__year,
+	&:not(.fts-project--full) {
+		.fts-project__amounts {
+			opacity: 0;
+			max-height: 0;
+			margin-top: 0;
+			pointer-events: none;
+		}
+
+		.fts-project__year {
+			opacity: 0;
+			max-height: 0;
+			pointer-events: none;
+		}
+
 		.fts-project__awards,
 		.fts-project__arrow {
-			display: none;
+			opacity: 0;
+			pointer-events: none;
 		}
 	}
 
-	&.swiper-slide-active,
-	&.swiper-slide-duplicate-active,
 	&--full {
 		cursor: default;
 

@@ -12,17 +12,28 @@
 		border: 1px solid #E5EEF2;
 		border-radius: r(20);
 		background: var(--white);
+		overflow: hidden;
+		transition: border-color 0.3s ease;
 
 		img {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%) scale(1);
 			max-width: r(196);
 			max-height: r(94);
 			width: auto;
 			height: auto;
 			object-fit: contain;
+			transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+
+		&:hover {
+			border-color: rgba(27, 206, 27, 0.4);
+
+			img {
+				transform: translate(-50%, -50%) scale(1.07);
+			}
 		}
 	}
 }

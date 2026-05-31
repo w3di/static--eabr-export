@@ -5,10 +5,15 @@
 .fts-h2 {
 	display: block;
 	font-size: r(28);
-	line-height: r(34);
+	line-height: r(40);
 	font-weight: 400;
 	color: var(--dark);
 	margin: 0;
+}
+
+.fts-main .title--underline,
+.fts-main .title--underline > .title__inner {
+	line-height: 1.4;
 }
 
 .fts-title {

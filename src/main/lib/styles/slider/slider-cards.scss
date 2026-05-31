@@ -1,7 +1,7 @@
 .slider-cards {
 	gap: r(50);
 	display: flex;
-	overflow: visible;
+	overflow: clip;
 	flex-direction: column;
 
 	@media (max-width: 1260px) {

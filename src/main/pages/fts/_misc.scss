@@ -5,36 +5,21 @@
 	gap: r(40);
 	margin-top: r(32);
 
-	&__nav {
-		display: flex;
-		gap: r(40);
+	&__pagination {
+		display: none;
+		gap: r(12);
+		justify-content: center;
 	}
 
-	&__btn {
-		width: r(58);
-		height: r(58);
+	&__dot {
+		width: r(12);
+		height: r(12);
 		border-radius: 50%;
-		background: transparent;
-		border: none;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+		background: #E7F2F6;
 		cursor: pointer;
-		transition: 0.2s ease;
+		transition: background 0.2s ease;
 
-		svg {
-			width: r(26);
-			height: r(26);
-		}
-
-		&:hover {
-			background: rgba(36, 214, 255, 0.1);
-		}
-
-		&:disabled {
-			opacity: 0.4;
-			cursor: not-allowed;
-		}
+		&--active { background: #24D6FF; }
 	}
 }
 
@@ -69,11 +54,8 @@
 		gap: r(16);
 		margin-top: r(24);
 
-		&__btn {
-			width: r(48);
-			height: r(48);
-			svg { width: r(22); height: r(22); }
-		}
+		&__nav { display: none; }
+		&__pagination { display: flex; }
 	}
 
 	.fts-pill {

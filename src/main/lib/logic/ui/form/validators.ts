@@ -1,6 +1,10 @@
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 class Validators {
+  static required(v: string): boolean {
+    return v.trim().length > 0;
+  }
+
   static email(v: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   }

@@ -59,13 +59,19 @@ class I18n {
       ['data-i18n-title', 'title'],
     ];
 
+    const decodeEntities = (s: string): string => {
+      const t = document.createElement('textarea');
+      t.innerHTML = s;
+      return t.value;
+    };
+
     ATTR_MAP.forEach(([dataAttr, htmlAttr]) => {
       document
         .querySelectorAll<HTMLElement>(`[${dataAttr}]`)
         .forEach((el) => {
           const key = el.getAttribute(dataAttr);
           if (!key) return;
-          el.setAttribute(htmlAttr, i18next.t(key));
+          el.setAttribute(htmlAttr, decodeEntities(i18next.t(key)));
         });
     });
 
