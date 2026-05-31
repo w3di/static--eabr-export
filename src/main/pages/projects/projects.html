@@ -10,6 +10,11 @@
         <%= htmlWebpackPlugin.options.widgets.header %>
 
         <main class="prj">
+            <section class="prj-banner">
+                <div class="prj-banner__bg" style="background-image: url('/assets/images/projects/prj-banner.webp');" aria-hidden="true"></div>
+                <span class="prj-banner__label">БАННЕР</span>
+            </section>
+
             <section class="prj-hero">
                 <div class="container">
                     <div class="prj-hero__crumb">Главная / Проекты</div>
@@ -42,19 +47,19 @@
                     <div class="prj-stats__row">
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val">$6.4</span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
+                                <span class="prj-stat__num-val">$<span data-animate="counter">6.4</span></span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
                             </div>
                             <div class="prj-stat__label">Составляет текущий инвестиционный портфель ЕАБР</div>
                         </div>
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val">326</span>&nbsp;<span class="prj-stat__num-unit">проектов</span>
+                                <span class="prj-stat__num-val" data-animate="counter">326</span>&nbsp;<span class="prj-stat__num-unit">проектов</span>
                             </div>
                             <div class="prj-stat__label">накопленный портфель во&nbsp;всех государствах-участниках Банка</div>
                         </div>
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val">$19.6</span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
+                                <span class="prj-stat__num-val">$<span data-animate="counter">19.6</span></span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
                             </div>
                             <div class="prj-stat__label">Общая сумма инвестиций Банка в&nbsp;экономики государств-участников</div>
                         </div>
@@ -63,7 +68,7 @@
             </section>
 
             <section class="prj-mega">
-                <a href="#" class="prj-mega__media" aria-label="Мегапроекты" style="background-image: url('/assets/images/projects/mega-project.png');">
+                <a href="#" class="prj-mega__media" aria-label="Мегапроекты" style="background-image: url('/assets/images/projects/mega-project.webp');">
                     <svg class="prj-mega__arrow" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                         <path d="M8 24L24 8M24 8H10M24 8V22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>

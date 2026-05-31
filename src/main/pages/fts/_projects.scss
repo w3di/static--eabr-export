@@ -20,6 +20,7 @@
 	overflow: hidden;
 	background: var(--white);
 	cursor: pointer;
+	transition: transform 0.35s ease, box-shadow 0.35s ease;
 
 	&__photo {
 		position: relative;
@@ -32,7 +33,36 @@
 		border-bottom: 0;
 		border-radius: r(24) r(24) 0 0;
 		box-sizing: border-box;
+		overflow: hidden;
 		transition: padding-top 0.4s ease;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: inherit;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: transform 0.5s ease;
+		}
+	}
+
+	&:not(&--full):hover {
+		transform: translateY(r(-4));
+		box-shadow: 0 r(12) r(28) rgba(36, 214, 255, 0.18);
+
+		.fts-project__photo::before {
+			transform: scale(1.06);
+		}
+
+		.fts-project__body {
+			background: #E4FAFF;
+		}
+
+		.fts-project__title {
+			color: #1BCE1B;
+		}
 	}
 
 	&__arrow {
@@ -68,6 +98,7 @@
 		color: #000;
 		font-weight: 400;
 		margin: 0;
+		transition: color 0.3s ease;
 		display: -webkit-box;
 		-webkit-line-clamp: 4;
 		-webkit-box-orient: vertical;
