@@ -175,7 +175,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: r(2);
 	flex-shrink: 0;
 }
 
@@ -186,7 +185,7 @@
 .pd-card__badge-l1,
 .pd-card__badge-l2 {
 	font-size: r(20);
-	line-height: r(24);
+	line-height: r(22);
 	color: #000;
 	text-align: center;
 }
@@ -197,6 +196,10 @@
 
 	&--lead {
 		padding: r(80) 0 r(20);
+	}
+
+	&--news .container:has(.slider-cards) > .title {
+		display: none;
 	}
 
 	&--tight {
@@ -235,17 +238,11 @@
 }
 
 .pd-sdg__icon {
+	display: block;
 	width: r(140);
 	height: r(140);
 	border-radius: r(10);
-	background: linear-gradient(135deg, #1BCE1B, #37EE50);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: r(56);
-	line-height: 1;
-	font-weight: 500;
-	color: #FFFFFF;
+	object-fit: cover;
 }
 
 .pd-related {
@@ -323,23 +320,8 @@
 }
 
 .pd-related__btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: r(32);
-	width: r(263);
-	height: r(53);
-	box-sizing: border-box;
-	padding: r(12) r(40);
-	background: #A0EDFF;
-	border-radius: r(32);
-	font-size: r(24);
-	line-height: r(29);
-	font-weight: 400;
-	color: #111;
 	text-decoration: none;
-
-	svg { width: r(20); height: r(20); }
+	color: #111;
 }
 
 @media (max-width: 1260px) {
@@ -513,7 +495,6 @@
 	.pd-sdg__icon {
 		width: r(108);
 		height: r(108);
-		font-size: r(48);
 	}
 
 	

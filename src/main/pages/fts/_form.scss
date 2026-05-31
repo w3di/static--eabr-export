@@ -25,6 +25,12 @@
 		color: #000;
 		font-weight: 400;
 		margin: 0;
+		transition: color 0.2s ease;
+	}
+
+	&__field:has(&__input:not(:placeholder-shown)) &__label,
+	&__field:has(&__textarea:not(:placeholder-shown)) &__label {
+		color: rgba(0, 0, 0, 0.4);
 	}
 
 	&__label-row {
@@ -46,7 +52,7 @@
 		font-family: var(--font-regular);
 		font-size: r(20);
 		line-height: r(24);
-		color: var(--dark);
+		color: #000;
 		padding: 0;
 		background: transparent;
 		border: none;
