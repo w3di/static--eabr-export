@@ -2,22 +2,22 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Программа I — Подготовка инвестиционных проектов | Евразийский банк развития</title>
+    <title data-i18n="ftsProgram1.pageTitle">Программа I — Подготовка инвестиционных проектов | Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
 <%
     const sideMenu = [
-        { label: 'Продукты',                       href: '#' },
-        { label: 'Проекты',                        href: htmlWebpackPlugin.options.routes.projects },
-        { label: 'Мегапроекты',                    href: '#' },
-        { label: 'Фонд технического содействия',   href: htmlWebpackPlugin.options.routes.fts, active: true },
-        { label: 'Фонд цифровых инициатив',        href: '#' },
-        { label: 'Международное сотрудничество',   href: '#' },
-        { label: 'Аналитика',                      href: '#' },
-        { label: 'ESG',                            href: '#' },
-        { label: 'ГЧП',                            href: '#' },
-        { label: 'Исламские финансы',              href: htmlWebpackPlugin.options.routes.islamicFinance }
+        { label: 'Продукты',                       href: '#',                                       i18n: 'fts.nav.products' },
+        { label: 'Проекты',                        href: htmlWebpackPlugin.options.routes.projects, i18n: 'fts.nav.projects' },
+        { label: 'Мегапроекты',                    href: '#',                                       i18n: 'fts.nav.mega' },
+        { label: 'Фонд технического содействия',   href: htmlWebpackPlugin.options.routes.fts, active: true, i18n: 'fts.nav.fts' },
+        { label: 'Фонд цифровых инициатив',        href: '#',                                       i18n: 'fts.nav.fdi' },
+        { label: 'Международное сотрудничество',   href: '#',                                       i18n: 'fts.nav.intl' },
+        { label: 'Аналитика',                      href: '#',                                       i18n: 'fts.nav.analytics' },
+        { label: 'ESG',                            href: '#',                                       i18n: 'fts.nav.esg' },
+        { label: 'ГЧП',                            href: '#',                                       i18n: 'fts.nav.ppp' },
+        { label: 'Исламские финансы',              href: htmlWebpackPlugin.options.routes.islamicFinance, i18n: 'fts.nav.islamic' }
     ];
 
     const cofinanceList = [
@@ -35,23 +35,23 @@
 
         <div class="nav-drawer">
             <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
-            <label for="nav-drawer-toggle" class="nav-drawer__pull" aria-label="Открыть разделы">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
                 <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                     <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
                     <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </label>
             <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
-            <div class="nav-drawer__panel" role="dialog" aria-label="Разделы">
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
                 <label for="nav-drawer-toggle" class="nav-drawer__close">
-                    <span>ЗАКРЫТЬ</span>
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
                     <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                     </svg>
                 </label>
                 <div class="nav-drawer__items">
                     <% sideMenu.forEach(function(item) { %>
-                    <a href="<%= item.href %>" class="nav-drawer__item<%= item.active ? ' nav-drawer__item--active' : '' %>"><%= item.label %></a>
+                    <a href="<%= item.href %>" class="nav-drawer__item<%= item.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= item.i18n %>"><%= item.label %></a>
                     <% }); %>
                 </div>
             </div>
@@ -64,42 +64,42 @@
                         <ul class="prg-side__list">
                             <% sideMenu.forEach(function(item) { %>
                             <li class="prg-side__item<%= item.active ? ' prg-side__item--active' : '' %>">
-                                <a href="<%= item.href %>" class="prg-side__link"><%= item.label %></a>
+                                <a href="<%= item.href %>" class="prg-side__link" data-i18n="<%= item.i18n %>"><%= item.label %></a>
                             </li>
                             <% }); %>
                         </ul>
                     </aside>
 
                     <article class="prg-main">
-                        <nav class="prg-crumbs">Главная / Наша&nbsp;деятельность / Фонд&nbsp;технического&nbsp;содействия / <span>Программа&nbsp;I</span></nav>
+                        <nav class="prg-crumbs"><span data-i18n="fts.breadcrumbHome">Главная</span> / <span data-i18n="fts.breadcrumbActivity">Наша&nbsp;деятельность</span> / <span data-i18n="fts.breadcrumbCurrent">Фонд&nbsp;технического&nbsp;содействия</span> / <span data-i18n="ftsProgram1.kicker">Программа&nbsp;I</span></nav>
 
                         <div class="prg-head">
-                            <div class="prg-head__kicker">Программа&nbsp;I</div>
+                            <div class="prg-head__kicker" data-i18n="ftsProgram1.kicker">Программа&nbsp;I</div>
                             <h1 class="title title--small title--underline prg-head__title">
-                                <span class="title__inner">Подготовка инвестиционных проектов</span>
+                                <span class="title__inner" data-i18n="ftsProgram1.title">Подготовка инвестиционных проектов</span>
                             </h1>
                         </div>
 
-                        <p class="prg-lead">Направлена на&nbsp;поддержку подготовки инвестиционных проектов, планируемых к&nbsp;реализации при&nbsp;участии ЕАБР.</p>
+                        <p class="prg-lead" data-i18n="ftsProgram1.lead">Направлена на&nbsp;поддержку подготовки инвестиционных проектов, планируемых к&nbsp;реализации при&nbsp;участии ЕАБР.</p>
 
-                        <h2 class="prg-subtitle">Основная задача программы:</h2>
+                        <h2 class="prg-subtitle" data-i18n="ftsProgram1.taskTitle">Основная задача программы:</h2>
 
-                        <blockquote class="prg-quote">
+                        <blockquote class="prg-quote" data-i18n="ftsProgram1.quote">
                             Повысить готовность инвестиционных сделок к&nbsp;финансированию Банком и&nbsp;его&nbsp;партнерами.
                         </blockquote>
 
-                        <h2 class="prg-subtitle">В&nbsp;рамках программы ФТС может софинансировать:</h2>
+                        <h2 class="prg-subtitle" data-i18n="ftsProgram1.cofinanceTitle">В&nbsp;рамках программы ФТС может софинансировать:</h2>
 
                         <ul class="prg-list">
-                            <% cofinanceList.forEach(function(item) { %>
+                            <% cofinanceList.forEach(function(item, i) { %>
                             <li class="prg-list__item">
                                 <span class="prg-list__dash" aria-hidden="true"></span>
-                                <span class="prg-list__text"><%= item %></span>
+                                <span class="prg-list__text" data-i18n="ftsProgram1.cofinanceList.<%= i %>"><%- item %></span>
                             </li>
                             <% }); %>
                         </ul>
 
-                        <div class="prg-note">
+                        <div class="prg-note" data-i18n="ftsProgram1.note">
                             Программа ориентирована на&nbsp;проекты с&nbsp;высоким социально-экономическим и&nbsp;интеграционным эффектом для&nbsp;региона. «Взращивание» инвестиционных проектов позволяет повысить качество их&nbsp;подготовки, ускорить принятие инвестиционных решений и&nbsp;создать условия для&nbsp;дальнейшего финансирования, включая необходимую мобилизацию средств.
                         </div>
                     </article>

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Ключевые продукты ЕАБР | Евразийский банк развития</title>
+    <title data-i18n="keyProducts.pageTitle">Ключевые продукты ЕАБР | Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -71,28 +71,28 @@
                 <div class="kp-hero__bg mob-visible" style="background-image: url('/assets/images/projects/prj-banner-mobile.webp');" aria-hidden="true"></div>
                 <div class="container">
                     <div class="kp-hero__inner">
-                        <h1 class="kp-hero__title">Широкий спектр финансовых инструментов</h1>
-                        <p class="kp-hero__lead">У&nbsp;нас большой перечень продуктов&nbsp;— можем по-разному миксовать и&nbsp;использовать вообще все что есть в&nbsp;финансовом мире. Мы&nbsp;можем и&nbsp;классические и&nbsp;в&nbsp;связке синдикатов и&nbsp;более сложные структуры</p>
+                        <h1 class="kp-hero__title" data-i18n="keyProducts.heroTitle">Широкий спектр финансовых инструментов</h1>
+                        <p class="kp-hero__lead" data-i18n="keyProducts.heroLead">У&nbsp;нас большой перечень продуктов&nbsp;— можем по-разному миксовать и&nbsp;использовать вообще все что есть в&nbsp;финансовом мире. Мы&nbsp;можем и&nbsp;классические и&nbsp;в&nbsp;связке синдикатов и&nbsp;более сложные структуры</p>
                     </div>
                 </div>
             </section>
 
             <section class="kp-main">
                 <div class="container">
-                    <nav class="kp-crumbs">Главная / <span>Ключевые продукты ЕАБР</span></nav>
+                    <nav class="kp-crumbs"><span data-i18n="common.home">Главная</span> / <span data-i18n="keyProducts.breadcrumbCurrent">Ключевые продукты ЕАБР</span></nav>
 
                     <h2 class="kp-title title title--underline">
                         <span class="title__inner">
-                            <span class="mob-hidden">Ключевые продукты ЕАБР</span>
-                            <span class="mob-visible">Ключевые продукты</span>
+                            <span class="mob-hidden" data-i18n="keyProducts.titleFull">Ключевые продукты ЕАБР</span>
+                            <span class="mob-visible" data-i18n="keyProducts.titleShort">Ключевые продукты</span>
                         </span>
                     </h2>
 
                     <div class="kp-list">
-                        <% products.forEach(function(p) { %>
+                        <% products.forEach(function(p, i) { %>
                         <details class="kp-item<%= p.expanded ? ' is-open' : '' %>"<%= p.expanded ? ' open' : '' %>>
                             <summary class="kp-item__summary">
-                                <span class="kp-item__title"><%= p.title %></span>
+                                <span class="kp-item__title" data-i18n="keyProducts.products.<%= i %>.title"><%- p.title %></span>
                                 <span class="kp-item__toggle" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" fill="none">
                                         <path d="M6 6L18 18M18 6L6 18" stroke="#1BCE1B" stroke-width="2" stroke-linecap="round"/>
@@ -101,16 +101,16 @@
                             </summary>
                             <div class="kp-item__wrap">
                                 <div class="kp-item__body">
-                                    <p class="kp-item__text"><%= p.body %></p>
+                                    <p class="kp-item__text" data-i18n="keyProducts.products.<%= i %>.body"><%- p.body %></p>
                                     <a href="#" class="button-arrow kp-item__more">
-                                        <span class="button-arrow__text">Подробнее</span>
+                                        <span class="button-arrow__text" data-i18n="common.more">Подробнее</span>
                                         <svg class="button-arrow__icon" aria-hidden="true">
                                             <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
                                         </svg>
                                     </a>
                                     <% if (p.examples && p.examples.length) { %>
                                     <div class="kp-examples">
-                                        <h3 class="kp-examples__title">Примеры проектов под&nbsp;тип финансирования</h3>
+                                        <h3 class="kp-examples__title" data-i18n="keyProducts.examplesTitle">Примеры проектов под&nbsp;тип финансирования</h3>
                                         <%= htmlWebpackPlugin.options.widgets.projectsBlock %>
                                     </div>
                                     <% } %>
@@ -120,7 +120,7 @@
                         <% }); %>
                     </div>
 
-                    <div class="kp-disclaimer">Перечень инструментов не&nbsp;является исчерпывающим и&nbsp;может быть расширен в&nbsp;зависимости от&nbsp;специфики и&nbsp;потребностей проекта</div>
+                    <div class="kp-disclaimer" data-i18n="keyProducts.disclaimer">Перечень инструментов не&nbsp;является исчерпывающим и&nbsp;может быть расширен в&nbsp;зависимости от&nbsp;специфики и&nbsp;потребностей проекта</div>
 
                     <a href="<%= htmlWebpackPlugin.options.routes.bankPrograms %>" class="kp-extra">
                         <span class="kp-extra__icon" aria-hidden="true">
@@ -129,8 +129,8 @@
                             </svg>
                         </span>
                         <div class="kp-extra__text">
-                            <span class="kp-extra__title">Программы для&nbsp;финансовых институтов</span>
-                            <span class="kp-extra__sub">В&nbsp;разделе «Продукты банка»</span>
+                            <span class="kp-extra__title" data-i18n="keyProducts.extraTitle">Программы для&nbsp;финансовых институтов</span>
+                            <span class="kp-extra__sub" data-i18n="keyProducts.extraSub">В&nbsp;разделе «Продукты банка»</span>
                         </div>
                         <span class="kp-extra__arrow" aria-hidden="true">
                             <svg class="kp-extra__arrow-icon">
@@ -144,22 +144,22 @@
             <section class="kp-funds">
                 <div class="container">
                     <h2 class="kp-funds__heading title title--underline">
-                        <span class="title__inner">Фонды</span>
+                        <span class="title__inner" data-i18n="keyProducts.fundsHeading">Фонды</span>
                     </h2>
 
                     <% funds.forEach(function(f, i) { %>
                     <div class="kp-fund<%= i % 2 === 1 ? ' kp-fund--reverse' : '' %>">
                         <a href="<%= f.href %>" class="kp-fund__photo" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 57.86%, rgba(0,0,0,0.24) 100%), url('<%= f.image %>');">
                             <span class="kp-fund__more">
-                                <span>Подробнее</span>
+                                <span data-i18n="common.more">Подробнее</span>
                                 <svg class="kp-fund__more-icon" aria-hidden="true">
                                     <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
                                 </svg>
                             </span>
                         </a>
                         <div class="kp-fund__text">
-                            <h3 class="kp-fund__title"><%= f.title %></h3>
-                            <p class="kp-fund__body"><%= f.body %></p>
+                            <h3 class="kp-fund__title" data-i18n="keyProducts.funds.<%= i %>.title"><%- f.title %></h3>
+                            <p class="kp-fund__body" data-i18n="keyProducts.funds.<%= i %>.body"><%- f.body %></p>
                         </div>
                     </div>
                     <% }); %>

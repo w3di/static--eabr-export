@@ -185,7 +185,7 @@
                                         <div class="fts-brief__value">
                                             <% if (s.prefix) { %><span class="fts-brief__pre"><%= s.prefix %></span><% } %>
                                             <span<%= s.animate ? ' data-animate="counter"' : '' %><%= s.from ? ' data-counter-from="' + s.from + '"' : '' %>><%= s.num %></span>
-                                            <% if (s.unit) { %><span class="fts-brief__sup"><%= s.unit %></span><% } %>
+                                            <% if (s.unit) { %><span class="fts-brief__sup" data-i18n="fts.briefStats.<%= i %>.unit"><%= s.unit %></span><% } %>
                                         </div>
                                         <div class="fts-brief__label" data-i18n="fts.briefStats.<%= i %>.label"><%- s.label %></div>
                                         <% if (s.note) { %>

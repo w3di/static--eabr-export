@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Проекты - Евразийский банк развития</title>
+    <title data-i18n="projectsPage.pageTitle">Проекты - Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -12,24 +12,24 @@
         <main class="prj">
             <section class="prj-banner">
                 <div class="prj-banner__bg" style="background-image: url('/assets/images/projects/prj-banner.webp');" aria-hidden="true"></div>
-                <span class="prj-banner__label">БАННЕР</span>
+                <span class="prj-banner__label" data-i18n="projectsPage.bannerLabel">БАННЕР</span>
             </section>
 
             <section class="prj-hero">
                 <div class="container">
-                    <div class="prj-hero__crumb">Главная / Проекты</div>
-                    <h1 class="prj-hero__title">ПРОЕКТЫ</h1>
+                    <div class="prj-hero__crumb" data-i18n="projectsPage.breadcrumb">Главная / Проекты</div>
+                    <h1 class="prj-hero__title" data-i18n="projectsPage.title">ПРОЕКТЫ</h1>
                     <div class="prj-hero__row">
-                        <p class="prj-hero__lead">Основную долю в&nbsp;портфеле ЕАБР занимают проекты с&nbsp;интеграционным эффектом в&nbsp;сферах транспортной инфраструктуры, цифровых систем, зеленой энергетики, сельского хозяйства, промышленности и&nbsp;машиностроения. В&nbsp;своей деятельности Банк руководствуется Целями в&nbsp;области устойчивого развития ООН и&nbsp;принципами ESG.</p>
+                        <p class="prj-hero__lead" data-i18n="projectsPage.lead">Основную долю в&nbsp;портфеле ЕАБР занимают проекты с&nbsp;интеграционным эффектом в&nbsp;сферах транспортной инфраструктуры, цифровых систем, зеленой энергетики, сельского хозяйства, промышленности и&nbsp;машиностроения. В&nbsp;своей деятельности Банк руководствуется Целями в&nbsp;области устойчивого развития ООН и&nbsp;принципами ESG.</p>
                         <div class="prj-hero__buttons">
                             <a href="#" class="prj-btn-ghost">
-                                <span>Все проекты</span>
+                                <span data-i18n="projectsPage.btnAll">Все проекты</span>
                                 <svg class="prj-btn-ghost__icon" aria-hidden="true">
                                     <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
                                 </svg>
                             </a>
                             <a href="#" class="prj-btn-ghost">
-                                <span>Мегапроекты</span>
+                                <span data-i18n="projectsPage.btnMega">Мегапроекты</span>
                                 <svg class="prj-btn-ghost__icon" aria-hidden="true">
                                     <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more-bold"></use>
                                 </svg>
@@ -42,33 +42,33 @@
             <section class="prj-stats">
                 <div class="container">
                     <h2 class="title title--small title--underline prj-stats__heading">
-                        <span class="title__inner">На&nbsp;31&nbsp;декабря 2025&nbsp;года</span>
+                        <span class="title__inner" data-i18n="projectsPage.statsHeading">На&nbsp;31&nbsp;декабря 2025&nbsp;года</span>
                     </h2>
                     <div class="prj-stats__row">
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val">$<span data-animate="counter">6.4</span></span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
+                                <span class="prj-stat__num-val">$<span data-animate="counter">6.4</span></span>&nbsp;<span class="prj-stat__num-unit" data-i18n="projectsPage.stats.0.unit">млрд</span>
                             </div>
-                            <div class="prj-stat__label">Составляет текущий инвестиционный портфель ЕАБР</div>
+                            <div class="prj-stat__label" data-i18n="projectsPage.stats.0.label">Составляет текущий инвестиционный портфель ЕАБР</div>
                         </div>
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val" data-animate="counter">326</span>&nbsp;<span class="prj-stat__num-unit">проектов</span>
+                                <span class="prj-stat__num-val" data-animate="counter">326</span>&nbsp;<span class="prj-stat__num-unit" data-i18n="projectsPage.stats.1.unit">проектов</span>
                             </div>
-                            <div class="prj-stat__label">накопленный портфель во&nbsp;всех государствах-участниках Банка</div>
+                            <div class="prj-stat__label" data-i18n="projectsPage.stats.1.label">накопленный портфель во&nbsp;всех государствах-участниках Банка</div>
                         </div>
                         <div class="prj-stat">
                             <div class="prj-stat__num">
-                                <span class="prj-stat__num-val">$<span data-animate="counter">19.6</span></span>&nbsp;<span class="prj-stat__num-unit">млрд</span>
+                                <span class="prj-stat__num-val">$<span data-animate="counter">19.6</span></span>&nbsp;<span class="prj-stat__num-unit" data-i18n="projectsPage.stats.2.unit">млрд</span>
                             </div>
-                            <div class="prj-stat__label">Общая сумма инвестиций Банка в&nbsp;экономики государств-участников</div>
+                            <div class="prj-stat__label" data-i18n="projectsPage.stats.2.label">Общая сумма инвестиций Банка в&nbsp;экономики государств-участников</div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="prj-mega">
-                <a href="#" class="prj-mega__media" aria-label="Мегапроекты" style="background-image: url('/assets/images/projects/mega-project.webp');">
+                <a href="#" class="prj-mega__media" data-i18n-aria-label="projectsPage.megaAria" aria-label="Мегапроекты" style="background-image: url('/assets/images/projects/mega-project.webp');">
                     <svg class="prj-mega__arrow" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                         <path d="M8 24L24 8M24 8H10M24 8V22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -76,9 +76,9 @@
                 <div class="container">
                     <div class="prj-mega__text">
                         <h2 class="title prj-mega__title">
-                            <span class="title__inner">Мегапроекты</span>
+                            <span class="title__inner" data-i18n="projectsPage.megaTitle">Мегапроекты</span>
                         </h2>
-                        <p class="prj-mega__lead">Мегапроекты как стратегический фокус банка. ЕАБР реализует инвестиционные проекты, направленные на&nbsp;экономический рост, развитие интеграции и&nbsp;расширение торгово-экономических связей на&nbsp;евразийском пространстве.</p>
+                        <p class="prj-mega__lead" data-i18n="projectsPage.megaLead">Мегапроекты как стратегический фокус банка. ЕАБР реализует инвестиционные проекты, направленные на&nbsp;экономический рост, развитие интеграции и&nbsp;расширение торгово-экономических связей на&nbsp;евразийском пространстве.</p>
                     </div>
                 </div>
             </section>
@@ -88,7 +88,7 @@
             <section class="prj-projects">
                 <div class="container">
                     <h2 class="title title--small title--underline prj-projects__heading">
-                        <span class="title__inner">Проекты</span>
+                        <span class="title__inner" data-i18n="projectsPage.projectsHeading">Проекты</span>
                     </h2>
                     <%= htmlWebpackPlugin.options.widgets.projectsBlock %>
                 </div>
@@ -97,12 +97,12 @@
             <section class="prj-tools">
                 <div class="container">
                     <h2 class="title title--underline prj-tools__heading">
-                        <span class="title__inner">Инструменты реализации проектов</span>
+                        <span class="title__inner" data-i18n="projectsPage.toolsHeading">Инструменты реализации проектов</span>
                     </h2>
                     <a href="#" class="prj-tools__card">
-                        <h3 class="prj-tools__card-title">Информация о&nbsp;продуктах</h3>
+                        <h3 class="prj-tools__card-title" data-i18n="projectsPage.toolsCardTitle">Информация о&nbsp;продуктах</h3>
                         <div class="prj-tools__card-meta">
-                            <span class="prj-tools__card-sub">В&nbsp;разделе «Продукты банка»</span>
+                            <span class="prj-tools__card-sub" data-i18n="projectsPage.toolsCardSub">В&nbsp;разделе «Продукты банка»</span>
                             <svg class="prj-tools__card-icon" aria-hidden="true">
                                 <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
                             </svg>
@@ -114,7 +114,7 @@
             <section class="prj-news-sec">
                 <div class="container">
                     <h2 class="title title--small title--underline prj-news-sec__heading">
-                        <span class="title__inner">Новости</span>
+                        <span class="title__inner" data-i18n="projectsPage.newsHeading">Новости</span>
                     </h2>
                     <%= htmlWebpackPlugin.options.widgets.newsBlock %>
                 </div>

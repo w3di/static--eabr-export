@@ -1,5 +1,6 @@
 import 'air-datepicker/air-datepicker.css';
 import AirDatepicker from 'air-datepicker';
+import i18next from 'i18next';
 import SlimSelect from 'slim-select';
 import 'slim-select/scss';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
@@ -26,7 +27,9 @@ class FormInit {
         )!;
 
         const filterKey = item.dataset.filterKey;
-        const inlineLabel = item.dataset.datepickerInlineLabel;
+        const inlineLabelKey = item.dataset.datepickerInlineLabel;
+        const labelText = (): string =>
+          inlineLabelKey ? i18next.t(inlineLabelKey) : i18next.t('filters.date');
 
         const toIso = (s: string): string => {
           const [d, m, y] = s.split('.');
@@ -74,11 +77,7 @@ class FormInit {
               isComplete = true;
             }
             input.value = date;
-            if (inlineLabel) {
-              head.value = date || inlineLabel;
-            } else {
-              head.value = 'Дата';
-            }
+            head.value = inlineLabelKey && date ? date : labelText();
             if (filterKey) {
               if (!date) {
                 filterState.set(filterKey, null);
@@ -90,6 +89,8 @@ class FormInit {
             if (isComplete) datepicker.hide();
           },
         });
+
+        head.value = labelText();
 
         if (filterKey) {
           const initial = filterState.get(filterKey);
@@ -103,10 +104,14 @@ class FormInit {
                 )
                 .join(' - ');
               input.value = display;
-              head.value = inlineLabel ? display : 'Дата';
+              head.value = inlineLabelKey ? display : labelText();
             }
           }
         }
+
+        i18next.on('languageChanged', () => {
+          if (!inlineLabelKey || !input.value) head.value = labelText();
+        });
       });
   }
 

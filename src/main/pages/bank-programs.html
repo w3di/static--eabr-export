@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Программы для финансовых институтов | Евразийский банк развития</title>
+    <title data-i18n="bankPrograms.pageTitle">Программы для финансовых институтов | Евразийский банк развития</title>
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
@@ -34,32 +34,32 @@
 
         <main class="bp">
             <div class="container">
-                <nav class="bp-crumbs">Главная / <a href="<%= htmlWebpackPlugin.options.routes.keyProducts %>">Ключевые продукты ЕАБР</a> / <span>Программы для&nbsp;финансовых институтов</span></nav>
+                <nav class="bp-crumbs"><span data-i18n="bankPrograms.breadcrumbHome">Главная</span> / <a href="<%= htmlWebpackPlugin.options.routes.keyProducts %>" data-i18n="bankPrograms.breadcrumbProducts">Ключевые продукты ЕАБР</a> / <span data-i18n="bankPrograms.breadcrumbCurrent">Программы для&nbsp;финансовых институтов</span></nav>
 
                 <header class="bp-head">
                     <h1 class="bp-title title title--underline">
-                        <span class="title__inner">Программы для&nbsp;финансовых институтов</span>
+                        <span class="title__inner" data-i18n="bankPrograms.title">Программы для&nbsp;финансовых институтов</span>
                     </h1>
-                    <p class="bp-subtitle">Программы целевых кредитных линий для&nbsp;финансовых институтов направлены на:</p>
+                    <p class="bp-subtitle" data-i18n="bankPrograms.subtitle">Программы целевых кредитных линий для&nbsp;финансовых институтов направлены на:</p>
                 </header>
 
                 <ul class="bp-goals">
-                    <% goals.forEach(function(g) { %>
+                    <% goals.forEach(function(g, i) { %>
                     <li class="bp-goal">
-                        <h2 class="bp-goal__title"><%= g.title %></h2>
-                        <p class="bp-goal__sub"><%= g.sub %></p>
+                        <h2 class="bp-goal__title" data-i18n="bankPrograms.goals.<%= i %>.title"><%- g.title %></h2>
+                        <p class="bp-goal__sub" data-i18n="bankPrograms.goals.<%= i %>.sub"><%- g.sub %></p>
                     </li>
                     <% }); %>
                 </ul>
 
                 <div class="bp-bottom">
                     <div class="bp-text">
-                        <p>Кредитная линия предоставляется финансовому институту на&nbsp;цели одной или&nbsp;нескольких программ для&nbsp;последующего финансирования собственных субпроектов финансового института или&nbsp;субпроектов субзаемщиков.</p>
-                        <p>Требования к&nbsp;финансовым институтам, процедуры установления кредитной линии и&nbsp;описание условий программ приведены ниже.</p>
+                        <p data-i18n="bankPrograms.bottom.p0">Кредитная линия предоставляется финансовому институту на&nbsp;цели одной или&nbsp;нескольких программ для&nbsp;последующего финансирования собственных субпроектов финансового института или&nbsp;субпроектов субзаемщиков.</p>
+                        <p data-i18n="bankPrograms.bottom.p1">Требования к&nbsp;финансовым институтам, процедуры установления кредитной линии и&nbsp;описание условий программ приведены ниже.</p>
                     </div>
 
                     <ul class="bp-docs">
-                        <% docs.forEach(function(d) { %>
+                        <% docs.forEach(function(d, i) { %>
                         <li class="bp-doc">
                             <a href="#" class="bp-doc__link">
                                 <span class="bp-doc__icon" aria-hidden="true">
@@ -71,7 +71,7 @@
                                     </svg>
                                 </span>
                                 <span class="bp-doc__text">
-                                    <span class="bp-doc__title"><%= d.title %></span>
+                                    <span class="bp-doc__title" data-i18n="bankPrograms.docs.<%= i %>.title"><%- d.title %></span>
                                     <span class="bp-doc__size">PDF, <%= d.size %></span>
                                 </span>
                             </a>
