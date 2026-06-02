@@ -1,0 +1,936 @@
+.ppp-main {
+    background-color: #F3F3F3;
+}
+
+.ppp-main .title--underline {
+    line-height: 1.3;
+}
+
+#ppp-about,
+#ppp-program,
+#ppp-news,
+#ppp-analytics {
+    scroll-margin-top: 120px;
+}
+
+.ppp-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #003879 0%, #00C1ED 100%);
+
+    &__wrap {
+        position: relative;
+        min-height: 390px;
+        padding-top: 110px;
+    }
+
+    &__watermark {
+        position: absolute;
+        top: 50%;
+        left: -21px;
+        font-size: 480px;
+        line-height: 576px;
+        font-weight: 500;
+        color: #FFFFFF;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+        opacity: .12;
+        transform: translateY(-50%);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        max-width: 880px;
+        margin-bottom: 32px;
+        font-size: 48px;
+        line-height: 58px;
+        font-weight: 400;
+        color: #FFFFFF;
+    }
+
+    &__lead {
+        max-width: 1200px;
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 400;
+        color: #FFFFFF;
+    }
+}
+
+.ppp-h2 {
+    font-size: 34px;
+    line-height: 41px;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.ppp-h3 {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.ppp-text {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--dark);
+}
+
+.ppp-inst-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 24px;
+    background: #FFFFFF;
+    border-radius: 24px;
+
+    p {
+        font-size: 18px;
+        line-height: 22px;
+        color: var(--dark);
+    }
+}
+
+.ppp-note {
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(17, 17, 17, .6);
+}
+
+.ppp-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+
+    &__dash {
+        flex-shrink: 0;
+        width: 20px;
+        height: 0;
+        margin-top: 11px;
+        border-top: 2px solid #1BCE1B;
+    }
+}
+
+.ppp-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ppp-benefit {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+    background: #FFFFFF;
+    border-left: 3px solid rgba(0, 0, 0, .4);
+    border-radius: 32px;
+    transition: border-left-color .3s ease;
+
+    &__icon {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 72px;
+        border-radius: 12px;
+        background: rgba(27, 206, 27, .12);
+    }
+
+    &__icon svg {
+        width: 54px;
+        height: 54px;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+
+    &:hover {
+        border-left-color: #1BCE1B;
+    }
+}
+
+.ppp-roles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.ppp-role {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background: #FFFFFF;
+    border-left: 3px solid rgba(0, 0, 0, .4);
+    border-radius: 24px;
+    transition: border-left-color .3s ease;
+
+    &:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    &__head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 72px;
+        border-radius: 12px;
+        background: rgba(27, 206, 27, .12);
+    }
+
+    &__icon svg {
+        width: 54px;
+        height: 54px;
+    }
+
+    &__arrow {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        fill: #D5D5D5;
+        transition: fill .3s ease;
+    }
+
+    &__text {
+        position: relative;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+
+    &:hover {
+        border-left-color: #1BCE1B;
+    }
+
+    &:hover &__arrow {
+        fill: #1BCE1B;
+    }
+}
+
+.ppp-centers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.ppp-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 144px;
+    padding: 12px;
+    background: #FFFFFF;
+    border-radius: 24px;
+
+    &__countries {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__country {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__flag {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #DDD;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid #ECEEF0;
+    }
+
+    &__name {
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+
+    &__form {
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(17, 17, 17, .8);
+    }
+}
+
+.ppp-funcs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ppp-func {
+    padding: 28px 24px;
+    background: #FFFFFF;
+    border-radius: 24px;
+
+    &__text {
+        font-size: 18px;
+        line-height: 22px;
+        color: var(--dark);
+    }
+}
+
+.ppp-gov {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.ppp-gov__item {
+    box-sizing: border-box;
+    padding: 20px 0;
+    background: #FFFFFF;
+    border: 1px solid #E5EEF2;
+    border-radius: 24px;
+
+    .ppp-gov__toggle {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .ppp-gov__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        padding: 0 20px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .ppp-gov__brand {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .ppp-gov__flag {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #D9E3E8 center / cover no-repeat;
+        border: 1px solid #ECEEF0;
+    }
+
+    .ppp-gov__name {
+        font-size: 24px;
+        line-height: 29px;
+        color: var(--dark);
+    }
+
+    .ppp-gov__arrow {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        fill: rgba(0, 0, 0, .4);
+        transition: transform .35s ease;
+    }
+
+    .ppp-gov__wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        visibility: hidden;
+        transition:
+            grid-template-rows .35s ease,
+            visibility 0s linear .35s;
+    }
+
+    .ppp-gov__inner {
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .ppp-gov__list {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 0 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .ppp-gov__org {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 20px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+    }
+
+    .ppp-gov__link {
+        color: inherit;
+        text-decoration: none;
+        transition: color .3s ease;
+
+        &:hover {
+            color: #1BCE1B;
+        }
+    }
+
+    .ppp-gov__law {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 20px 0;
+    }
+
+    .ppp-gov__lawname {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--dark);
+    }
+
+    .ppp-gov__text {
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(17, 17, 17, .8);
+    }
+
+    .ppp-gov__dot {
+        flex-shrink: 0;
+        width: 10px;
+        height: 10px;
+        margin-top: 6px;
+        border-radius: 50%;
+        background: #1BCE1B;
+    }
+
+    .ppp-gov__toggle:checked ~ .ppp-gov__wrapper {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        transition:
+            grid-template-rows .35s ease,
+            visibility 0s linear 0s;
+    }
+
+    .ppp-gov__toggle:checked ~ .ppp-gov__head .ppp-gov__arrow {
+        transform: rotate(180deg);
+    }
+}
+
+.ppp-lawnorms {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ppp-lawnorm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+    background: #FFFFFF;
+    border-radius: 24px;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__flag {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #D9E3E8 center / cover no-repeat;
+        border: 1px solid #ECEEF0;
+    }
+
+    &__name {
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(17, 17, 17, .8);
+    }
+}
+
+.ppp-acc {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        padding: 20px 0;
+        border-bottom: 1px solid #E5EEF2;
+    }
+
+    &__summary {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__q {
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 500;
+        color: var(--dark);
+    }
+
+    &__toggle {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #F2FDF2;
+        transform: rotate(45deg);
+        transition: transform .25s ease;
+    }
+
+    &__item.is-open &__toggle {
+        transform: rotate(0);
+    }
+
+    &__wrap {
+        overflow: hidden;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+        padding: 16px 0 4px;
+        margin: 0;
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 17px;
+            line-height: 24px;
+            color: var(--dark);
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 11px;
+                left: 0;
+                width: 10px;
+                height: 0;
+                border-top: 2px solid #1BCE1B;
+            }
+        }
+    }
+
+    &__a {
+        padding-top: 14px;
+        font-size: 17px;
+        line-height: 24px;
+        color: var(--dark);
+    }
+}
+
+.ppp-support {
+    &__title {
+        margin-bottom: 28px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 28px 24px;
+        background: #FFFFFF;
+        border-radius: 24px;
+    }
+
+    &__card-title {
+        font-size: 34px;
+        line-height: 41px;
+        font-weight: 400;
+        color: var(--dark);
+    }
+
+    &__text {
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--dark);
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+    }
+
+    &__card.is-open &__text {
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+    }
+
+    &__more {
+        align-self: flex-end;
+        padding: 0;
+        background: none;
+        border: none;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(17, 17, 17, .4);
+        cursor: pointer;
+    }
+}
+
+.ppp-db {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.ppp-db__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    text-decoration: none;
+
+    .ppp-db__flag {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #D9E3E8 center / cover no-repeat;
+        border: 1px solid #ECEEF0;
+    }
+
+    .ppp-db__info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex-grow: 1;
+    }
+
+    .ppp-db__country {
+        font-size: 24px;
+        line-height: 29px;
+        color: var(--dark);
+    }
+
+    .ppp-db__label {
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(17, 17, 17, .4);
+    }
+
+    .ppp-db__arrow {
+        flex-shrink: 0;
+        width: 26px;
+        height: 16px;
+        fill: rgba(17, 17, 17, .4);
+        transition: fill .3s ease;
+    }
+
+    &:hover .ppp-db__arrow {
+        fill: #1BCE1B;
+    }
+}
+
+.ppp-stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 32px;
+
+    &__circle {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 318px;
+        height: 318px;
+        border-radius: 50%;
+        background: linear-gradient(213.53deg, #A0EDFF 16.99%, #24D6FF 90.86%);
+    }
+
+    &__value {
+        display: flex;
+        align-items: baseline;
+        font-size: 80px;
+        line-height: 96px;
+        font-weight: 500;
+        color: var(--dark);
+    }
+
+    &__unit {
+        font-size: 34px;
+        line-height: 41px;
+        font-weight: 400;
+    }
+
+    &__caption {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    &__line {
+        flex-shrink: 0;
+        width: 6px;
+        height: 82px;
+        background: #24D6FF;
+        border-radius: 3px;
+    }
+
+    &__label {
+        font-size: 34px;
+        line-height: 41px;
+        color: var(--dark);
+    }
+}
+
+@media (max-width: 1260px) {
+    .ppp-banner__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 380px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .ppp-banner__watermark {
+        font-size: 200px;
+        line-height: 1;
+        transform: translate(18px, -50%);
+    }
+
+    .ppp-banner__title {
+        margin-bottom: 16px;
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .ppp-banner__lead {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ppp-main .title--small.title--underline {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .ppp-h2 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .ppp-h2--intro {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .ppp-h2--lg {
+        font-size: 34px;
+        line-height: 41px;
+    }
+
+    .ppp-text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .ppp-text--sm {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ppp-roles,
+    .ppp-centers,
+    .ppp-funcs,
+    .ppp-gov,
+    .ppp-db,
+    .ppp-support__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .ppp-centers {
+        gap: 12px;
+    }
+
+    .ppp-center {
+        min-height: auto;
+    }
+
+    .ppp-benefit {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 20px;
+        border-left-color: #1BCE1B;
+        border-radius: 24px;
+    }
+
+    .ppp-benefit__text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .ppp-role {
+        padding: 24px 20px;
+        border-left-color: #1BCE1B;
+    }
+
+    .ppp-role__text {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ppp-func {
+        padding: 24px 20px;
+    }
+
+    .ppp-func__text,
+    .ppp-inst-card p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ppp-inst-card,
+    .ppp-support__card {
+        padding: 24px 20px;
+    }
+
+    .ppp-gov__item .ppp-gov__lawname,
+    .ppp-gov__item .ppp-gov__text,
+    .ppp-gov__item .ppp-gov__org,
+    .ppp-lawnorm__text {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .ppp-db {
+        gap: 10px;
+    }
+
+    .ppp-db__item {
+        gap: 24px;
+        border: 1px solid #E5EEF2;
+    }
+
+    .ppp-db__item .ppp-db__flag {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ppp-db__item .ppp-db__info {
+        gap: 6px;
+    }
+
+    .ppp-db__item .ppp-db__label {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .ppp-db__item .ppp-db__arrow {
+        align-self: flex-end;
+    }
+
+    .ppp-stat {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .ppp-stat__caption {
+        align-items: stretch;
+    }
+
+    .ppp-stat__line {
+        height: auto;
+        align-self: stretch;
+    }
+
+    .ppp-main .mbm-15 {
+        margin-bottom: 22px;
+    }
+
+    .ppp-main .mbm-20 {
+        margin-bottom: 27px;
+    }
+
+    .ppp-main .mbm-30 {
+        margin-bottom: 37px;
+    }
+}

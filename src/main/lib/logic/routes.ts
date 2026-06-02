@@ -20,6 +20,7 @@ const ROUTES = {
   newsEvents: '/news-events/',
   newsEventsDetail: '/news-events-detail/',
   ourContribution: '/our-contribution/',
+  ppp: '/ppp/',
   projects: '/projects/',
   sitemap: '/sitemap/',
   video: '/video/',

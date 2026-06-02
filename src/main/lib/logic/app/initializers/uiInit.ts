@@ -4,6 +4,8 @@ import { AsideObserver } from '../../ui/asideObserver';
 import { ButtonReturn } from '../../ui/buttonReturn';
 import { Title } from '../../ui/title';
 import { SpotlightCard } from '../../ui/spotlightCard';
+import { Tabs } from '../../ui/tabs';
+import { ReadMore } from '../../ui/readMore';
 
 class UiInit {
   constructor() {
@@ -14,6 +16,8 @@ class UiInit {
     this.title();
     this.spotlightCards();
     this.switcher();
+    this.tabs();
+    this.readMore();
   }
 
   private header() {
@@ -54,6 +58,18 @@ class UiInit {
     document.querySelectorAll('[data-switcher]').forEach((el) => {
       el.addEventListener('click', () => el.classList.toggle('active'));
     });
+  }
+
+  private tabs() {
+    document
+      .querySelectorAll<HTMLElement>('[data-tabset]')
+      .forEach((el) => new Tabs(el));
+  }
+
+  private readMore() {
+    document
+      .querySelectorAll<HTMLElement>('[data-readmore]')
+      .forEach((el) => new ReadMore(el));
   }
 }
 

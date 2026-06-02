@@ -55,7 +55,7 @@ class PageInit {
 
   private faqAccordions() {
     document
-      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item')
+      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item, .ppp-acc__item')
       .forEach((el) => new FaqAccordion(el));
   }
 
@@ -102,7 +102,9 @@ class PageInit {
 
   private countryAccordions() {
     document
-      .querySelectorAll<HTMLInputElement>('.contacts-country__toggle')
+      .querySelectorAll<HTMLInputElement>(
+        '.contacts-country__toggle, .ppp-gov__toggle',
+      )
       .forEach((el) => new CountryAccordion(el));
   }
 

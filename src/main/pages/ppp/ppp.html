@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="ppp.pageTitle">ГЧП на евразийском пространстве | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const navItems = [
+        { href: '#ppp-about',     label: 'О ГЧП на евразийском пространстве', i18n: 'ppp.nav.about', active: true },
+        { href: '#ppp-program',   label: 'Программа ЕАБР',                              i18n: 'ppp.nav.program' },
+        { href: '#ppp-news',      label: 'Мероприятия и новости',                  i18n: 'ppp.nav.news' },
+        { href: '#ppp-analytics', label: 'Обзоры и аналитика',                     i18n: 'ppp.nav.analytics' }
+    ];
+
+    const benefits = [
+        'Ускорить запуск инфраструктурных объектов, с одной стороны, а с другой — отложить на более поздний срок бюджетные расходы на них, то есть сдвинуть сроки начала строительства влево, а траты бюджета — вправо;',
+        'Обеспечить предоставление бо́льшего объема качественных публичных услуг бо́льшему количеству потребителей;',
+        'Передать частному партнеру часть строительных, коммерческих, финансовых рисков и функции по предоставлению услуг населению, которые он выполняет зачастую гораздо эффективнее самого государства и др.'
+    ];
+
+    const roles = [
+        'Имеет широкую линейку кредитных и некредитных продуктов для проектов ГЧП',
+        'Обладает потенциалом обеспечить доступность финансовых ресурсов для проектов ГЧП',
+        'Предоставляет государствам техническое содействие в проведении законодательных реформ ГЧП, укреплении институциональных механизмов, наращивании практических компетенций структурирования bankable-проектов ГЧП, формировании полного пакета документации для значимых с точки зрения интеграции и устойчивого развития стран-участниц ЕАБР проектов ГЧП, готовых к запуску и финансированию'
+    ];
+
+    const centers = [
+        { form: 'Акционерное общество',                  items: [{ flag: '/assets/images/flags/flag-kz.svg', country: 'Казахстан' }] },
+        { form: 'Автономная некоммерческая организация', items: [{ flag: '/assets/images/flags/flag-ru.svg', country: 'Россия' }] },
+        { form: 'Государственные учреждения',            items: [{ flag: '/assets/images/flags/flag-kg.svg', country: 'Кыргызстан' }, { flag: '/assets/images/flags/flag-tj.svg', country: 'Таджикистан' }] },
+        { form: 'Подразделение агентства',               items: [{ flag: '/assets/images/flags/flag-by.svg', country: 'Беларусь' }] }
+    ];
+
+    const funcs = [
+        'Некоторые из них наиболее широкий — по разработке и проведению единой политики ГЧП, совершенствованию законодательства о ГЧП, разработке проектных документов и их экспертизе, отбору проектов ГЧП и частных партнеров, распространению знаний и опыта ГЧП, наращиванию компетенций в сфере ГЧП, обеспечению межведомственной координации, коммуникации с инвесторами и кредиторами, ведению реестра проектов ГЧП и осуществлению их мониторинга (так называемые в международной практике «Full Service PPP Agency»)',
+        'Другие — комбинацию функций и полномочий, связанных в основном с экспертизой документации по проектам ГЧП, консультированием органов, принимающих управленческие решения в отношении проектов ГЧП («Review PPP Agency»), либо узкий спектр функций по проведению исследований, распространению знаний и наращиванию компетенций в сфере ГЧП («PPP Center of Excellence»).'
+    ];
+
+    const gov = [
+        { id: 'am', flag: '/assets/images/flags/flag-am.svg', country: 'Армения',     orgs: [{ text: 'Министерство финансов Республики Армения', url: 'https://minfin.am/ru/' }] },
+        { id: 'by', flag: '/assets/images/flags/flag-by.svg', country: 'Беларусь',    orgs: [{ text: 'Министерство экономики Республики Беларусь', url: 'https://economy.gov.by/ru/g4p-ru/' }, { text: 'Межведомственный инфраструктурный координационный совет', url: '' }, { text: 'ГУ «Национальное агентство инвестиций и приватизации»', url: 'https://investinbelarus.by' }] },
+        { id: 'kz', flag: '/assets/images/flags/flag-kz.svg', country: 'Казахстан',   orgs: [{ text: 'Министерство национальной экономики Республики Казахстан', url: 'https://www.gov.kz/memleket/entities/economy/activities' }, { text: 'АО «Казахстанский центр государственно-частного партнерства»', url: 'https://kzppp.kz/' }] },
+        { id: 'kg', flag: '/assets/images/flags/flag-kg.svg', country: 'Кыргызстан',  orgs: [{ text: 'Министерство экономики и коммерции Кыргызской Республики', url: 'https://mineconom.gov.kg/ru' }, { text: 'Совет по ГЧП при Кабинете Министров Кыргызской Республики', url: '' }, { text: 'Национальное агентство по инвестициям при Президенте Кыргызской Республики', url: 'https://invest.gov.kg/ru' }, { text: 'ГУ «Центр государственно-частного партнерства»', url: 'https://ppp.gov.kg/' }] },
+        { id: 'ru', flag: '/assets/images/flags/flag-ru.svg', country: 'Россия',      orgs: [{ text: 'Министерство экономического развития Российской Федерации', url: 'https://www.economy.gov.ru/material/departments/d22/gosudarstvenno_chastnoe_partnerstvo/' }, { text: 'АНО «Национальный центр развития государственно-частного партнерства»', url: 'https://pppcenter.ru/' }] },
+        { id: 'tj', flag: '/assets/images/flags/flag-tj.svg', country: 'Таджикистан', orgs: [{ text: 'Государственный комитет по инвестициям и управлению государственным имуществом Республики Таджикистан', url: '' }, { text: 'Совет по ГЧП при Правительстве Республики Таджикистан', url: '' }, { text: 'ГУ «Центр реализации проектов государственно-частного партнерства»', url: 'http://ppp.tj/homepageru/' }] },
+        { id: 'uz', flag: '/assets/images/flags/flag-uz.svg', country: 'Узбекистан',  orgs: [{ text: 'Министерство экономики и финансов Республики Узбекистан', url: 'https://www.imv.uz/en/static/vazirlikning-vazifalari-va-funksiyalari-2' }] }
+    ];
+    gov.forEach(function(g, i) { g.i = i; });
+    const govCols = [
+        [gov[0], gov[5], gov[3]],
+        [gov[1], gov[2], gov[4], gov[6]]
+    ];
+
+    const laws = [
+        { id: 'am', flag: '/assets/images/flags/flag-am.svg', country: 'Армения',     law: 'Закон Армении о ГЧП',     text: 'Нормы об установлении лимита условных обязательств по ГЧП, видах государственного содействия в проектах ГЧП (гранты, субсидии, выделение активов, гарантии минимального дохода и/или потребления, гарантии спроса, бюджетные гарантии, кредиты, возмещение затрат и рисков по проекту ГЧП), возможность разрешения споров посредством альтернативных способов, а также в международном торговом или инвестиционном арбитраже, нормы об иммунитете;' },
+        { id: 'by', flag: '/assets/images/flags/flag-by.svg', country: 'Беларусь',    law: 'Закон Беларуси о ГЧП',    text: 'Гарантии прав государственного, частного партнеров и кредиторов;' },
+        { id: 'kz', flag: '/assets/images/flags/flag-kz.svg', country: 'Казахстан',   law: 'Закон Казахстана о ГЧП',  text: 'Принцип ГЧП «ценности для населения», нормы о платежных механизмах, источниках финансирования и источниках получения доходов субъектами ГЧП;' },
+        { id: 'kg', flag: '/assets/images/flags/flag-kg.svg', country: 'Кыргызстан',  law: 'Закон Кыргызстана о ГЧП', text: 'Подчинение проектов ГЧП межгосударственного характера регулированию международных договоров, специальный регуляторный режим «проектной песочницы» для реализации инновационных проектов ГЧП;' },
+        { id: 'ru', flag: '/assets/images/flags/flag-ru.svg', country: 'Россия',      law: 'Закон России о ГЧП',      text: 'Детальная проработка понятийного аппарата, «конструктор» элементов форм ГЧП, возможность участия в проекте ГЧП двух и более публичных партнеров;' },
+        { id: 'tj', flag: '/assets/images/flags/flag-tj.svg', country: 'Таджикистан', law: 'Закон Таджикистана о ГЧП', text: 'Детальная регламентация подачи и оценки незапрашиваемых предложений, создания и участия в консорциумах, а также нормы возможности применения иностранного права к соглашению о ГЧП;' },
+        { id: 'uz', flag: '/assets/images/flags/flag-uz.svg', country: 'Узбекистан',  law: 'Закон Узбекистана о ГЧП', text: 'Гарантии прав кредитора, в том числе компенсация, выплачиваемая кредиторам в случае досрочного расторжения соглашения о ГЧП, виды поддержки ГЧП и др.' }
+    ];
+    laws.forEach(function(l, i) { l.i = i; });
+    const lawCols = [
+        [laws[0], laws[1], laws[5]],
+        [laws[2], laws[3], laws[4], laws[6]]
+    ];
+
+    const db = [
+        { country: 'Армения',     flag: '/assets/images/flags/flag-am.svg', label: 'База данных проектов ГЧП' },
+        { country: 'Беларусь',    flag: '/assets/images/flags/flag-by.svg', label: 'Проекты ГЧП' },
+        { country: 'Казахстан',   flag: '/assets/images/flags/flag-kz.svg', label: 'Реестр проектов ГЧП' },
+        { country: 'Кыргызстан',  flag: '/assets/images/flags/flag-kg.svg', label: 'Проекты ГЧП' },
+        { country: 'Россия',      flag: '/assets/images/flags/flag-ru.svg', label: 'База данных проектов ГЧП' },
+        { country: 'Таджикистан', flag: '/assets/images/flags/flag-tj.svg', label: 'Реестр проектов ГЧП' },
+        { country: 'Узбекистан',  flag: '/assets/images/flags/flag-uz.svg', label: 'Реестр проектов ГЧП' }
+    ];
+
+    const growth = [
+        'Программный подход к формированию портфеля проектов ГЧП на основе планов инфраструктурного развития внутри страны и на евразийском пространстве;',
+        'Господдержка для решения приоритетных инфраструктурных потребностей (льготные финансовые механизмы ГЧП и первоочередное софинансирование, специальные правовые режимы и др.);',
+        'Цифровизация процессов подготовки и сопровождения реализации проектов ГЧП, создание единого цифрового пространства ГЧП и цифровых проектных офисов для упрощения межведомственного взаимодействия, а также создания каналов связи органов власти и потенциальных инвесторов;',
+        'Стандартизация на основе лучшей ГЧП-практики проектных документов и соглашений о ГЧП для повышения их качества, а также сокращения сроков запуска и снижения издержек участников ГЧП-проектов;',
+        'Повышение прозрачности управленческих решений, связанных с разработкой проектов ГЧП, конкурсными процедурами и исполнением обязательств по соглашениям о ГЧП;',
+        'Постоянное наращивание компетенций в сфере ГЧП;',
+        'Партнерство с международными и национальными институтами (банками) развития.'
+    ];
+
+    const supports = [
+        { ns: 'supportInst',   title: 'ЕАБР содействует развитию институциональной среды ГЧП:', eurasian: 'Создавая платформу и условия для взаимодействия представителей уполномоченных органов в сфере ГЧП, центров ГЧП и экспертного сообщества в поддержку ГЧП для достижения Целей в области устойчивого развития, продвижения трансграничных ГЧП, создания общих баз данных ГЧП. В условиях развития евразийских интеграционных процессов значимость скоординированной, связной деятельности в сфере ГЧП возрастает. За счет исключения дублирования усилий и дополняя деятельность друг друга станет возможным в разы более эффективно преумножить результаты развития ГЧП на евразийском пространстве.', country: 'Путем проведения совместных мероприятий (форумов, workshops, road-shows) и исследований ГЧП, участия в предпроектной подготовке, наращивании компетенций у представителей уполномоченных органов в сфере ГЧП и центров ГЧП.' },
+        { ns: 'supportLegal',  title: 'ЕАБР содействует развитию благоприятной правовой среды ГЧП:', eurasian: 'Создавая условия для гармонизации, снижения изолированности законодательного регулирования ГЧП в странах ЕАЭС+ и распространения единообразных правовых подходов к трансграничным ГЧП и ГЧП для достижения ЦУР.', country: 'Консультируя органы власти по законодательным инициативам, направленным на внедрение в их законы о ГЧП современных правовых механизмов, обеспечивающих права и интересы партнеров, защиту их инвестиций, а также на устранение чрезмерно обременительных законодательных требований.' },
+        { ns: 'supportGrowth', title: 'ЕАБР содействует созданию точек роста рынков ГЧП:', eurasian: 'Масштабируя лучшие ГЧП-практики, а также участвуя в реализации ключевых инвестиционных мегапроектов с интеграционным эффектом в отношении представляющих интерес для всех стран-участниц ЕАБР объектов инфраструктуры.', country: 'Осуществляя проектное консультирование и грантовое финансирование «взращивания» проектов ГЧП, формирования полного пакета предпроектной документации, необходимой для создания bankable-проектов ГЧП.' }
+    ];
+
+    function renderSupport(s) {
+%>
+                            <div class="ppp-support">
+                                <h2 class="title title--small title--underline ppp-support__title">
+                                    <span class="title__inner" data-i18n="ppp.<%= s.ns %>.title"><%- s.title %></span>
+                                </h2>
+                                <div class="ppp-support__cards">
+                                    <div class="ppp-support__card" data-readmore>
+                                        <h3 class="ppp-support__card-title" data-i18n="ppp.<%= s.ns %>.tabCountry">На страновом уровне</h3>
+                                        <div class="ppp-support__text" data-readmore-text data-i18n="ppp.<%= s.ns %>.country"><%- s.country %></div>
+                                        <button class="ppp-support__more" type="button" data-readmore-btn data-i18n="ppp.more">…еще</button>
+                                    </div>
+                                    <div class="ppp-support__card" data-readmore>
+                                        <h3 class="ppp-support__card-title" data-i18n="ppp.<%= s.ns %>.tabEurasian">На евразийском пространстве в целом</h3>
+                                        <div class="ppp-support__text" data-readmore-text data-i18n="ppp.<%= s.ns %>.eurasian"><%- s.eurasian %></div>
+                                        <button class="ppp-support__more" type="button" data-readmore-btn data-i18n="ppp.more">…еще</button>
+                                    </div>
+                                </div>
+                            </div>
+<%
+    }
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular ppp-main">
+            <section class="ppp-banner">
+                <div class="container ppp-banner__wrap">
+                    <span class="ppp-banner__watermark" aria-hidden="true" data-i18n="ppp.watermark">ГЧП</span>
+                    <div class="ppp-banner__content">
+                        <h1 class="ppp-banner__title" data-i18n="ppp.bannerTitle">Государственно-частное партнёрство</h1>
+                        <p class="ppp-banner__lead" data-i18n="ppp.lead">как основанное на объединении ресурсов и разделении рисков сотрудничество публичного и частного партнеров в сфере развития публичной инфраструктуры, применяется во всех странах евразийского пространства. И заинтересованность в развитии ГЧП только возрастает.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="ppp.breadcrumbHome">Главная</span> / <strong data-i18n="ppp.breadcrumbAbout">О банке</strong>
+                                </div>
+                            </div>
+
+                            <section id="ppp-about" class="ppp-section mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="ppp.aboutTitle">О ГЧП на евразийском пространстве</span>
+                                </h2>
+
+                                <p id="ppp-program" class="ppp-text mb-40 mbm-30" data-i18n="ppp.programLead">Наличие инфраструктуры, ее доступность и взаимосвязанность непосредственно влияют на социально-экономическое развитие всех стран-участниц ЕАБР. В текущих условиях из-за необходимости выстраивания новых логистических цепочек потребности в наращивании инфраструктуры стали несопоставимо выше. Но большинству государств просто не по силам покрыть инфраструктурные разрывы только средствами госбюджета.</p>
+
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="ppp.benefitsTitle">ГЧП позволяет государствам:</span>
+                                </h2>
+                                <div class="ppp-benefits mb-40 mbm-30">
+                                    <% benefits.forEach(function(t, i) { %>
+                                    <div class="ppp-benefit" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
+                                        <span class="ppp-benefit__icon" aria-hidden="true">
+                                            <svg>
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-ppp-<%= i + 1 %>"></use>
+                                            </svg>
+                                        </span>
+                                        <p class="ppp-benefit__text" data-i18n="ppp.benefits.<%= i %>"><%- t %></p>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <p class="ppp-text mb-20 mbm-15" data-i18n="ppp.prepText0">Количество проектов ГЧП напрямую зависит от качества их предпроектной подготовки.</p>
+                                <p class="ppp-text" data-i18n="ppp.prepText1">Такие условия для развития ГЧП в евразийском пространстве могут быть обеспечены более эффективно.</p>
+                            </section>
+
+                            <section class="ppp-section mb-60 mbm-30">
+                                <h2 class="ppp-h2 ppp-h2--intro mb-25 mbm-20" data-i18n="ppp.rolesIntro">Евразийский банк развития как международная финансовая организация и как институт развития:</h2>
+                                <div class="ppp-roles">
+                                    <% roles.forEach(function(t, i) { %>
+                                    <div class="ppp-role" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
+                                        <div class="ppp-role__head">
+                                            <span class="ppp-role__icon" aria-hidden="true">
+                                                <svg>
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-ppp-role-<%= i + 1 %>"></use>
+                                                </svg>
+                                            </span>
+                                            <svg class="ppp-role__arrow" aria-hidden="true">
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+                                            </svg>
+                                        </div>
+                                        <p class="ppp-role__text" data-i18n="ppp.roles.<%= i %>"><%- t %></p>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <section class="ppp-section mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="ppp.instTitle">Институциональная среда ГЧП в странах евразийского пространства</span>
+                                </h2>
+                                <div class="ppp-inst-card mb-40 mbm-20">
+                                    <p data-i18n="ppp.instLead">Уровень развития ГЧП в значительной степени зависит от эффективности системы государственного управления в сфере ГЧП и институциональной среды ГЧП. Во всех государствах евразийского пространства созданы структуры управления в сфере ГЧП (PPP Units): в качестве уполномоченных органов в рамках министерств экономики, департаментов, агентств и (или) специализированных центров ГЧП.</p>
+                                    <p data-i18n="ppp.instLead2">Однако наличие структуры управления ГЧП само по себе не является фактором успеха.</p>
+                                </div>
+
+                                <h2 class="ppp-h2 mb-20 mbm-15" data-i18n="ppp.centersTitle">Центры ГЧП в странах-участницах ЕАБР отличаются по организационно-правовой форме:</h2>
+                                <div class="ppp-centers mb-40 mbm-20">
+                                    <% centers.forEach(function(c, i) { %>
+                                    <div class="ppp-center">
+                                        <div class="ppp-center__countries">
+                                            <% c.items.forEach(function(it, j) { %>
+                                            <div class="ppp-center__country">
+                                                <span class="ppp-center__flag" style="background-image: url('<%= it.flag %>');"></span>
+                                                <span class="ppp-center__name" data-i18n="ppp.centers.<%= i %>.countries.<%= j %>"><%- it.country %></span>
+                                            </div>
+                                            <% }); %>
+                                        </div>
+                                        <span class="ppp-center__form" data-i18n="ppp.centers.<%= i %>.form"><%- c.form %></span>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <h3 class="ppp-h3 mb-20 mbm-15" data-i18n="ppp.funcsTitle">Они выполняют разный диапазон функций и полномочий:</h3>
+                                <div class="ppp-funcs mb-40 mbm-20">
+                                    <% funcs.forEach(function(t, i) { %>
+                                    <div class="ppp-func">
+                                        <p class="ppp-func__text" data-i18n="ppp.funcs.<%= i %>"><%- t %></p>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                                <p class="ppp-text mb-40 mbm-20" data-i18n="ppp.funcsNote">Роль и статус центров ГЧП не статичны, они могут изменяться по мере перехода с одного уровня развития ГЧП на другой, реализации национальной программы ГЧП и удовлетворения инфраструктурных потребностей в государстве.</p>
+
+                                <h2 class="title title--small title--underline mb-20 mbm-15">
+                                    <span class="title__inner" data-i18n="ppp.govTitle">Структуры управления в сфере ГЧП:</span>
+                                </h2>
+                                <div class="ppp-gov mb-40 mbm-20">
+                                    <% govCols.forEach(function(col) { %>
+                                    <div class="ppp-gov__col">
+                                        <% col.forEach(function(g) { %>
+                                        <div class="ppp-gov__item">
+                                            <input type="checkbox" id="ppp-gov-<%= g.id %>" class="ppp-gov__toggle">
+                                            <label for="ppp-gov-<%= g.id %>" class="ppp-gov__head">
+                                                <span class="ppp-gov__brand">
+                                                    <span class="ppp-gov__flag" style="background-image: url('<%= g.flag %>');"></span>
+                                                    <span class="ppp-gov__name" data-i18n="ppp.gov.<%= g.i %>.country"><%- g.country %></span>
+                                                </span>
+                                                <svg class="ppp-gov__arrow" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                                </svg>
+                                            </label>
+                                            <div class="ppp-gov__wrapper">
+                                                <div class="ppp-gov__inner">
+                                                    <ul class="ppp-gov__list">
+                                                        <% g.orgs.forEach(function(org, j) { %>
+                                                        <li class="ppp-gov__org">
+                                                            <span class="ppp-gov__dot" aria-hidden="true"></span>
+                                                            <% if (org.url) { %>
+                                                            <a href="<%= org.url %>" class="ppp-gov__link" target="_blank" rel="noopener noreferrer" data-i18n="ppp.gov.<%= g.i %>.orgs.<%= j %>"><%- org.text %></a>
+                                                            <% } else { %>
+                                                            <span data-i18n="ppp.gov.<%= g.i %>.orgs.<%= j %>"><%- org.text %></span>
+                                                            <% } %>
+                                                        </li>
+                                                        <% }); %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <% renderSupport(supports[0]); %>
+                            </section>
+
+                            <section class="ppp-section mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="ppp.lawTitle">Законодательство о ГЧП в странах евразийского пространства</span>
+                                </h2>
+                                <p class="ppp-text ppp-text--sm mb-40 mbm-20" data-i18n="ppp.lawLead">Правовое регулирование ГЧП во всех странах-участницах ЕАБР осуществляется в специальных законах о ГЧП.</p>
+
+                                <div class="ppp-gov mb-40 mbm-20">
+                                    <% lawCols.forEach(function(col) { %>
+                                    <div class="ppp-gov__col">
+                                        <% col.forEach(function(l) { %>
+                                        <div class="ppp-gov__item">
+                                            <input type="checkbox" id="ppp-law-<%= l.id %>" class="ppp-gov__toggle">
+                                            <label for="ppp-law-<%= l.id %>" class="ppp-gov__head">
+                                                <span class="ppp-gov__brand">
+                                                    <span class="ppp-gov__flag" style="background-image: url('<%= l.flag %>');"></span>
+                                                    <span class="ppp-gov__name" data-i18n="ppp.laws.<%= l.i %>.country"><%- l.country %></span>
+                                                </span>
+                                                <svg class="ppp-gov__arrow" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-arrow-drop"></use>
+                                                </svg>
+                                            </label>
+                                            <div class="ppp-gov__wrapper">
+                                                <div class="ppp-gov__inner">
+                                                    <div class="ppp-gov__law">
+                                                        <span class="ppp-gov__lawname" data-i18n="ppp.laws.<%= l.i %>.law"><%- l.law %></span>
+                                                        <p class="ppp-gov__text" data-i18n="ppp.laws.<%= l.i %>.text"><%- l.text %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <p class="ppp-text mb-20 mbm-15" data-i18n="ppp.lawIntro2">Законы о ГЧП стран-участниц ЕАБР по-разному оцениваются с точки зрения их согласованности с международными стандартами регулирования ГЧП.</p>
+                                <h3 class="ppp-h3 mb-40 mbm-20" data-i18n="ppp.lawIntro3">По оценке ЕАБР, в законах о ГЧП каждой из стран-участниц ЕАБР есть целый ряд эффективных правовых норм:</h3>
+
+                                <div class="ppp-lawnorms mb-50 mbm-30">
+                                    <% laws.forEach(function(l) { %>
+                                    <div class="ppp-lawnorm">
+                                        <div class="ppp-lawnorm__head">
+                                            <span class="ppp-lawnorm__flag" style="background-image: url('<%= l.flag %>');"></span>
+                                            <span class="ppp-lawnorm__name" data-i18n="ppp.laws.<%= l.i %>.law"><%- l.law %></span>
+                                        </div>
+                                        <p class="ppp-lawnorm__text" data-i18n="ppp.laws.<%= l.i %>.text"><%- l.text %></p>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <% renderSupport(supports[1]); %>
+                            </section>
+
+                            <section class="ppp-section mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="ppp.marketTitle">Рынки ГЧП в странах евразийского пространства</span>
+                                </h2>
+                                <p class="ppp-text mb-40 mbm-20" data-i18n="ppp.marketLead">Рынки ГЧП в странах-участницах ЕАБР различаются по количественным показателям, но во многом схожи по отраслевой специфике и тенденциям развития.</p>
+
+                                <div id="ppp-analytics">
+                                    <h2 class="ppp-h2 ppp-h2--lg mb-20 mbm-15" data-i18n="ppp.marketNumbersTitle">Рынки ГЧП в цифрах</h2>
+                                    <p class="ppp-text ppp-text--sm mb-40 mbm-20" data-i18n="ppp.marketNumbers">Лидирующие позиции по количеству проектов ГЧП и объему инвестиций занимают ГЧП-рынки России, Казахстана, Узбекистана и Кыргызстана.</p>
+                                </div>
+
+                                <div class="ppp-db mb-40 mbm-20">
+                                    <% db.forEach(function(d, i) { %>
+                                    <a href="#" class="ppp-db__item">
+                                        <span class="ppp-db__flag" style="background-image: url('<%= d.flag %>');"></span>
+                                        <span class="ppp-db__info">
+                                            <span class="ppp-db__country" data-i18n="ppp.db.<%= i %>.country"><%- d.country %></span>
+                                            <span class="ppp-db__label" data-i18n="ppp.db.<%= i %>.label"><%- d.label %></span>
+                                        </span>
+                                        <svg class="ppp-db__arrow" aria-hidden="true">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-long"></use>
+                                        </svg>
+                                    </a>
+                                    <% }); %>
+                                </div>
+
+                                <h2 class="ppp-h2 ppp-h2--lg mb-20 mbm-15" data-i18n="ppp.growthTitle">Факторы роста рынков ГЧП</h2>
+                                <ul class="ppp-bullets mb-40 mbm-20">
+                                    <% growth.forEach(function(t, i) { %>
+                                    <li class="ppp-bullets__item">
+                                        <span class="ppp-bullets__dash" aria-hidden="true"></span>
+                                        <span data-i18n="ppp.growth.<%= i %>"><%- t %></span>
+                                    </li>
+                                    <% }); %>
+                                </ul>
+
+                                <% renderSupport(supports[2]); %>
+                            </section>
+
+                            <div class="ppp-stat">
+                                <div class="ppp-stat__circle">
+                                    <div class="ppp-stat__value">
+                                        <span class="ppp-stat__pre" data-i18n="ppp.statPrefix">$</span><span data-animate="counter" data-counter-from="0">1.4</span><span class="ppp-stat__unit" data-i18n="ppp.statUnit">млрд</span>
+                                    </div>
+                                </div>
+                                <div class="ppp-stat__caption">
+                                    <span class="ppp-stat__line" aria-hidden="true"></span>
+                                    <p class="ppp-stat__label" data-i18n="ppp.statLabel">Накопленный портфель ЕАБР по ГЧП-проектам</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>
