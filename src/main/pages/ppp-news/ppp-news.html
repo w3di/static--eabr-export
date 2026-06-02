@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="pnews.pageTitle">Мероприятия и новости по ГЧП | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const navItems = [
+        { href: '/ppp/',         label: 'ГЧП на евразийском пространстве', i18n: 'pnews.nav.about' },
+        { href: '/ppp-program/', label: 'Программа ЕАБР по ГЧП',           i18n: 'pnews.nav.program' },
+        { href: '#',             label: 'Мероприятия и новости',          i18n: 'pnews.nav.news', active: true },
+        { href: '#',             label: 'Обзоры и аналитика',             i18n: 'pnews.nav.analytics' }
+    ];
+
+    const news = [
+        { dt: '2025-09-02', date: '2 сентября 2025',  video: false, title: 'ЕАБР предоставил финансирование для развития институциональной среды государственно-частного партнерства' },
+        { dt: '2023-09-29', date: '29 сентября 2023', video: false, title: 'Евразийскому банку развития присуждена Премия Центра ГЧП Кыргызстана в номинации «Международный партнер года»' },
+        { dt: '2025-12-18', date: '18 декабря 2025', video: true,  title: 'Евгений Винокуров о перспективах Центральной Азии как одного из наиболее быстрорастущих регионов мира — интервью' }
+    ];
+    const cards = [];
+    for (let i = 0; i < 3; i++) { news.forEach(function(n) { cards.push(n); }); }
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular pnews-main">
+            <section class="ppp-banner">
+                <div class="container ppp-banner__wrap">
+                    <span class="ppp-banner__watermark" aria-hidden="true" data-i18n="pnews.watermark">ГЧП</span>
+                    <div class="ppp-banner__content">
+                        <h1 class="ppp-banner__title" data-i18n="pnews.bannerTitle">Мероприятия и новости Евразийского банка развития по государственно-частному партнерству</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="pnews.breadcrumbHome">Главная</span> / <span data-i18n="pnews.breadcrumbActivity">Наша деятельность</span> / <span data-i18n="pnews.breadcrumbPpp">ГЧП</span> / <strong data-i18n="pnews.breadcrumbNews">Мероприятия и новости</strong>
+                                </div>
+                            </div>
+
+                            <div class="articles-content">
+                                <div class="articles-content__filter pnews-filter-bar">
+                                    <form action="" class="filter-articles">
+                                        <div class="filter-articles__date input-date order-mob-2" data-datepicker="block" data-datepicker-inline-label="pnews.filterDates" data-filter-key="date">
+                                            <input type="text" class="input-date__head" data-datepicker="head" value="Дата" readonly>
+                                            <input type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату" data-i18n-placeholder="pnews.datePlaceholder">
+                                        </div>
+                                        <div class="grow mob-hidden"></div>
+                                        <div class="filter-articles__search form-search order-mob-1">
+                                            <input type="text" class="form-search__input" data-i18n-placeholder="pnews.searchPlaceholder" data-filter-key="q">
+                                            <button class="form-search__button" type="button">
+                                                <span class="form-search__text" data-i18n="pnews.searchText">Поиск</span>
+                                                <svg class="form-search__icon" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-search"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="articles-content__main">
+                                    <div class="grid grid--near">
+                                        <% cards.forEach(function(n) { %>
+                                        <div class="grid__col grid__col--4 grid__col-mob--4">
+                                            <a href="<%= htmlWebpackPlugin.options.routes.newsEventsDetail %>" class="article-video<%= n.video ? '' : ' article-video--plain' %>">
+                                                <picture class="article-video__picture">
+                                                    <img src="/assets/images/1200x800.svg" alt="<%- n.title %>">
+                                                </picture>
+                                                <div class="article-video__content">
+                                                    <time class="article-video__date" datetime="<%= n.dt %>"><%- n.date %></time>
+                                                    <p class="article-video__title"><%- n.title %></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+
+                                <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
+                                    <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <path d="M8 1L1 8L8 15" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        <span data-i18n="pnews.pagPrev">Назад</span>
+                                    </button>
+                                    <ul class="ap-pagination__list" data-pagination-list></ul>
+                                    <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
+                                        <span data-i18n="pnews.pagNext">Далее</span>
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <path d="M1 1L8 8L1 15" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

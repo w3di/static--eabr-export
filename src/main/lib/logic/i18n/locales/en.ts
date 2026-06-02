@@ -1238,4 +1238,107 @@ export const en = {
     newsTitle: 'Events and news',
     more: '…more',
   },
+  pprog: {
+    pageTitle: 'EDB PPP Programme | Eurasian Development Bank',
+    watermark: 'PPP',
+    bannerTitle:
+      'Eurasian Development Bank Programme for Public-Private Partnership',
+    breadcrumbHome: 'Home',
+    breadcrumbActivity: 'Our activities',
+    breadcrumbPpp: 'PPP',
+    breadcrumbProgram: 'EDB PPP Programme',
+    nav: {
+      about: 'PPP in the Eurasian space',
+      products: 'Products',
+      news: 'Events and news',
+      analytics: 'Reviews and analytics',
+    },
+    productsTitle: 'Products',
+    productsLead:
+      'The EDB provides credit products that meet the requirements of large-scale investment projects in terms of tenor, repayment schedule, intended use, tranches and more.',
+    creditTitle: 'The broad range of financial products and instruments comprises:',
+    credit: {
+      0: 'Debt financing',
+      1: 'Equity financing',
+      2: 'Mezzanine financing',
+    },
+    creditWide: {
+      0: 'Issuance of special-purpose tranches',
+      '0Note':
+        '(to pay interest and fees, as well as to fund a debt service reserve account)',
+      1: 'Syndicated loans',
+      2: 'Additional financial instruments',
+      '2Note': '(currency hedging of financing, etc.)',
+    },
+    nonCreditTitle:
+      'As one of the leading analytical centres with deep PPP expertise across its region of operations, the EDB is able to provide non-credit products:',
+    nonCredit: {
+      0: 'Project advisory',
+      1: 'Legal advisory',
+      2: 'Holding roadshows for PPP projects',
+    },
+    nonCreditWide: {
+      0: 'Organising and conducting applied research on the sectoral and country-specific aspects of PPP development, as well as research on PPP markets;',
+      1: 'Development of guidelines and standardised project documents and PPP agreements;',
+    },
+    directionsTitle: 'Priority areas',
+    directions: {
+      0: {
+        title: 'PPP for sustainable development',
+        text: 'as a mechanism for creating infrastructure that delivers, alongside economic effects, the social and environmental effects envisaged by the SDGs, and that also supports the implementation of states’ climate and social agendas within their own',
+      },
+      1: {
+        title: 'Cross-border PPP',
+        text: 'as a mechanism that helps unlock the integration potential of the EAEU in transport and logistics, water and energy, trade and other areas of economic cooperation. Through the creation of cross-border or',
+      },
+      2: {
+        title: 'Digitalisation of PPP processes',
+        text: 'creating digital products for the preparation and implementation of PPP projects; digitalising management decisions in the PPP field makes it possible to reduce the time and costs of preparing and launching PPP projects and to simplify the interaction of public authorities',
+      },
+    },
+    more: '…more',
+  },
+  pnews: {
+    pageTitle: 'PPP events and news | Eurasian Development Bank',
+    watermark: 'PPP',
+    bannerTitle: 'Events and news of the Eurasian Development Bank on public-private partnership',
+    breadcrumbHome: 'Home',
+    breadcrumbActivity: 'Our activities',
+    breadcrumbPpp: 'PPP',
+    breadcrumbNews: 'Events and news',
+    nav: {
+      about: 'PPP in the Eurasian space',
+      program: 'EDB PPP Programme',
+      news: 'Events and news',
+      analytics: 'Reviews and analytics',
+    },
+    filterDates: 'Date',
+    datePlaceholder: 'Select date',
+    searchText: 'Search',
+    searchPlaceholder: 'Search',
+    pagPrev: 'Back',
+    pagNext: 'Next',
+  },
+  pana: {
+    pageTitle: 'PPP reviews and analytics | Eurasian Development Bank',
+    watermark: 'PPP',
+    bannerTitle: 'Reviews and analytics of the Eurasian Development Bank on public-private partnership',
+    breadcrumbHome: 'Home',
+    breadcrumbActivity: 'Our activities',
+    breadcrumbPpp: 'PPP',
+    breadcrumbAnalytics: 'Reviews and analytics',
+    nav: {
+      about: 'PPP in the Eurasian space',
+      program: 'EDB PPP Programme',
+      news: 'Events and news',
+      analytics: 'Reviews and analytics',
+    },
+    digestTitle: 'EDB PPP Digest',
+    intro: {
+      0: 'Public-private partnership is used across all EDB member states as a tool that helps governments attract private capital, draw on the expertise of the private sector and allocate risks in projects to build new or upgrade existing infrastructure, in order to improve access to transport, healthcare, education, energy and utility services while at the same time stimulating economic growth and raising the well-being of the population.',
+      1: 'The national PPP markets of the Bank’s member states are rich in developments related to the rollout of PPP project activity, the development of the institutional and legal PPP environment, and the instruments and conditions for financing PPP projects. Many of the PPP events being held are largely common to all EDB member states. The EDB serves as a platform for interaction between the national PPP centres of the member states, the authorities and organisations responsible for PPP, investors and lenders, and the PPP expert community, enabling the exchange of views and experience across the full range of pressing issues on each country’s national PPP agenda and the formation of a common Eurasian PPP agenda. We are pleased to present a new PPP initiative of the Bank — a news digest on PPP across the Eurasian space. This material is intended to cover and disseminate PPP news both within and beyond the EDB in order to improve the availability of information and awareness of PPP among governments and the investment, banking and expert PPP communities.',
+      2: 'The PPP Digest covers news across the Eurasian space in the sections “Regulation. Institutions. Standards”, “Markets. Projects” and “Key events”, as well as international news in the section “Interviews. Opinions. Partner news”.',
+    },
+    analyticsTitle: 'Reviews and analytics',
+  },
 };

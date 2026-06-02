@@ -77,7 +77,7 @@ class FormInit {
               isComplete = true;
             }
             input.value = date;
-            head.value = inlineLabelKey && date ? date : labelText();
+            head.value = labelText();
             if (filterKey) {
               if (!date) {
                 filterState.set(filterKey, null);
@@ -104,13 +104,15 @@ class FormInit {
                 )
                 .join(' - ');
               input.value = display;
-              head.value = inlineLabelKey ? display : labelText();
+              window.setTimeout(() => {
+                head.value = labelText();
+              });
             }
           }
         }
 
         i18next.on('languageChanged', () => {
-          if (!inlineLabelKey || !input.value) head.value = labelText();
+          head.value = labelText();
         });
       });
   }

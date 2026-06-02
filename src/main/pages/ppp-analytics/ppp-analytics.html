@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="pana.pageTitle">Обзоры и аналитика по ГЧП | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const navItems = [
+        { href: '/ppp/',         label: 'ГЧП на евразийском пространстве', i18n: 'pana.nav.about' },
+        { href: '/ppp-program/', label: 'Программа ЕАБР по ГЧП',           i18n: 'pana.nav.program' },
+        { href: '/ppp-news/',    label: 'Мероприятия и новости',          i18n: 'pana.nav.news' },
+        { href: '#',             label: 'Обзоры и аналитика',             i18n: 'pana.nav.analytics', active: true }
+    ];
+
+    const intro = [
+        'Государственно-частное партнерство применяется во всех странах — участницах ЕАБР как инструмент, помогающий правительствам привлекать частный капитал, использовать опыт частного сектора и распределять риски в проектах создания новой или обновления существующей инфраструктуры для улучшения доступа к услугам транспорта, здравоохранения, образования, энергетики, коммунальных систем при одновременном стимулировании экономического роста и повышении благосостояния населения.',
+        'Национальные рынки ГЧП стран-участниц Банка насыщены событиями, связанными с развертыванием проектной ГЧП-деятельности, развитием институциональной и правовой ГЧП-среды, инструментов и условий финансирования проектов ГЧП. Целый ряд проводимых ГЧП-мероприятий являются во многом общими для всех стран-участниц ЕАБР. ЕАБР выступает площадкой взаимодействия национальных ГЧП-центров стран-участниц, уполномоченных в сфере ГЧП органов и организаций, инвесторов и кредиторов, экспертного ГЧП-сообщества для обмена мнениями и опытом по всему спектру актуальных вопросов национальной ГЧП-повестки каждой из стран и становления общей евразийской ГЧП-повестки. Вашему вниманию представляется новая ГЧП-инициатива Банка — новостная подборка по ГЧП на евразийском пространстве. Данный материал призван освещать и распространять ГЧП-новости как внутри, так и вне ЕАБР для повышения информационной доступности и осведомленности о ГЧП правительств, инвестиционного, банковского и экспертного ГЧП-сообществ.',
+        'ГЧП-Дайджест освещает новости на евразийском пространстве в разделах «Регулирование. Институты. Стандарты», «Рынки. Проекты», «Ключевые события», а также международные новости в разделе «Интервью. Мнения. Новости партнеров».'
+    ];
+
+    const years = [
+        { year: '2026', digests: [
+            { title: 'Дайджест № 2 март-апрель 2026',   size: 'PDF, 236.54 KB' },
+            { title: 'Дайджест № 1 январь-февраль 2026', size: 'PDF, 236.54 KB' }
+        ] },
+        { year: '2025', digests: [
+            { title: 'Дайджест № 6 ноябрь-декабрь 2025', size: 'PDF, 236.54 KB' },
+            { title: 'Дайджест № 5 сентябрь-октябрь 2025', size: 'PDF, 236.54 KB' }
+        ] }
+    ];
+
+    const reviews = [
+        { date: '18 декабря 2025',  title: 'Межстрановой обзор «Правовая среда ГЧП на евразийском пространстве»' },
+        { date: '18 декабря 2025',  title: 'Страновой обзор «Развитие государственно-частного партнерства в Республике Армения: ключевые этапы и перспективы»' },
+        { date: '16 сентября 2025', title: 'Трансграничные государственно-частные партнерства' },
+        { date: '18 декабря 2025',  title: 'Макроэкономический прогноз 2026–2028' }
+    ];
+
+    function renderDigest(d) {
+%>
+                                        <div class="pana-pdf">
+                                            <span class="pana-pdf__badge" aria-hidden="true">PDF</span>
+                                            <span class="pana-pdf__info">
+                                                <span class="pana-pdf__name"><%- d.title %></span>
+                                                <span class="pana-pdf__size"><%- d.size %></span>
+                                            </span>
+                                        </div>
+<%
+    }
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular pana-main">
+            <section class="ppp-banner">
+                <div class="container ppp-banner__wrap">
+                    <span class="ppp-banner__watermark" aria-hidden="true" data-i18n="pana.watermark">ГЧП</span>
+                    <div class="ppp-banner__content">
+                        <h1 class="ppp-banner__title" data-i18n="pana.bannerTitle">Обзоры и Аналитика Евразийского банка развития по государственно-частному партнерству</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="pana.breadcrumbHome">Главная</span> / <span data-i18n="pana.breadcrumbActivity">Наша деятельность</span> / <span data-i18n="pana.breadcrumbPpp">ГЧП</span> / <strong data-i18n="pana.breadcrumbAnalytics">Обзоры и аналитика</strong>
+                                </div>
+                            </div>
+
+                            <section class="pana-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="pana.digestTitle">ГЧП-Дайджест ЕАБР</span>
+                                </h2>
+                                <div class="pana-text">
+                                    <% intro.forEach(function(p, i) { %>
+                                    <p data-i18n="pana.intro.<%= i %>"><%- p %></p>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <section class="pana-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="pana.analyticsTitle">Обзоры и аналитика</span>
+                                </h2>
+
+                                <div class="pana-years" data-tabset>
+                                    <div class="pana-years__head">
+                                        <% years.forEach(function(y, i) { %>
+                                        <button class="pana-years__btn<%= i === 0 ? ' is-active' : '' %>" type="button" data-tab-btn="<%= i %>"><%= y.year %></button>
+                                        <% }); %>
+                                    </div>
+                                    <% years.forEach(function(y, i) { %>
+                                    <div class="pana-years__panel<%= i === 0 ? ' is-active' : '' %>" data-tab-panel="<%= i %>">
+                                        <div class="pana-digests">
+                                            <% y.digests.forEach(function(d) { renderDigest(d); }); %>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <div class="pana-books">
+                                    <% reviews.forEach(function(r) { %>
+                                    <a href="#" class="pana-book">
+                                        <span class="pana-book__cover" aria-hidden="true"></span>
+                                        <span class="pana-book__info">
+                                            <span class="pana-book__title"><%- r.title %></span>
+                                            <span class="pana-book__date"><%- r.date %></span>
+                                        </span>
+                                    </a>
+                                    <% }); %>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="pprog.pageTitle">Программа ЕАБР по ГЧП | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const navItems = [
+        { href: '/ppp/',            label: 'ГЧП на евразийском пространстве', i18n: 'pprog.nav.about' },
+        { href: '#pprog-products',  label: 'Продукты',                       i18n: 'pprog.nav.products', active: true },
+        { href: '#pprog-news',      label: 'Мероприятия и новости',          i18n: 'pprog.nav.news' },
+        { href: '#pprog-analytics', label: 'Обзоры и аналитика',             i18n: 'pprog.nav.analytics' }
+    ];
+
+    const creditRow = ['Долговое финансирование', 'Долевое финансирование', 'Мезонинное финансирование'];
+    const creditWide = [
+        { title: 'Выпуск траншей специального назначения', note: '(на уплату процентов и комиссий, а также формирование резервного счёта обслуживания долга)' },
+        { title: 'Синдицированные кредиты' },
+        { title: 'Дополнительные финансовые инструменты', note: '(валютное хеджирование финансирования и др.)' }
+    ];
+
+    const nonCreditRow = ['Проектное консультирование', 'Юридическое консультирование', 'Проведение road-show проектов ГЧП'];
+    const nonCreditWide = [
+        'Организация и проведение прикладных исследований по отраслевой и страновой специфике развития ГЧП, а также исследований рынков ГЧП;',
+        'Разработка руководящих принципов и стандартизированных проектных документов и соглашений о ГЧП;'
+    ];
+
+    const directions = [
+        { num: '1', title: 'ГЧП для обеспечения устойчивого развития', text: 'как механизм создания инфраструктуры, обеспечивающей, наряду с экономическими, социальные и экологические эффекты, предусмотренные ЦУР, а также способствующей осуществлению климатической и социальной повестки государств в собственных' },
+        { num: '2', title: 'Трансграничные ГЧП', text: 'как механизм, способствующий раскрытию интеграционного потенциала ЕАЭС в транспортно-логистической, водно-энергетической, торговой и иных сферах экономического сотрудничества. За счёт создания трансграничной или' },
+        { num: '3', title: 'Цифровизация процессов ГЧП', text: 'cоздание цифровых продуктов для подготовки и реализации ГЧП-проектов, оцифровка управленческих решений в сфере ГЧП позволяет сократить сроки и издержки на подготовку и запуск проектов ГЧП, упростить взаимодействие органов власти' }
+    ];
+
+    function renderCard(title, opts) {
+        opts = opts || {};
+        const cls = 'pprog-card' + (opts.blue ? ' pprog-card--blue' : '') + (opts.wide ? ' pprog-card--wide' : '');
+%>
+                                    <div class="<%= cls %>">
+                                        <h3 class="pprog-card__title" data-i18n="<%= opts.i18n %>"><%- title %></h3>
+                                        <% if (opts.note) { %>
+                                        <p class="pprog-card__note" data-i18n="<%= opts.i18n %>Note"><%- opts.note %></p>
+                                        <% } %>
+                                    </div>
+<%
+    }
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <div class="nav-drawer">
+            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
+                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+                <label for="nav-drawer-toggle" class="nav-drawer__close">
+                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </label>
+                <div class="nav-drawer__items">
+                    <% navItems.forEach(function(it) { %>
+                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <main class="main main--regular pprog-main">
+            <section class="ppp-banner">
+                <div class="container ppp-banner__wrap">
+                    <span class="ppp-banner__watermark" aria-hidden="true" data-i18n="pprog.watermark">ГЧП</span>
+                    <div class="ppp-banner__content">
+                        <h1 class="ppp-banner__title" data-i18n="pprog.bannerTitle">Программа Евразийского банка развития по государственно-частному партнёрству</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <aside class="nav-aside">
+                                <% navItems.forEach(function(it) { %>
+                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                                <% }); %>
+                            </aside>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="pprog.breadcrumbHome">Главная</span> / <span data-i18n="pprog.breadcrumbActivity">Наша деятельность</span> / <span data-i18n="pprog.breadcrumbPpp">ГЧП</span> / <strong data-i18n="pprog.breadcrumbProgram">Программа ЕАБР по ГЧП</strong>
+                                </div>
+                            </div>
+
+                            <section id="pprog-products" class="pprog-section mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-20 mbm-15">
+                                    <span class="title__inner" data-i18n="pprog.productsTitle">Продукты</span>
+                                </h2>
+                                <p class="pprog-lead mb-25 mbm-20" data-i18n="pprog.productsLead">ЕАБР предоставляет кредитные продукты, отвечающие требованиям крупномасштабных инвестиционных проектов по срочности, графику погашения, целевому использованию, траншам и др.</p>
+
+                                <h3 class="pprog-h3 mb-20 mbm-15" data-i18n="pprog.creditTitle">Широкую линейку финансовых продуктов и инструментов образуют:</h3>
+                                <div class="pprog-cards mb-50 mbm-30">
+                                    <div class="pprog-cards__row">
+                                        <% creditRow.forEach(function(t, i) { renderCard(t, { i18n: 'pprog.credit.' + i }); }); %>
+                                    </div>
+                                    <% creditWide.forEach(function(c, i) { renderCard(c.title, { wide: true, note: c.note, i18n: 'pprog.creditWide.' + i }); }); %>
+                                </div>
+
+                                <h3 class="pprog-h3 mb-20 mbm-15" data-i18n="pprog.nonCreditTitle">ЕАБР как один из ведущих аналитических центров с глубокой экспертизой по вопросам ГЧП в регионе присутствия способен предоставлять не кредитные продукты:</h3>
+                                <div class="pprog-cards">
+                                    <div class="pprog-cards__row">
+                                        <% nonCreditRow.forEach(function(t, i) { renderCard(t, { blue: true, i18n: 'pprog.nonCredit.' + i }); }); %>
+                                    </div>
+                                    <% nonCreditWide.forEach(function(t, i) { renderCard(t, { blue: true, wide: true, i18n: 'pprog.nonCreditWide.' + i }); }); %>
+                                </div>
+                            </section>
+
+                            <section id="pprog-analytics" class="pprog-section">
+                                <h2 class="title title--small title--underline mb-20 mbm-15">
+                                    <span class="title__inner" data-i18n="pprog.directionsTitle">Приоритетные направления</span>
+                                </h2>
+                                <div class="pprog-dirs">
+                                    <% directions.forEach(function(d, i) { %>
+                                    <div class="pprog-dir" data-readmore>
+                                        <span class="pprog-dir__num" aria-hidden="true"><%= d.num %></span>
+                                        <h3 class="pprog-dir__title" data-i18n="pprog.directions.<%= i %>.title"><%- d.title %></h3>
+                                        <p class="pprog-dir__text" data-readmore-text data-i18n="pprog.directions.<%= i %>.text"><%- d.text %></p>
+                                        <button class="pprog-dir__more" type="button" data-readmore-btn data-i18n="pprog.more">…ещё</button>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>
