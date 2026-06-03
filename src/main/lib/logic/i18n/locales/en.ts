@@ -1140,7 +1140,7 @@ export const en = {
     lead: '— a form of cooperation between public and private partners based on the pooling of resources and the sharing of risks in the development of public infrastructure — is applied across all countries of the Eurasian space. And interest in the development of PPP only continues to grow.',
     nav: {
       about: 'PPP in the Eurasian space',
-      program: 'EDB Programme',
+      program: 'EDB PPP Programme',
       news: 'Events and news',
       analytics: 'Reviews and analytics',
     },
@@ -1263,6 +1263,7 @@ export const en = {
     breadcrumbProgram: 'EDB PPP Programme',
     nav: {
       about: 'PPP in the Eurasian space',
+      program: 'EDB PPP Programme',
       products: 'Products',
       news: 'Events and news',
       analytics: 'Reviews and analytics',

@@ -1124,7 +1124,7 @@ export const zh = {
     lead: '是公共合作方与私人合作方在公共基础设施开发领域，基于资源整合与风险分担而开展的合作，已在欧亚地区各国得到应用。各方对发展PPP的关注度也在不断提升。',
     nav: {
       about: '欧亚地区的PPP',
-      program: '欧亚开发银行计划',
+      program: '欧亚开发银行PPP计划',
       news: '活动与新闻',
       analytics: '评述与分析',
     },
@@ -1246,6 +1246,7 @@ export const zh = {
     breadcrumbProgram: '欧亚开发银行PPP计划',
     nav: {
       about: '欧亚地区的PPP',
+      program: '欧亚开发银行PPP计划',
       products: '产品',
       news: '活动与新闻',
       analytics: '评述与分析',
