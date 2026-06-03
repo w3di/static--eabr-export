@@ -7,7 +7,7 @@
 	position: relative;
 	width: fit-content;
 	align-items: center;
-	border-radius: r(54);
+	border-radius: r(24);
 	justify-content: center;
 
 	&--mob-full {
@@ -45,6 +45,7 @@
 		fill: #111111;
 		display: block;
 		position: relative;
+		flex-shrink: 0;
 	}
 
 	&__text {

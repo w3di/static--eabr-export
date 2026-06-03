@@ -14,6 +14,7 @@
         .hint { color: #666; margin-left: 8px; font-size: 13px; }
         code { color: #999; margin-left: 8px; font-size: 12px; }
         .badge { display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 4px; background: #1BCE1B; color: #FFF; font-size: 11px; font-weight: 700; vertical-align: middle; }
+        .badge--blue { background: #0097D8; }
         .ref { color: #999; font-size: 12px; }
     </style>
 </head>
@@ -39,7 +40,10 @@
         { href: routes.careersAbout,      key: 'careersAbout',      hint: 'О нас / карта Евразии' },
         { href: routes.careersJobs,       key: 'careersJobs',       hint: 'Открытые вакансии' },
         { href: routes.careersInternship, key: 'careersInternship', hint: 'Стажировка и практика' },
-        { href: routes.contacts,          key: 'contacts',          hint: 'Контакты' }
+        { href: routes.contacts,          key: 'contacts',          hint: 'Контакты' },
+        { href: routes.pppProgram,        key: 'pppProgram',        hint: 'ГЧП: Программа', isNewBlue: true },
+        { href: routes.pppNews,           key: 'pppNews',           hint: 'ГЧП: Новости', isNewBlue: true },
+        { href: routes.pppAnalytics,      key: 'pppAnalytics',      hint: 'ГЧП: Аналитика', isNewBlue: true }
     ];
 
     const readyKeys = new Set(ready.map(function(e) { return e.key; }));
@@ -52,7 +56,7 @@
     <h2>Готовые страницы (<%= ready.length %>)</h2>
     <ul>
         <% ready.forEach(function(e) { %>
-        <li><a href="<%= e.href %>"><%= e.href %></a> <span class="hint">— <%= e.hint %></span><% if (e.isNew) { %><span class="badge">NEW</span><% } %></li>
+        <li><a href="<%= e.href %>"><%= e.href %></a> <span class="hint">— <%= e.hint %></span><% if (e.isNew) { %><span class="badge">NEW</span><% } %><% if (e.isNewBlue) { %><span class="badge badge--blue">NEW</span><% } %></li>
         <% }); %>
     </ul>
 

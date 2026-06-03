@@ -29,11 +29,15 @@ class FormInit {
         const filterKey = item.dataset.filterKey;
         const inlineLabelKey = item.dataset.datepickerInlineLabel;
         const labelText = (): string =>
-          inlineLabelKey ? i18next.t(inlineLabelKey) : i18next.t('filters.date');
+          inlineLabelKey
+            ? i18next.t(inlineLabelKey)
+            : i18next.t('filters.date');
 
         const toIso = (s: string): string => {
           const [d, m, y] = s.split('.');
-          return y && m && d ? `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}` : '';
+          return y && m && d
+            ? `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`
+            : '';
         };
 
         const fromIso = (s: string): Date | null => {
@@ -41,31 +45,42 @@ class FormInit {
           return y && m && d ? new Date(y, m - 1, d) : null;
         };
 
+        const isMobile = window.matchMedia('(max-width: 1260px)').matches;
+
         const dp = new AirDatepicker(head, {
           range: true,
           multipleDatesSeparator: '-',
           buttons: ['clear'],
+          isMobile,
 
-          position({ $datepicker, $target, $pointer, done }) {
-            const popper = createPopper($target, $datepicker, {
-              placement: 'bottom',
-              modifiers: [
-                { name: 'flip', options: { padding: { top: 64 } } },
-                { name: 'offset', options: { offset: [0, 10] } },
-                { name: 'arrow', options: { element: $pointer } },
-              ],
-            });
-            return function completeHide() {
-              popper.destroy();
-              done();
-            };
-          },
+          ...(isMobile
+            ? {}
+            : {
+                position({ $datepicker, $target, $pointer, done }) {
+                  const popper = createPopper($target, $datepicker, {
+                    placement: 'bottom',
+                    modifiers: [
+                      { name: 'flip', options: { padding: { top: 64 } } },
+                      { name: 'offset', options: { offset: [0, 10] } },
+                      { name: 'arrow', options: { element: $pointer } },
+                    ],
+                  });
+                  return function completeHide() {
+                    popper.destroy();
+                    done();
+                  };
+                },
+              }),
 
           onSelect({ formattedDate, datepicker }) {
             let date = '';
             let isComplete = false;
             if (Array.isArray(formattedDate)) {
-              if (formattedDate.length === 2 && formattedDate[0] && formattedDate[1]) {
+              if (
+                formattedDate.length === 2 &&
+                formattedDate[0] &&
+                formattedDate[1]
+              ) {
                 const [from, to] = formattedDate;
                 date = from === to ? from : `${from} - ${to}`;
                 isComplete = true;
@@ -78,6 +93,7 @@ class FormInit {
             }
             input.value = date;
             head.value = labelText();
+            head.classList.toggle('is-filled', !!date);
             if (filterKey) {
               if (!date) {
                 filterState.set(filterKey, null);
@@ -90,20 +106,29 @@ class FormInit {
           },
         });
 
+        (head as unknown as { airDatepicker?: typeof dp }).airDatepicker = dp;
+
         head.value = labelText();
 
         if (filterKey) {
           const initial = filterState.get(filterKey);
           if (initial) {
-            const parsed = initial.split('_').map(fromIso).filter((d): d is Date => d !== null);
+            const parsed = initial
+              .split('_')
+              .map(fromIso)
+              .filter((d): d is Date => d !== null);
             if (parsed.length) {
-              dp.selectDate(parsed.length === 1 ? parsed[0] : parsed, { silent: true });
+              dp.selectDate(parsed.length === 1 ? parsed[0] : parsed, {
+                silent: true,
+              });
               const display = parsed
-                .map((d) =>
-                  `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`,
+                .map(
+                  (d) =>
+                    `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`,
                 )
                 .join(' - ');
               input.value = display;
+              head.classList.add('is-filled');
               window.setTimeout(() => {
                 head.value = labelText();
               });
@@ -135,6 +160,14 @@ class FormInit {
     Fancybox.bind('[data-fancybox="menu-aside"]', {
       mainClass: 'fancybox-aside-contents',
       closeButton: false,
+    });
+
+    Fancybox.bind('[data-fancybox="bakad-gallery"]', {
+      mainClass: 'fancybox-bakad',
+      Thumbs: false,
+      Toolbar: {
+        display: { left: [], middle: [], right: ['close'] },
+      },
     });
   }
 }

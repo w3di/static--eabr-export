@@ -904,6 +904,9 @@ export const zh = {
     viewCards: '卡片',
     viewTable: '表格',
     filtersAria: '筛选',
+    filtersTitle: '筛选',
+    filtersReset: '重置',
+    filtersApply: '应用',
     typeFilter: '项目类型',
     industryFilter: '行业',
     dateLabel: '年份',
@@ -927,6 +930,10 @@ export const zh = {
     mln: '百万美元',
     sumLabel: '项目金额',
     bankLabel: '银行参与金额',
+    awards: {
+      ij: 'IJGlobal Awards 2021',
+      esg: '绿色金融项目',
+    },
     cards: {
       0: { title: '向ARARATBANK开放式股份公司提供不可循环的定向信贷额度以实施该计划……', country: '亚美尼亚' },
       1: { title: '向Ayil Bank开放式股份公司提供信贷额度以在吉尔吉斯共和国实施小额信贷计划', country: '吉尔吉斯斯坦' },
@@ -1034,6 +1041,7 @@ export const zh = {
     galleryTitle: '图片资料',
     copyright: '照片版权某某，来源某处',
     videoTitle: '视频资料',
+    newsTitle: '新闻',
     playAria: '播放',
     pauseAria: '暂停',
     pcPrevAria: '上一张',
@@ -1097,6 +1105,11 @@ export const zh = {
       2: {
         date: '2025年11月28日',
         tag: '机械制造',
+        title: '欧亚各国经济在2026年将增长至9.3%：欧亚开发银行发布新的宏观预测',
+      },
+      3: {
+        date: '2025年11月28日',
+        tag: '基础设施',
         title: '欧亚各国经济在2026年将增长至9.3%：欧亚开发银行发布新的宏观预测',
       },
     },

@@ -544,6 +544,8 @@
 		border-radius: 24px;
 		min-height: 235px;
 		overflow: hidden;
+		cursor: pointer;
+		text-decoration: none;
 
 		&--main { grid-area: main; min-height: 490px; }
 		&--tr   { grid-area: tr; }
@@ -1021,4 +1023,67 @@
 	.pb-news { padding: 40px 0; }
 
 	.pb-photo-carousel { display: none; }
+}
+
+.fancybox-bakad {
+	.fancybox__backdrop {
+		background: rgba(64, 64, 64, 0.62);
+	}
+
+	.fancybox-image {
+		border-radius: 24px;
+	}
+
+	.fancybox__slide { position: relative; }
+
+	.fancybox__caption {
+		position: absolute;
+		left: 0;
+		right: auto;
+		bottom: 0;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0 40px 28px;
+		text-align: left;
+		font-family: 'Brown LL Pan', sans-serif;
+		font-size: 16px;
+		line-height: 19px;
+		color: #FFFFFF;
+	}
+
+	.fancybox__nav {
+		--f-button-width: 56px;
+		--f-button-height: 56px;
+		--f-button-border-radius: 50%;
+		--f-button-bg: rgba(255, 255, 255, 0.6);
+		--f-button-hover-bg: rgba(255, 255, 255, 0.85);
+
+		.f-button svg { display: none; }
+
+		.f-button::after {
+			content: '';
+			width: 15px;
+			height: 24px;
+			background: center / contain no-repeat
+				url("data:image/svg+xml,%3Csvg width='15' height='24' viewBox='0 0 15 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4805 1L1.48047 12L13.4805 23' stroke='%23111111' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+		}
+
+		.f-button.is-next::after {
+			transform: rotate(180deg);
+		}
+	}
+
+	.fancybox__toolbar {
+		padding: 18px 22px;
+		--f-button-bg: transparent;
+		--f-button-hover-bg: rgba(255, 255, 255, 0.18);
+		--f-button-color: #FFFFFF;
+		--f-button-hover-color: #FFFFFF;
+
+		.f-button svg {
+			color: #FFFFFF;
+			stroke: #FFFFFF;
+		}
+	}
 }

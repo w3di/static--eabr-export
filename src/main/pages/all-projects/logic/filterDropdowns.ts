@@ -15,6 +15,68 @@ class FilterDropdowns {
     });
     document.addEventListener('click', () => this.closeAll());
     this.bindTabs();
+    this.bindMobileSheet();
+  }
+
+  private bindMobileSheet() {
+    const bar = document.querySelector<HTMLElement>('.ap-projects__bar');
+    const openBtn = document.querySelector<HTMLElement>('[data-filters-open]');
+    if (!bar || !openBtn) return;
+
+    const open = () => {
+      bar.classList.add('is-filters-open');
+      document.body.classList.add('ap-filters-lock');
+    };
+    const close = () => {
+      bar.classList.remove('is-filters-open');
+      document.body.classList.remove('ap-filters-lock');
+    };
+
+    openBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      open();
+    });
+
+    document
+      .querySelectorAll<HTMLElement>('[data-filters-close]')
+      .forEach((el) =>
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          close();
+        }),
+      );
+
+    const resetBtn = document.querySelector<HTMLElement>('[data-filters-reset]');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.resetAll();
+      });
+    }
+  }
+
+  private resetAll() {
+    this.wraps.forEach((wrap) => {
+      const head = wrap.querySelector<HTMLElement>('.ap-dropdown__item--head');
+      const key = wrap.dataset.filterKey;
+      if (head) this.selectItem(wrap, head);
+      if (key) filterState.set(key, null);
+    });
+
+    document
+      .querySelectorAll<HTMLElement>('[data-datepicker="head"]')
+      .forEach((h) => {
+        const dp = (h as { airDatepicker?: { clear?: () => void } })
+          .airDatepicker;
+        if (dp && typeof dp.clear === 'function') dp.clear();
+      });
+
+    document
+      .querySelectorAll<HTMLInputElement>('input[data-filter-key="q"]')
+      .forEach((inp) => {
+        inp.value = '';
+        filterState.set('q', null);
+      });
   }
 
   private bindTabs() {
@@ -87,7 +149,10 @@ class FilterDropdowns {
       e.stopPropagation();
       const isOpen = wrap.classList.contains('is-open');
       this.closeAll();
-      if (!isOpen) wrap.classList.add('is-open');
+      if (!isOpen) {
+        wrap.classList.add('is-open');
+        if (this.mq.matches) this.expand(panel);
+      }
     });
 
     panel.addEventListener('click', (e) => e.stopPropagation());
@@ -100,29 +165,55 @@ class FilterDropdowns {
     item.classList.add('ap-dropdown__item--active');
 
     const isHead = item.classList.contains('ap-dropdown__item--head');
-    if (isHead) {
-      const def = this.defaults.get(wrap);
-      if (def) this.setLabel(wrap, def);
-    } else {
-      this.setLabel(wrap, (item.textContent || '').trim());
-    }
+    wrap.classList.toggle('is-filled', !isHead);
   }
 
   private bindListItems(wrap: HTMLElement) {
     const key = wrap.dataset.filterKey;
+    const multi = wrap.dataset.multi !== undefined;
     const items = Array.from(
       wrap.querySelectorAll<HTMLElement>('.ap-dropdown__item'),
     );
     items.forEach((item, idx) => {
       item.addEventListener('click', () => {
-        this.selectItem(wrap, item);
-        if (key) {
-          const isHead = item.classList.contains('ap-dropdown__item--head');
-          filterState.set(key, isHead ? null : String(idx));
+        const isHead = item.classList.contains('ap-dropdown__item--head');
+        if (multi && !isHead) {
+          this.toggleItem(wrap, item);
+          if (key) this.syncMulti(wrap, key, items);
+          return;
         }
+        this.selectItem(wrap, item);
+        if (key) filterState.set(key, isHead ? null : String(idx));
         this.closeAll();
       });
     });
+  }
+
+  private toggleItem(wrap: HTMLElement, item: HTMLElement) {
+    const head = wrap.querySelector<HTMLElement>('.ap-dropdown__item--head');
+    if (head) head.classList.remove('ap-dropdown__item--active');
+    item.classList.toggle('ap-dropdown__item--active');
+  }
+
+  private syncMulti(wrap: HTMLElement, key: string, items: HTMLElement[]) {
+    const active = items
+      .map((el, i) =>
+        el.classList.contains('ap-dropdown__item--active') &&
+        !el.classList.contains('ap-dropdown__item--head')
+          ? i
+          : -1,
+      )
+      .filter((i) => i >= 0);
+
+    wrap.classList.toggle('is-filled', active.length > 0);
+
+    if (active.length === 0) {
+      const head = wrap.querySelector<HTMLElement>('.ap-dropdown__item--head');
+      if (head) head.classList.add('ap-dropdown__item--active');
+      filterState.set(key, null);
+    } else {
+      filterState.set(key, active.join(','));
+    }
   }
 
   private bindSum(wrap: HTMLElement) {
@@ -169,6 +260,21 @@ class FilterDropdowns {
       wrap.querySelectorAll<HTMLElement>('.ap-dropdown__item'),
     );
 
+    if (wrap.dataset.multi !== undefined && items.length) {
+      const idxs = initial
+        .split(',')
+        .map((s) => parseInt(s, 10))
+        .filter((n) => !isNaN(n) && items[n]);
+      if (idxs.length) {
+        items.forEach((el) =>
+          el.classList.remove('ap-dropdown__item--active'),
+        );
+        idxs.forEach((i) => items[i].classList.add('ap-dropdown__item--active'));
+        wrap.classList.add('is-filled');
+      }
+      return;
+    }
+
     if (items.length) {
       const idx = parseInt(initial, 10);
       if (!isNaN(idx) && items[idx]) {
@@ -188,8 +294,33 @@ class FilterDropdowns {
     }
   }
 
+  private mq = window.matchMedia('(max-width: 1260px)');
+
+  private expand(panel: HTMLElement) {
+    panel.style.height = '0px';
+    void panel.offsetHeight;
+    panel.style.height = `${panel.scrollHeight}px`;
+  }
+
+  private collapse(panel: HTMLElement) {
+    panel.style.height = `${panel.scrollHeight}px`;
+    void panel.offsetHeight;
+    panel.style.height = '0px';
+  }
+
   private closeAll() {
-    this.wraps.forEach((w) => w.classList.remove('is-open'));
+    const mobile = this.mq.matches;
+    this.wraps.forEach((w) => {
+      const wasOpen = w.classList.contains('is-open');
+      w.classList.remove('is-open');
+      const panel = w.querySelector<HTMLElement>('.ap-dropdown');
+      if (!panel) return;
+      if (mobile) {
+        if (wasOpen) this.collapse(panel);
+      } else {
+        panel.style.height = '';
+      }
+    });
   }
 }
 

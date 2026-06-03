@@ -67,12 +67,6 @@
 	background: #fff;
 	border-left: 3px solid #37EE50;
 	border-radius: 24px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-	&:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 10px 24px rgba(17, 17, 17, 0.06);
-	}
 }
 
 .bp-goal__title {
@@ -129,18 +123,13 @@
 	background: #fff;
 	border: 1px solid #E5EEF2;
 	border-radius: 24px;
-	transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+	transition: border-color 0.2s ease, background 0.2s ease;
 
-	&:hover {
-		border-color: #1BCE1B;
-		transform: translateX(4px);
-	}
-
+	&:hover,
 	&:active,
 	&:focus-within {
 		background: #F2FDF2;
 		border-color: #1BCE1B;
-		transform: translateX(0);
 	}
 }
 

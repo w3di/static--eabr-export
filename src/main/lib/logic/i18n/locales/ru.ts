@@ -834,6 +834,12 @@ export const ru = {
         title:
           'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз',
       },
+      3: {
+        date: '28 ноября 2025',
+        tag: 'Инфраструктура',
+        title:
+          'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз',
+      },
     },
   },
   bankPrograms: {
@@ -1016,6 +1022,9 @@ export const ru = {
     viewCards: 'Карточки',
     viewTable: 'Таблица',
     filtersAria: 'Фильтры',
+    filtersTitle: 'Фильтры',
+    filtersReset: 'Сбросить',
+    filtersApply: 'Применить',
     typeFilter: 'Тип проекта',
     industryFilter: 'Отрасль',
     dateLabel: 'Год',
@@ -1039,6 +1048,10 @@ export const ru = {
     mln: 'млн $',
     sumLabel: 'сумма проекта',
     bankLabel: 'сумма участия банка',
+    awards: {
+      ij: 'IJGlobal Awards 2021',
+      esg: 'Проекты зелёного финансирования',
+    },
     cards: {
       0: {
         title:
@@ -1214,6 +1227,7 @@ export const ru = {
     galleryTitle: 'Фотоматериалы',
     copyright: 'Копирайт фото такое-то взято оттуда',
     videoTitle: 'Видеоматериалы',
+    newsTitle: 'Новости',
     playAria: 'Воспроизвести',
     pauseAria: 'Пауза',
     pcPrevAria: 'Назад',

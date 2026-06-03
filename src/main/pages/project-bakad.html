@@ -35,20 +35,20 @@
     ];
 
     const gallery = [
-        { image: '/assets/images/projects/bakad-g-4.webp', area: 'main' },
-        { image: '/assets/images/projects/bakad-g-1.webp', area: 'tr' },
-        { image: '/assets/images/projects/bakad-g-3.webp', area: 'mr' },
-        { image: '/assets/images/projects/bakad-g-5.webp', area: 'bl' },
-        { image: '/assets/images/projects/bakad-g-2.webp', area: 'bm' },
-        { image: '/assets/images/projects/bakad-g-6.webp', area: 'br' }
+        { image: '/assets/images/projects/bakad-g-4.webp', area: 'main', copyright: 'Копирайт фото 1 — источник' },
+        { image: '/assets/images/projects/bakad-g-1.webp', area: 'tr',   copyright: 'Копирайт фото 2 — источник' },
+        { image: '/assets/images/projects/bakad-g-3.webp', area: 'mr',   copyright: 'Копирайт фото 3 — источник' },
+        { image: '/assets/images/projects/bakad-g-5.webp', area: 'bl',   copyright: 'Копирайт фото 4 — источник' },
+        { image: '/assets/images/projects/bakad-g-2.webp', area: 'bm',   copyright: 'Копирайт фото 5 — источник' },
+        { image: '/assets/images/projects/bakad-g-6.webp', area: 'br',   copyright: 'Копирайт фото 6 — источник' }
     ];
 
     const carouselSlides = [
-        '/assets/images/projects/bakad-pc-1.webp',
-        '/assets/images/projects/bakad-pc-2.webp',
-        '/assets/images/projects/bakad-pc-3.webp',
-        '/assets/images/projects/bakad-pc-4.webp',
-        '/assets/images/projects/bakad-pc-5.webp'
+        { src: '/assets/images/projects/bakad-pc-1.webp', copyright: 'Копирайт фото 1 — источник' },
+        { src: '/assets/images/projects/bakad-pc-2.webp', copyright: 'Копирайт фото 2 — источник' },
+        { src: '/assets/images/projects/bakad-pc-3.webp', copyright: 'Копирайт фото 3 — источник' },
+        { src: '/assets/images/projects/bakad-pc-4.webp', copyright: 'Копирайт фото 4 — источник' },
+        { src: '/assets/images/projects/bakad-pc-5.webp', copyright: 'Копирайт фото 5 — источник' }
     ];
 
 %>
@@ -224,10 +224,10 @@
                     <div class="pb-gallery__swiper swiper" data-slider="pb-gallery">
                         <div class="pb-gallery__grid swiper-wrapper">
                             <% gallery.forEach(function(g) { %>
-                            <div class="pb-gallery__cell pb-gallery__cell--<%= g.area %> swiper-slide">
+                            <a class="pb-gallery__cell pb-gallery__cell--<%= g.area %> swiper-slide" href="<%= g.image %>" data-fancybox="bakad-gallery" data-caption="<%= g.copyright %>" data-copyright="<%= g.copyright %>">
                                 <span class="pb-gallery__img" style="background-image: url('<%= g.image %>');"></span>
                                 <img class="pb-gallery__mark" src="/assets/images/projects/bakad-watermark.webp" alt="" loading="lazy">
-                            </div>
+                            </a>
                             <% }); %>
                         </div>
                         <div class="pb-gallery__pagination" data-slider-pagination></div>
@@ -263,11 +263,16 @@
             </section>
 
             <section class="pb-news">
-                <%= htmlWebpackPlugin.options.widgets.newsCarousel %>
+                <div class="container">
+                    <h2 class="pb-h1 title title--underline">
+                        <span class="title__inner" data-i18n="projectBakad.newsTitle">Новости</span>
+                    </h2>
+                    <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                </div>
             </section>
 
             <section class="pb-photo-carousel" data-pc>
-                <div class="pb-pc__stage" data-pc-stage style="background-image: url('<%= carouselSlides[0] %>');"></div>
+                <div class="pb-pc__stage" data-pc-stage style="background-image: url('<%= carouselSlides[0].src %>');"></div>
                 <button type="button" class="pb-pc__arrow pb-pc__arrow--prev" data-pc-prev data-i18n-aria-label="projectBakad.pcPrevAria" aria-label="Назад">
                     <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
@@ -275,13 +280,13 @@
                     <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <div class="pb-pc__thumbs" data-pc-thumbs>
-                    <% carouselSlides.forEach(function(src, i) { %>
-                    <button type="button" class="pb-pc__thumb<%= i === 0 ? ' is-active' : '' %>" data-pc-thumb data-pc-src="<%= src %>" style="background-image: url('<%= src %>');" data-i18n-aria-label="projectBakad.thumbAria.<%= i %>" aria-label="Фото <%= i + 1 %>"></button>
+                    <% carouselSlides.forEach(function(s, i) { %>
+                    <button type="button" class="pb-pc__thumb<%= i === 0 ? ' is-active' : '' %>" data-pc-thumb data-pc-src="<%= s.src %>" data-pc-copyright="<%= s.copyright %>" style="background-image: url('<%= s.src %>');" data-i18n-aria-label="projectBakad.thumbAria.<%= i %>" aria-label="Фото <%= i + 1 %>"></button>
                     <% }); %>
                 </div>
                 <div class="pb-pc__footer">
                     <div class="container">
-                        <p class="pb-copyright" data-i18n="projectBakad.copyright">Копирайт фото такое-то взято оттуда</p>
+                        <p class="pb-copyright" data-pc-copy><%= carouselSlides[0].copyright %></p>
                     </div>
                 </div>
             </section>

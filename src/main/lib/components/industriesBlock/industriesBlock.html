@@ -34,6 +34,12 @@
             <a href="<%= it.href %>" class="prj-industry<%= industriesTallIndexes.indexOf(i) >= 0 ? ' prj-industry--tall' : '' %>" style="background-image: url('<%= it.image %>');">
                 <div class="prj-industry__shade"></div>
                 <span class="prj-industry__label"><%= it.label %></span>
+                <span class="prj-industry__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 18 18" fill="none">
+                        <path d="M1 1H17V17" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M1 17L17 1" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
             </a>
             <% }); %>
         </div>

@@ -247,13 +247,12 @@
 		justify-content: center;
 		width: 32px;
 		height: 32px;
-		color: rgba(17, 17, 17, 0.4);
-		transition: color 0.3s ease, transform 0.3s ease;
+		fill: #D5D5D5;
+		transition: fill 0.3s ease;
 
 		svg {
 			width: 32px;
 			height: 32px;
-			fill: currentColor;
 		}
 	}
 
@@ -263,8 +262,7 @@
 	}
 
 	&:hover &__arrow {
-		color: #1BCE1B;
-		transform: translate(4px, -4px);
+		fill: #1BCE1B;
 	}
 }
 

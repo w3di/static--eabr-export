@@ -916,6 +916,9 @@ export const en = {
     viewCards: 'Cards',
     viewTable: 'Table',
     filtersAria: 'Filters',
+    filtersTitle: 'Filters',
+    filtersReset: 'Reset',
+    filtersApply: 'Apply',
     typeFilter: 'Project type',
     industryFilter: 'Industry',
     dateLabel: 'Year',
@@ -939,6 +942,10 @@ export const en = {
     mln: 'mn $',
     sumLabel: 'project amount',
     bankLabel: 'Bank\'s contribution',
+    awards: {
+      ij: 'IJGlobal Awards 2021',
+      esg: 'Green finance projects',
+    },
     cards: {
       0: { title: 'Provision of a non-revolving targeted credit line to ARARATBANK OJSC to implement the programme&nbsp;...', country: 'Armenia' },
       1: { title: 'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic', country: 'Kyrgyzstan' },
@@ -1046,6 +1053,7 @@ export const en = {
     galleryTitle: 'Photos',
     copyright: 'Photo copyright such-and-such, sourced from there',
     videoTitle: 'Videos',
+    newsTitle: 'News',
     playAria: 'Play',
     pauseAria: 'Pause',
     pcPrevAria: 'Back',
@@ -1111,6 +1119,12 @@ export const en = {
       2: {
         date: '28 November 2025',
         tag: 'Mechanical engineering',
+        title:
+          'Eurasian economies will grow up to 9.3% in 2026: EDB has presented a new Macroforecast',
+      },
+      3: {
+        date: '28 November 2025',
+        tag: 'Infrastructure',
         title:
           'Eurasian economies will grow up to 9.3% in 2026: EDB has presented a new Macroforecast',
       },

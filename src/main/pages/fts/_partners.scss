@@ -13,7 +13,10 @@
 		border-radius: r(20);
 		background: var(--white);
 		overflow: hidden;
-		transition: border-color 0.3s ease;
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
 		img {
 			position: absolute;
@@ -30,9 +33,11 @@
 
 		&:hover {
 			border-color: rgba(27, 206, 27, 0.4);
+			transform: translateY(r(-4));
+			box-shadow: 0 r(12) r(40) rgba(17, 17, 17, 0.12);
 
 			img {
-				transform: translate(-50%, -50%) scale(1.07);
+				transform: translate(-50%, -50%) scale(1.035);
 			}
 		}
 	}

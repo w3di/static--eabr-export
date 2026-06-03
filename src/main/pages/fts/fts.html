@@ -153,7 +153,7 @@
                                 <h2 class="fts-h2 mb-25 mbm-15">
                                     <span data-i18n="fts.goalTitle">Цель фонда:</span>
                                 </h2>
-                                <div class="fts-callout" data-i18n="fts.goalText">
+                                <div class="fts-callout" data-animate="fadeInText" data-i18n="fts.goalText">
                                     Цель ФТС&nbsp;— содействовать подготовке качественных инвестиционных проектов и&nbsp;развитию институциональной среды, способствующей росту инвестиционной активности в&nbsp;странах-участницах Евразийский банк развития.
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                                 </h2>
                                 <div class="fts-programs">
                                     <% programs.forEach(function(p, i) { %>
-                                    <a href="<%= p.href %>" class="fts-program" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.25)">
+                                    <a href="<%= p.href %>" class="fts-program">
                                         <div class="fts-program__head">
                                             <span class="fts-program__title" data-i18n="fts.programs.<%= i %>.title"><%- p.title %></span>
                                             <svg class="fts-program__arrow" aria-hidden="true">
@@ -254,7 +254,10 @@
                             </div>
 
                             <div class="mb-60 mbm-30">
-                                <%= htmlWebpackPlugin.options.widgets.newsCarousel %>
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="fts.newsTitle">Новости</span>
+                                </h2>
+                                <%= htmlWebpackPlugin.options.widgets.newsBlock %>
                             </div>
 
                             <div class="mb-60 mbm-30">
@@ -317,6 +320,11 @@
                                                         <path d="M8.5 1V16M16 8.5H1" stroke="#111111" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                                 </span>
+                                                <button type="button" class="fts-form__file-remove" data-fts-file-remove aria-label="Удалить файл">
+                                                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <path d="M2.25 4.5H15.75M6.75 4.5V3C6.75 2.586 7.086 2.25 7.5 2.25H10.5C10.914 2.25 11.25 2.586 11.25 3V4.5M14.25 4.5V15C14.25 15.414 13.914 15.75 13.5 15.75H4.5C4.086 15.75 3.75 15.414 3.75 15V4.5M7.5 8.25V12M10.5 8.25V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </button>
                                             </label>
                                         </div>
                                     </div>

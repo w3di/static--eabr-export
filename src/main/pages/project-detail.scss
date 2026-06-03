@@ -72,8 +72,6 @@
 	background: transparent;
 	cursor: pointer;
 	padding: 0;
-	border-bottom: r(2) solid #1BCE1B;
-	padding-bottom: r(2);
 }
 
 .pd-card__print-icon {
@@ -85,6 +83,8 @@
 	font-size: r(20);
 	line-height: r(24);
 	color: #111111;
+	border-bottom: r(2) solid #1BCE1B;
+	padding-bottom: r(2);
 }
 
 .pd-card__title {
@@ -277,14 +277,36 @@
 	gap: r(8);
 	background: #A0EDFF;
 	border-radius: r(24);
+	text-decoration: none;
+	cursor: pointer;
+	overflow: hidden;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0 r(-60);
+		width: calc(300% + #{r(220)});
+		transform: translateX(-66.66%);
+		transition: transform 0.4s ease;
+		background: linear-gradient(15deg, #24D6FF 0%, #24D6FF 33%, #A0EDFF 66%, #A0EDFF 100%);
+		z-index: 0;
+	}
+
+	&:hover::after {
+		transform: translateX(-33.33%);
+	}
 }
 
 .pd-related__industry-icon {
+	position: relative;
+	z-index: 1;
 	width: r(106);
 	height: r(106);
 }
 
 .pd-related__industry-label {
+	position: relative;
+	z-index: 1;
 	font-size: r(20);
 	line-height: r(24);
 	color: #111;

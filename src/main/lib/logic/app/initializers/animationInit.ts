@@ -82,13 +82,27 @@ class AnimationInit {
   }
 
   private counters() {
-    document
-      .querySelectorAll<HTMLElement>('[data-animate="counter"]')
-      .forEach((item) => {
-        onVisible(item, () => {
-          new Counter(item, { duration: 3000 });
-        });
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-animate="counter"]'),
+    );
+    if (!items.length) return;
+
+    const groups = new Map<Element, HTMLElement[]>();
+    items.forEach((item) => {
+      const key = item.closest('section') || document.body;
+      const list = groups.get(key) || [];
+      list.push(item);
+      groups.set(key, list);
+    });
+
+    groups.forEach((list, key) => {
+      let started = false;
+      onVisible(key as HTMLElement, () => {
+        if (started) return;
+        started = true;
+        list.forEach((item) => new Counter(item, { duration: 1800 }));
       });
+    });
   }
 }
 

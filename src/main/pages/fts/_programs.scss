@@ -11,7 +11,7 @@
 	flex-direction: column;
 	gap: r(16);
 	padding: r(32);
-	background: #F4F6F7;
+	background: #FFFFFF;
 	border-left: r(3) solid rgba(0, 0, 0, 0.4);
 	border-radius: r(24);
 	text-decoration: none;
@@ -58,19 +58,12 @@
 	}
 
 	&:hover {
-		transform: translateY(r(-4));
 		border-left-color: #1BCE1B;
-		background: #ECEFF1;
-		box-shadow: 0 r(20) r(40) rgba(27, 206, 27, 0.15);
-	}
-
-	&:hover &__title {
-		transform: translateX(r(4));
+		box-shadow: 0 r(12) r(40) rgba(17, 17, 17, 0.12);
 	}
 
 	&:hover &__arrow {
 		fill: #1BCE1B;
-		transform: translate(r(4), r(-4)) rotate(45deg);
 	}
 }
 

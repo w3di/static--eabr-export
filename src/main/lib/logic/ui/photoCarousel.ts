@@ -4,6 +4,7 @@ class PhotoCarousel {
   private thumbs: HTMLButtonElement[];
   private prev: HTMLButtonElement;
   private next: HTMLButtonElement;
+  private copy: HTMLElement | null;
   private index = 0;
 
   constructor(root: HTMLElement) {
@@ -12,6 +13,7 @@ class PhotoCarousel {
     this.thumbs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-pc-thumb]'));
     this.prev = root.querySelector<HTMLButtonElement>('[data-pc-prev]')!;
     this.next = root.querySelector<HTMLButtonElement>('[data-pc-next]')!;
+    this.copy = root.querySelector<HTMLElement>('[data-pc-copy]');
 
     this.thumbs.forEach((thumb, i) => {
       thumb.addEventListener('click', () => this.go(i));
@@ -27,6 +29,9 @@ class PhotoCarousel {
 
     const src = this.thumbs[next].dataset.pcSrc!;
     this.stage.style.backgroundImage = `url('${src}')`;
+
+    const copyright = this.thumbs[next].dataset.pcCopyright;
+    if (this.copy && copyright) this.copy.textContent = copyright;
 
     this.thumbs[this.index].classList.remove('is-active');
     this.thumbs[next].classList.add('is-active');

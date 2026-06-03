@@ -11,6 +11,8 @@ import { ValuesAccordion } from '../../ui/valuesAccordion';
 import { FaqAccordion } from '../../ui/faqAccordion';
 import { PhotoCarousel } from '../../ui/photoCarousel';
 import { PosterVideo } from '../../ui/posterVideo';
+import { Tooltip } from '../../ui/tooltip';
+import { GalleryCopyright } from '../../../../pages/project-bakad/logic/galleryCopyright';
 
 class PageInit {
   constructor() {
@@ -27,6 +29,20 @@ class PageInit {
     this.faqAccordions();
     this.photoCarousels();
     this.posterVideos();
+    this.tooltips();
+    this.galleryCopyright();
+  }
+
+  private galleryCopyright() {
+    document
+      .querySelectorAll<HTMLElement>('.pb-gallery')
+      .forEach((el) => new GalleryCopyright(el));
+  }
+
+  private tooltips() {
+    document
+      .querySelectorAll<HTMLElement>('[data-tooltip]')
+      .forEach((el) => new Tooltip(el));
   }
 
   private photoCarousels() {

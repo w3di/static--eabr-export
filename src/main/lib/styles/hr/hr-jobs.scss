@@ -101,7 +101,7 @@
   &::before {
     content: '';
     position: absolute;
-    left: r(22);
+    left: r(22.5);
     top: r(67);
     bottom: r(67);
     width: r(3);
@@ -112,7 +112,7 @@
   &::after {
     content: '';
     position: absolute;
-    left: r(22);
+    left: r(22.5);
     top: r(67);
     bottom: r(67);
     width: r(3);
@@ -200,7 +200,7 @@
 
   .hr-steps::before,
   .hr-steps::after {
-    left: r(14);
+    left: r(14.5);
     top: r(29);
     bottom: r(29);
   }

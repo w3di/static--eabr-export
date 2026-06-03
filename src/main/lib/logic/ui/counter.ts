@@ -34,7 +34,7 @@ class Counter {
   }
 
   private ease(t: number): number {
-    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    return 1 - Math.pow(1 - t, 3);
   }
 
   private format(value: number): string {

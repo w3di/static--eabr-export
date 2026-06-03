@@ -51,17 +51,34 @@ class FtsForm {
     const textEl = form.querySelector<HTMLElement>('[data-fts-file-text]');
     if (!input || !textEl) return;
 
+    const label = input.closest<HTMLElement>('.fts-form__file');
+    const removeBtn = form.querySelector<HTMLButtonElement>(
+      '[data-fts-file-remove]',
+    );
     const defaultKey = textEl.getAttribute('data-i18n') || 'fts.fields.fileBtn';
+
+    const reset = () => {
+      input.value = '';
+      textEl.setAttribute('data-i18n', defaultKey);
+      textEl.textContent = i18next.t(defaultKey);
+      label?.classList.remove('has-file');
+    };
 
     input.addEventListener('change', () => {
       const file = input.files?.[0];
       if (file) {
         textEl.removeAttribute('data-i18n');
         textEl.textContent = file.name;
+        label?.classList.add('has-file');
       } else {
-        textEl.setAttribute('data-i18n', defaultKey);
-        textEl.textContent = i18next.t(defaultKey);
+        reset();
       }
+    });
+
+    removeBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      reset();
     });
   };
 }
