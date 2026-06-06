@@ -1,0 +1,13 @@
+<%
+    const navItems = [
+        { href: '/ppp/',           label: 'ГЧП на евразийском пространстве', i18n: 'ppp.nav.about' },
+        { href: '/ppp-program/',   label: 'Программа ЕАБР по ГЧП',           i18n: 'ppp.nav.program' },
+        { href: '/ppp-news/',      label: 'Мероприятия и новости',          i18n: 'ppp.nav.news' },
+        { href: '/ppp-analytics/', label: 'Обзоры и аналитика',             i18n: 'ppp.nav.analytics' }
+    ];
+%>
+<aside class="nav-aside">
+    <% navItems.forEach(function(it) { %>
+    <a href="<%= it.href %>" class="nav-aside__item" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+    <% }); %>
+</aside>

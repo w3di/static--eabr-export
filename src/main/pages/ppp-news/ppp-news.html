@@ -7,13 +7,6 @@
 </head>
 <body class="body" id="body" data-body>
 <%
-    const navItems = [
-        { href: '/ppp/',         label: 'ГЧП на евразийском пространстве', i18n: 'pnews.nav.about' },
-        { href: '/ppp-program/', label: 'Программа ЕАБР по ГЧП',           i18n: 'pnews.nav.program' },
-        { href: '/ppp-news/',    label: 'Мероприятия и новости',          i18n: 'pnews.nav.news', active: true },
-        { href: '/ppp-analytics/', label: 'Обзоры и аналитика',           i18n: 'pnews.nav.analytics' }
-    ];
-
     const news = [
         { dt: '2025-09-02', date: '2 сентября 2025',  video: false, title: 'ЕАБР предоставил финансирование для развития институциональной среды государственно-частного партнерства' },
         { dt: '2023-09-29', date: '29 сентября 2023', video: false, title: 'Евразийскому банку развития присуждена Премия Центра ГЧП Кыргызстана в номинации «Международный партнер года»' },
@@ -25,29 +18,7 @@
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
 
-        <div class="nav-drawer">
-            <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
-            <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
-                <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
-                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </label>
-            <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
-            <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
-                <label for="nav-drawer-toggle" class="nav-drawer__close">
-                    <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
-                    <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                    </svg>
-                </label>
-                <div class="nav-drawer__items">
-                    <% navItems.forEach(function(it) { %>
-                    <a href="<%= it.href %>" class="nav-drawer__item<%= it.active ? ' nav-drawer__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
-                    <% }); %>
-                </div>
-            </div>
-        </div>
+        <%= htmlWebpackPlugin.options.widgets.pppNavDrawer %>
 
         <main class="main main--regular pnews-main">
             <section class="ppp-banner">
@@ -63,11 +34,7 @@
                 <div class="container">
                     <div class="grid">
                         <div class="grid__col grid__col--3 mob-hidden">
-                            <aside class="nav-aside">
-                                <% navItems.forEach(function(it) { %>
-                                <a href="<%= it.href %>" class="nav-aside__item<%= it.active ? ' nav-aside__item--active' : '' %>" data-i18n="<%= it.i18n %>"><%- it.label %></a>
-                                <% }); %>
-                            </aside>
+                            <%= htmlWebpackPlugin.options.widgets.pppNavAside %>
                         </div>
 
                         <div class="grid__col grid__col--9 grid__col-mob--4">

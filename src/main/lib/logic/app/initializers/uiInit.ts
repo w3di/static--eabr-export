@@ -6,11 +6,13 @@ import { Title } from '../../ui/title';
 import { SpotlightCard } from '../../ui/spotlightCard';
 import { Tabs } from '../../ui/tabs';
 import { ReadMore } from '../../ui/readMore';
+import { SectionNav } from '../../ui/sectionNav';
 
 class UiInit {
   constructor() {
     this.header();
     this.mobileMenu();
+    this.sectionNav();
     this.asideObserver();
     this.returnButton();
     this.title();
@@ -28,6 +30,10 @@ class UiInit {
   private mobileMenu() {
     const el = document.querySelector<HTMLElement>('[data-mobile-menu]');
     if (el) new MobileMenu(el);
+  }
+
+  private sectionNav() {
+    if (document.querySelector('.nav-aside, .nav-drawer')) new SectionNav();
   }
 
   private asideObserver() {
