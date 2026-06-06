@@ -66,7 +66,7 @@
                             </div>
                             <button type="button" class="pb-info__print">
                                 <svg class="pb-info__print-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M4.61493 9.88946V1.7998H19.3873V9.88946M6.02127 17.9791H17.9799M1.80078 10.2412H22.2008V19.386C22.2008 20.9401 20.941 22.1998 19.387 22.1998H4.61457C3.06056 22.1998 1.80078 20.9401 1.80078 19.386V10.2412Z" stroke="#1BCE1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <use href="/assets/sprite/sprite-svg.svg#icon-print-round"></use>
                                 </svg>
                                 <span class="pb-info__print-text" data-i18n="projectBakad.print">Распечатать</span>
                             </button>
@@ -247,13 +247,12 @@
                         </video>
                         <button type="button" class="pb-video__btn pb-video__btn--play" data-pv-play data-i18n-aria-label="projectBakad.playAria" aria-label="Воспроизвести">
                             <svg viewBox="0 0 91 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.31 7.56224C2.46754 6.23772 2.93189 4.96822 3.66615 3.85466C4.4004 2.74109 5.38431 1.81417 6.53965 1.14758C7.695 0.480994 8.98991 0.0931199 10.3215 0.014797C11.653 -0.0635258 12.9845 0.169862 14.21 0.696405C20.405 3.34474 34.2883 9.6389 51.905 19.8064C69.5275 29.9797 81.9233 38.8639 87.3075 42.8947C91.9042 46.3422 91.9158 53.1789 87.3133 56.6381C81.9817 60.6456 69.7375 69.4131 51.905 79.7147C34.055 90.0164 20.335 96.2347 14.1983 98.8481C8.91333 101.106 2.99834 97.6814 2.31 91.9822C1.505 85.3206 0 70.1947 0 49.7664C0 29.3497 1.49917 14.2297 2.31 7.56224Z" fill="white"/>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-play"></use>
                             </svg>
                         </button>
                         <button type="button" class="pb-video__btn pb-video__btn--pause" data-pv-pause data-i18n-aria-label="projectBakad.pauseAria" aria-label="Пауза">
                             <svg viewBox="0 0 91 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="10" y="0" width="24" height="100" rx="6" fill="white"/>
-                                <rect x="57" y="0" width="24" height="100" rx="6" fill="white"/>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-pause"></use>
                             </svg>
                         </button>
                         <img class="pb-video__mark" src="/assets/images/projects/bakad-watermark.webp" alt="" loading="lazy">
@@ -274,10 +273,14 @@
             <section class="pb-photo-carousel" data-pc>
                 <div class="pb-pc__stage" data-pc-stage style="background-image: url('<%= carouselSlides[0].src %>');"></div>
                 <button type="button" class="pb-pc__arrow pb-pc__arrow--prev" data-pc-prev data-i18n-aria-label="projectBakad.pcPrevAria" aria-label="Назад">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left-lg"></use>
+                    </svg>
                 </button>
                 <button type="button" class="pb-pc__arrow pb-pc__arrow--next" data-pc-next data-i18n-aria-label="projectBakad.pcNextAria" aria-label="Вперёд">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right-lg"></use>
+                    </svg>
                 </button>
                 <div class="pb-pc__thumbs" data-pc-thumbs>
                     <% carouselSlides.forEach(function(s, i) { %>

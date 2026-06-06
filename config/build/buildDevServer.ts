@@ -10,7 +10,10 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     open: false,
     hot: true,
     client: {
-      overlay: true,
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
       progress: true,
     },
     compress: false,

@@ -90,6 +90,7 @@
 		justify-content: center;
 		width: r(15);
 		height: r(15);
+		color: rgba(17, 17, 17, 0.6);
 
 		svg { width: 100%; height: 100%; }
 	}
@@ -152,6 +153,7 @@
 		border-radius: r(4);
 		flex-shrink: 0;
 		background: var(--white);
+		color: #FFFFFF;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

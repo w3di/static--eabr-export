@@ -87,8 +87,7 @@
             <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
             <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
                 <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                    <rect x="0.5" y="0.5" width="21" height="21" rx="4.5" stroke="black"/>
-                    <path d="M10.3662 16L5 11L10.3662 6M5 11H17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <use href="/assets/sprite/sprite-svg.svg#icon-nav-pull"></use>
                 </svg>
             </label>
             <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
@@ -96,7 +95,7 @@
                 <label for="nav-drawer-toggle" class="nav-drawer__close">
                     <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
                     <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <path d="M3 3l10 10M13 3L3 13" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <use href="/assets/sprite/sprite-svg.svg#icon-close-sm"></use>
                     </svg>
                 </label>
                 <div class="nav-drawer__items">
@@ -271,7 +270,7 @@
                                             <span class="fts-faq__q" data-i18n="fts.faq.<%= i %>.q"><%- f.q %></span>
                                             <span class="fts-faq__toggle" aria-hidden="true">
                                                 <svg viewBox="0 0 24 24" fill="none">
-                                                    <path d="M6 6L18 18M18 6L6 18" stroke="#1BCE1B" stroke-width="2" stroke-linecap="round"/>
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-close-lg"></use>
                                                 </svg>
                                             </span>
                                         </summary>
@@ -317,12 +316,12 @@
                                                 <span class="fts-form__file-text" data-fts-file-text data-i18n="fts.fields.fileBtn">Выбрать файл</span>
                                                 <span class="fts-form__file-plus" aria-hidden="true">
                                                     <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.5 1V16M16 8.5H1" stroke="#111111" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <use href="/assets/sprite/sprite-svg.svg#icon-plus"></use>
                                                     </svg>
                                                 </span>
                                                 <button type="button" class="fts-form__file-remove" data-fts-file-remove aria-label="Удалить файл">
                                                     <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                        <path d="M2.25 4.5H15.75M6.75 4.5V3C6.75 2.586 7.086 2.25 7.5 2.25H10.5C10.914 2.25 11.25 2.586 11.25 3V4.5M14.25 4.5V15C14.25 15.414 13.914 15.75 13.5 15.75H4.5C4.086 15.75 3.75 15.414 3.75 15V4.5M7.5 8.25V12M10.5 8.25V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <use href="/assets/sprite/sprite-svg.svg#icon-trash"></use>
                                                     </svg>
                                                 </button>
                                             </label>
@@ -334,7 +333,7 @@
                                             <input type="checkbox" checked>
                                             <span class="fts-form__consent-box" aria-hidden="true">
                                                 <svg viewBox="0 0 14 14" fill="none">
-                                                    <path d="M3 7.5l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-check-sm"></use>
                                                 </svg>
                                             </span>
                                             <span data-i18n="fts.consent">Я&nbsp;соглашаюсь на&nbsp;сбор и&nbsp;обработку персональных данных</span>

@@ -183,6 +183,7 @@
 	width: r(32);
 	height: r(32);
 	flex-shrink: 0;
+	color: rgba(0, 0, 0, 0.4);
 }
 
 .ap-search__placeholder {
@@ -348,6 +349,7 @@ body.ap-filters-lock {
 	width: r(14);
 	height: r(8);
 	transition: transform 0.2s ease;
+	color: rgba(17, 17, 17, 0.6);
 }
 
 .is-open > .ap-filter .ap-filter__chev {
@@ -359,8 +361,8 @@ body.ap-filters-lock {
 	color: #111111;
 }
 
-.ap-filter-wrap.is-filled .ap-filter__chev path {
-	stroke: #111111;
+.ap-filter-wrap.is-filled .ap-filter__chev {
+	color: #111111;
 }
 
 .ap-filter--date.is-filled {
@@ -539,6 +541,7 @@ body.ap-filters-lock {
 	justify-content: center;
 	border-radius: 50%;
 	background: #FFFFFF;
+	color: #24D6FF;
 	opacity: 0;
 	transform: translate(r(8), r(-8));
 	transition: opacity 0.3s ease, transform 0.3s ease;
@@ -755,8 +758,6 @@ body.ap-filters-lock {
 		width: r(9);
 		height: r(16);
 		transition: transform 0.25s ease;
-
-		path { stroke: #111111; transition: stroke 0.2s ease; }
 	}
 
 	&:hover {
@@ -775,8 +776,6 @@ body.ap-filters-lock {
 		background: transparent;
 		color: rgba(17, 17, 17, 0.6);
 		pointer-events: none;
-
-		svg path { stroke: rgba(17, 17, 17, 0.6); }
 	}
 }
 
@@ -1142,6 +1141,7 @@ body.ap-filters-lock {
 		padding: 0;
 		border: 0;
 		background: transparent;
+		color: #111111;
 		cursor: pointer;
 
 		svg { width: r(16); height: r(16); }
@@ -1241,6 +1241,7 @@ body.ap-filters-lock {
 		height: r(32);
 		border: 0;
 		background: transparent;
+		color: #111111;
 		padding: 0;
 		cursor: pointer;
 
