@@ -24,46 +24,63 @@
     const routes = htmlWebpackPlugin.options.routes;
     const industries = htmlWebpackPlugin.options.industries || [];
 
-    const ready = [
-        { href: routes.keyProducts,       key: 'keyProducts',       hint: 'Ключевые продукты ЕАБР', isNew: true },
-        { href: routes.bankPrograms,      key: 'bankPrograms',      hint: 'Программы банка', isNew: true },
-        { href: routes.allProjects,       key: 'allProjects',       hint: 'Все проекты (с фильтрами в URL)', isNew: true },
-        { href: routes.projectDetail,     key: 'projectDetail',     hint: 'Карагандинская ТЭЦ-3 (детальная)', isNew: true },
-        { href: routes.projectBakad,      key: 'projectBakad',      hint: 'BAKAD (детальная)', isNew: true },
-        { href: routes.ftsProgram1,       key: 'ftsProgram1',       hint: 'ФТС: Программа I', isNew: true },
-        { href: routes.ftsProgram2,       key: 'ftsProgram2',       hint: 'ФТС: Программа II', isNew: true },
-        { href: routes.ourContribution,   key: 'ourContribution',   hint: 'Наш вклад' },
-        { href: routes.islamicFinance,    key: 'islamicFinance',    hint: 'Исламские финансы' },
-        { href: routes.fts,               key: 'fts',               hint: 'Фонд технического содействия (ФТС)', isNew: true },
-        { href: routes.projects,          key: 'projects',          hint: 'Проекты', isNew: true },
-        { href: routes.careers,           key: 'careers',           hint: 'Работайте с нами (ценности)' },
-        { href: routes.careersAbout,      key: 'careersAbout',      hint: 'О нас / карта Евразии' },
-        { href: routes.careersJobs,       key: 'careersJobs',       hint: 'Открытые вакансии' },
-        { href: routes.careersInternship, key: 'careersInternship', hint: 'Стажировка и практика' },
-        { href: routes.contacts,          key: 'contacts',          hint: 'Контакты' },
-        { href: routes.ppp,               key: 'ppp',               hint: 'ГЧП на евразийском пространстве', isNewBlue: true },
-        { href: routes.pppProgram,        key: 'pppProgram',        hint: 'ГЧП: Программа', isNewBlue: true },
-        { href: routes.pppNews,           key: 'pppNews',           hint: 'ГЧП: Новости', isNewBlue: true },
-        { href: routes.pppAnalytics,      key: 'pppAnalytics',      hint: 'ГЧП: Аналитика', isNewBlue: true },
-        { href: '/investors/',            key: 'investors',            hint: 'Информация для инвесторов', isNewRed: true },
-        { href: '/investors/mission/',     key: 'investorsMission',     hint: 'Наша миссия', isNewRed: true },
-        { href: '/investors/compliance/',  key: 'investorsCompliance',  hint: 'Корпоративное соответствие', isNewRed: true },
-        { href: '/investors/contacts/',    key: 'investorsContacts',    hint: 'Контакты', isNewRed: true }
+    const groups = [
+        { title: 'Продукты и программы', items: [
+            { href: routes.keyProducts,    key: 'keyProducts',    hint: 'Ключевые продукты ЕАБР', isNew: true },
+            { href: routes.bankPrograms,   key: 'bankPrograms',   hint: 'Программы банка', isNew: true },
+            { href: routes.islamicFinance, key: 'islamicFinance', hint: 'Исламские финансы' }
+        ] },
+        { title: 'Фонд технического содействия (ФТС)', items: [
+            { href: routes.fts,         key: 'fts',         hint: 'Фонд технического содействия (ФТС)', isNew: true },
+            { href: routes.ftsProgram1, key: 'ftsProgram1', hint: 'ФТС: Программа I', isNew: true },
+            { href: routes.ftsProgram2, key: 'ftsProgram2', hint: 'ФТС: Программа II', isNew: true }
+        ] },
+        { title: 'Проекты', items: [
+            { href: routes.projects,      key: 'projects',      hint: 'Проекты', isNew: true },
+            { href: routes.allProjects,   key: 'allProjects',   hint: 'Все проекты (с фильтрами в URL)', isNew: true },
+            { href: routes.projectDetail, key: 'projectDetail', hint: 'Карагандинская ТЭЦ-3 (детальная)', isNew: true },
+            { href: routes.projectBakad,  key: 'projectBakad',  hint: 'BAKAD (детальная)', isNew: true }
+        ] },
+        { title: 'ГЧП', items: [
+            { href: routes.ppp,          key: 'ppp',          hint: 'ГЧП на евразийском пространстве', isNewBlue: true },
+            { href: routes.pppProgram,   key: 'pppProgram',   hint: 'ГЧП: Программа', isNewBlue: true },
+            { href: routes.pppNews,      key: 'pppNews',      hint: 'ГЧП: Новости', isNewBlue: true },
+            { href: routes.pppAnalytics, key: 'pppAnalytics', hint: 'ГЧП: Аналитика', isNewBlue: true }
+        ] },
+        { title: 'Инвесторам', items: [
+            { href: '/investors/',           key: 'investors',           hint: 'Информация для инвесторов', isNewRed: true },
+            { href: '/investors/mission/',    key: 'investorsMission',    hint: 'Наша миссия', isNewRed: true },
+            { href: '/investors/compliance/', key: 'investorsCompliance', hint: 'Корпоративное соответствие', isNewRed: true },
+            { href: '/investors/contacts/',   key: 'investorsContacts',   hint: 'Контакты', isNewRed: true }
+        ] },
+        { title: 'Карьера', items: [
+            { href: routes.careers,           key: 'careers',           hint: 'Работайте с нами (ценности)' },
+            { href: routes.careersAbout,      key: 'careersAbout',      hint: 'О нас / карта Евразии' },
+            { href: routes.careersJobs,       key: 'careersJobs',       hint: 'Открытые вакансии' },
+            { href: routes.careersInternship, key: 'careersInternship', hint: 'Стажировка и практика' }
+        ] },
+        { title: 'Общие', items: [
+            { href: routes.ourContribution, key: 'ourContribution', hint: 'Наш вклад' },
+            { href: routes.contacts,        key: 'contacts',        hint: 'Контакты' }
+        ] }
     ];
 
-    const readyKeys = new Set(ready.map(function(e) { return e.key; }));
+    const readyItems = groups.reduce(function(acc, g) { return acc.concat(g.items); }, []);
+    const readyKeys = new Set(readyItems.map(function(e) { return e.key; }));
     const rest = Object.keys(routes)
         .filter(function(k) { return k !== 'sitemap' && !readyKeys.has(k); })
         .map(function(k) { return { key: k, href: routes[k] }; });
 %>
-    <h1>Карта сайта <span class="ref">(новое отмечено с коммита 85fdc00)</span></h1>
+    <h1>Карта сайта <span class="ref">— готовых страниц: <%= readyItems.length %></span></h1>
 
-    <h2>Готовые страницы (<%= ready.length %>)</h2>
+    <% groups.forEach(function(group) { %>
+    <h2><%= group.title %> (<%= group.items.length %>)</h2>
     <ul>
-        <% ready.forEach(function(e) { %>
+        <% group.items.forEach(function(e) { %>
         <li><a href="<%= e.href %>"><%= e.href %></a> <span class="hint">— <%= e.hint %></span><% if (e.isNew) { %><span class="badge">NEW</span><% } %><% if (e.isNewBlue) { %><span class="badge badge--blue">NEW</span><% } %><% if (e.isNewRed) { %><span class="badge badge--red">NEW</span><% } %></li>
         <% }); %>
     </ul>
+    <% }); %>
 
     <% if (industries.length) { %>
     <h2>Отрасли (<%= industries.length %>) <span class="badge">NEW</span></h2>
