@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="inv.info.pageTitle">Информация для инвесторов | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const activities = [
+        {
+            icon: 'icon-act-projects',
+            title: 'Проекты',
+            i18nTitle: 'inv.info.activity0Title',
+            text: 'Финансирование крупномасштабных инфраструктурных, энергетических и&nbsp;промышленных проектов в&nbsp;странах-членах нашей организации.',
+            i18nText: 'inv.info.activity0Text'
+        },
+        {
+            icon: 'icon-report-esg',
+            title: 'Фонды',
+            i18nTitle: 'inv.info.activity1Title',
+            text: 'Предоставление инвесторам доступа к&nbsp;ключевым секторам быстрорастущей экономики Центральной Азии посредством специализированных инвестиционных фондов.',
+            i18nText: 'inv.info.activity1Text'
+        },
+        {
+            icon: 'icon-act-world',
+            title: 'Другие направления деятельности Банка',
+            i18nTitle: 'inv.info.activity2Title',
+            wide: true
+        }
+    ];
+
+    const directions = [
+        {
+            title: 'Корпоративное управление',
+            i18nTitle: 'inv.info.dir0Title',
+            text: 'Мы обязуемся придерживаться самых высоких стандартов прозрачности и&nbsp;содействовать корпоративному управлению на&nbsp;уровне клиентов и&nbsp;стран, обеспечивая долгосрочные доверительные отношения с&nbsp;нашими инвесторами.',
+            i18nText: 'inv.info.dir0Text',
+            links: [
+                { label: 'Кодекс деловой этики и поведения', i18n: 'inv.info.dir0Link0' }
+            ]
+        },
+        {
+            title: 'Экологическая и социальная устойчивость',
+            i18nTitle: 'inv.info.dir1Title',
+            text: 'В&nbsp;рамках всей нашей деятельности мы&nbsp;содействуем экологически и&nbsp;социально обоснованному развитию, оказывая позитивное влияние на&nbsp;всю Евразию.',
+            i18nText: 'inv.info.dir1Text',
+            links: [
+                { label: 'Принципы устойчивого развития EDB', i18n: 'inv.info.dir1Link0' },
+                { label: 'Экологическая и социальная структура EDB', i18n: 'inv.info.dir1Link1' }
+            ]
+        }
+    ];
+
+    const principles = [
+        { text: 'Использование всех доступных источников финансирования, включая двусторонние и&nbsp;многосторонние банковские займы, а&nbsp;также выпуски ценных бумаг, номинированных в&nbsp;национальных валютах государств-членов.', i18n: 'inv.info.principle0' },
+        { text: 'Снижение стоимости финансирования за&nbsp;счет диверсификации источников и&nbsp;сроков финансирования, а&nbsp;также использования производных финансовых инструментов для&nbsp;хеджирования валютных и&nbsp;процентных рисков.', i18n: 'inv.info.principle1' },
+        { text: 'Оптимизация ранее привлеченных заемных средств для&nbsp;обеспечения эффективности и&nbsp;долгосрочной устойчивости портфеля Банка.', i18n: 'inv.info.principle2' },
+        { text: 'Разработка инструментов рыночного софинансирования для&nbsp;обеспечения привлекательных условий финансирования для&nbsp;клиентов и&nbsp;минимизации рисков.', i18n: 'inv.info.principle3' },
+        { text: 'Внедрение передовых методов устойчивого развития путем выпуска «зеленых» и&nbsp;социальных облигаций.', i18n: 'inv.info.principle4' }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <%= htmlWebpackPlugin.options.widgets.investorsNavDrawer %>
+
+        <main class="main main--regular inv-info-main">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <%= htmlWebpackPlugin.options.widgets.investorsNavAside %>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4 inv-content">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="inv.breadcrumbHome">Главная</span> / <strong data-i18n="inv.breadcrumbInvestors">Инвесторам</strong>
+                                </div>
+                            </div>
+
+                            <section class="inv-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.info.missionTitle">Наша миссия</span>
+                                </h2>
+                                <p class="inv-info-lead" data-i18n="inv.info.missionText">Евразийский банк развития работает над&nbsp;содействием экономическому росту, торговле и&nbsp;интеграции в&nbsp;Евразии. Наш приоритет&nbsp;— установление долгосрочных, доверительных отношений с&nbsp;инвесторами на&nbsp;основе прозрачности и&nbsp;высочайших стандартов корпоративного управления.</p>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.info.activityTitle">Чем мы занимаемся</span>
+                                </h2>
+                                <div class="inv-activities">
+                                    <% activities.forEach(function(a) { %>
+                                    <div class="inv-activity<%= a.wide ? ' inv-activity--wide' : '' %>">
+                                        <div class="inv-activity__head">
+                                            <span class="inv-activity__icon" aria-hidden="true">
+                                                <svg viewBox="0 0 54 54" fill="none">
+                                                    <use href="/assets/sprite/sprite-svg.svg#<%= a.icon %>"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="inv-activity__title" data-i18n="<%= a.i18nTitle %>"><%- a.title %></span>
+                                        </div>
+                                        <% if (a.text) { %>
+                                        <p class="inv-activity__text" data-i18n="<%= a.i18nText %>"><%- a.text %></p>
+                                        <% } %>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <% directions.forEach(function(d) { %>
+                            <section class="inv-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="<%= d.i18nTitle %>"><%- d.title %></span>
+                                </h2>
+                                <p class="inv-dir-text mb-25 mbm-20" data-i18n="<%= d.i18nText %>"><%- d.text %></p>
+                                <div class="inv-dirlinks">
+                                    <% d.links.forEach(function(l) { %>
+                                    <a href="#" class="inv-dirlink" data-i18n="<%= l.i18n %>"><%- l.label %></a>
+                                    <% }); %>
+                                </div>
+                            </section>
+                            <% }); %>
+
+                            <section class="inv-section mb-60 mbm-40">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.info.principlesTitle">Принципы мобилизации финансирования</span>
+                                </h2>
+                                <div class="inv-principles">
+                                    <% principles.forEach(function(p, i) { %>
+                                    <div class="inv-principle">
+                                        <p class="inv-principle__text" data-i18n="<%= p.i18n %>"><%- p.text %></p>
+                                        <span class="inv-principle__num" aria-hidden="true"><%= i + 1 %></span>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <div class="mb-60 mbm-30">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.info.newsTitle">Новости</span>
+                                </h2>
+                                <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="inv.pageTitle">Информация для инвесторов | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const pageNav = [
+        { href: '#reports',      label: 'Финансовые отчеты',        i18n: 'inv.pagenav.reports' },
+        { href: '#disclosure',   label: 'Раскрытие информации',     i18n: 'inv.pagenav.disclosure' },
+        { href: '#corporate',    label: 'Корпоративные отчеты',     i18n: 'inv.pagenav.corporate' },
+        { href: '#debt',         label: 'Долговые инструменты',     i18n: 'inv.pagenav.debt' },
+        { href: '#transactions', label: 'История транзакций',       i18n: 'inv.pagenav.transactions' },
+        { href: '#treasury',     label: 'Казначейские инструменты', i18n: 'inv.pagenav.treasury' },
+        { href: '#ratings',      label: 'Кредитные рейтинги',       i18n: 'inv.pagenav.ratings' }
+    ];
+
+    const stats = [
+        { label: 'Накопленный инвестиционный портфель', num: '$19,6', unit: 'млрд', i18n: 'inv.stats.portfolio' },
+        { label: 'Уставный капитал',                    num: '$8,5',  unit: 'млрд', i18n: 'inv.stats.capital' }
+    ];
+
+    const ratings = [
+        { agency: 'АКРА', scales: [
+            { value: 'A-',  label: 'глобальный',   i18n: 'inv.rating.global' },
+            { value: 'AAA', label: 'национальный', i18n: 'inv.rating.national' }
+        ] },
+        { agency: 'CCXI', scales: [
+            { value: 'A-',  label: 'глобальный',   i18n: 'inv.rating.global' },
+            { value: 'AAA', label: 'национальный', i18n: 'inv.rating.national' }
+        ] }
+    ];
+
+    const reportYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
+
+    const reports = [
+        { title: 'Финансовая отчетность за 2025 год', size: 'PDF, 236.54 KB' },
+        { title: 'Отчет о раскрытии информации об устойчивом развитии за 2025 год', size: 'PDF, 236.54 KB' },
+        { title: 'Сокращенная промежуточная финансовая отчетность за шестимесячный период, закончившийся 30 июня 2025 года', size: 'PDF, 236.54 KB' }
+    ];
+
+    const disclosureLinks = [
+        'Уведомления',
+        'Существенные факты',
+        'Отчеты эмитента',
+        'Учредительные документы',
+        'Предоставление информации'
+    ];
+
+    const corporateCards = [
+        { title: 'Годовые отчеты', icon: 'icon-report-annual' },
+        { title: 'Отчеты об устойчивом развитии', icon: 'icon-report-esg' }
+    ];
+
+    const debtPrograms = [
+        'Программа EMTN',
+        'Программа ECP',
+        'Выпуск местных облигаций в России',
+        'Выпуск местных облигаций в Казахстане',
+        'Выпуск местных облигаций в Армении',
+        'Международные долговые инструменты'
+    ];
+
+    const txByYear = {
+        '2025': [
+            { date: '28.12.2023', amount: '50 млрд тенге',  instrument: 'Облигации, ISIN KZX000001003',                maturity: '27.06.2027', coupon: '14,20%' },
+            { date: '28.12.2023', amount: '10 млрд рублей', instrument: 'Облигации серии 003P-009, ISIN RU000A107EA1', maturity: '13.12.2028', coupon: 'RUONIA+1,70%' },
+            { date: '15.08.2023', amount: '20 млн $ США',   instrument: 'Облигации, ISIN AMEABRB21ER0',                maturity: '15.08.2026', coupon: '6,00%' },
+            { date: '03.08.2023', amount: '25 млрд тенге',  instrument: 'Облигации, ISIN KZ2D00009958',                maturity: '20.04.2028', coupon: '15,50%' },
+            { date: '14.07.2023', amount: '6 млрд рублей',  instrument: 'Облигации серии 003Р-008, ISIN RU000A106JX4', maturity: '07.07.2028', coupon: 'RUONIA+2%' }
+        ],
+        '2024': [],
+        '2023': [],
+        '2022': [],
+        '2021': [],
+        '2020': []
+    };
+
+    const ratingAgencies = [
+        {
+            agency: 'АКРА',
+            desc: 'Кредитный рейтинг эмитента по глобальной шкале: A-. По национальной шкале: AAA (RU). Прогноз: стабильный.',
+            docs: [
+                { title: 'Рейтинговое решение ACRA от 13 марта 2026 года',    size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое решение ACRA от 12 сентября 2025 года', size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое решение ACRA от 4 апреля 2025 года',    size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое решение ACRA от 16 октября 2024 года',  size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое решение ACRA от 27 апреля 2024 года',   size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое решение ACRA от 9 ноября 2023 года',    size: 'PDF, 236.54 KB' }
+            ]
+        },
+        {
+            agency: 'CCXI',
+            desc: 'Кредитный рейтинг эмитента по глобальной шкале: Ag. По национальной шкале: AAA. Прогноз: стабильный.',
+            docs: [
+                { title: 'Рейтинговое действие CCXI от 5 сентября 2025 года',  size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое действие CCXI от 5 сентября 2024 года',  size: 'PDF, 236.54 KB' },
+                { title: 'Рейтинговое действие CCXI от 28 декабря 2023 года',  size: 'PDF, 236.54 KB' }
+            ]
+        }
+    ];
+
+    function renderPdf(d) {
+%>
+                <div class="bp-doc">
+                    <a href="#" class="bp-doc__link">
+                        <span class="bp-doc__icon" aria-hidden="true">
+                            <svg viewBox="0 0 38 38" aria-hidden="true">
+                                <use href="/assets/sprite/sprite-svg.svg#icon-pdf"></use>
+                            </svg>
+                        </span>
+                        <span class="bp-doc__text">
+                            <span class="bp-doc__title"><%- d.title %></span>
+                            <span class="bp-doc__size"><%- d.size %></span>
+                        </span>
+                    </a>
+                </div>
+<%
+    }
+
+    function renderTags(items) {
+        items.forEach(function(it) {
+%>
+                    <a href="#" class="inv-tag"><%- it %></a>
+<%
+        });
+    }
+
+    function renderTxTable(rows) {
+%>
+                                    <div class="inv-tablewrap">
+                                        <table class="inv-table2">
+                                            <thead>
+                                                <tr>
+                                                    <th data-i18n="inv.colDate">Дата выпуска</th>
+                                                    <th data-i18n="inv.colAmount">Сумма</th>
+                                                    <th data-i18n="inv.colInstrument">Инструмент</th>
+                                                    <th data-i18n="inv.colMaturity">Срок погашения</th>
+                                                    <th data-i18n="inv.colCoupon">Купонная ставка (% годовых)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% rows.forEach(function(t) { %>
+                                                <tr>
+                                                    <td data-label="Дата выпуска"><%- t.date %></td>
+                                                    <td data-label="Сумма"><%- t.amount %></td>
+                                                    <td class="inv-table2__instrument" data-label="Инструмент"><%- t.instrument %></td>
+                                                    <td data-label="Срок погашения"><%- t.maturity %></td>
+                                                    <td data-label="Купонная ставка (% годовых)"><%- t.coupon %></td>
+                                                </tr>
+                                                <% }); %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+<%
+    }
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <%= htmlWebpackPlugin.options.widgets.investorsNavDrawer %>
+
+        <main class="main main--regular inv-main">
+            <section class="inv-hero">
+                <div class="inv-hero__media" aria-hidden="true">
+                    <img src="/assets/images/1440x380.svg" alt="" class="inv-hero__img">
+                </div>
+                <div class="container inv-hero__wrap">
+                    <h1 class="inv-hero__title" data-i18n="inv.heroTitle">Информация<br>для&nbsp;инвесторов</h1>
+                </div>
+            </section>
+
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <%= htmlWebpackPlugin.options.widgets.investorsNavAside %>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4 inv-content">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="inv.breadcrumbHome">Главная</span> / <strong data-i18n="inv.breadcrumbInvestors">Инвесторам</strong>
+                                </div>
+                            </div>
+
+                            <section class="inv-section mb-60 mbm-40" id="mission">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.introTitle">Информация для&nbsp;инвесторов</span>
+                                </h2>
+
+                                <div class="inv-pagenav">
+                                    <span class="inv-pagenav__label" data-i18n="inv.pagenavLabel">Навигация по&nbsp;странице:</span>
+                                    <div class="inv-pagenav__list">
+                                        <% pageNav.forEach(function(it) { %>
+                                        <a href="<%= it.href %>" class="inv-chip" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40">
+                                <div class="inv-stats">
+                                    <% stats.forEach(function(s) { %>
+                                    <div class="inv-stat">
+                                        <span class="inv-stat__label" data-i18n="<%= s.i18n %>"><%- s.label %></span>
+                                        <span class="inv-stat__value"><span class="inv-stat__num"><%- s.num %></span><span class="inv-stat__unit"><%- s.unit %></span></span>
+                                    </div>
+                                    <% }); %>
+                                </div>
+
+                                <div class="inv-ratings-head">
+                                    <span class="inv-ratings-head__title" data-i18n="inv.ratingsHead">Кредитные рейтинги</span>
+                                    <div class="inv-ratings-head__list">
+                                        <% ratings.forEach(function(r) { %>
+                                        <div class="inv-rating">
+                                            <span class="inv-rating__agency"><%- r.agency %></span>
+                                            <div class="inv-rating__scales">
+                                                <% r.scales.forEach(function(sc) { %>
+                                                <div class="inv-rating__scale">
+                                                    <span class="inv-rating__value"><%- sc.value %></span>
+                                                    <span class="inv-rating__label" data-i18n="<%= sc.i18n %>"><%- sc.label %></span>
+                                                </div>
+                                                <% }); %>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="reports" data-tabset>
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.reportsTitle">Финансовая отчетность</span>
+                                </h2>
+                                <p class="inv-text mb-25 mbm-20" data-i18n="inv.reportsNote">Финансовая отчетность и&nbsp;промежуточная финансовая информация составляются в&nbsp;соответствии с&nbsp;МСФО.</p>
+
+                                <div class="inv-yeartabs mb-25 mbm-20">
+                                    <button type="button" class="inv-yeartabs__arrow inv-yeartabs__arrow--prev" data-i18n-aria-label="inv.prev" aria-label="Назад">
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="inv-yeartabs__track">
+                                        <% reportYears.forEach(function(y, i) { %>
+                                        <button type="button" class="inv-yeartab<%= i === 0 ? ' is-active' : '' %>" data-tab-btn="<%= i %>"><%= y %></button>
+                                        <% }); %>
+                                    </div>
+                                    <button type="button" class="inv-yeartabs__arrow inv-yeartabs__arrow--next" data-i18n-aria-label="inv.next" aria-label="Далее">
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <% reportYears.forEach(function(y, i) { %>
+                                <div class="inv-tabpanel<%= i === 0 ? ' is-active' : '' %>" data-tab-panel="<%= i %>">
+                                    <div class="inv-pdf-list">
+                                        <% reports.forEach(function(d) { renderPdf(d); }); %>
+                                    </div>
+                                </div>
+                                <% }); %>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="disclosure">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.disclosureTitle">Раскрытие информации</span>
+                                </h2>
+                                <div class="inv-tags">
+                                    <% renderTags(disclosureLinks); %>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="corporate">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.corporateTitle">Корпоративные отчеты</span>
+                                </h2>
+                                <div class="inv-cards">
+                                    <% corporateCards.forEach(function(c) { %>
+                                    <a href="#" class="inv-card" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
+                                        <span class="inv-card__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 54 54" fill="none">
+                                                <use href="/assets/sprite/sprite-svg.svg#<%= c.icon %>"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="inv-card__title"><%- c.title %></span>
+                                    </a>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="debt">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.debtTitle">Долговые инструменты</span>
+                                </h2>
+                                <p class="inv-text mb-25 mbm-20" data-i18n="inv.debtText">Банк привлекает финансирование, используя как&nbsp;международные, так&nbsp;и&nbsp;внутренние рынки капитала. Заимствования EDB представляются такими долговыми инструментами, как&nbsp;еврооблигации, внутренние облигации, ECP, синдицированные и&nbsp;двусторонние кредиты, а&nbsp;также связанное финансирование, обеспеченное международными экспортно-кредитными агентствами/банками.</p>
+                                <h3 class="inv-subtitle mb-15" data-i18n="inv.debtPrograms">Программы</h3>
+                                <div class="inv-proglist">
+                                    <% debtPrograms.forEach(function(it) { %>
+                                    <a href="#" class="inv-prog"><%- it %></a>
+                                    <% }); %>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="treasury">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.treasuryTitle">Казначейские инструменты</span>
+                                </h2>
+                                <div class="inv-treasury">
+                                    <span class="inv-treasury__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 140 140" fill="none">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-treasury"></use>
+                                        </svg>
+                                    </span>
+                                    <div class="inv-treasury__text">
+                                        <h3 class="inv-treasury__heading" data-i18n="inv.treasuryHeading">Обзор казначейских операций и&nbsp;управления активами и&nbsp;пассивами</h3>
+                                        <p class="inv-treasury__desc" data-i18n="inv.treasuryDesc">Информация об&nbsp;участии Банка на&nbsp;мировых финансовых рынках, Инвестиционная декларация и&nbsp;политика управления рисками.</p>
+                                        <a href="#" class="button-arrow inv-treasury__btn">
+                                            <span class="button-arrow__text" data-i18n="inv.viewAll">Читать обзор</span>
+                                            <svg class="button-arrow__icon" aria-hidden="true">
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="inv-section mb-60 mbm-40" id="transactions" data-tabset>
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.transactionsTitle">История транзакций</span>
+                                </h2>
+                                <p class="inv-text mb-25 mbm-20" data-i18n="inv.transactionsText">Банк имеет долгую и&nbsp;успешную историю привлечения заемных средств на&nbsp;национальных и&nbsp;международных рынках капитала. Операции осуществляются в&nbsp;соответствии с&nbsp;финансовыми планами и&nbsp;целями Банка по&nbsp;эффективному управлению ликвидностью.</p>
+
+                                <div class="inv-yeartabs mb-25 mbm-20">
+                                    <button type="button" class="inv-yeartabs__arrow inv-yeartabs__arrow--prev" data-i18n-aria-label="inv.prev" aria-label="Назад">
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="inv-yeartabs__track">
+                                        <% reportYears.forEach(function(y, i) { %>
+                                        <button type="button" class="inv-yeartab<%= i === 0 ? ' is-active' : '' %>" data-tab-btn="<%= i %>"><%= y %></button>
+                                        <% }); %>
+                                    </div>
+                                    <button type="button" class="inv-yeartabs__arrow inv-yeartabs__arrow--next" data-i18n-aria-label="inv.next" aria-label="Далее">
+                                        <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <% reportYears.forEach(function(y, i) { var rows = txByYear[y] || []; %>
+                                <div class="inv-tabpanel<%= i === 0 ? ' is-active' : '' %>" data-tab-panel="<%= i %>">
+                                    <% if (rows.length) { %>
+                                    <% renderTxTable(rows); %>
+                                    <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
+                                        <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
+                                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
+                                            </svg>
+                                            <span data-i18n="inv.prev">Назад</span>
+                                        </button>
+                                        <ul class="ap-pagination__list" data-pagination-list></ul>
+                                        <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
+                                            <span data-i18n="inv.next">Далее</span>
+                                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
+                                            </svg>
+                                        </button>
+                                    </nav>
+                                    <% } else { %>
+                                    <p class="inv-empty" data-i18n="inv.txEmpty">За выбранный год данные отсутствуют.</p>
+                                    <% } %>
+                                </div>
+                                <% }); %>
+                            </section>
+
+                            <section class="inv-section" id="ratings">
+                                <h2 class="title title--small title--underline mb-25 mbm-20">
+                                    <span class="title__inner" data-i18n="inv.ratingsTitle">Кредитные рейтинги</span>
+                                </h2>
+                                <% ratingAgencies.forEach(function(a) { %>
+                                <div class="inv-rating-block">
+                                    <div class="inv-rating-detail">
+                                        <span class="inv-rating-detail__agency"><%- a.agency %></span>
+                                        <p class="inv-rating-detail__text"><%- a.desc %></p>
+                                    </div>
+                                    <div class="inv-pdf-list">
+                                        <% a.docs.forEach(function(d) { renderPdf(d); }); %>
+                                    </div>
+                                </div>
+                                <% }); %>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

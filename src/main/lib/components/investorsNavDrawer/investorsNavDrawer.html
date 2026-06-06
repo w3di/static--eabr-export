@@ -1,0 +1,30 @@
+<%
+    const navItems = [
+        { href: '/investors/',            label: 'Информация для инвесторов', i18n: 'inv.nav.main' },
+        { href: '/investors/mission/',    label: 'Наша миссия',               i18n: 'inv.nav.mission' },
+        { href: '/investors/compliance/', label: 'Комплаенс',                 i18n: 'inv.nav.compliance' },
+        { href: '/investors/contacts/',   label: 'Контакты',                  i18n: 'inv.nav.contacts' }
+    ];
+%>
+<div class="nav-drawer">
+    <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer__toggle">
+    <label for="nav-drawer-toggle" class="nav-drawer__pull" data-i18n-aria-label="a11y.navDrawerOpen" aria-label="Открыть разделы">
+        <svg class="nav-drawer__pull-icon" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <use href="/assets/sprite/sprite-svg.svg#icon-nav-pull"></use>
+        </svg>
+    </label>
+    <label for="nav-drawer-toggle" class="nav-drawer__overlay" aria-hidden="true"></label>
+    <div class="nav-drawer__panel" role="dialog" data-i18n-aria-label="a11y.navDrawerPanel" aria-label="Разделы">
+        <label for="nav-drawer-toggle" class="nav-drawer__close">
+            <span data-i18n="a11y.navDrawerClose">ЗАКРЫТЬ</span>
+            <svg class="nav-drawer__close-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <use href="/assets/sprite/sprite-svg.svg#icon-close-sm"></use>
+            </svg>
+        </label>
+        <div class="nav-drawer__items">
+            <% navItems.forEach(function(it) { %>
+            <a href="<%= it.href %>" class="nav-drawer__item" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+            <% }); %>
+        </div>
+    </div>
+</div>

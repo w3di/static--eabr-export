@@ -1,0 +1,13 @@
+<%
+    const navItems = [
+        { href: '/investors/',            label: 'Информация для инвесторов', i18n: 'inv.nav.main' },
+        { href: '/investors/mission/',    label: 'Наша миссия',               i18n: 'inv.nav.mission' },
+        { href: '/investors/compliance/', label: 'Комплаенс',                 i18n: 'inv.nav.compliance' },
+        { href: '/investors/contacts/',   label: 'Контакты',                  i18n: 'inv.nav.contacts' }
+    ];
+%>
+<aside class="nav-aside">
+    <% navItems.forEach(function(it) { %>
+    <a href="<%= it.href %>" class="nav-aside__item" data-i18n="<%= it.i18n %>"><%- it.label %></a>
+    <% }); %>
+</aside>

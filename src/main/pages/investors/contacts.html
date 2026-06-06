@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="inv.contacts.pageTitle">Контакты | Евразийский банк развития</title>
+    <%= htmlWebpackPlugin.options.widgets.head %>
+</head>
+<body class="body" id="body" data-body>
+<%
+    const contacts = [
+        {
+            title: 'Отдел финансирования:',
+            i18nTitle: 'inv.contacts.dept0Title',
+            phone: '+7 (727) 244 40 44',
+            email: 'funding@eabr.org',
+            address: 'Проспект Достык, 220, Алматы, 050051, Республика Казахстан',
+            i18nAddress: 'inv.contacts.dept0Addr'
+        },
+        {
+            title: 'Министерство финансов:',
+            i18nTitle: 'inv.contacts.dept1Title',
+            subtitle: 'Торговый отдел',
+            i18nSubtitle: 'inv.contacts.dept1Sub',
+            phone: '+7 (727) 244 40 44',
+            email: 'treasure@eabr.org',
+            address: 'Проспект Достык, 220, Алматы, 050051, Республика Казахстан',
+            i18nAddress: 'inv.contacts.dept1Addr'
+        },
+        {
+            title: 'Офис заместителя председателя правления:',
+            i18nTitle: 'inv.contacts.dept2Title',
+            subtitle: 'Региональное представительство',
+            i18nSubtitle: 'inv.contacts.dept2Sub',
+            phone: '+971 505158804',
+            email: 'adgm@eabr.org',
+            address: '24-й этаж, башня Аль-Хатем Площадь ADGM, остров Аль-Марья Абу-Даби, ОАЭ',
+            i18nAddress: 'inv.contacts.dept2Addr'
+        }
+    ];
+%>
+    <div class="page">
+        <%= htmlWebpackPlugin.options.widgets.header %>
+
+        <%= htmlWebpackPlugin.options.widgets.investorsNavDrawer %>
+
+        <main class="main main--regular inv-info-main">
+            <section class="section section--start relative">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col--3 mob-hidden">
+                            <%= htmlWebpackPlugin.options.widgets.investorsNavAside %>
+                        </div>
+
+                        <div class="grid__col grid__col--9 grid__col-mob--4 inv-content">
+                            <div class="mb-25 mbm-15">
+                                <div class="breadcrumbs">
+                                    <span data-i18n="inv.breadcrumbHome">Главная</span> / <strong data-i18n="inv.breadcrumbInvestors">Инвесторам</strong>
+                                </div>
+                            </div>
+
+                            <section class="inv-section">
+                                <h2 class="title title--small title--underline mb-25 mbm-18">
+                                    <span class="title__inner" data-i18n="inv.contacts.title">Контакты</span>
+                                </h2>
+                                <p class="inv-contacts-lead mb-25 mbm-18" data-i18n="inv.contacts.lead">Для&nbsp;получения подробной информации о&nbsp;наших программах финансирования, операциях с&nbsp;финансами или&nbsp;присутствии на&nbsp;Ближнем Востоке, пожалуйста, обращайтесь в&nbsp;наши специализированные отделы.</p>
+
+                                <div class="inv-contacts">
+                                    <% contacts.forEach(function(c) { %>
+                                    <div class="inv-contact">
+                                        <div class="inv-contact__head">
+                                            <h3 class="inv-contact__name" data-i18n="<%= c.i18nTitle %>"><%- c.title %></h3>
+                                            <% if (c.subtitle) { %>
+                                            <span class="inv-contact__sub" data-i18n="<%= c.i18nSubtitle %>"><%- c.subtitle %></span>
+                                            <% } %>
+                                        </div>
+                                        <div class="inv-contact__info">
+                                            <a href="tel:<%= c.phone.replace(/[^+\d]/g, '') %>" class="inv-contact__row">
+                                                <svg class="inv-contact__ico" viewBox="0 0 28 28" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-phone"></use>
+                                                </svg>
+                                                <span class="inv-contact__text"><%- c.phone %></span>
+                                            </a>
+                                            <a href="mailto:<%= c.email %>" class="inv-contact__row">
+                                                <svg class="inv-contact__ico" viewBox="0 0 28 28" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-mail"></use>
+                                                </svg>
+                                                <span class="inv-contact__text"><%- c.email %></span>
+                                            </a>
+                                            <div class="inv-contact__row inv-contact__row--addr">
+                                                <svg class="inv-contact__ico" viewBox="0 0 28 28" aria-hidden="true">
+                                                    <use href="/assets/sprite/sprite-svg.svg#icon-pin"></use>
+                                                </svg>
+                                                <span class="inv-contact__text" data-i18n="<%= c.i18nAddress %>"><%- c.address %></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%= htmlWebpackPlugin.options.widgets.footer %>
+    </div>
+</body>
+</html>

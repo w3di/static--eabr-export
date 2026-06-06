@@ -5,6 +5,7 @@ import { ButtonReturn } from '../../ui/buttonReturn';
 import { Title } from '../../ui/title';
 import { SpotlightCard } from '../../ui/spotlightCard';
 import { Tabs } from '../../ui/tabs';
+import { YearTabs } from '../../ui/yearTabs';
 import { ReadMore } from '../../ui/readMore';
 import { SectionNav } from '../../ui/sectionNav';
 
@@ -19,6 +20,7 @@ class UiInit {
     this.spotlightCards();
     this.switcher();
     this.tabs();
+    this.yearTabs();
     this.readMore();
   }
 
@@ -70,6 +72,12 @@ class UiInit {
     document
       .querySelectorAll<HTMLElement>('[data-tabset]')
       .forEach((el) => new Tabs(el));
+  }
+
+  private yearTabs() {
+    document
+      .querySelectorAll<HTMLElement>('.inv-yeartabs')
+      .forEach((el) => new YearTabs(el));
   }
 
   private readMore() {

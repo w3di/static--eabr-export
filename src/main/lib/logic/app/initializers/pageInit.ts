@@ -1,5 +1,6 @@
 import { IslamicForm } from '../../../../pages/islamic-finance/logic/islamicForm';
 import { FtsForm } from '../../../../pages/fts/logic/ftsForm';
+import { ComplianceForm } from '../../../../pages/investors/logic/complianceForm';
 import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
 import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
 import { SearchFilter } from '../../../../pages/all-projects/logic/searchFilter';
@@ -18,6 +19,7 @@ class PageInit {
   constructor() {
     this.islamicForm();
     this.ftsForm();
+    this.complianceForm();
     this.countryAccordions();
     this.navDrawers();
     this.stepsLineFill();
@@ -71,13 +73,18 @@ class PageInit {
 
   private faqAccordions() {
     document
-      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item, .ppp-acc__item')
+      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item, .ppp-acc__item, .inv-faq__item')
       .forEach((el) => new FaqAccordion(el));
   }
 
   private ftsForm() {
     const el = document.querySelector<HTMLFormElement>('[data-fts-form]');
     if (el) new FtsForm(el);
+  }
+
+  private complianceForm() {
+    const el = document.querySelector<HTMLFormElement>('[data-inv-form]');
+    if (el) new ComplianceForm(el);
   }
 
   private filterDropdowns() {

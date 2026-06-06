@@ -7,4 +7,12 @@
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+@media (max-width: 1260px) {
+    .page {
+        scroll-padding-top: 76px;
+    }
 }
