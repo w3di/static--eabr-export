@@ -1,6 +1,3 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import Swiper from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
 import { introConfig } from './configs/intro';
