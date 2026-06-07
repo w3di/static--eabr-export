@@ -1,16 +1,38 @@
 import { UiInit } from './initializers/uiInit';
-import { SliderInit } from './initializers/sliderInit';
-import { FormInit } from './initializers/formInit';
-import { AnimationInit } from './initializers/animationInit';
 import { PageInit } from './initializers/pageInit';
 
 class App {
   constructor() {
     new UiInit();
-    new FormInit();
-    new SliderInit();
-    new AnimationInit();
     new PageInit();
+    this.lazyFeatures();
+  }
+
+  private async lazyFeatures() {
+    if (document.querySelector('[data-slider], [data-carousel="block"]')) {
+      const { SliderInit } = await import(
+        /* webpackChunkName: "slider" */ './initializers/sliderInit'
+      );
+      new SliderInit();
+    }
+
+    if (document.querySelector('[data-animate]')) {
+      const { AnimationInit } = await import(
+        /* webpackChunkName: "animation" */ './initializers/animationInit'
+      );
+      new AnimationInit();
+    }
+
+    if (
+      document.querySelector(
+        '[data-datepicker="block"], [data-select="block"], [data-fancybox]',
+      )
+    ) {
+      const { FormInit } = await import(
+        /* webpackChunkName: "form" */ './initializers/formInit'
+      );
+      new FormInit();
+    }
   }
 }
 

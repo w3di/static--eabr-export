@@ -15,6 +15,7 @@ export function buildWebpackConfig(
     entry: paths.entry,
     output: {
       filename: 'js/bundle.[contenthash:4].js',
+      chunkFilename: 'js/[name].[contenthash:4].js',
       path: paths.build,
       publicPath: '/',
       clean: true,
