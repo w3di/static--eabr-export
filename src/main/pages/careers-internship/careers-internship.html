@@ -9,12 +9,12 @@
 <%
     const perks = [
         {
-            icon: 'icon-perk-1',
+            icon: 'icon-cmpl-hotline',
             title: 'Менторская поддержка:',
             text: 'Каждому стажеру предоставляется опытный наставник, который поможет адаптироваться к&nbsp;рабочей среде и&nbsp;успешно выполнять свои обязанности.'
         },
         {
-            icon: 'icon-perk-2',
+            icon: 'icon-isl-4',
             title: 'Международный опыт:',
             text: 'Мы&nbsp;активно ведем проекты в&nbsp;различных регионах присутствия ЕАБР. Стажеры имеют возможность получить опыт работы в&nbsp;международном контексте и&nbsp;развить свои навыки в&nbsp;межкультурном взаимодействии.'
         },
@@ -24,7 +24,7 @@
             text: 'ЕАБР является престижной организацией в&nbsp;банковском секторе. Стажерская программа в&nbsp;ЕАБР откроет профессиональные перспективы и&nbsp;усилит опыт, позволит создать ценные связи, расширить свою профессиональную сеть и&nbsp;повысить шансы на&nbsp;будущие карьерные возможности в&nbsp;финансовой сфере'
         },
         {
-            icon: 'icon-perk-4',
+            icon: 'icon-job-1',
             title: 'Профессиональное развитие:',
             text: 'Возможность начать карьеру под&nbsp;руководством опытных профессионалов и&nbsp;участвовать в&nbsp;различных инвестиционных проектах. Это позволит расширить свои знания и&nbsp;сформировать профессиональные навыки в&nbsp;области финансового сектора.'
         }
@@ -64,7 +64,7 @@
                             <div class="hr-perks mob-hidden mb-40 mbm-30">
                                 <% perks.forEach(function(p, i) { %>
                                 <article class="hr-perk" data-spotlight-card="block" data-spotlight-color="rgba(180, 130, 255, 0.2)">
-                                    <div class="hr-perk__icon">
+                                    <div class="hr-perk__icon ic-violet">
                                         <svg aria-hidden="true">
                                             <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                         </svg>
@@ -81,7 +81,7 @@
                                         <% perks.forEach(function(p, i) { %>
                                         <div class="swiper-slide">
                                             <article class="hr-perk" data-spotlight-card="block" data-spotlight-color="rgba(180, 130, 255, 0.2)">
-                                                <div class="hr-perk__icon">
+                                                <div class="hr-perk__icon ic-violet">
                                                     <svg aria-hidden="true">
                                                         <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                                     </svg>

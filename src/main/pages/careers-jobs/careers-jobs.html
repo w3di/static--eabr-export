@@ -9,12 +9,12 @@
 <%
     const offersTop = [
         { icon: 'icon-job-1', title: 'Возможности для&nbsp;профессионального роста и&nbsp;развития' },
-        { icon: 'icon-job-2', title: 'Работа над&nbsp;значимыми и&nbsp;масштабными проектами' }
+        { icon: 'icon-act-projects', title: 'Работа над&nbsp;значимыми и&nbsp;масштабными проектами' }
     ];
 
     const offersBottom = [
-        { icon: 'icon-job-3', title: 'Сильная команда и&nbsp;экспертиза' },
-        { icon: 'icon-job-4', title: 'Стабильность и&nbsp;прозрачные условия' },
+        { icon: 'icon-ppp-role-3', title: 'Сильная команда и&nbsp;экспертиза' },
+        { icon: 'icon-report-annual', title: 'Стабильность и&nbsp;прозрачные условия' },
         { icon: 'icon-job-5', title: 'Современная рабочая среда' }
     ];
     const allOffers = offersTop.concat(offersBottom);
@@ -76,7 +76,7 @@
                                 <div class="hr-perks-grid">
                                     <% offersTop.forEach(function(p, i) { %>
                                     <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
-                                        <div class="hr-perk__icon">
+                                        <div class="hr-perk__icon ic-green">
                                             <svg aria-hidden="true">
                                                 <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                             </svg>
@@ -88,7 +88,7 @@
                                     <div class="hr-perks-grid__row-3">
                                         <% offersBottom.forEach(function(p, i) { %>
                                         <article class="hr-perk hr-perk--green" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
-                                            <div class="hr-perk__icon">
+                                            <div class="hr-perk__icon ic-green">
                                                 <svg aria-hidden="true">
                                                     <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
                                                 </svg>
