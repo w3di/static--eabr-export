@@ -1,4 +1,4 @@
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { PhoneLite } from './phoneLite';
 
 class Validators {
   static required(v: string): boolean {
@@ -10,8 +10,7 @@ class Validators {
   }
 
   static phone(v: string): boolean {
-    const p = parsePhoneNumberFromString(v.trim());
-    return !!p && p.isValid();
+    return PhoneLite.isValid(v.trim());
   }
 
   static minLength(v: string, n: number): boolean {
