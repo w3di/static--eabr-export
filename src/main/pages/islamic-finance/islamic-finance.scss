@@ -62,18 +62,6 @@
 	}
 }
 
-.isl-section-title__line {
-	display: none;
-}
-
-.isl-subtitle {
-	font-size: r(24);
-	line-height: r(29);
-	color: var(--dark);
-	margin: 0 0 r(20);
-}
-
-
 .isl-haram-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -539,15 +527,6 @@
 	.isl-consent {
 		font-size: r(18);
 		line-height: r(22);
-	}
-
-	.isl-section-title__line {
-		margin-bottom: r(24);
-	}
-
-	.isl-subtitle {
-		font-size: r(20);
-		line-height: r(24);
 	}
 
 	.isl-haram-grid,

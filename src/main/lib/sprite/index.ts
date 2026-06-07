@@ -46,6 +46,8 @@ import './icon-ppp-role-2.svg';
 import './icon-ppp-role-3.svg';
 import './icon-pdf.svg';
 import './icon-arrow-diag.svg';
+import './icon-geo.svg';
+import './icon-chevron-down-thin.svg';
 import './icon-check-sm.svg';
 import './icon-chevron-down.svg';
 import './icon-chevron-left.svg';

@@ -1,44 +1,11 @@
 .z-index {
-    &-1 {
-        z-index: 1;
-    }
-
     &-2 {
         z-index: 2;
     }
-
-    &-3 {
-        z-index: 3;
-    }
-}
-
-.order {
-	&-1 {
-		order: 1;
-	}
-	&-2 {
-		order: 2;
-	}
-	&-3 {
-		order: 3;
-	}
-	&-4 {
-		order: 4;
-	}
-	&-5 {
-		order: 5;
-	}
-	&-6 {
-		order: 6;
-	}
 }
 
 .relative {
     position: relative;
-}
-
-.over-hidden {
-    overflow: hidden;
 }
 
 .hidden {
@@ -67,27 +34,6 @@
 }
 
 @media (max-width: 1260px) {
-	.order-mob {
-		&-1 {
-			order: 1;
-		}
-		&-2 {
-			order: 2;
-		}
-		&-3 {
-			order: 3;
-		}
-		&-4 {
-			order: 4;
-		}
-		&-5 {
-			order: 5;
-		}
-		&-6 {
-			order: 6;
-		}
-	}
-
 	.fz-mob {
 		&-20 {
 			font-size: r(20);

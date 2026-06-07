@@ -186,13 +186,6 @@
 	color: rgba(0, 0, 0, 0.4);
 }
 
-.ap-search__placeholder {
-	font-family: 'Brown LL Pan', sans-serif;
-	font-size: r(24);
-	line-height: r(29);
-	color: rgba(0, 0, 0, 0.4);
-}
-
 .ap-search__input {
 	flex: 1 1 auto;
 	min-width: 0;
@@ -1031,11 +1024,6 @@ body.ap-filters-lock {
 	.ap-search__field-inner { gap: r(12); }
 
 	.ap-search__icon { display: none; }
-
-	.ap-search__placeholder {
-		font-size: r(20);
-		line-height: r(24);
-	}
 
 	.ap-search__btn {
 		display: flex;

@@ -56,9 +56,14 @@
 		height: r(46);
 		border-radius: 50%;
 		background: var(--white);
+		color: #24D6FF;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		opacity: 0;
+		transform: translate(r(-6), r(6));
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		pointer-events: none;
 
 		svg { width: r(16); height: r(16); }
 	}
@@ -181,10 +186,6 @@
 		transition: opacity 0.3s ease;
 	}
 
-	&__arrow {
-		transition: opacity 0.3s ease;
-	}
-
 	&__award {
 		width: r(60);
 		height: r(60);
@@ -241,6 +242,12 @@
 
 		.fts-project__body {
 			background: #E4FAFF;
+		}
+
+		.fts-project__arrow {
+			opacity: 1;
+			transform: translate(0, 0);
+			pointer-events: auto;
 		}
 	}
 }

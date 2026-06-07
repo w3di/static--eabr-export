@@ -42,12 +42,6 @@
   scroll-margin-top: 100px;
 }
 
-.inv-intro__lead {
-  font-size: 18px;
-  line-height: 1.45;
-  color: rgba(17, 17, 17, 0.6);
-}
-
 .inv-text {
   font-size: 16px;
   line-height: 1.5;
@@ -317,40 +311,6 @@
     break-inside: avoid;
     margin-bottom: 6px;
   }
-}
-
-.inv-table {
-  display: flex;
-  flex-direction: column;
-}
-
-.inv-table__row {
-  display: grid;
-  grid-template-columns: 1fr 140px;
-  gap: 24px;
-  padding: 16px 0;
-  border-bottom: 1px solid #e5eef2;
-  color: #111111;
-  transition: color 0.2s ease;
-
-  &--head {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.4);
-  }
-
-  &:not(.inv-table__row--head):hover {
-    color: #1bce1b;
-  }
-}
-
-.inv-table__name {
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.inv-table__file {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
 }
 
 .inv-tags {

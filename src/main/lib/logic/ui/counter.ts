@@ -1,6 +1,5 @@
 interface CounterOptions {
   duration?: number;
-  from?: number;
 }
 
 class Counter {
@@ -20,9 +19,7 @@ class Counter {
     this.decimals = raw.includes('.') ? raw.split('.')[1].length : 0;
 
     const fromAttr = el.dataset.counterFrom;
-    if (typeof options.from === 'number') {
-      this.from = options.from;
-    } else if (fromAttr === 'now') {
+    if (fromAttr === 'now') {
       this.from = new Date().getFullYear();
     } else if (fromAttr) {
       this.from = parseFloat(fromAttr);
@@ -54,12 +51,6 @@ class Counter {
     };
 
     this.raf = requestAnimationFrame(tick);
-  }
-
-  cancel(): this {
-    if (this.raf !== null) cancelAnimationFrame(this.raf);
-    this.raf = null;
-    return this;
   }
 }
 

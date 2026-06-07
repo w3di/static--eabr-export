@@ -54,8 +54,7 @@
                         <label class="ap-search__field">
                             <div class="ap-search__field-inner">
                                 <svg class="ap-search__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                    <circle cx="14" cy="14" r="9" stroke="rgba(0,0,0,0.4)" stroke-width="2"/>
-                                    <path d="M21 21L27 27" stroke="rgba(0,0,0,0.4)" stroke-width="2" stroke-linecap="round"/>
+                                    <use href="/assets/sprite/sprite-svg.svg#icon-search-line"></use>
                                 </svg>
                                 <input type="search" class="ap-search__input" placeholder="Найти проект" autocomplete="off" data-filter-key="q">
                             </div>
@@ -83,7 +82,7 @@
                         </div>
                         <button class="ap-mobile-filter-btn mob-visible" type="button" aria-label="Фильтры">
                             <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                <path d="M15.9987 9.3335L2.66537 9.3335M15.9987 22.6668L29.332 22.6668M25.332 13.3335C23.1229 13.3335 21.332 11.5426 21.332 9.3335C21.332 7.12436 23.1229 5.3335 25.332 5.3335C27.5412 5.3335 29.332 7.12436 29.332 9.3335C29.332 11.5426 27.5412 13.3335 25.332 13.3335ZM6.66537 26.6668C8.8745 26.6668 10.6654 24.876 10.6654 22.6668C10.6654 20.4577 8.8745 18.6668 6.66537 18.6668C4.45623 18.6668 2.66537 20.4577 2.66537 22.6668C2.66537 24.876 4.45623 26.6668 6.66537 26.6668Z" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-filter"></use>
                             </svg>
                         </button>
 
@@ -96,7 +95,7 @@
                                 <button class="ap-filter" type="button" data-dropdown-toggle>
                                     <span>Тип проекта</span>
                                     <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
-                                        <path d="M1 1L7 7L13 1" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-chevron-down"></use>
                                     </svg>
                                 </button>
                                 <div class="ap-dropdown ap-dropdown--list">
@@ -121,8 +120,7 @@
                             <a href="<%= htmlWebpackPlugin.options.routes.projectDetail %>" class="ap-card__photo" style="background-image: url('<%= p.image %>');">
                                 <span class="ap-card__arrow" aria-hidden="true">
                                     <svg viewBox="0 0 18 18" fill="none">
-                                        <path d="M1 1H17V17" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
-                                        <path d="M1 17L17 1" stroke="#24D6FF" stroke-width="2" stroke-linecap="round"/>
+                                        <use href="/assets/sprite/sprite-svg.svg#icon-corner"></use>
                                     </svg>
                                 </span>
                             </a>
@@ -171,7 +169,7 @@
                     <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
                         <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
                             <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
-                                <path d="M8 1L1 8L8 15" stroke="rgba(17,17,17,0.6)" stroke-width="2" stroke-linecap="round"/>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
                             </svg>
                             <span>Назад</span>
                         </button>
@@ -179,7 +177,7 @@
                         <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
                             <span>Далее</span>
                             <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
-                                <path d="M1 1L8 8L1 15" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
                             </svg>
                         </button>
                     </nav>

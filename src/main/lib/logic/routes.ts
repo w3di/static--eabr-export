@@ -29,8 +29,4 @@ const ROUTES = {
   video: '/video/',
 } as const;
 
-type RouteKey = keyof typeof ROUTES;
-type RoutePath = (typeof ROUTES)[RouteKey];
-
 export { ROUTES };
-export type { RouteKey, RoutePath };

@@ -54,18 +54,6 @@
   width: 100%;
   aspect-ratio: 1024 / 817;
   margin-top: r(40);
-
-  &__bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-  }
 }
 
 .hr-pin {
@@ -183,43 +171,6 @@
     outline: none;
   }
 
-  &--accent {
-    font-size: r(18);
-    line-height: r(22);
-    color: var(--green);
-  }
-}
-
-.hr-city-card {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: r(4);
-  width: r(283);
-  padding: r(8);
-  background: var(--white);
-  border-radius: r(16);
-  z-index: 3;
-
-  &__media {
-    width: 100%;
-    height: r(200);
-    border-radius: r(8);
-    background: #d9d9d9 center / cover no-repeat;
-  }
-
-  &__name {
-    font-size: r(24);
-    line-height: r(29);
-    color: var(--dark);
-  }
-
-  &__role {
-    font-size: r(18);
-    line-height: r(22);
-    color: var(--green);
-  }
 }
 
 .hr-flags-card {
@@ -388,27 +339,6 @@
     font-size: r(12);
     line-height: r(14);
     max-height: r(14);
-  }
-
-  .hr-city-card {
-    width: r(122);
-    padding: r(4) r(16);
-    background: var(--white);
-    border-radius: r(16);
-
-    &__media {
-      display: none;
-    }
-
-    &__name {
-      font-size: r(16);
-      line-height: r(19);
-    }
-
-    &__role {
-      font-size: r(12);
-      line-height: r(14);
-    }
   }
 
   .hr-flags-card,
