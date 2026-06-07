@@ -21,13 +21,6 @@
             sub: 'между государствами-участниками ЕАБР'
         }
     ];
-
-    const docs = [
-        { title: 'Программы АПК',          size: '151.28 KB' },
-        { title: 'Программы ЭЭ',           size: '145.28 KB' },
-        { title: 'Программы ТФ',           size: '145.28 KB' },
-        { title: 'Программы МСБ и&nbsp;МФ', size: '145.28 KB' }
-    ];
 %>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
@@ -59,9 +52,9 @@
                     </div>
 
                     <ul class="bp-docs">
-                        <% docs.forEach(function(d, i) { %>
+                        <% htmlWebpackPlugin.options.data.programs.forEach(function(d, i) { %>
                         <li class="bp-doc">
-                            <a href="#" class="bp-doc__link">
+                            <a href="<%= d.file %>" class="bp-doc__link" download>
                                 <span class="bp-doc__icon" aria-hidden="true">
                                     <svg viewBox="0 0 38 38" aria-hidden="true">
                                         <use href="/assets/sprite/sprite-svg.svg#icon-pdf"></use>

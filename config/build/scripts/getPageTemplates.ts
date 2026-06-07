@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { TemplatePageType, TemplateStringType } from './buildPagesList';
 import { ROUTES } from '../../../src/main/lib/logic/routes';
 import { INDUSTRIES } from '../../../src/main/data/industries';
+import { PAGE_DATA } from './pageData';
 
 const resolveFilename = (relPath: string, name: string): string => {
   if (name === 'index.html') return 'index.html';
@@ -21,6 +22,7 @@ const createPluginInstance = (
   widgets: TemplateStringType,
 ): HtmlWebpackPlugin => {
   const filename = resolveFilename(data.path, data.name);
+  const pageKey = filename.replace(/index\.html$/, '').replace(/\/$/, '');
 
   return new HtmlWebpackPlugin({
     template: path + '/' + data.path,
@@ -29,6 +31,7 @@ const createPluginInstance = (
     widgets,
     routes: ROUTES,
     industries: INDUSTRIES,
+    data: PAGE_DATA[pageKey] || {},
   });
 };
 

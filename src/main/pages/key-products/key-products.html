@@ -6,61 +6,6 @@
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
-<%
-    const products = [
-        {
-            slug: 'investment',
-            title: 'Инвестиционное финансирование',
-            body: 'Финансирование инвестиционных проектов на стадии их реализации, включая модернизацию, расширение производств, создание новых объектов в государствах-участниках Банка.'
-        },
-        {
-            slug: 'project',
-            title: 'Проектное финансирование',
-            body: 'Долгосрочное финансирование проектов с обеспечением рисков активами и денежными потоками самого проекта, без полного покрытия гарантиями инициатора.'
-        },
-        {
-            slug: 'islamic',
-            title: 'Исламское финансирование',
-            body: 'Финансирование на основе принципов шариата: мурабаха, иджара, мудараба и других исламских инструментов финансовой деятельности.'
-        },
-        {
-            slug: 'working-capital',
-            title: 'Оборотное финансирование',
-            body: 'Финансирование оборотного капитала компаний для поддержания текущей операционной деятельности и расширения производственных программ.'
-        },
-        {
-            slug: 'documentary',
-            title: 'Документарные операции',
-            body: 'Аккредитивы, гарантии и инкассо для обеспечения международных торговых операций между компаниями государств-участников Банка и их партнёрами.'
-        },
-        {
-            slug: 'ppp',
-            title: 'Государственно-частное партнерство',
-            body: 'как основанное на&nbsp;объединении ресурсов и&nbsp;разделении рисков сотрудничество публичного и&nbsp;частного партнеров в&nbsp;сфере развития публичной инфраструктуры, применяется во&nbsp;всех странах евразийского пространства. И&nbsp;заинтересованность в&nbsp;развитии ГЧП только возрастает. Наличие инфраструктуры, ее&nbsp;доступность и&nbsp;взаимосвязанность, непосредственно влияют на&nbsp;социально-экономическое развитие всех государств ЕАЭС+. В&nbsp;текущих условиях из-за необходимости выстраивания новых логистических цепочек потребности в&nbsp;наращивании инфраструктуры стали несопоставимо выше. Но&nbsp;большинству государств просто не&nbsp;по&nbsp;силам покрыть инфраструктурные разрывы только средствами госбюджета.',
-            examples: [
-                { title: 'Расширение и&nbsp;модернизация Международного аэропорта Алматы', country: 'Казахстан', flag: '/assets/images/flags/flag-kz.svg', image: '/assets/images/1200x800.svg', year: '2024' },
-                { title: 'Расширение и&nbsp;модернизация Международного аэропорта Алматы', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан', flag: '/assets/images/flags/flag-kz.svg', image: '/assets/images/1200x800.svg', year: '2024' },
-                { title: 'Предоставление кредитной линии ОАО «Айыл банк» для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', image: '/assets/images/1200x800.svg', year: '2024' },
-                { title: 'Предоставление кредитной линии ОАО «Айыл банк» для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', country: 'Армения', flag: '/assets/images/flags/flag-am.svg', image: '/assets/images/1200x800.svg', year: '2024' }
-            ]
-        }
-    ];
-
-    const funds = [
-        {
-            title: 'Фонд технического содействия (ФТС)',
-            body: 'Специализированный фонд, целью которого является создание благоприятных условий для&nbsp;реализации инвестиционных проектов и&nbsp;развития в&nbsp;странах-участницах Банка, а&nbsp;также усиление инвестиционных проектов, соответствующих его&nbsp;миссии, для&nbsp;будущего финансирования. Ресурсы Фонда формируются за&nbsp;счет отчислений от&nbsp;чистой прибыли Банка и&nbsp;привлеченных средств Доноров, включая международные организации.',
-            image: '/assets/images/funds/fci.webp',
-            href: htmlWebpackPlugin.options.routes.fts
-        },
-        {
-            title: 'Фонд цифровых инициатив (ФЦИ)',
-            body: 'Фонд содействует государствам-участникам в&nbsp;цифровой трансформации и&nbsp;поддерживает проекты по&nbsp;автоматизации различных сфер жизни общества',
-            image: '/assets/images/funds/fts.webp',
-            href: '#'
-        }
-    ];
-%>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
 
@@ -88,7 +33,7 @@
                     </h2>
 
                     <div class="kp-list">
-                        <% products.forEach(function(p, i) { %>
+                        <% htmlWebpackPlugin.options.data.keyProducts.forEach(function(p, i) { %>
                         <details class="kp-item<%= p.expanded ? ' is-open' : '' %>"<%= p.expanded ? ' open' : '' %>>
                             <summary class="kp-item__summary">
                                 <span class="kp-item__title" data-i18n="keyProducts.products.<%= i %>.title"><%- p.title %></span>
@@ -146,9 +91,10 @@
                         <span class="title__inner" data-i18n="keyProducts.fundsHeading">Фонды</span>
                     </h2>
 
-                    <% funds.forEach(function(f, i) { %>
+                    <% htmlWebpackPlugin.options.data.funds.forEach(function(f, i) { %>
+                    <% var fundHref = f.routeKey ? htmlWebpackPlugin.options.routes[f.routeKey] : (f.href || '#'); %>
                     <div class="kp-fund<%= i % 2 === 1 ? ' kp-fund--reverse' : '' %>">
-                        <a href="<%= f.href %>" class="kp-fund__photo" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 57.86%, rgba(0,0,0,0.24) 100%), url('<%= f.image %>');">
+                        <a href="<%= fundHref %>" class="kp-fund__photo" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 57.86%, rgba(0,0,0,0.24) 100%), url('<%= f.image %>');">
                             <span class="kp-fund__more">
                                 <span data-i18n="common.more">Подробнее</span>
                                 <svg class="kp-fund__more-icon" aria-hidden="true">
