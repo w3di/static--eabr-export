@@ -1,4 +1,4 @@
-import { FormValidator } from '../../../lib/logic/ui/form';
+import { FormValidator, FormSubmitter } from '../../../lib/logic/ui/form';
 
 class ComplianceForm {
   constructor(form: HTMLFormElement) {
@@ -12,6 +12,13 @@ class ComplianceForm {
     )!;
     const consentBlock = form.querySelector<HTMLElement>('.inv-form__bottom')!;
     const submit = form.querySelector<HTMLButtonElement>('.inv-form__submit')!;
+
+    const submitter = new FormSubmitter({
+      form,
+      submit,
+      block: 'inv-form',
+      sendingKey: 'inv.compliance.sending',
+    });
 
     new FormValidator({
       form,
@@ -46,7 +53,7 @@ class ComplianceForm {
       },
       submit,
       readyClass: 'inv-form--ready',
-      submittedClass: 'inv-form--submitted',
+      onValid: submitter.submit,
     });
   }
 }

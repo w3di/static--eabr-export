@@ -1,36 +1,8 @@
-<%
-    const sharedNews = [
-        {
-            image: '/assets/images/projects/fts-project-2.webp',
-            date:  '28 ноября 2025',
-            tag:   'Машиностроение',
-            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
-        },
-        {
-            image: '/assets/images/projects/fts-project-1.webp',
-            date:  '28 ноября 2025',
-            tag:   'АПК',
-            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
-        },
-        {
-            image: '/assets/images/projects/fts-project-3.webp',
-            date:  '28 ноября 2025',
-            tag:   'Энергетика',
-            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
-        },
-        {
-            image: '/assets/images/projects/fts-project-4.webp',
-            date:  '28 ноября 2025',
-            tag:   'Инфраструктура',
-            title: 'Экономики стран Евразии покажут рост до&nbsp;9,3% в&nbsp;2026&nbsp;году: ЕАБР представил новый Макропрогноз'
-        }
-    ];
-%>
 <div class="fts-news-slider">
     <div class="swiper fts-news-slider__swiper" data-slider="news">
         <div class="swiper-wrapper">
             <% sharedNews.forEach(function(n, i) { %>
-            <a href="#" class="swiper-slide fts-news__card">
+            <a href="<%= n.href %>" class="swiper-slide fts-news__card">
                 <div class="fts-news__media" style="background-image: url('<%= n.image %>');"></div>
                 <div class="fts-news__body">
                     <div class="fts-news__meta">

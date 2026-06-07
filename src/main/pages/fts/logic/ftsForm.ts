@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { FormValidator } from '../../../lib/logic/ui/form';
+import { FormValidator, FormSubmitter } from '../../../lib/logic/ui/form';
 
 class FtsForm {
   constructor(form: HTMLFormElement) {
@@ -8,11 +8,20 @@ class FtsForm {
     const phone = form.querySelector<HTMLInputElement>('#fts-phone')!;
     const message = form.querySelector<HTMLTextAreaElement>('#fts-message')!;
     const counter = form.querySelector<HTMLElement>('[data-fts-counter]');
-    const consentInput = form.querySelector<HTMLInputElement>('.fts-form__consent input[type="checkbox"]')!;
+    const consentInput = form.querySelector<HTMLInputElement>(
+      '.fts-form__consent input[type="checkbox"]',
+    )!;
     const consentBlock = form.querySelector<HTMLElement>('.fts-form__bottom')!;
     const submit = form.querySelector<HTMLButtonElement>('.fts-form__submit')!;
 
     this.bindFile(form);
+
+    const submitter = new FormSubmitter({
+      form,
+      submit,
+      block: 'fts-form',
+      sendingKey: 'fts.sending',
+    });
 
     new FormValidator({
       form,
@@ -33,7 +42,12 @@ class FtsForm {
             ? { el: counter, max: 1000, maxClass: 'fts-form__counter--max' }
             : undefined,
         },
-        { input: phone, rules: ['phone'], errorKey: 'fts.errors.phone', phoneMask: true },
+        {
+          input: phone,
+          rules: ['phone'],
+          errorKey: 'fts.errors.phone',
+          phoneMask: true,
+        },
       ],
       consent: {
         input: consentInput,
@@ -42,7 +56,7 @@ class FtsForm {
       },
       submit,
       readyClass: 'fts-form--ready',
-      submittedClass: 'fts-form--submitted',
+      onValid: submitter.submit,
     });
   }
 

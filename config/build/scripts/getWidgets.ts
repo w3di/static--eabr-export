@@ -5,6 +5,8 @@ import { BuildPaths } from '../types/config';
 import { TemplateStringType } from './buildPagesList';
 import { ROUTES } from '../../../src/main/lib/logic/routes';
 import { INDUSTRIES } from '../../../src/main/data/industries';
+import { SHARED_PROJECTS } from '../../../src/main/lib/components/projectsBlock/sharedProjects';
+import { SHARED_NEWS } from '../../../src/main/lib/components/newsBlock/sharedNews';
 
 const fileContents: TemplateStringType = {};
 
@@ -15,8 +17,15 @@ const renderWidget = (filePath: string): string => {
   return compiled({
     routes: ROUTES,
     industries: INDUSTRIES,
+    sharedProjects: SHARED_PROJECTS,
+    sharedNews: SHARED_NEWS,
     htmlWebpackPlugin: {
-      options: { routes: ROUTES, industries: INDUSTRIES },
+      options: {
+        routes: ROUTES,
+        industries: INDUSTRIES,
+        sharedProjects: SHARED_PROJECTS,
+        sharedNews: SHARED_NEWS,
+      },
     },
   });
 };

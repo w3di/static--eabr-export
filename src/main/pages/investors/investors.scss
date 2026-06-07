@@ -1390,6 +1390,24 @@ a.inv-contact__row:hover {
   display: block;
 }
 
+.inv-form--loading .inv-form__submit {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: progress;
+}
+
+.inv-form__submit-error {
+  display: none;
+  font-family: 'Brown LL Pan', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e2362d;
+}
+
+.inv-form--error .inv-form__submit-error {
+  display: block;
+}
+
 .inv-field__error {
   margin-top: 6px;
   font-family: 'Brown LL Pan', sans-serif;

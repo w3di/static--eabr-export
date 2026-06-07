@@ -3,6 +3,7 @@ import {
   FUNDS,
 } from '../../../src/main/pages/key-products/keyProducts';
 import { BANK_PROGRAMS } from '../../../src/main/pages/bank-programs/bankPrograms';
+import { FTS_PARTNERS } from '../../../src/main/pages/fts/ftsPartners';
 
 type PageData = Record<string, unknown>;
 
@@ -13,6 +14,9 @@ const PAGE_DATA: Record<string, PageData> = {
   },
   'bank-programs': {
     programs: BANK_PROGRAMS,
+  },
+  fts: {
+    partners: FTS_PARTNERS,
   },
 };
 

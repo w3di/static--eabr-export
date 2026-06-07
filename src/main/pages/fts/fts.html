@@ -47,16 +47,6 @@
         'Успешное двухэтапное рассмотрение Проекта ФТС органами управления Банка'
     ];
 
-    const partners = [
-        { name: 'WFP',   image: '/assets/images/partners/wfp.webp' },
-        { name: 'UNDP',  image: '/assets/images/partners/undp.webp' },
-        { name: 'CAREC', image: '/assets/images/partners/carec.webp' },
-        { name: 'ESCAP', image: '/assets/images/partners/escap.webp' },
-        { name: 'OSCE',  image: '/assets/images/partners/osce.webp' },
-        { name: 'UNIDO', image: '/assets/images/partners/unido.webp' },
-        { name: 'UNFPA', image: '/assets/images/partners/unfpa.webp' }
-    ];
-
     const faq = [
         {
             q: 'Какие виды технического содействия предоставляет ФТС ЕАБР?',
@@ -244,10 +234,10 @@
                                     <span class="title__inner" data-i18n="fts.partnersTitle">Наши партнеры</span>
                                 </h2>
                                 <div class="fts-partners">
-                                    <% partners.forEach(function(p) { %>
-                                    <div class="fts-partners__cell" title="<%= p.name %>">
+                                    <% htmlWebpackPlugin.options.data.partners.forEach(function(p) { %>
+                                    <a href="<%= p.href %>" class="fts-partners__cell" title="<%= p.name %>" target="_blank" rel="noopener noreferrer">
                                         <img src="<%= p.image %>" alt="<%= p.name %>" loading="lazy">
-                                    </div>
+                                    </a>
                                     <% }); %>
                                 </div>
                             </div>
@@ -328,6 +318,7 @@
                                         </div>
                                     </div>
                                     <div class="fts-form__success" data-i18n="fts.success">Сообщение успешно отправлено. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</div>
+                                    <div class="fts-form__submit-error" data-i18n="fts.submitError">Не&nbsp;удалось отправить сообщение. Попробуйте ещё&nbsp;раз.</div>
                                     <div class="fts-form__bottom">
                                         <label class="fts-form__consent">
                                             <input type="checkbox" checked>

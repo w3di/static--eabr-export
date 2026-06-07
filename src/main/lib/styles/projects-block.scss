@@ -48,23 +48,6 @@
 		}
 	}
 
-	&:not(&--full):hover {
-		transform: translateY(r(-4));
-		box-shadow: 0 r(12) r(28) rgba(36, 214, 255, 0.18);
-
-		.fts-project__photo::before {
-			transform: scale(1.06);
-		}
-
-		.fts-project__body {
-			background: #E4FAFF;
-		}
-
-		.fts-project__title {
-			color: #1BCE1B;
-		}
-	}
-
 	&__arrow {
 		position: absolute;
 		top: r(18);
@@ -220,7 +203,7 @@
 		}
 	}
 
-	&:not(.fts-project--full) {
+	&:not(.fts-project--full):not(:hover) {
 		.fts-project__amounts {
 			opacity: 0;
 			max-height: 0;
@@ -242,8 +225,6 @@
 	}
 
 	&--full {
-		cursor: default;
-
 		.fts-project__photo {
 			padding-top: 86.6%;
 		}
@@ -251,6 +232,45 @@
 		.fts-project__body {
 			background: #E4FAFF;
 		}
+	}
+
+	&:hover {
+		.fts-project__photo {
+			padding-top: 86.6%;
+		}
+
+		.fts-project__body {
+			background: #E4FAFF;
+		}
+	}
+}
+
+.fts-projects__swiper:has(.fts-project:hover) .fts-project--full:not(:hover) {
+	.fts-project__photo {
+		padding-top: 74.7%;
+	}
+
+	.fts-project__body {
+		background: #F0FCFF;
+	}
+
+	.fts-project__amounts {
+		opacity: 0;
+		max-height: 0;
+		margin-top: 0;
+		pointer-events: none;
+	}
+
+	.fts-project__year {
+		opacity: 0;
+		max-height: 0;
+		pointer-events: none;
+	}
+
+	.fts-project__awards,
+	.fts-project__arrow {
+		opacity: 0;
+		pointer-events: none;
 	}
 }
 
