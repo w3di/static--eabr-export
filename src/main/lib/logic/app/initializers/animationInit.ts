@@ -10,6 +10,24 @@ class AnimationInit {
     this.counters();
     this.drawCheck();
     this.titleUnderline();
+    this.grow();
+  }
+
+  private grow() {
+    document
+      .querySelectorAll<HTMLElement>('[data-animate="grow"]')
+      .forEach((item) => {
+        item.style.opacity = '0';
+        const play = () =>
+          animate(item, {
+            scale: [0.2, 1],
+            opacity: [0, 1],
+            ease: 'outElastic(1, .5)',
+            duration: 1200,
+          });
+        onVisible(item, () => setTimeout(play, 200));
+        item.addEventListener('click', play);
+      });
   }
 
   private titleUnderline() {
@@ -39,9 +57,9 @@ class AnimationInit {
           animate(chars, {
             opacity: { from: 0 },
             y: { from: 40, to: 0 },
-            duration: 1250,
+            duration: 650,
             ease: 'out(3)',
-            delay: stagger(50),
+            delay: stagger(18),
           });
         });
       });

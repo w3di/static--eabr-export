@@ -2,6 +2,12 @@ export const zh = {
   home: {
     heading: '欧亚开发银行 — 多边开发银行',
   },
+  notFound: {
+    pageTitle: '页面未找到 — 欧亚开发银行',
+    title: '页面未找到',
+    text: '该页面可能已被移动或删除，或网址有误。请返回首页或使用菜单。',
+    btn: '返回首页',
+  },
   nav: {
     topAnalytics: '分析',
     topNews: '新闻与活动',

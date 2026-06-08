@@ -3,10 +3,12 @@
 
   &__slide {
     opacity: 0;
+    pointer-events: none;
     transition: 0.3s opacity;
 
     &.active {
       opacity: 1;
+      pointer-events: auto;
     }
   }
 

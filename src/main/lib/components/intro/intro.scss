@@ -63,6 +63,7 @@
 }
 
 .intro-count {
+  margin-left: auto;
   text-align: right;
 
   &__number {
@@ -71,8 +72,12 @@
   }
 
   &__text {
-    font-size: r(24);
+    font-size: r(34);
     line-height: 1.2;
+
+    @media (width <= 1260px) {
+      font-size: r(24);
+    }
   }
 
   &--light {

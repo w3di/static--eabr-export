@@ -2,6 +2,12 @@ export const en = {
   home: {
     heading: 'Eurasian Development Bank — a multilateral development bank',
   },
+  notFound: {
+    pageTitle: 'Page not found — Eurasian Development Bank',
+    title: 'Page not found',
+    text: 'The page may have been moved or removed, or the address is incorrect. Return to the homepage or use the menu.',
+    btn: 'Home',
+  },
   nav: {
     topAnalytics: 'Analytics',
     topNews: 'News &amp;&nbsp;events',

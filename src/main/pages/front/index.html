@@ -14,7 +14,10 @@
                 <%= htmlWebpackPlugin.options.widgets.sectionSliderIntro %>
             </section>
             <section class="section mb-185 mbm-120">
-                <%= htmlWebpackPlugin.options.widgets.newsCarousel %>
+                <div class="container">
+                    <h2 class="title title--small title--underline mb-35" data-title="block">Новости</h2>
+                    <%= htmlWebpackPlugin.options.widgets.newsBlock %>
+                </div>
             </section>
             <section class="section mb-160 mbm-120">
                 <%= htmlWebpackPlugin.options.widgets.sectionFrontFocus %>
@@ -32,7 +35,16 @@
                 <%= htmlWebpackPlugin.options.widgets.sectionFrontDevelopment %>
             </section>
             <section class="section">
-                <%= htmlWebpackPlugin.options.widgets.sectionFrontAnalytics %>
+                <div class="container">
+                    <h2 class="title title--small title--underline mb-50 mbm-30" data-title="block">Аналитика</h2>
+                    <%= htmlWebpackPlugin.options.widgets.analyticsBlock %>
+                    <a href="" class="button-arrow ap-analytics__btn">
+                        <span class="button-arrow__text">Смотреть все</span>
+                        <svg class="button-arrow__icon" aria-hidden="true">
+                            <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
+                        </svg>
+                    </a>
+                </div>
             </section>
         </main>
         <%= htmlWebpackPlugin.options.widgets.footer %>

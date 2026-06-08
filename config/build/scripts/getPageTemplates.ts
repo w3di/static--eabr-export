@@ -11,6 +11,7 @@ const resolveFilename = (relPath: string, name: string): string => {
   const dir = nodePath.dirname(relPath);
   const base = nodePath.basename(relPath, '.html');
 
+  if (base === '404') return '404.html';
   if (dir === '.') return `${base}/index.html`;
   if (base === nodePath.basename(dir)) return `${dir}/index.html`;
   return `${dir}/${base}/index.html`;

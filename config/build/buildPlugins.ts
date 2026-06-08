@@ -183,15 +183,21 @@ class SeoMeta {
         'SeoMeta',
         (data, cb) => {
           const out = data.outputName || '';
-          const key = out.replace(/index\.html$/, '').replace(/\/$/, '');
-          const url = `${SITE.baseUrl}/${key ? key + '/' : ''}`;
+          const is404 = out === '404.html';
+          const key = is404
+            ? '404'
+            : out.replace(/index\.html$/, '').replace(/\/$/, '');
+          const url = is404
+            ? `${SITE.baseUrl}/404.html`
+            : `${SITE.baseUrl}/${key ? key + '/' : ''}`;
           const titleMatch = data.html.match(/<title[^>]*>([^<]*)<\/title>/);
           const title = (titleMatch ? titleMatch[1] : SITE.name).trim();
           const desc =
             PAGE_DESCRIPTIONS[key] !== undefined
               ? PAGE_DESCRIPTIONS[key]
               : SITE.defaultDescription;
-          const robots = SITE.indexable ? 'index, follow' : 'noindex, nofollow';
+          const robots =
+            is404 || !SITE.indexable ? 'noindex, nofollow' : 'index, follow';
           const pageLd = buildPageLd(data.html, url, title, desc);
 
           const tags = [

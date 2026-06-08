@@ -337,6 +337,11 @@
   align-items: flex-start;
   gap: r(20);
   z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
+.pd-related__card:hover {
+  box-shadow: 0 r(4) r(40) 0 rgb(0 0 0 / 12%);
 }
 
 .pd-related__title {
