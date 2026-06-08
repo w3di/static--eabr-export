@@ -1333,6 +1333,8 @@ export const en = {
     searchPlaceholder: 'Search',
     pagPrev: 'Back',
     pagNext: 'Next',
+    empty: 'Nothing matches your query',
+    reset: 'Reset',
   },
   pana: {
     pageTitle: 'PPP reviews and analytics | Eurasian Development Bank',

@@ -4,10 +4,14 @@ import {
 } from '../../../src/main/pages/key-products/keyProducts';
 import { BANK_PROGRAMS } from '../../../src/main/pages/bank-programs/bankPrograms';
 import { FTS_PARTNERS } from '../../../src/main/pages/fts/ftsPartners';
+import { PPP_ANALYTICS } from '../../../src/main/pages/ppp-analytics/pppAnalytics';
 
 type PageData = Record<string, unknown>;
 
 const PAGE_DATA: Record<string, PageData> = {
+  'ppp-analytics': {
+    analytics: PPP_ANALYTICS,
+  },
   'key-products': {
     keyProducts: KEY_PRODUCTS,
     funds: FUNDS,

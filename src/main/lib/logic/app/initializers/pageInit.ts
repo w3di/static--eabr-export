@@ -5,6 +5,7 @@ import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccord
 import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
 import { SearchFilter } from '../../../../pages/all-projects/logic/searchFilter';
 import { ProjectsList } from '../../../../pages/all-projects/logic/projectsList';
+import { PppNewsList } from '../../../../pages/ppp-news/logic/pppNewsList';
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
@@ -28,6 +29,7 @@ class PageInit {
     this.filterDropdowns();
     this.searchFilters();
     this.projectsList();
+    this.pppNewsList();
     this.faqAccordions();
     this.photoCarousels();
     this.posterVideos();
@@ -69,6 +71,12 @@ class PageInit {
     document
       .querySelectorAll<HTMLElement>('.ap-projects')
       .forEach((el) => new ProjectsList(el));
+  }
+
+  private pppNewsList() {
+    document
+      .querySelectorAll<HTMLElement>('[data-pnews-cards]')
+      .forEach((el) => new PppNewsList(el));
   }
 
   private faqAccordions() {

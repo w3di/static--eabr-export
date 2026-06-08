@@ -1680,6 +1680,8 @@ export const ru = {
     searchPlaceholder: 'Поиск',
     pagPrev: 'Назад',
     pagNext: 'Далее',
+    empty: 'По&nbsp;вашему запросу ничего не&nbsp;найдено',
+    reset: 'Сбросить',
   },
   pana: {
     pageTitle: 'Обзоры и аналитика по ГЧП | Евразийский банк развития',

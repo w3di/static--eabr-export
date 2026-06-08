@@ -6,15 +6,6 @@
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
-<%
-    const news = [
-        { dt: '2025-09-02', date: '2 сентября 2025',  video: false, title: 'ЕАБР предоставил финансирование для развития институциональной среды государственно-частного партнерства' },
-        { dt: '2023-09-29', date: '29 сентября 2023', video: false, title: 'Евразийскому банку развития присуждена Премия Центра ГЧП Кыргызстана в номинации «Международный партнер года»' },
-        { dt: '2025-12-18', date: '18 декабря 2025', video: true,  title: 'Евгений Винокуров о перспективах Центральной Азии как одного из наиболее быстрорастущих регионов мира — интервью' }
-    ];
-    const cards = [];
-    for (let i = 0; i < 3; i++) { news.forEach(function(n) { cards.push(n); }); }
-%>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
 
@@ -65,24 +56,11 @@
                                 </div>
 
                                 <div class="articles-content__main">
-                                    <div class="grid grid--near">
-                                        <% cards.forEach(function(n) { %>
-                                        <div class="grid__col grid__col--4 grid__col-mob--4">
-                                            <a href="<%= htmlWebpackPlugin.options.routes.newsEventsDetail %>" class="article-video<%= n.video ? '' : ' article-video--plain' %>">
-                                                <picture class="article-video__picture">
-                                                    <img src="/assets/images/1200x800.svg" alt="<%- n.title %>">
-                                                </picture>
-                                                <div class="article-video__content">
-                                                    <time class="article-video__date" datetime="<%= n.dt %>"><%- n.date %></time>
-                                                    <p class="article-video__title"><%- n.title %></p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <% }); %>
-                                    </div>
+                                    <div class="grid grid--near pnews-cards" data-pnews-cards></div>
+                                    <p class="ap-projects__status" data-pnews-status hidden></p>
                                 </div>
 
-                                <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
+                                <nav class="ap-pagination" aria-label="Pagination" data-total-pages="1">
                                     <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
                                         <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
                                             <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>

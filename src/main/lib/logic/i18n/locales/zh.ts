@@ -1315,6 +1315,8 @@ export const zh = {
     searchPlaceholder: '搜索',
     pagPrev: '上一页',
     pagNext: '下一页',
+    empty: '没有符合您查询的结果',
+    reset: '重置',
   },
   pana: {
     pageTitle: 'PPP评述与分析 | 欧亚开发银行',

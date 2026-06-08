@@ -135,6 +135,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 38px;
+    margin-top: 40px;
 }
 
 .pana-book {
@@ -235,7 +236,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        margin: 0 -20px;
+        margin: 28px -20px 0;
         padding: 0 20px;
         -webkit-overflow-scrolling: touch;
     }
