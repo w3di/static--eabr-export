@@ -172,10 +172,8 @@
                                     <% roles.forEach(function(t, i) { %>
                                     <div class="ppp-role" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
                                         <div class="ppp-role__head">
-                                            <span class="ppp-role__icon ic-green" aria-hidden="true">
-                                                <svg>
-                                                    <use href="/assets/sprite/sprite-svg.svg#<%= t.icon %>"></use>
-                                                </svg>
+                                            <span class="ppp-role__icon" aria-hidden="true">
+                                                <img src="/assets/images/products/<%= t.icon %>.svg" width="54" height="54" alt="">
                                             </span>
                                             <svg class="ppp-role__arrow" aria-hidden="true">
                                                 <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
