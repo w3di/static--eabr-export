@@ -7,113 +7,28 @@
 </head>
 <body class="body" id="body" data-body>
 <%
-    const pageNav = [
-        { href: '#reports',      label: 'Финансовые отчеты',        i18n: 'inv.pagenav.reports' },
-        { href: '#disclosure',   label: 'Раскрытие информации',     i18n: 'inv.pagenav.disclosure' },
-        { href: '#corporate',    label: 'Корпоративные отчеты',     i18n: 'inv.pagenav.corporate' },
-        { href: '#debt',         label: 'Долговые инструменты',     i18n: 'inv.pagenav.debt' },
-        { href: '#transactions', label: 'История транзакций',       i18n: 'inv.pagenav.transactions' },
-        { href: '#treasury',     label: 'Казначейские инструменты', i18n: 'inv.pagenav.treasury' },
-        { href: '#ratings',      label: 'Кредитные рейтинги',       i18n: 'inv.pagenav.ratings' }
-    ];
-
-    const stats = [
-        { label: 'Накопленный инвестиционный портфель', num: '$19,6', unit: 'млрд', i18n: 'inv.stats.portfolio' },
-        { label: 'Уставный капитал',                    num: '$8,5',  unit: 'млрд', i18n: 'inv.stats.capital' }
-    ];
-
-    const ratings = [
-        { agency: 'АКРА', scales: [
-            { value: 'A-',  label: 'глобальный',   i18n: 'inv.rating.global' },
-            { value: 'AAA', label: 'национальный', i18n: 'inv.rating.national' }
-        ] },
-        { agency: 'CCXI', scales: [
-            { value: 'A-',  label: 'глобальный',   i18n: 'inv.rating.global' },
-            { value: 'AAA', label: 'национальный', i18n: 'inv.rating.national' }
-        ] }
-    ];
-
-    const reportYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
-
-    const reports = [
-        { title: 'Финансовая отчетность за 2025 год', size: 'PDF, 236.54 KB' },
-        { title: 'Отчет о раскрытии информации об устойчивом развитии за 2025 год', size: 'PDF, 236.54 KB' },
-        { title: 'Сокращенная промежуточная финансовая отчетность за шестимесячный период, закончившийся 30 июня 2025 года', size: 'PDF, 236.54 KB' }
-    ];
-
-    const disclosureLinks = [
-        'Уведомления',
-        'Существенные факты',
-        'Отчеты эмитента',
-        'Учредительные документы',
-        'Предоставление информации'
-    ];
-
-    const corporateCards = [
-        { title: 'Годовые отчеты', icon: 'icon-report-annual' },
-        { title: 'Отчеты об устойчивом развитии', icon: 'icon-report-esg' }
-    ];
-
-    const debtPrograms = [
-        'Программа EMTN',
-        'Программа ECP',
-        'Выпуск местных облигаций в России',
-        'Выпуск местных облигаций в Казахстане',
-        'Выпуск местных облигаций в Армении',
-        'Международные долговые инструменты'
-    ];
-
-    const txByYear = {
-        '2025': [
-            { date: '28.12.2023', amount: '50 млрд тенге',  instrument: 'Облигации, ISIN KZX000001003',                maturity: '27.06.2027', coupon: '14,20%' },
-            { date: '28.12.2023', amount: '10 млрд рублей', instrument: 'Облигации серии 003P-009, ISIN RU000A107EA1', maturity: '13.12.2028', coupon: 'RUONIA+1,70%' },
-            { date: '15.08.2023', amount: '20 млн $ США',   instrument: 'Облигации, ISIN AMEABRB21ER0',                maturity: '15.08.2026', coupon: '6,00%' },
-            { date: '03.08.2023', amount: '25 млрд тенге',  instrument: 'Облигации, ISIN KZ2D00009958',                maturity: '20.04.2028', coupon: '15,50%' },
-            { date: '14.07.2023', amount: '6 млрд рублей',  instrument: 'Облигации серии 003Р-008, ISIN RU000A106JX4', maturity: '07.07.2028', coupon: 'RUONIA+2%' }
-        ],
-        '2024': [],
-        '2023': [],
-        '2022': [],
-        '2021': [],
-        '2020': []
-    };
-
-    const ratingAgencies = [
-        {
-            agency: 'АКРА',
-            desc: 'Кредитный рейтинг эмитента по глобальной шкале: A-. По национальной шкале: AAA (RU). Прогноз: стабильный.',
-            docs: [
-                { title: 'Рейтинговое решение ACRA от 13 марта 2026 года',    size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое решение ACRA от 12 сентября 2025 года', size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое решение ACRA от 4 апреля 2025 года',    size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое решение ACRA от 16 октября 2024 года',  size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое решение ACRA от 27 апреля 2024 года',   size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое решение ACRA от 9 ноября 2023 года',    size: 'PDF, 236.54 KB' }
-            ]
-        },
-        {
-            agency: 'CCXI',
-            desc: 'Кредитный рейтинг эмитента по глобальной шкале: Ag. По национальной шкале: AAA. Прогноз: стабильный.',
-            docs: [
-                { title: 'Рейтинговое действие CCXI от 5 сентября 2025 года',  size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое действие CCXI от 5 сентября 2024 года',  size: 'PDF, 236.54 KB' },
-                { title: 'Рейтинговое действие CCXI от 28 декабря 2023 года',  size: 'PDF, 236.54 KB' }
-            ]
-        }
-    ];
+    const pd = htmlWebpackPlugin.options.data;
+    const pageNav = pd.pageNav;
+    const stats = pd.stats;
+    const ratings = pd.ratings;
+    const reportYears = pd.reportYears;
+    const reports = pd.reports;
+    const disclosureLinks = pd.disclosureLinks;
+    const corporateCards = pd.corporateCards;
+    const debtPrograms = pd.debtPrograms;
+    const txByYear = pd.txByYear;
+    const ratingAgencies = pd.ratingAgencies;
 
     function renderPdf(d) {
 %>
                 <div class="bp-doc">
-                    <a href="#" class="bp-doc__link">
+                    <a href="<%= d.file %>" class="bp-doc__link" download>
                         <span class="bp-doc__icon" aria-hidden="true">
-                            <svg viewBox="0 0 38 38" aria-hidden="true">
-                                <use href="/assets/sprite/sprite-svg.svg#icon-pdf"></use>
-                            </svg>
+                            <img src="/assets/images/products/icon-pdf.svg" width="38" height="38" alt="">
                         </span>
                         <span class="bp-doc__text">
                             <span class="bp-doc__title"><%- d.title %></span>
-                            <span class="bp-doc__size"><%- d.size %></span>
+                            <span class="bp-doc__size">PDF, <%= d.size %></span>
                         </span>
                     </a>
                 </div>
@@ -281,9 +196,7 @@
                                     <% corporateCards.forEach(function(c) { %>
                                     <a href="#" class="inv-card" data-spotlight-card="block" data-spotlight-color="rgba(27, 206, 27, 0.2)">
                                         <span class="inv-card__icon" aria-hidden="true">
-                                            <svg viewBox="0 0 54 54" fill="none">
-                                                <use href="/assets/sprite/sprite-svg.svg#<%= c.icon %>"></use>
-                                            </svg>
+                                            <img src="<%= c.icon %>" width="54" height="54" alt="">
                                         </span>
                                         <span class="inv-card__title"><%- c.title %></span>
                                     </a>
@@ -310,9 +223,7 @@
                                 </h2>
                                 <div class="inv-treasury">
                                     <span class="inv-treasury__icon" aria-hidden="true">
-                                        <svg viewBox="0 0 54 54" fill="none">
-                                            <use href="/assets/sprite/sprite-svg.svg#icon-report-esg"></use>
-                                        </svg>
+                                        <img src="/assets/images/products/icon-report-esg.svg" width="140" height="140" alt="">
                                     </span>
                                     <div class="inv-treasury__text">
                                         <h3 class="inv-treasury__heading" data-i18n="inv.treasuryHeading">Обзор казначейских операций и&nbsp;управления активами и&nbsp;пассивами</h3>

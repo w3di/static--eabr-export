@@ -6,10 +6,12 @@ import { BANK_PROGRAMS } from '../../../src/main/pages/bank-programs/bankProgram
 import { FTS_PARTNERS } from '../../../src/main/pages/fts/ftsPartners';
 import { PPP_ANALYTICS } from '../../../src/main/pages/ppp-analytics/pppAnalytics';
 import { COMPLIANCE_DOCS } from '../../../src/main/pages/investors/logic/complianceDocs';
+import { INVESTORS } from '../../../src/main/pages/investors/investors';
 
 type PageData = Record<string, unknown>;
 
 const PAGE_DATA: Record<string, PageData> = {
+  investors: INVESTORS,
   'ppp-analytics': {
     analytics: PPP_ANALYTICS,
   },
