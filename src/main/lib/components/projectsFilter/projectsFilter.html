@@ -1,0 +1,99 @@
+<section class="ap-projects">
+    <div class="container">
+        <div class="ap-projects__bar">
+            <div class="ap-projects__left">
+                <h2 class="ap-projects__title" data-i18n="allProjects.projectsTitle">ПРОЕКТЫ</h2>
+                <div class="ap-view">
+                    <span class="ap-view__label" data-i18n="allProjects.viewLabel">Вид:</span>
+                    <div class="ap-view__tabs" data-tabs data-active="0" data-filter-key="view">
+                        <span class="ap-view__pill" aria-hidden="true"></span>
+                        <button class="ap-view__tab ap-view__tab--active" type="button" data-tab="0" data-i18n="allProjects.viewCards">Карточки</button>
+                        <button class="ap-view__tab" type="button" data-tab="1" data-i18n="allProjects.viewTable">Таблица</button>
+                    </div>
+                </div>
+            </div>
+            <button class="ap-mobile-filter-btn mob-visible" type="button" data-filters-open data-i18n-aria-label="allProjects.filtersAria" aria-label="Фильтры">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <use href="/assets/sprite/sprite-svg.svg#icon-filter"></use>
+                </svg>
+            </button>
+
+            <div class="ap-filters" data-filters-panel>
+                <div class="ap-filters__head">
+                    <span class="ap-filters__title" data-i18n="allProjects.filtersTitle">Фильтры</span>
+                    <button class="ap-filters__close" type="button" data-filters-close aria-label="Закрыть">
+                        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <use href="/assets/sprite/sprite-svg.svg#icon-close-sm"></use>
+                        </svg>
+                    </button>
+                </div>
+                <%
+                    const industryItems = ['Все отрасли','Металлургия','Полезные ископаемые','Транспорт','Энергетика','Финансы','Инфраструктура'];
+                    const projectTypeItems = ['Все типы','Кредитная линия','Гарантия','Инвестиция','Софинансирование'];
+                %>
+
+                <div class="ap-filter-wrap" data-dropdown-wrap data-filter-key="type">
+                    <button class="ap-filter" type="button" data-dropdown-toggle>
+                        <span data-i18n="allProjects.typeFilter">Тип проекта</span>
+                        <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                    <div class="ap-dropdown ap-dropdown--list">
+                        <ul class="ap-dropdown__list">
+                            <% projectTypeItems.forEach(function(t, i) { %>
+                            <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %>" data-i18n="allProjects.projectTypes.<%= i %>"><%- t %></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ap-filter-wrap ap-filter-wrap--date input-date" data-datepicker="block" data-datepicker-inline-label="allProjects.dateLabel" data-filter-key="date">
+                    <input type="text" class="ap-filter ap-filter--date input-date__head" data-datepicker="head" value="Год" readonly>
+                    <input type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату" data-i18n-placeholder="allProjects.datePlaceholder">
+                </div>
+
+                <div class="ap-filter-wrap" data-dropdown-wrap data-multi data-filter-key="industry">
+                    <button class="ap-filter" type="button" data-dropdown-toggle>
+                        <span data-i18n="allProjects.industryFilter">Отрасль</span>
+                        <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-down"></use>
+                        </svg>
+                    </button>
+                    <div class="ap-dropdown ap-dropdown--list">
+                        <ul class="ap-dropdown__list">
+                            <% industryItems.forEach(function(t, i) { %>
+                            <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %>" data-i18n="allProjects.industries.<%= i %>"><%- t %></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ap-filters__actions">
+                    <button class="ap-filters__reset" type="button" data-filters-reset data-i18n="allProjects.filtersReset">Сбросить</button>
+                    <button class="ap-filters__apply" type="button" data-filters-close data-i18n="allProjects.filtersApply">Применить</button>
+                </div>
+            </div>
+            <div class="ap-filters__overlay" data-filters-close aria-hidden="true"></div>
+        </div>
+
+        <div class="ap-cards" data-projects-cards></div>
+        <p class="ap-projects__status" data-projects-status hidden></p>
+
+        <nav class="ap-pagination" aria-label="Pagination" data-total-pages="1">
+            <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
+                <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                    <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
+                </svg>
+                <span data-i18n="allProjects.pagPrev">Назад</span>
+            </button>
+            <ul class="ap-pagination__list" data-pagination-list></ul>
+            <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
+                <span data-i18n="allProjects.pagNext">Далее</span>
+                <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
+                    <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
+                </svg>
+            </button>
+        </nav>
+    </div>
+</section>

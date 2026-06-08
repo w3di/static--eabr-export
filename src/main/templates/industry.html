@@ -8,17 +8,6 @@
 <body class="body" id="body" data-body>
 <%
     const industry = htmlWebpackPlugin.options.industry;
-    const projectCards = [
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' }
-    ];
     const heroImage = industry.hero || industry.image;
 %>
     <div class="page">
@@ -66,179 +55,18 @@
                 </div>
             </section>
 
-            <section class="ap-projects">
-                <div class="container">
-                    <div class="ap-projects__bar">
-                        <div class="ap-projects__left">
-                            <h2 class="ap-projects__title">ПРОЕКТЫ</h2>
-                            <div class="ap-view">
-                                <span class="ap-view__label">Вид:</span>
-                                <div class="ap-view__tabs" data-tabs data-active="0" data-filter-key="view">
-                                    <span class="ap-view__pill" aria-hidden="true"></span>
-                                    <button class="ap-view__tab ap-view__tab--active" type="button" data-tab="0">Карточки</button>
-                                    <button class="ap-view__tab" type="button" data-tab="1">Таблица</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="ap-mobile-filter-btn mob-visible" type="button" aria-label="Фильтры">
-                            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                <use href="/assets/sprite/sprite-svg.svg#icon-filter"></use>
-                            </svg>
-                        </button>
-
-                        <div class="ap-filters">
-                            <%
-                                const projectTypeItems = ['Все типы','Кредитная линия','Гарантия','Инвестиция','Софинансирование'];
-                            %>
-
-                            <div class="ap-filter-wrap" data-dropdown-wrap data-filter-key="type">
-                                <button class="ap-filter" type="button" data-dropdown-toggle>
-                                    <span>Тип проекта</span>
-                                    <svg class="ap-filter__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
-                                        <use href="/assets/sprite/sprite-svg.svg#icon-chevron-down"></use>
-                                    </svg>
-                                </button>
-                                <div class="ap-dropdown ap-dropdown--list">
-                                    <ul class="ap-dropdown__list">
-                                        <% projectTypeItems.forEach(function(t, i) { %>
-                                        <li class="ap-dropdown__item<%= i === 0 ? ' ap-dropdown__item--head' : '' %>"><%= t %></li>
-                                        <% }); %>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="ap-filter-wrap ap-filter-wrap--date input-date" data-datepicker="block" data-datepicker-inline-label="Год" data-filter-key="date">
-                                <input type="text" class="ap-filter ap-filter--date input-date__head" data-datepicker="head" value="Год" readonly>
-                                <input type="text" class="input-date__field" data-datepicker="field" placeholder="Выберите дату">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ap-cards">
-                        <% projectCards.forEach(function(p) { %>
-                        <article class="ap-card">
-                            <a href="<%= htmlWebpackPlugin.options.routes.projectDetail %>" class="ap-card__photo" style="background-image: url('<%= p.image %>');">
-                                <span class="ap-card__arrow" aria-hidden="true">
-                                    <svg viewBox="0 0 18 18" fill="none">
-                                        <use href="/assets/sprite/sprite-svg.svg#icon-corner"></use>
-                                    </svg>
-                                </span>
-                            </a>
-                            <div class="ap-card__body">
-                                <div class="ap-card__info">
-                                    <h3 class="ap-card__title"><%= p.title %></h3>
-                                    <div class="ap-card__sums">
-                                        <div class="ap-card__sum">
-                                            <div class="ap-card__sum-val ap-card__sum-val--dark">
-                                                <span class="ap-card__sum-num"><%= p.sum.num %></span><span class="ap-card__sum-unit"><%= p.sum.unit %></span>
-                                            </div>
-                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--dark">сумма проекта</div>
-                                        </div>
-                                        <div class="ap-card__sum">
-                                            <div class="ap-card__sum-val ap-card__sum-val--green">
-                                                <span class="ap-card__sum-num"><%= p.bank.num %></span><span class="ap-card__sum-unit"><%= p.bank.unit %></span>
-                                            </div>
-                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--green">сумма участия банка</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ap-card__meta">
-                                    <div class="ap-card__meta-left">
-                                        <div class="ap-card__country">
-                                            <span class="ap-card__flag" style="background-image: url('<%= p.flag %>');"></span>
-                                            <span><%= p.country %></span>
-                                        </div>
-                                        <div class="ap-card__year"><%= p.year %></div>
-                                    </div>
-                                    <div class="ap-card__awards">
-                                        <span class="ap-card__award-wrap" data-tooltip>
-                                            <img class="ap-card__award ap-card__award--ij" src="/assets/images/awards/ij-global.webp" alt="IJ Global Awards 2021" loading="lazy">
-                                            <span class="ap-card__tooltip js-tooltip">IJGlobal Awards 2021</span>
-                                        </span>
-                                        <span class="ap-card__award-wrap" data-tooltip>
-                                            <img class="ap-card__award ap-card__award--esg" src="/assets/images/awards/esg.webp" alt="ESG" loading="lazy">
-                                            <span class="ap-card__tooltip js-tooltip">Проекты зелёного финансирования</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <% }); %>
-                    </div>
-
-                    <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
-                        <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
-                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
-                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
-                            </svg>
-                            <span>Назад</span>
-                        </button>
-                        <ul class="ap-pagination__list" data-pagination-list></ul>
-                        <button class="ap-pagination__nav ap-pagination__nav--next" type="button">
-                            <span>Далее</span>
-                            <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
-                                <use href="/assets/sprite/sprite-svg.svg#icon-chevron-right"></use>
-                            </svg>
-                        </button>
-                    </nav>
-                </div>
-            </section>
+            <%= htmlWebpackPlugin.options.widgets.projectsFilter %>
 
             <section class="ap-analytics">
                 <div class="container">
                     <h2 class="title title--small title--underline ap-analytics__heading">
-                        <span class="title__inner">Аналитика</span>
+                        <span class="title__inner" data-i18n="allProjects.analyticsHeading">Аналитика</span>
                     </h2>
 
-                    <%
-                        const analyticsBooks = [
-                            { title: 'Макроэкономический обзор ЕАБР. Сентябрь 2025', date: '16 сентября 2025', cover: 'linear-gradient(135deg, #1BCE1B 0%, #37EE50 100%)' },
-                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #0097D8 0%, #24D6FF 100%)' },
-                            { title: 'Китай и&nbsp;Евразийский регион: анализ инвестиционных потоков на&nbsp;основе&nbsp;...', date: '25 декабря 2025', cover: 'linear-gradient(135deg, #2C3142 0%, #4A5070 100%)' },
-                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #A0EDFF 0%, #D9F8FF 100%)' }
-                        ];
-                    %>
-
-                    <div class="ap-analytics__list swiper" data-slider="analytics">
-                        <div class="ap-analytics__wrapper swiper-wrapper">
-                            <% analyticsBooks.forEach(function(b, i) { %>
-                            <a href="#" class="ap-book swiper-slide">
-                                <div class="ap-book__cover" style="background: <%= b.cover %>;">
-                                    <svg class="ap-book__mask" viewBox="0 0 374 526" preserveAspectRatio="none" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="18" height="526" fill="url(#apMaskA<%= i %>)"/>
-                                        <rect width="356" height="526" transform="matrix(-1 0 0 1 374 0)" fill="url(#apMaskB<%= i %>)"/>
-                                        <rect width="356" height="526" transform="matrix(-1 0 0 1 374 0)" fill="url(#apMaskC<%= i %>)"/>
-                                        <defs>
-                                            <linearGradient id="apMaskA<%= i %>" x1="18" y1="263" x2="0" y2="263" gradientUnits="userSpaceOnUse">
-                                                <stop stop-opacity="0.14"/>
-                                                <stop offset="0.0750563" stop-opacity="0.08"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0.06"/>
-                                            </linearGradient>
-                                            <linearGradient id="apMaskB<%= i %>" x1="356" y1="263" x2="0" y2="263" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white" stop-opacity="0.12"/>
-                                                <stop offset="0.00393357" stop-color="white" stop-opacity="0.06"/>
-                                                <stop offset="0.00792303" stop-color="#666666" stop-opacity="0.04"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0"/>
-                                            </linearGradient>
-                                            <linearGradient id="apMaskC<%= i %>" x1="109" y1="315.5" x2="35.5" y2="526" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white" stop-opacity="0"/>
-                                                <stop offset="1" stop-color="white" stop-opacity="0.12"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ap-book__body">
-                                    <h3 class="ap-book__title"><%= b.title %></h3>
-                                    <div class="ap-book__date"><%= b.date %></div>
-                                </div>
-                            </a>
-                            <% }); %>
-                        </div>
-                        <div class="ap-analytics__dots" data-slider-pagination aria-hidden="true"></div>
-                    </div>
+                    <%= htmlWebpackPlugin.options.widgets.analyticsBlock %>
 
                     <a href="#" class="button-arrow ap-analytics__btn">
-                        <span class="button-arrow__text">Смотреть все</span>
+                        <span class="button-arrow__text" data-i18n="common.watchAll">Смотреть все</span>
                         <svg class="button-arrow__icon" aria-hidden="true">
                             <use href="/assets/sprite/sprite-svg.svg#icon-arrow-more"></use>
                         </svg>
@@ -249,7 +77,7 @@
             <section class="ap-news">
                 <div class="container">
                     <h2 class="title title--small title--underline ap-news__heading">
-                        <span class="title__inner">Новости</span>
+                        <span class="title__inner" data-i18n="allProjects.newsHeading">Новости</span>
                     </h2>
                     <%= htmlWebpackPlugin.options.widgets.newsBlock %>
                 </div>
