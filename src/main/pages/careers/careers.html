@@ -91,9 +91,7 @@
                                 <ul class="hr-checks">
                                     <% checks.forEach(function(text, i) { %>
                                     <li class="hr-checks__item">
-                                        <svg class="hr-checks__icon" data-animate="drawCheck" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M4 12.5 L10 18.5 L20 6" fill="none" stroke="#1BCE1B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
-                                        </svg>
+                                        <img class="hr-checks__icon" data-animate="drawCheck" src="/assets/images/check-approve.png" width="28" height="28" alt="" aria-hidden="true">
                                         <span data-i18n="careers.checks.<%= i %>"><%= text %></span>
                                     </li>
                                     <% }); %>
