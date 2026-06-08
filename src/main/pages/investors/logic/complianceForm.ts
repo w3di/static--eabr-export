@@ -2,7 +2,7 @@ import { FormValidator, FormSubmitter } from '../../../lib/logic/ui/form';
 
 class ComplianceForm {
   constructor(form: HTMLFormElement) {
-    const type = form.querySelector<HTMLSelectElement>('#cmpl-type')!;
+    const type = form.querySelector<HTMLInputElement>('#cmpl-type')!;
     const name = form.querySelector<HTMLInputElement>('#cmpl-name')!;
     const message = form.querySelector<HTMLTextAreaElement>('#cmpl-msg')!;
     const email = form.querySelector<HTMLInputElement>('#cmpl-email')!;

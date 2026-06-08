@@ -1253,31 +1253,104 @@ a.inv-contact__row:hover {
   min-height: 24px;
 }
 
-.inv-field__control--select {
-  border-bottom: 1px solid #1bce1b;
+.inv-select {
+  position: relative;
 }
 
-.inv-field__select {
+.inv-select__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   width: 100%;
   box-sizing: border-box;
   padding: 0 0 8px;
+  border: 0;
+  border-bottom: 1px solid #1bce1b;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
   color: #111;
-  background: transparent;
-  border: 0;
-  outline: none;
-  appearance: none;
-  cursor: pointer;
+  text-align: left;
 }
 
-.inv-field__control--select .ss-main {
-  padding: 0 0 8px;
-  background: transparent;
+.inv-select__label--placeholder {
+  color: rgb(0 0 0 / 40%);
+}
+
+.inv-select__chev {
+  width: 14px;
+  height: 8px;
+  flex-shrink: 0;
+  color: rgb(17 17 17 / 60%);
+  transition: transform 0.2s ease;
+}
+
+.inv-select.is-open .inv-select__chev {
+  transform: rotate(180deg);
+}
+
+.inv-select__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: #fff;
+  border: 1px solid #e5eef2;
+  border-radius: 16px;
+  box-shadow: 0 4px 40px rgb(0 0 0 / 12%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0s linear 0.18s;
+}
+
+.inv-select.is-open .inv-select__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.inv-select__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.inv-select__item {
+  padding: 10px 16px;
+  font-family: 'Brown LL Pan', sans-serif;
+  font-size: 20px;
   line-height: 24px;
-  color: #111;
+  color: rgb(17 17 17 / 60%);
   cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.inv-select__item:hover {
+  background: rgb(27 206 27 / 6%);
+  color: #111;
+}
+
+.inv-select__item--active {
+  background: rgb(27 206 27 / 12%);
+  color: #111;
 }
 
 .inv-form__consent {

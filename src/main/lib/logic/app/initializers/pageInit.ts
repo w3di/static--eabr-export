@@ -14,6 +14,7 @@ import { FaqAccordion } from '../../ui/faqAccordion';
 import { PhotoCarousel } from '../../ui/photoCarousel';
 import { PosterVideo } from '../../ui/posterVideo';
 import { Tooltip } from '../../ui/tooltip';
+import { FormSelect } from '../../ui/form/formSelect';
 import { GalleryCopyright } from '../../../../pages/project-bakad/logic/galleryCopyright';
 
 class PageInit {
@@ -27,6 +28,7 @@ class PageInit {
     this.cityMapPins();
     this.valuesAccordions();
     this.filterDropdowns();
+    this.formSelects();
     this.searchFilters();
     this.projectsList();
     this.pppNewsList();
@@ -102,6 +104,12 @@ class PageInit {
       document.querySelectorAll<HTMLElement>('[data-dropdown-wrap]'),
     );
     if (wraps.length) new FilterDropdowns(wraps);
+  }
+
+  private formSelects() {
+    document
+      .querySelectorAll<HTMLElement>('[data-form-select]')
+      .forEach((el) => new FormSelect(el));
   }
 
   private valuesAccordions() {

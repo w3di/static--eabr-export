@@ -102,13 +102,23 @@
                                     <div class="inv-form__row">
                                         <div class="inv-field">
                                             <label class="inv-field__label" for="cmpl-type" data-i18n="inv.compliance.fldType">Тип проблемы</label>
-                                            <div class="inv-field__control inv-field__control--select select-app" data-select="block">
-                                                <select class="inv-field__select" id="cmpl-type" data-select="field">
-                                                    <option value="" selected data-i18n="inv.compliance.fldTypePh">Выберите тип проблемы</option>
-                                                    <option data-i18n="inv.compliance.fldTypeOpt0">Коррупция</option>
-                                                    <option data-i18n="inv.compliance.fldTypeOpt1">Мошенничество</option>
-                                                    <option data-i18n="inv.compliance.fldTypeOpt2">Иное</option>
-                                                </select>
+                                            <div class="inv-field__control">
+                                                <div class="inv-select" data-form-select>
+                                                    <button class="inv-select__btn" type="button" data-form-select-toggle aria-haspopup="listbox">
+                                                        <span class="inv-select__label inv-select__label--placeholder" data-form-select-label data-i18n="inv.compliance.fldTypePh">Выберите тип проблемы</span>
+                                                        <svg class="inv-select__chev" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+                                                            <use href="/assets/sprite/sprite-svg.svg#icon-chevron-down"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="inv-select__dropdown" role="listbox">
+                                                        <ul class="inv-select__list">
+                                                            <li class="inv-select__item" role="option" data-value="corruption" data-i18n="inv.compliance.fldTypeOpt0">Коррупция</li>
+                                                            <li class="inv-select__item" role="option" data-value="fraud" data-i18n="inv.compliance.fldTypeOpt1">Мошенничество</li>
+                                                            <li class="inv-select__item" role="option" data-value="other" data-i18n="inv.compliance.fldTypeOpt2">Иное</li>
+                                                        </ul>
+                                                    </div>
+                                                    <input type="hidden" id="cmpl-type" data-form-select-value>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="inv-field">
