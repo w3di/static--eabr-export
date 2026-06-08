@@ -92,10 +92,8 @@
                     <div class="isl-prod-grid mb-50 mbm-30">
                         <% products.forEach(function(p, i) { %>
                         <article class="isl-prod-card">
-                            <div class="isl-prod-card__icon ic-green">
-                                <svg aria-hidden="true">
-                                    <use href="/assets/sprite/sprite-svg.svg#<%= p.icon %>"></use>
-                                </svg>
+                            <div class="isl-prod-card__icon">
+                                <img src="/assets/images/products/<%= p.icon %>.svg" width="54" height="54" alt="" aria-hidden="true">
                             </div>
                             <h3 class="isl-prod-card__title" data-i18n="islamicFinance.products.<%= i %>.title"><%= p.title %></h3>
                             <p class="isl-prod-card__text" data-i18n="islamicFinance.products.<%= i %>.text"><%= p.text %></p>

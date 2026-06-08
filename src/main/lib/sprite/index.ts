@@ -71,4 +71,3 @@ import './logo-inst.svg';
 import './logo-linkedin.svg';
 import './logo-tg.svg';
 import './logo-yt.svg';
-import './logo-main.svg';
