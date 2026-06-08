@@ -5,6 +5,9 @@ import 'the-new-css-reset/css/reset.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'air-datepicker/air-datepicker.css';
+import 'slim-select/scss';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import './style.scss';
 
 declare global {

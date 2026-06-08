@@ -1,9 +1,6 @@
-import 'air-datepicker/air-datepicker.css';
 import AirDatepicker from 'air-datepicker';
 import i18next from 'i18next';
 import SlimSelect from 'slim-select';
-import 'slim-select/scss';
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { Fancybox } from '@fancyapps/ui';
 import { createPopper } from '@popperjs/core';
 import { filterState } from '../../ui/filterState';
