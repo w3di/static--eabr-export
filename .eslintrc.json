@@ -16,7 +16,8 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [2, 2, { "SwitchCase": 1 }],
+        "indent": 0,
+        "max-len": 0,
         "linebreak-style": 0,
         "import/no-unresolved": 0,
         "no-unused-vars": 1,
@@ -24,16 +25,6 @@
         "import/extensions": 0,
         "import/no-extraneous-dependencies": 0,
         "no-underscore-dangle": 0,
-        "max-len": [
-            1,
-            {
-                "code": 80,
-                "ignoreComments": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true,
-                "ignoreUrls": true
-            }
-        ],
         "no-param-reassign": 0
     }
 }

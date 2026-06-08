@@ -1,20 +1,20 @@
 .main {
-	flex-grow: 1;
-	overflow: clip;
+  flex-grow: 1;
+  overflow: clip;
 
-	&--regular {
-		padding-bottom: r(150);
+  &--regular {
+    padding-bottom: r(150);
 
-		@media (max-width: 1260px) {
-			padding-bottom: r(90);
-		}
-	}
+    @media (width <= 1260px) {
+      padding-bottom: r(90);
+    }
+  }
 
-	&--front {
-		padding-bottom: r(115);
+  &--front {
+    padding-bottom: r(115);
 
-		@media (max-width: 1260px) {
-			padding-bottom: r(60);
-		}
-	}
+    @media (width <= 1260px) {
+      padding-bottom: r(60);
+    }
+  }
 }

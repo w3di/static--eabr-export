@@ -65,7 +65,9 @@ class FormSubmitter {
 
     submit.disabled = false;
     submit.textContent = this.submitLabel;
-    form.classList.add(state === 'success' ? `${block}--submitted` : `${block}--error`);
+    form.classList.add(
+      state === 'success' ? `${block}--submitted` : `${block}--error`,
+    );
   };
 }
 

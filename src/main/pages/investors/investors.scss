@@ -1,5 +1,5 @@
 .inv-main {
-  background: #ffffff;
+  background: #fff;
 }
 
 .inv-hero {
@@ -31,7 +31,7 @@
   font-weight: 500;
   font-size: 112px;
   line-height: 1.2;
-  color: #ffffff;
+  color: #fff;
 }
 
 .inv-content {
@@ -45,14 +45,14 @@
 .inv-text {
   font-size: 16px;
   line-height: 1.5;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
 }
 
 .inv-subtitle {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-pagenav {
@@ -65,7 +65,7 @@
 .inv-pagenav__label {
   font-size: 18px;
   line-height: 1.22;
-  color: #111111;
+  color: #111;
 }
 
 .inv-pagenav__list {
@@ -81,7 +81,7 @@
   padding: 6px 12px;
   font-size: 16px;
   line-height: 19px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgb(0 0 0 / 40%);
   background: #f8fafc;
   border: 1px solid #e5eef2;
   border-radius: 20px;
@@ -116,7 +116,7 @@
 .inv-stat__label {
   font-size: 18px;
   line-height: 22px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-stat__value {
@@ -147,7 +147,7 @@
 .inv-ratings-head__title {
   font-size: 18px;
   line-height: 1.22;
-  color: #111111;
+  color: #111;
 }
 
 .inv-ratings-head__list {
@@ -164,7 +164,7 @@
   gap: 12px;
   padding: 24px 20px;
   background: #f8fafc;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
 }
 
@@ -190,13 +190,13 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 34px;
   line-height: 41px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-rating__label {
   font-size: 20px;
   line-height: 24px;
-  color: #000000;
+  color: #000;
 }
 
 .inv-yeartabs {
@@ -271,7 +271,7 @@
   font-size: 20px;
   line-height: 24px;
   white-space: nowrap;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
   background: transparent;
   border: 0;
   border-radius: 24px;
@@ -279,7 +279,7 @@
   transition: color 0.25s ease;
 
   &.is-active {
-    color: #111111;
+    color: #111;
   }
 }
 
@@ -297,6 +297,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -328,9 +329,9 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
   background: #f8fafc;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
   transition:
     border-color 0.2s ease,
@@ -356,9 +357,9 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
   background: #f8fafc;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
   transition:
     border-color 0.2s ease,
@@ -384,7 +385,7 @@
   gap: 16px;
   padding: 32px;
   background: #f8fafc;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
   transition:
     background 0.3s ease,
@@ -405,7 +406,7 @@
   width: 72px;
   height: 72px;
   border-radius: 12px;
-  background: rgba(27, 206, 27, 0.12);
+  background: rgb(27 206 27 / 12%);
   color: #1bce1b;
 
   svg {
@@ -419,7 +420,7 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 28px;
   line-height: 34px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-treasury {
@@ -435,7 +436,7 @@
   justify-content: center;
   width: 180px;
   height: 180px;
-  background: rgba(27, 206, 27, 0.12);
+  background: rgb(27 206 27 / 12%);
   border-radius: 24px;
   color: #1bce1b;
 
@@ -457,14 +458,14 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-treasury__desc {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-treasury__btn {
@@ -517,7 +518,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    color: #000000;
+    color: #000;
     background: #edf5f8;
   }
 
@@ -528,31 +529,35 @@
   td {
     font-size: 18px;
     line-height: 22px;
-    color: rgba(17, 17, 17, 0.6);
+    color: rgb(17 17 17 / 60%);
   }
 
   td:nth-child(2) {
-    color: #111111;
+    color: #111;
   }
 
   td:nth-child(3) {
     font-size: 20px;
     line-height: 24px;
-    color: #000000;
+    color: #000;
   }
 
   th:nth-child(1) {
     width: 13.1%;
   }
+
   th:nth-child(2) {
     width: 13.6%;
   }
+
   th:nth-child(3) {
     width: 37.2%;
   }
+
   th:nth-child(4) {
     width: 15.4%;
   }
+
   th:nth-child(5) {
     width: 20.7%;
   }
@@ -563,7 +568,7 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 18px;
   line-height: 1.4;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
 }
 
 .ap-pagination {
@@ -592,10 +597,10 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
 }
 
-@media (max-width: 1260px) {
+@media (width <= 1260px) {
   .inv-hero {
     height: 523px;
   }
@@ -649,11 +654,10 @@
     tr {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 12px;
-      row-gap: 16px;
+      gap: 16px 12px;
       padding-bottom: 16px;
       margin-bottom: 12px;
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #0097d8;
       border-radius: 24px;
       overflow: hidden;
@@ -666,7 +670,7 @@
       border: 0;
       font-size: 18px;
       line-height: 22px;
-      color: #111111;
+      color: #111;
 
       &::before {
         content: attr(data-label);
@@ -674,7 +678,7 @@
         margin-bottom: 4px;
         font-size: 16px;
         line-height: 19px;
-        color: rgba(0, 0, 0, 0.4);
+        color: rgb(0 0 0 / 40%);
       }
     }
 
@@ -803,7 +807,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .inv-hero__title {
     font-size: 40px;
   }
@@ -814,7 +818,7 @@
 }
 
 .inv-info-main {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+  background: linear-gradient(180deg, #fff 0%, #f3f3f3 100%);
 }
 
 .inv-info-main--map {
@@ -848,7 +852,7 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 28px;
   line-height: 1.25;
-  color: #111111;
+  color: #111;
 }
 
 .inv-activities {
@@ -866,8 +870,8 @@
   flex-direction: column;
   gap: 16px;
   padding: 32px;
-  background: #ffffff;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  background: #fff;
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
 }
 
@@ -885,7 +889,7 @@
   width: 72px;
   height: 72px;
   border-radius: 12px;
-  background: rgba(27, 206, 27, 0.12);
+  background: rgb(27 206 27 / 12%);
   color: #1bce1b;
 
   svg {
@@ -898,20 +902,20 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 28px;
   line-height: 34px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-activity__text {
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-dir-text {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 18px;
   line-height: 22px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-dirlinks {
@@ -929,9 +933,9 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
-  background: #ffffff;
-  border-left: 3px solid rgba(0, 0, 0, 0.4);
+  color: #111;
+  background: #fff;
+  border-left: 3px solid rgb(0 0 0 / 40%);
   border-radius: 24px;
   transition:
     border-color 0.2s ease,
@@ -953,7 +957,7 @@
   position: relative;
   overflow: hidden;
   padding: 20px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #eceef0;
   border-radius: 24px;
 }
@@ -965,7 +969,7 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-principle__num {
@@ -977,10 +981,9 @@
   font-size: 120px;
   line-height: 144px;
   background: linear-gradient(213.53deg, #a0edff 16.99%, #24d6ff 90.86%);
-  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 40px rgba(160, 237, 255, 0.4);
+  text-shadow: 0 4px 40px rgb(160 237 255 / 40%);
 }
 
 .inv-principle:first-child .inv-principle__num {
@@ -990,7 +993,7 @@
 .inv-contacts-lead {
   font-size: 16px;
   line-height: 19px;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
 }
 
 .inv-contacts {
@@ -1003,7 +1006,7 @@
   display: flex;
   gap: 20px;
   padding: 24px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 24px;
 }
 
@@ -1019,14 +1022,14 @@
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 34px;
   line-height: 41px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-contact__sub {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: rgba(17, 17, 17, 0.4);
+  color: rgb(17 17 17 / 40%);
 }
 
 .inv-contact__info {
@@ -1040,7 +1043,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #111111;
+  color: #111;
   transition: color 0.2s ease;
 }
 
@@ -1069,13 +1072,13 @@ a.inv-contact__row:hover {
 .inv-cmpl-lead,
 .inv-cmpl-note {
   font-family: 'Brown LL Pan', sans-serif;
-  color: #111111;
+  color: #111;
 }
 
 .inv-cmpl-lead {
   font-size: 16px;
   line-height: 19px;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
 }
 
 .inv-cmpl-note {
@@ -1110,7 +1113,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-faq__toggle {
@@ -1140,7 +1143,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: rgba(17, 17, 17, 0.6);
+  color: rgb(17 17 17 / 60%);
 }
 
 .inv-cmpl-head {
@@ -1157,7 +1160,7 @@ a.inv-contact__row:hover {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgba(27, 206, 27, 0.12);
+  background: rgb(27 206 27 / 12%);
 
   svg {
     width: 54px;
@@ -1170,7 +1173,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 34px;
   line-height: 41px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-form {
@@ -1210,14 +1213,14 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #000000;
+  color: #000;
 }
 
 .inv-field__counter {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 16px;
   line-height: 19px;
-  color: rgba(17, 17, 17, 0.4);
+  color: rgb(17 17 17 / 40%);
 }
 
 .inv-field__control {
@@ -1231,7 +1234,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
+  color: #111;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #1bce1b;
@@ -1240,7 +1243,7 @@ a.inv-contact__row:hover {
   appearance: none;
 
   &::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgb(0 0 0 / 40%);
   }
 }
 
@@ -1249,7 +1252,7 @@ a.inv-contact__row:hover {
   cursor: pointer;
 
   &:invalid {
-    color: rgba(17, 17, 17, 0.4);
+    color: rgb(17 17 17 / 40%);
   }
 }
 
@@ -1268,7 +1271,7 @@ a.inv-contact__row:hover {
   svg {
     width: 24px;
     height: 24px;
-    color: rgba(17, 17, 17, 0.6);
+    color: rgb(17 17 17 / 60%);
   }
 }
 
@@ -1293,13 +1296,13 @@ a.inv-contact__row:hover {
   justify-content: center;
   width: 18px;
   height: 18px;
-  border: 1px solid rgba(17, 17, 17, 0.6);
+  border: 1px solid rgb(17 17 17 / 60%);
   border-radius: 4px;
 
   svg {
     width: 12px;
     height: 12px;
-    color: #ffffff;
+    color: #fff;
     opacity: 0;
   }
 }
@@ -1317,7 +1320,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 20px;
   line-height: 24px;
-  color: #111111;
+  color: #111;
 }
 
 .inv-form__bottom {
@@ -1391,7 +1394,7 @@ a.inv-contact__row:hover {
   font-family: 'Brown LL Pan', sans-serif;
   font-size: 24px;
   line-height: 29px;
-  color: #111111;
+  color: #111;
   background: #a0edff;
   border: 0;
   border-radius: 24px;
@@ -1416,7 +1419,7 @@ a.inv-contact__row:hover {
   gap: 6px;
 }
 
-@media (max-width: 1260px) {
+@media (width <= 1260px) {
   .inv-info-map {
     top: 0;
     left: 50%;

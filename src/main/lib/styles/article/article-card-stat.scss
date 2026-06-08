@@ -1,39 +1,39 @@
 .article-card-stat {
-	height: 100%;
-	display: flex;
-	border-radius: r(24);
-	flex-direction: column;
-	padding: r(30) r(30) r(20);
-	justify-content: space-between;
-	background: linear-gradient(90deg, #86F290 0%, #37EE50 100%);
+  height: 100%;
+  display: flex;
+  border-radius: r(24);
+  flex-direction: column;
+  padding: r(30) r(30) r(20);
+  justify-content: space-between;
+  background: linear-gradient(90deg, #86f290 0%, #37ee50 100%);
 
-	@media (max-width: 1260px) {
-		padding: r(30) r(20) r(15);
-	}
+  @media (width <= 1260px) {
+    padding: r(30) r(20) r(15);
+  }
 
-	&__number {
-		font-size: r(34);
-		line-height: 1.2;
+  &__number {
+    font-size: r(34);
+    line-height: 1.2;
 
-		strong {
-			font-size: r(80);
-			font-weight: 500;
-		}
-	}
+    strong {
+      font-size: r(80);
+      font-weight: 500;
+    }
+  }
 
-	&__icon {
-		width: r(192);
-		height: r(192);
-		display: block;
+  &__icon {
+    width: r(192);
+    height: r(192);
+    display: block;
 
-		@media (max-width: 1260px) {
-			width: r(152);
-			height: r(152);
-		}
-	}
+    @media (width <= 1260px) {
+      width: r(152);
+      height: r(152);
+    }
+  }
 
-	&__text {
-		font-size: r(34);
-		line-height: 1.2;
-	}
+  &__text {
+    font-size: r(34);
+    line-height: 1.2;
+  }
 }

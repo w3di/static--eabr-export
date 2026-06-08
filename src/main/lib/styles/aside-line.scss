@@ -1,19 +1,19 @@
 .aside-line {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	padding-top: r(10);
-	position: absolute;
-	transition: 0.3s all;
-	pointer-events: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: r(10);
+  position: absolute;
+  transition: 0.3s all;
+  pointer-events: none;
 
-	&.active {
-		transform: translateX(88px);
-	}
+  &.active {
+    transform: translateX(88px);
+  }
 
-	&__content {
-		top: r(80);
-		position: sticky;
-		pointer-events: all;
-	}
+  &__content {
+    top: r(80);
+    position: sticky;
+    pointer-events: all;
+  }
 }

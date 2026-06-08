@@ -1,17 +1,17 @@
 .mb {
-	@for $i from 1 through 40 {
-		&-#{$i * 5} {
-			margin-bottom: r($i * 5);
-		}
-	}
+  @for $i from 1 through 40 {
+    &-#{$i * 5} {
+      margin-bottom: r($i * 5);
+    }
+  }
 }
 
-@media (max-width: 1260px) {
-	.mbm {
-		@for $i from 1 through 40 {
-			&-#{$i * 5} {
-				margin-bottom: r($i * 5);
-			}
-		}
-	}
+@media (width <= 1260px) {
+  .mbm {
+    @for $i from 1 through 40 {
+      &-#{$i * 5} {
+        margin-bottom: r($i * 5);
+      }
+    }
+  }
 }

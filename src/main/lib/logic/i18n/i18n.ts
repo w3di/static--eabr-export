@@ -66,13 +66,11 @@ class I18n {
     };
 
     ATTR_MAP.forEach(([dataAttr, htmlAttr]) => {
-      document
-        .querySelectorAll<HTMLElement>(`[${dataAttr}]`)
-        .forEach((el) => {
-          const key = el.getAttribute(dataAttr);
-          if (!key) return;
-          el.setAttribute(htmlAttr, decodeEntities(i18next.t(key)));
-        });
+      document.querySelectorAll<HTMLElement>(`[${dataAttr}]`).forEach((el) => {
+        const key = el.getAttribute(dataAttr);
+        if (!key) return;
+        el.setAttribute(htmlAttr, decodeEntities(i18next.t(key)));
+      });
     });
 
     this.refreshSwitcherState();

@@ -1,104 +1,104 @@
 .intro-content {
-	height: 100%;
-	display: flex;
-	padding: r(85) 0;
-	flex-direction: column;
-	justify-content: space-between;
+  height: 100%;
+  display: flex;
+  padding: r(85) 0;
+  flex-direction: column;
+  justify-content: space-between;
 
-	@media (max-width: 1260px) {
-		padding: r(40) 0 r(120);
-	}
+  @media (width <= 1260px) {
+    padding: r(40) 0 r(120);
+  }
 
-	&__main {
-		max-width: 50%;
+  &__main {
+    max-width: 50%;
 
-		@media (max-width: 1260px) {
-			max-width: 80%;
-		}
-	}
+    @media (width <= 1260px) {
+      max-width: 80%;
+    }
+  }
 
-	&__title {
-		font-size: r(80);
-		line-height: 1.1;
+  &__title {
+    font-size: r(80);
+    line-height: 1.1;
 
-		@media (max-width: 1260px) {
-			font-size: r(34);
-			line-height: 1.1;
-		}
-	}
+    @media (width <= 1260px) {
+      font-size: r(34);
+      line-height: 1.1;
+    }
+  }
 
-	&__editor {
-		font-size: r(24);
-		line-height: 1.2;
-		margin-top: r(32);
+  &__editor {
+    font-size: r(24);
+    line-height: 1.2;
+    margin-top: r(32);
 
-		@media (max-width: 1260px) {
-			font-size: r(16);
-			margin-top: r(16);
-		}
-	}
+    @media (width <= 1260px) {
+      font-size: r(16);
+      margin-top: r(16);
+    }
+  }
 
-	&__link {
-		display: none;
+  &__link {
+    display: none;
 
-		@media (max-width: 1260px) {
-			display: block;
-			margin-top: r(16);
-		}
-	}
+    @media (width <= 1260px) {
+      display: block;
+      margin-top: r(16);
+    }
+  }
 
-	&__footer {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-	}
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 
-	&--light {
-		color: #ffffff;
-	}
+  &--light {
+    color: #fff;
+  }
 
-	&--dark {
-		color: #111111;
-	}
+  &--dark {
+    color: #111;
+  }
 }
 
 .intro-count {
-	text-align: right;
+  text-align: right;
 
-	&__number {
-		line-height: 1.2;
-		font-size: r(120);
-	}
+  &__number {
+    line-height: 1.2;
+    font-size: r(120);
+  }
 
-	&__text {
-		font-size: r(24);
-		line-height: 1.2;
-	}
+  &__text {
+    font-size: r(24);
+    line-height: 1.2;
+  }
 
-	&--light {
-		color: #ffffff;
-	}
+  &--light {
+    color: #fff;
+  }
 
-	&--dark {
-		color: #111111;
-	}
+  &--dark {
+    color: #111;
+  }
 }
 
 .intro {
-	width: 100%;
-	height: r(360);
-	margin: 0 auto;
-	max-width: r(1440);
+  width: 100%;
+  height: r(360);
+  margin: 0 auto;
+  max-width: r(1440);
 
-	img {
-		width: auto;
-		height: 100%;
-		object-fit: cover;
-	}
+  img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-@media (max-width: 1260px) {
-	.intro {
-		height: r(380);
-	}
+@media (width <= 1260px) {
+  .intro {
+    height: r(380);
+  }
 }

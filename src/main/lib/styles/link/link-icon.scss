@@ -1,38 +1,38 @@
 .link-icon {
-	gap: r(12);
-	display: inline-flex;
-	font-size: r(24);
-	line-height: 1.2;
-	align-items: center;
-	transition: color .2s ease;
+  gap: r(12);
+  display: inline-flex;
+  font-size: r(24);
+  line-height: 1.2;
+  align-items: center;
+  transition: color 0.2s ease;
 
-	&__icon {
-		width: r(28);
-		height: r(28);
-		fill: #1BCE1B;
-		color: #1BCE1B;
-		flex-shrink: 0;
-		transition: fill .2s ease;
-	}
+  &__icon {
+    width: r(28);
+    height: r(28);
+    fill: #1bce1b;
+    color: #1bce1b;
+    flex-shrink: 0;
+    transition: fill 0.2s ease;
+  }
 
-	&__text {
-		transition: color .2s ease;
-	}
+  &__text {
+    transition: color 0.2s ease;
+  }
 
-	&:is(a, button):hover &__text {
-		color: #1BCE1B;
-	}
+  &:is(a, button):hover &__text {
+    color: #1bce1b;
+  }
 
-	&:is(a, button):focus-visible {
-		outline: 2px solid #1BCE1B;
-		outline-offset: 4px;
-		border-radius: r(4);
-	}
+  &:is(a, button):focus-visible {
+    outline: 2px solid #1bce1b;
+    outline-offset: 4px;
+    border-radius: r(4);
+  }
 }
 
-@media (max-width: 1260px) {
-	.link-icon {
-		font-size: r(20);
-		line-height: r(24);
-	}
+@media (width <= 1260px) {
+  .link-icon {
+    font-size: r(20);
+    line-height: r(24);
+  }
 }

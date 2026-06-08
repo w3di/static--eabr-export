@@ -1,28 +1,28 @@
 .link-more {
-	gap: r(24);
-	display: flex;
-	transition: 0.3s all;
-	align-items: flex-end;
+  gap: r(24);
+  display: flex;
+  transition: 0.3s all;
+  align-items: flex-end;
 
-	&__text {
-		font-size: r(20);
-		line-height: 1.2;
-		color: rgba(17, 17, 17, 0.4);
-	}
+  &__text {
+    font-size: r(20);
+    line-height: 1.2;
+    color: rgb(17 17 17 / 40%);
+  }
 
-	&__icon {
-		width: r(24);
-		height: r(24);
-		display: block;
-		fill: rgba(17, 17, 17, 0.4);
-	}
+  &__icon {
+    width: r(24);
+    height: r(24);
+    display: block;
+    fill: rgb(17 17 17 / 40%);
+  }
 }
 
-@media (max-width: 1260px) {
-	.link-more {
-		&__icon {
-			width: r(20);
-			height: r(20);
-		}
-	}
+@media (width <= 1260px) {
+  .link-more {
+    &__icon {
+      width: r(20);
+      height: r(20);
+    }
+  }
 }

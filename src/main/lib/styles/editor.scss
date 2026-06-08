@@ -1,64 +1,74 @@
 .editor {
+  display: block;
+
+  &--page {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      font-size: inherit;
+      text-transform: uppercase;
+    }
+
+    b,
+    strong {
+      font-weight: 500;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--small {
+    h2 {
+      font-size: r(34);
+    }
+
+    h3 {
+      font-size: r(20);
+      font-weight: 500;
+    }
+  }
+
+  & > * {
+    margin-bottom: 1em;
+  }
+
+  & :last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  ol {
+    padding-left: 1em;
+    list-style-type: decimal;
+  }
+
+  ul {
+    padding-left: 1em;
+    list-style-type: disc;
+  }
+
+  picture {
     display: block;
-
-    &--page {
-        h2, h3, h4, h5, h6  {
-            font-weight: 700;
-            font-size: inherit;
-            text-transform: uppercase;
-        }
-
-		b, strong {
-			font-weight: 500;
-		}
-
-        a {
-            text-decoration: underline;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-    }
-
-	&--small {
-		h2 {
-			font-size: r(34);
-		}
-
-		h3 {
-			font-size: r(20);
-			font-weight: 500;
-		}
-	}
-
-    & > * {
-        margin-bottom: 1em;
-    }
-
-    & :last-child {
-        margin-bottom: 0;
-    }
-
-	h1, h2, h3, h4, h5, h6 {
-		margin-bottom: 0.5em;
-	}
-
-    p {
-        margin-bottom: 1em;
-    }
-
-    ol {
-        padding-left: 1em;
-        list-style-type: decimal;
-    }
-
-    ul {
-        padding-left: 1em;
-        list-style-type: disc;
-    }
-
-    picture {
-        display: block;
-    }
+  }
 }

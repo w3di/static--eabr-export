@@ -1,24 +1,24 @@
 .slider-intro {
-	position: relative;
+  position: relative;
 
-	&__toolbar {
-		left: 0;
-		right: 0;
-		bottom: 0;
-		gap: r(85);
-		z-index: 1;
-		display: flex;
-		position: absolute;
-		pointer-events: none;
-		flex-direction: column;
+  &__toolbar {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    gap: r(85);
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    pointer-events: none;
+    flex-direction: column;
 
-		@media (max-width: 1260px) {
-			gap: r(22);
-		}
-	}
+    @media (width <= 1260px) {
+      gap: r(22);
+    }
+  }
 
-	&__controls {
-		display: flex;
-		justify-content: center;
-	}
+  &__controls {
+    display: flex;
+    justify-content: center;
+  }
 }

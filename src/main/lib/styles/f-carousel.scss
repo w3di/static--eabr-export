@@ -6,9 +6,9 @@
   }
 
   &__caption {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgb(0 0 0 / 40%);
 
-    @media (max-width: 1260px) {
+    @media (width <= 1260px) {
       padding: 0 r(20);
     }
   }
@@ -19,14 +19,14 @@
 
   --f-button-width: 58px;
   --f-button-height: 58px;
-  --f-button-bg: rgba(255, 255, 255, 0.6);
+  --f-button-bg: rgb(255 255 255 / 60%);
   --f-button-svg-width: 28px;
   --f-button-svg-height: 28px;
-  --f-button-hover-bg: rgba(255, 255, 255, 0.4);
-  --f-button-active-bg: rgba(255, 255, 255, 0.8);
+  --f-button-hover-bg: rgb(255 255 255 / 40%);
+  --f-button-active-bg: rgb(255 255 255 / 80%);
   --f-button-svg-stroke-width: 2px;
 
-  @media (max-width: 1260px) {
+  @media (width <= 1260px) {
     --f-button-width: 32px;
     --f-button-height: 32px;
     --f-button-svg-width: 22px;
@@ -38,7 +38,7 @@
     --f-thumb-width: 60px;
     --f-thumb-height: 60px;
 
-    @media (max-width: 1260px) {
+    @media (width <= 1260px) {
       --f-thumb-gap: 4px;
       --f-thumb-width: 32px;
       --f-thumb-height: 32px;
@@ -50,7 +50,7 @@
   border-radius: r(100);
 
   svg {
-    stroke: #111111;
+    stroke: #111;
   }
 }
 
@@ -63,7 +63,7 @@
 
   &__slide {
     &__button {
-      border: 2px solid #ffffff;
+      border: 2px solid #fff;
     }
   }
 }

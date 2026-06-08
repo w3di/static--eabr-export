@@ -18,7 +18,9 @@ class PosterVideo {
     this.video.addEventListener('pause', this.onStop);
     this.video.addEventListener('ended', this.onStop);
     this.root.addEventListener('mousemove', this.onActivity);
-    this.root.addEventListener('touchstart', this.onActivity, { passive: true });
+    this.root.addEventListener('touchstart', this.onActivity, {
+      passive: true,
+    });
     this.root.addEventListener('mouseleave', this.onLeave);
   }
 

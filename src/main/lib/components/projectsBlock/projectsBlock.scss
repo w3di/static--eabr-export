@@ -130,8 +130,9 @@
     white-space: nowrap;
 
     &--dark {
-      color: rgba(17, 17, 17, 0.6);
+      color: rgb(17 17 17 / 60%);
     }
+
     &--green {
       color: #1bce1b;
     }
@@ -140,6 +141,7 @@
   &__amount-num {
     font-weight: 500;
   }
+
   &__amount-unit {
     font-size: r(20);
     line-height: r(24);
@@ -151,8 +153,9 @@
     line-height: r(19);
 
     &--dark {
-      color: rgba(17, 17, 17, 0.6);
+      color: rgb(17 17 17 / 60%);
     }
+
     &--green {
       color: #1bce1b;
     }
@@ -178,7 +181,7 @@
     gap: r(12);
     font-size: r(16);
     line-height: r(19);
-    color: rgba(17, 17, 17, 0.6);
+    color: rgb(17 17 17 / 60%);
   }
 
   &__flag {
@@ -197,7 +200,7 @@
     padding-left: r(36);
     font-size: r(16);
     line-height: r(19);
-    color: rgba(17, 17, 17, 0.6);
+    color: rgb(17 17 17 / 60%);
     max-height: r(40);
     overflow: hidden;
     transition:
@@ -230,7 +233,7 @@
     }
   }
 
-  &:not(.fts-project--full):not(:hover) {
+  &:not(.fts-project--full, :hover) {
     .fts-project__amounts {
       opacity: 0;
       max-height: 0;
@@ -307,7 +310,7 @@
   }
 }
 
-@media (max-width: 1260px) {
+@media (width <= 1260px) {
   .fts-projects-section {
     margin-top: r(82);
   }
@@ -323,17 +326,21 @@
       font-size: r(18);
       line-height: r(22);
     }
+
     &__amount-value {
       font-size: r(42);
       line-height: r(50);
     }
+
     &__amount-num {
       font-weight: 500;
     }
+
     &__amount-unit {
       font-size: r(18);
       line-height: r(22);
     }
+
     &__body {
       padding: r(20) r(14) r(16);
     }

@@ -10,7 +10,9 @@ class PhotoCarousel {
   constructor(root: HTMLElement) {
     this.root = root;
     this.stage = root.querySelector<HTMLElement>('[data-pc-stage]')!;
-    this.thumbs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-pc-thumb]'));
+    this.thumbs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>('[data-pc-thumb]'),
+    );
     this.prev = root.querySelector<HTMLButtonElement>('[data-pc-prev]')!;
     this.next = root.querySelector<HTMLButtonElement>('[data-pc-next]')!;
     this.copy = root.querySelector<HTMLElement>('[data-pc-copy]');

@@ -1,16 +1,16 @@
 .pagination-dots {
-	gap: r(12);
-	display: flex;
+  gap: r(12);
+  display: flex;
 
-	&__item {
-		width: r(12);
-		height: r(12);
-		display: block;
-		border-radius: r(12);
-		background-color: #E7F2F6;
+  &__item {
+    width: r(12);
+    height: r(12);
+    display: block;
+    border-radius: r(12);
+    background-color: #e7f2f6;
 
-		&.active {
-			background-color: var(--super-blue);
-		}
-	}
+    &.active {
+      background-color: var(--super-blue);
+    }
+  }
 }

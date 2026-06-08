@@ -13,7 +13,8 @@ type SharedProject = {
 const SHARED_PROJECTS: SharedProject[] = [
   {
     image: '/assets/images/projects/fts-project-1.webp',
-    title: 'Производство молочной и&nbsp;мясной продукции полного цикла в&nbsp;Армении',
+    title:
+      'Производство молочной и&nbsp;мясной продукции полного цикла в&nbsp;Армении',
     amountNum: '388',
     amountUnit: 'млн&nbsp;$',
     bankNum: '300',
@@ -35,7 +36,8 @@ const SHARED_PROJECTS: SharedProject[] = [
   },
   {
     image: '/assets/images/projects/fts-project-3.webp',
-    title: 'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
+    title:
+      'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
     amountNum: '388',
     amountUnit: 'млн&nbsp;$',
     bankNum: '300',
@@ -46,7 +48,8 @@ const SHARED_PROJECTS: SharedProject[] = [
   },
   {
     image: '/assets/images/projects/fts-project-4.webp',
-    title: 'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
+    title:
+      'Предоставление кредитной линии ОАО «Айыл банк» для&nbsp;реализации программы микрофинансирования в&nbsp;Кыргызской Республике',
     amountNum: '388',
     amountUnit: 'млн&nbsp;$',
     bankNum: '300',

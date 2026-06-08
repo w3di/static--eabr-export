@@ -22,12 +22,19 @@ class PppNewsList {
     this.root = cards.closest<HTMLElement>('.articles-content') || cards;
     this.status = this.root.querySelector<HTMLElement>('[data-pnews-status]');
     this.nav = this.root.querySelector<HTMLElement>('.ap-pagination');
-    this.list = this.nav?.querySelector<HTMLElement>('[data-pagination-list]') ?? null;
-    this.prevBtn = this.nav?.querySelector<HTMLElement>('.ap-pagination__nav--prev') ?? null;
-    this.nextBtn = this.nav?.querySelector<HTMLElement>('.ap-pagination__nav--next') ?? null;
+    this.list =
+      this.nav?.querySelector<HTMLElement>('[data-pagination-list]') ?? null;
+    this.prevBtn =
+      this.nav?.querySelector<HTMLElement>('.ap-pagination__nav--prev') ?? null;
+    this.nextBtn =
+      this.nav?.querySelector<HTMLElement>('.ap-pagination__nav--next') ?? null;
 
-    this.prevBtn?.addEventListener('click', () => this.go(this.currentPage() - 1));
-    this.nextBtn?.addEventListener('click', () => this.go(this.currentPage() + 1));
+    this.prevBtn?.addEventListener('click', () =>
+      this.go(this.currentPage() - 1),
+    );
+    this.nextBtn?.addEventListener('click', () =>
+      this.go(this.currentPage() + 1),
+    );
 
     filterState.subscribe((key) => this.onFilterChange(key));
     i18next.on('languageChanged', () => this.last && this.render(this.last));
@@ -184,7 +191,10 @@ class PppNewsList {
       this.list!.appendChild(li);
     });
 
-    this.prevBtn?.classList.toggle('ap-pagination__nav--disabled', res.page <= 1);
+    this.prevBtn?.classList.toggle(
+      'ap-pagination__nav--disabled',
+      res.page <= 1,
+    );
     this.nextBtn?.classList.toggle(
       'ap-pagination__nav--disabled',
       res.page >= res.totalPages,

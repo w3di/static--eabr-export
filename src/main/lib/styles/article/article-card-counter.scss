@@ -1,25 +1,25 @@
 .article-card-counter {
-	gap: r(6);
-	display: flex;
-	padding: r(22) r(32);
-	border-radius: r(24);
-	flex-direction: column;
-	background-color: #ffffff;
-	box-shadow: 0 r(4) r(40) 0 rgba(0, 0, 0, 0.12);
+  gap: r(6);
+  display: flex;
+  padding: r(22) r(32);
+  border-radius: r(24);
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 r(4) r(40) 0 rgb(0 0 0 / 12%);
 
-	&__text {
-		font-size: r(20);
-		line-height: 1.2;
-	}
+  &__text {
+    font-size: r(20);
+    line-height: 1.2;
+  }
 
-	&__number {
-		font-size: r(34);
-		line-height: 1.2;
-		color: var(--green);
+  &__number {
+    font-size: r(34);
+    line-height: 1.2;
+    color: var(--green);
 
-		strong {
-			font-size: r(80);
-			font-weight: 500;
-		}
-	}
+    strong {
+      font-size: r(80);
+      font-weight: 500;
+    }
+  }
 }

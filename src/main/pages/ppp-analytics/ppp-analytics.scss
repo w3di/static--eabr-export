@@ -1,248 +1,254 @@
 .pana-main {
-    background-color: #FFFFFF;
+  background-color: #fff;
 }
 
 .pana-main .title--underline {
-    line-height: 1.3;
+  line-height: 1.3;
 }
 
 .pana-main .ppp-banner__title {
-    max-width: 1100px;
+  max-width: 1100px;
 }
 
 .pana-text {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-    p {
-        font-size: 20px;
-        line-height: 24px;
-        color: var(--dark);
-    }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--dark);
+  }
 }
 
 .pana-years {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 
-    &__head {
-        position: relative;
-        display: inline-flex;
-        margin-bottom: 20px;
-        background: #EDF5F8;
-        border-radius: 32px;
-        padding: 0;
+  &__head {
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 20px;
+    background: #edf5f8;
+    border-radius: 32px;
+    padding: 0;
+  }
+
+  &__pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% / var(--tabs, 2));
+    height: 100%;
+    background: #a0edff;
+    border-radius: 24px;
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    min-width: 171px;
+    padding: 8px 38px;
+    border: 0;
+    background: transparent;
+    border-radius: 24px;
+    font-family: 'Brown LL Pan', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgb(17 17 17 / 60%);
+    cursor: pointer;
+    transition: color 0.25s ease;
+
+    &.is-active {
+      color: #111;
     }
+  }
 
-    &__pill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100% / var(--tabs, 2));
-        height: 100%;
-        background: #A0EDFF;
-        border-radius: 24px;
-        transition: transform .32s cubic-bezier(.4, 0, .2, 1);
-        z-index: 0;
+  &[data-active='1'] &__pill {
+    transform: translateX(100%);
+  }
+
+  &__panel {
+    display: none;
+
+    &.is-active {
+      display: block;
     }
-
-    &__btn {
-        position: relative;
-        z-index: 1;
-        min-width: 171px;
-        padding: 8px 38px;
-        border: 0;
-        background: transparent;
-        border-radius: 24px;
-        font-family: 'Brown LL Pan', sans-serif;
-        font-size: 20px;
-        line-height: 24px;
-        text-align: center;
-        color: rgba(17, 17, 17, .6);
-        cursor: pointer;
-        transition: color .25s ease;
-
-        &.is-active {
-            color: #111111;
-        }
-    }
-
-    &[data-active="1"] &__pill {
-        transform: translateX(100%);
-    }
-
-    &__panel {
-        display: none;
-
-        &.is-active {
-            display: block;
-        }
-    }
+  }
 }
 
 .pana-digests {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 .pana-pdf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid #e5eef2;
+  border-radius: 24px;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  &:hover,
+  &:focus-within {
+    background: #f2fdf2;
+    border-color: #1bce1b;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    color: #1bce1b;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 20px;
-    border: 1px solid #E5EEF2;
-    border-radius: 24px;
-    text-decoration: none;
-    transition: border-color .2s ease, background .2s ease;
+    flex-direction: column;
+    gap: 6px;
+  }
 
-    &:hover,
-    &:focus-within {
-        background: #F2FDF2;
-        border-color: #1BCE1B;
-    }
+  &__name {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--dark);
+  }
 
-    &__icon {
-        flex-shrink: 0;
-        display: inline-flex;
-        width: 38px;
-        height: 38px;
-        color: #1BCE1B;
-
-        svg { width: 100%; height: 100%; }
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    &__name {
-        font-size: 20px;
-        line-height: 24px;
-        color: var(--dark);
-    }
-
-    &__size {
-        font-size: 16px;
-        line-height: 19px;
-        color: rgba(17, 17, 17, .4);
-    }
+  &__size {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgb(17 17 17 / 40%);
+  }
 }
 
 .pana-books {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 38px;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+  margin-top: 40px;
 }
 
 .pana-book {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 270px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  &__cover {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 270 / 380;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1px;
+    filter: drop-shadow(-10px 8px 13px rgb(0 0 0 / 25%))
+      drop-shadow(0 6px 2.77px rgb(0 0 0 / 20%));
+  }
+
+  &__mask {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    width: 270px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.35s ease;
+    gap: 12px;
+  }
 
-    &:hover {
-        transform: translateY(-8px);
-    }
+  &__title {
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--dark);
+  }
 
-    &__cover {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        aspect-ratio: 270 / 380;
-        background-size: cover;
-        background-position: center;
-        border-radius: 1px;
-        filter: drop-shadow(-10px 8px 13px rgba(0, 0, 0, .25)) drop-shadow(0 6px 2.77px rgba(0, 0, 0, .2));
-    }
-
-    &__mask {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    &__title {
-        font-size: 18px;
-        line-height: 22px;
-        color: var(--dark);
-    }
-
-    &__date {
-        font-size: 16px;
-        line-height: 19px;
-        color: rgba(0, 0, 0, .4);
-    }
+  &__date {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgb(0 0 0 / 40%);
+  }
 }
 
-@media (max-width: 1260px) {
-    .pana-main .title--small.title--underline {
-        font-size: 34px;
-        line-height: 44px;
-    }
+@media (width <= 1260px) {
+  .pana-main .title--small.title--underline {
+    font-size: 34px;
+    line-height: 44px;
+  }
 
-    .pana-main .ppp-banner__title {
-        font-size: 28px;
-        line-height: 34px;
-    }
+  .pana-main .ppp-banner__title {
+    font-size: 28px;
+    line-height: 34px;
+  }
 
-    .pana-main .mbm-15 {
-        margin-bottom: 22px;
-    }
+  .pana-main .mbm-15 {
+    margin-bottom: 22px;
+  }
 
-    .pana-main .mbm-20 {
-        margin-bottom: 27px;
-    }
+  .pana-main .mbm-20 {
+    margin-bottom: 27px;
+  }
 
-    .pana-main .mbm-40 {
-        margin-bottom: 47px;
-    }
+  .pana-main .mbm-40 {
+    margin-bottom: 47px;
+  }
 
-    .pana-text p {
-        font-size: 18px;
-        line-height: 22px;
-    }
+  .pana-text p {
+    font-size: 18px;
+    line-height: 22px;
+  }
 
-    .pana-years__head {
-        display: flex;
-        width: 100%;
-    }
+  .pana-years__head {
+    display: flex;
+    width: 100%;
+  }
 
-    .pana-years__btn {
-        flex: 1;
-        min-width: 0;
-        padding: 8px 16px;
-    }
+  .pana-years__btn {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 16px;
+  }
 
-    .pana-digests {
-        grid-template-columns: 1fr;
-    }
+  .pana-digests {
+    grid-template-columns: 1fr;
+  }
 
-    .pana-books {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        margin: 28px -20px 0;
-        padding: 0 20px;
-        -webkit-overflow-scrolling: touch;
-    }
+  .pana-books {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 28px -20px 0;
+    padding: 0 20px;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    .pana-book {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-    }
+  .pana-book {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
 }

@@ -1,35 +1,35 @@
 .item-factoid-circle {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	@media (max-width: 1260px) {
-		justify-content: flex-start;
-	}
+  @media (width <= 1260px) {
+    justify-content: flex-start;
+  }
 
-	&__circle {
-		display: flex;
-		width: r(318);
-		height: r(318);
-		align-items: center;
-		border-radius: r(300);
-		flex-direction: column;
-		justify-content: center;
-		background: linear-gradient(195deg, #A0EDFF 13%, #24D6FF 100%);
+  &__circle {
+    display: flex;
+    width: r(318);
+    height: r(318);
+    align-items: center;
+    border-radius: r(300);
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(195deg, #a0edff 13%, #24d6ff 100%);
 
-		@media (max-width: 1260px) {
-			width: r(340);
-			height: r(340);
-		}
-	}
+    @media (width <= 1260px) {
+      width: r(340);
+      height: r(340);
+    }
+  }
 
-	&__number {
-		font-size: r(80);
-		font-weight: 500;
-		line-height: 1.2;
-	}
+  &__number {
+    font-size: r(80);
+    font-weight: 500;
+    line-height: 1.2;
+  }
 
-	&__text {
-		font-size: r(34);
-		line-height: 1.2;
-	}
+  &__text {
+    font-size: r(34);
+    line-height: 1.2;
+  }
 }

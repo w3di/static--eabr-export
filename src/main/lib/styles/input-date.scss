@@ -1,88 +1,84 @@
 .air-datepicker {
-	--adp-font-family: 'Brown LL Pan', 'Roboto', sans-serif;
-	--adp-font-size: 16px;
-	--adp-width: 340px;
-	--adp-padding: 16px;
-	--adp-border-radius: 20px;
-	--adp-day-cell-height: 41px;
+  --adp-font-family: 'Brown LL Pan', 'Roboto', sans-serif;
+  --adp-font-size: 16px;
+  --adp-width: 340px;
+  --adp-padding: 16px;
+  --adp-border-radius: 20px;
+  --adp-day-cell-height: 41px;
+  --adp-color: #1b1b1b;
+  --adp-color-secondary: #a5a5a5;
+  --adp-color-current-date: #111;
+  --adp-color-other-month: #c6c6c6;
+  --adp-color-disabled: #c6c6c6;
+  --adp-day-name-color: #6c6c6c;
+  --adp-nav-arrow-color: #a5a5a5;
+  --adp-border-color: transparent;
+  --adp-border-color-inner: #e5eef2;
+  --adp-cell-border-radius: 50%;
+  --adp-cell-background-color-selected: #a0edff;
+  --adp-cell-background-color-selected-hover: #a0edff;
+  --adp-cell-background-color-in-range: #d9f8ff;
+  --adp-cell-background-color-in-range-hover: #d9f8ff;
+  --adp-cell-border-color-in-range: #d9f8ff;
+  --adp-btn-color: rgb(0 0 0 / 40%);
+  --adp-btn-color-hover: rgb(0 0 0 / 40%);
 
-	--adp-color: #1B1B1B;
-	--adp-color-secondary: #A5A5A5;
-	--adp-color-current-date: #111111;
-	--adp-color-other-month: #C6C6C6;
-	--adp-color-disabled: #C6C6C6;
-	--adp-day-name-color: #6C6C6C;
-	--adp-nav-arrow-color: #A5A5A5;
-
-	--adp-border-color: transparent;
-	--adp-border-color-inner: #E5EEF2;
-
-	--adp-cell-border-radius: 50%;
-	--adp-cell-background-color-selected: #A0EDFF;
-	--adp-cell-background-color-selected-hover: #A0EDFF;
-	--adp-cell-background-color-in-range: #D9F8FF;
-	--adp-cell-background-color-in-range-hover: #D9F8FF;
-	--adp-cell-border-color-in-range: #D9F8FF;
-
-	--adp-btn-color: rgba(0, 0, 0, 0.4);
-	--adp-btn-color-hover: rgba(0, 0, 0, 0.4);
-
-	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 40px rgb(0 0 0 / 12%);
 }
 
 .air-datepicker--pointer {
-	display: none;
+  display: none;
 }
 
 .air-datepicker-nav {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .air-datepicker-nav--title {
-	font-weight: 700;
-	font-size: 15px;
-	color: #1B1B1B;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1b1b1b;
 }
 
 .air-datepicker-body--day-name {
-	text-transform: lowercase;
+  text-transform: lowercase;
 }
 
 .air-datepicker-cell.-selected-,
 .air-datepicker-cell.-selected-.-current-,
 .air-datepicker-cell.-selected-.-focus- {
-	color: #111111;
-	background: var(--adp-cell-background-color-selected);
+  color: #111;
+  background: var(--adp-cell-background-color-selected);
 }
 
 .air-datepicker-cell.-current- {
-	color: #111111;
-	background: #EDF5F8;
+  color: #111;
+  background: #edf5f8;
 }
 
 .air-datepicker-cell.-current-.-in-range- {
-	color: #111111;
-	background: var(--adp-cell-background-color-in-range);
+  color: #111;
+  background: var(--adp-cell-background-color-in-range);
 }
 
 .input-date {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	&__head {
-		width: 100%;
-		height: 40px;
-		font-size: r(20);
-		background-repeat: no-repeat;
-		background-position: right center;
-		background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.293045 6.70703C-0.0974798 6.31651 -0.0974788 5.68349 0.293045 5.29297C0.68357 4.90244 1.31658 4.90244 1.70711 5.29297L7.00008 10.5859L12.293 5.29297C12.6836 4.90245 13.3166 4.90245 13.7071 5.29297C14.0976 5.68349 14.0976 6.31651 13.7071 6.70703L7.00008 13.4141L0.293045 6.70703Z' fill='%23111111' fill-opacity='0.6'/%3E%3C/svg%3E");
+  &__head {
+    width: 100%;
+    height: 40px;
+    font-size: r(20);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.293045 6.70703C-0.0974798 6.31651 -0.0974788 5.68349 0.293045 5.29297C0.68357 4.90244 1.31658 4.90244 1.70711 5.29297L7.00008 10.5859L12.293 5.29297C12.6836 4.90245 13.3166 4.90245 13.7071 5.29297C14.0976 5.68349 14.0976 6.31651 13.7071 6.70703L7.00008 13.4141L0.293045 6.70703Z' fill='%23111111' fill-opacity='0.6'/%3E%3C/svg%3E");
 
-		@media (max-width: 1260px) {
-			font-size: r(18);
-		}
-	}
+    @media (width <= 1260px) {
+      font-size: r(18);
+    }
+  }
 
-	&__field {
-		display: none;
-	}
+  &__field {
+    display: none;
+  }
 }

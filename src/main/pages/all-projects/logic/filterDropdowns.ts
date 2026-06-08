@@ -46,7 +46,9 @@ class FilterDropdowns {
         }),
       );
 
-    const resetBtn = document.querySelector<HTMLElement>('[data-filters-reset]');
+    const resetBtn = document.querySelector<HTMLElement>(
+      '[data-filters-reset]',
+    );
     if (resetBtn) {
       resetBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -90,10 +92,7 @@ class FilterDropdowns {
         const apply = (idx: string) => {
           container.dataset.active = idx;
           tabs.forEach((t) =>
-            t.classList.toggle(
-              'ap-view__tab--active',
-              t.dataset.tab === idx,
-            ),
+            t.classList.toggle('ap-view__tab--active', t.dataset.tab === idx),
           );
         };
 
@@ -266,10 +265,10 @@ class FilterDropdowns {
         .map((s) => parseInt(s, 10))
         .filter((n) => !isNaN(n) && items[n]);
       if (idxs.length) {
-        items.forEach((el) =>
-          el.classList.remove('ap-dropdown__item--active'),
+        items.forEach((el) => el.classList.remove('ap-dropdown__item--active'));
+        idxs.forEach((i) =>
+          items[i].classList.add('ap-dropdown__item--active'),
         );
-        idxs.forEach((i) => items[i].classList.add('ap-dropdown__item--active'));
         wrap.classList.add('is-filled');
       }
       return;

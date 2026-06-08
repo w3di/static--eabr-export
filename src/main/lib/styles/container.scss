@@ -1,15 +1,15 @@
 .container {
-	z-index: 1;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 r(20);
-	max-width: r(1240);
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 r(20);
+  max-width: r(1240);
 
-	&--large {
-		max-width: r(1920);
-	}
+  &--large {
+    max-width: r(1920);
+  }
 
-	&--fill {
-		padding: 0;
-	}
+  &--fill {
+    padding: 0;
+  }
 }

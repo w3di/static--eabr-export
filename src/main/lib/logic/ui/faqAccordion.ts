@@ -37,7 +37,9 @@ class FaqAccordion {
     this.wrap.style.transition = `height ${this.duration}ms ease`;
     this.wrap.style.height = `${target}px`;
 
-    this.wrap.addEventListener('transitionend', this.onExpandEnd, { once: true });
+    this.wrap.addEventListener('transitionend', this.onExpandEnd, {
+      once: true,
+    });
   };
 
   private onExpandEnd = () => {
@@ -58,7 +60,9 @@ class FaqAccordion {
     this.wrap.style.transition = `height ${this.duration}ms ease`;
     this.wrap.style.height = '0px';
 
-    this.wrap.addEventListener('transitionend', this.onCollapseEnd, { once: true });
+    this.wrap.addEventListener('transitionend', this.onCollapseEnd, {
+      once: true,
+    });
   };
 
   private onCollapseEnd = () => {

@@ -93,12 +93,12 @@ export const en = {
     },
     contribution: {
       title: 'Our contribution',
-      lead0: 'EDB&nbsp;– a key partner in the region\'s development.',
+      lead0: "EDB&nbsp;– a key partner in the region's development.",
       lead1:
         'EDB investment projects significantly enhance the growth potential of member-state economies',
       stat0Label: 'Investment projects implemented by EDB since&nbsp;2006',
       stat1Label: 'Accumulated EDB investment portfolio in the economy',
-      projectsTitle: 'The Bank\'s projects contribute to:',
+      projectsTitle: "The Bank's projects contribute to:",
       stat2Label: 'annual increase in economic output',
       stat3Label: 'annual increase in tax revenues',
       stat4Lead: 'creation of',
@@ -107,8 +107,7 @@ export const en = {
     },
     development: {
       title: 'Sustainable development',
-      lead:
-        'The Bank is guided by the UN Sustainable Development Goals and ESG principles in its activities',
+      lead: 'The Bank is guided by the UN Sustainable Development Goals and ESG principles in its activities',
       more: 'More',
     },
     projects: {
@@ -125,8 +124,7 @@ export const en = {
     },
     focus: {
       title: 'Our focus',
-      lead:
-        'EDB supports private-sector investment projects aimed at growing economies and strengthening cooperation between countries in the Eurasian region.',
+      lead: 'EDB supports private-sector investment projects aimed at growing economies and strengthening cooperation between countries in the Eurasian region.',
       cards: {
         infrastructure: 'Infrastructure development',
         industry: 'Strengthening industrial potential',
@@ -185,8 +183,10 @@ export const en = {
       'Eurasian Development Bank won a prize at the annual Kazakhstan Stock Exchange (KASE) annual report contest',
   },
   newsEventsDetail: {
-    pageTitle: 'President of Kazakhstan received the Chairman of the EDB - Eurasian Development Bank',
-    breadcrumbCurrent: 'President of Kazakhstan received the Chairman of the EDB',
+    pageTitle:
+      'President of Kazakhstan received the Chairman of the EDB - Eurasian Development Bank',
+    breadcrumbCurrent:
+      'President of Kazakhstan received the Chairman of the EDB',
     title:
       'President of Kazakhstan received the Chairman of the EDB Management Board: 20-year results and new investment plans',
     date: '10 April 2026',
@@ -194,11 +194,11 @@ export const en = {
     body0:
       'The meeting discussed the results of two decades of operations of the Eurasian Development Bank, its role in strengthening economic cooperation between member states, and plans for the near future.',
     body1:
-      'President Kassym-Jomart Tokayev congratulated EDB on its 20th anniversary and noted the Bank\'s significant contribution to the development of the national economy of Kazakhstan and the entire Eurasian region.',
+      "President Kassym-Jomart Tokayev congratulated EDB on its 20th anniversary and noted the Bank's significant contribution to the development of the national economy of Kazakhstan and the entire Eurasian region.",
     body2:
-      'The President was briefed on the progress of EDB investment projects and on prospective areas of the Bank\'s activities under Strategy 2022–2026.',
+      "The President was briefed on the progress of EDB investment projects and on prospective areas of the Bank's activities under Strategy 2022–2026.",
     body3:
-      'Kassym-Jomart Tokayev noted the significant expansion of the Bank\'s presence in Kazakhstan and supported plans for the further development of investment projects in the country.',
+      "Kassym-Jomart Tokayev noted the significant expansion of the Bank's presence in Kazakhstan and supported plans for the further development of investment projects in the country.",
     referenceTitle: 'For reference:',
     eabrTerm: 'Eurasian Development Bank (EDB)&nbsp;—',
     eabrText:
@@ -216,7 +216,8 @@ export const en = {
     pageTitle: 'Past events - Eurasian Development Bank',
     breadcrumbCurrent: 'Past events',
     title: 'Past events of the Eurasian Development Bank',
-    item0: 'Investment dynamics of the Eurasian region&nbsp;— results and trends',
+    item0:
+      'Investment dynamics of the Eurasian region&nbsp;— results and trends',
     item1: 'Annual meeting and business forum',
   },
   contestPage: {
@@ -314,11 +315,11 @@ export const en = {
         text: 'Medical insurance (including family), life insurance, vacation, pension programs and fitness compensation.',
       },
     },
-    valuesTitle: 'The Bank\'s culture is based on six corporate values:',
+    valuesTitle: "The Bank's culture is based on six corporate values:",
     values: {
       0: {
         title: 'Responsibility',
-        text: 'We recognise that being accountable for our commitments is the foundation of EDB\'s solid reputation and international standing. Each of us is ready to answer for our actions before Society, Colleagues, Partners and Shareholders. We always consider the consequences of our decisions and act in the best interests of the countries where we operate.',
+        text: "We recognise that being accountable for our commitments is the foundation of EDB's solid reputation and international standing. Each of us is ready to answer for our actions before Society, Colleagues, Partners and Shareholders. We always consider the consequences of our decisions and act in the best interests of the countries where we operate.",
       },
       1: {
         title: 'Teamwork',
@@ -338,7 +339,7 @@ export const en = {
       },
       5: {
         title: 'Passion',
-        text: 'We are committed to our mission, take initiative and invest energy in meaningful projects that shape the region\'s future.',
+        text: "We are committed to our mission, take initiative and invest energy in meaningful projects that shape the region's future.",
       },
     },
   },
@@ -371,7 +372,8 @@ export const en = {
       'Haven\'t found a suitable position? You can send your CV to <a href="mailto:cv@eabr.org">cv@eabr.org</a>, and we\'ll get in touch when relevant opportunities arise.',
   },
   careersInternship: {
-    pageTitle: 'Internship & traineeship - Work with us - Eurasian Development Bank',
+    pageTitle:
+      'Internship & traineeship - Work with us - Eurasian Development Bank',
     breadcrumbCurrent: 'Internship & traineeship',
     title: 'Internship & traineeship',
     intro:
@@ -395,14 +397,14 @@ export const en = {
       },
     },
     info: {
-      0: 'The Eurasian Development Bank also engages students, graduates and master\'s students to undertake traineeships in the Bank\'s departments.',
+      0: "The Eurasian Development Bank also engages students, graduates and master's students to undertake traineeships in the Bank's departments.",
       1: 'We do not conduct mass recruitment of young specialists who have just finished their studies. Trainees are admitted on a case-by-case basis when additional resources are needed.',
     },
     formTitle: 'If you want to do an internship at EDB',
     formText:
       'Fill out the request form attached below and send it to <a href="mailto:cv@eabr.org">cv@eabr.org</a>, or complete the online form attaching the filled-out request and your CV. If interested, we will get in touch with you.',
     quote:
-      'We create opportunities for young professionals to become part of an international financial institution\'s team dedicated to supporting the economic growth of member states.',
+      "We create opportunities for young professionals to become part of an international financial institution's team dedicated to supporting the economic growth of member states.",
   },
   ourContribution: {
     pageTitle: 'Our contribution - Eurasian Development Bank',
@@ -413,7 +415,7 @@ export const en = {
     introText:
       'The Eurasian Development Bank is more than a financial institution. As a multilateral development bank, EDB acts as a driver of economic growth for its member states, helping to strengthen and expand economic ties and develop national economies through effective investments in quality projects that change the lives of 200&nbsp;million people across the Eurasian region for the better.',
     cardsTitle:
-      'The Bank\'s investment activity is focused on the priority development objectives of the member states:',
+      "The Bank's investment activity is focused on the priority development objectives of the member states:",
     cards: {
       0: {
         title: 'Infrastructure development',
@@ -453,7 +455,8 @@ export const en = {
   },
   careersAbout: {
     pageTitle: 'About the Bank - Work with us - Eurasian Development Bank',
-    breadcrumb: 'Home / Work&nbsp;with&nbsp;us / <strong>About the Bank</strong>',
+    breadcrumb:
+      'Home / Work&nbsp;with&nbsp;us / <strong>About the Bank</strong>',
     title: 'About the Bank',
     intro:
       'EDB is a multilateral development bank designed to facilitate the economic growth of its member states, the expansion of trade and economic ties between them, and the development of integration processes in the Eurasian region through investment activities.',
@@ -528,7 +531,7 @@ export const en = {
       },
       5: {
         title: 'Istisna',
-        text: 'A form of purchase and sale with the condition of manufacturing the asset, where the bank undertakes to finance the creation or production of an asset (real estate, equipment, infrastructure) at the client\'s request.',
+        text: "A form of purchase and sale with the condition of manufacturing the asset, where the bank undertakes to finance the creation or production of an asset (real estate, equipment, infrastructure) at the client's request.",
       },
     },
     committeeTitle: 'The Bank has an Islamic Finance Committee,',
@@ -581,8 +584,7 @@ export const en = {
     breadcrumbActivity: 'Our&nbsp;activities',
     breadcrumbCurrent: 'Technical Assistance Fund',
     title: 'Technical Assistance Fund (TAF)',
-    lead:
-      'The Technical Assistance Fund (TAF) is a dedicated instrument of the&nbsp;Bank aimed at creating favourable conditions for implementing investment projects in the&nbsp;Bank\'s member states. The Fund finances the preparation of investment initiatives, institutional development, and measures to enhance the investment appeal of the region of operations.<br><br>TAF resources are formed from contributions out of the&nbsp;Bank\'s net profit and from donor contributions.',
+    lead: "The Technical Assistance Fund (TAF) is a dedicated instrument of the&nbsp;Bank aimed at creating favourable conditions for implementing investment projects in the&nbsp;Bank's member states. The Fund finances the preparation of investment initiatives, institutional development, and measures to enhance the investment appeal of the region of operations.<br><br>TAF resources are formed from contributions out of the&nbsp;Bank's net profit and from donor contributions.",
     hero: {
       stat0Label: 'Today the Fund manages approximately',
       stat0Value: '$80',
@@ -611,8 +613,7 @@ export const en = {
       2: {
         value: '$45<span class="fts-brief__sup">mn</span>',
         unit: 'mn',
-        label:
-          'approved financing for projects under implementation',
+        label: 'approved financing for projects under implementation',
         note: '(*as of 31 December 2025)',
       },
     },
@@ -620,58 +621,63 @@ export const en = {
     projectsTitleMob: 'Projects',
     projectsLabels: {
       amount: 'project amount',
-      bankShare: 'Bank\'s contribution',
+      bankShare: "Bank's contribution",
       country: 'Country',
       year: 'year',
       awards: 'Award',
     },
     projects: {
       0: {
-        title:
-          'Full-cycle dairy and meat production in Armenia',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        title: 'Full-cycle dairy and meat production in Armenia',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Armenia',
         year: '2024',
       },
       1: {
         title: 'Expansion and modernisation of Almaty International Airport',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Kazakhstan',
         year: '2024',
       },
       2: {
         title:
           'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Kyrgyzstan',
         year: '2024',
       },
       3: {
-        title:
-          'Infrastructure development in the highland regions of Armenia',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        title: 'Infrastructure development in the highland regions of Armenia',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Armenia',
         year: '2024',
       },
     },
     projectsAllLink: 'View all projects',
-    programsTitle: 'The Fund\'s key instruments:',
+    programsTitle: "The Fund's key instruments:",
     programs: {
-      0: { title: 'Programme I',  text: 'Preparation of investment projects' },
+      0: { title: 'Programme I', text: 'Preparation of investment projects' },
       1: { title: 'Programme II', text: 'Expansion of investment activities' },
     },
     conditionsTitle: 'Conditions for providing technical assistance:',
     conditions: {
-      0: 'The TAF project aligns with the Bank\'s strategic objectives in the country of planned implementation',
-      1: 'The TAF project\'s sector is among the Bank\'s priorities in the region of operations',
-      2: 'Successful two-stage review of the TAF project by the Bank\'s governing bodies',
+      0: "The TAF project aligns with the Bank's strategic objectives in the country of planned implementation",
+      1: "The TAF project's sector is among the Bank's priorities in the region of operations",
+      2: "Successful two-stage review of the TAF project by the Bank's governing bodies",
     },
-    conditionsNote:
-      'Note: TAF projects are selected on a competitive basis',
+    conditionsNote: 'Note: TAF projects are selected on a competitive basis',
     partnersTitle: 'Our partners',
     newsTitle: 'News',
     news: {
@@ -746,7 +752,8 @@ export const en = {
     submit: 'Submit',
   },
   bankPrograms: {
-    pageTitle: 'Programmes for financial institutions | Eurasian Development Bank',
+    pageTitle:
+      'Programmes for financial institutions | Eurasian Development Bank',
     breadcrumbHome: 'Home',
     breadcrumbProducts: 'EDB key products',
     breadcrumbCurrent: 'Programmes for financial institutions',
@@ -768,7 +775,7 @@ export const en = {
       },
     },
     bottom: {
-      p0: 'A credit line is provided to a financial institution for the purposes of one or several programmes, for the subsequent financing of the financial institution\'s own sub-projects or the sub-projects of sub-borrowers.',
+      p0: "A credit line is provided to a financial institution for the purposes of one or several programmes, for the subsequent financing of the financial institution's own sub-projects or the sub-projects of sub-borrowers.",
       p1: 'The requirements for financial institutions, the procedures for establishing a credit line, and a description of the programme terms are set out below.',
     },
     docs: {
@@ -783,29 +790,29 @@ export const en = {
     bannerLabel: 'BANNER',
     breadcrumb: 'Home / Projects',
     title: 'PROJECTS',
-    lead:
-      'The bulk of the EDB portfolio consists of projects with an integration effect in transport infrastructure, digital systems, green energy, agriculture, industry, and mechanical engineering. In its activities, the Bank is guided by the UN Sustainable Development Goals and ESG principles.',
+    lead: 'The bulk of the EDB portfolio consists of projects with an integration effect in transport infrastructure, digital systems, green energy, agriculture, industry, and mechanical engineering. In its activities, the Bank is guided by the UN Sustainable Development Goals and ESG principles.',
     btnAll: 'All projects',
     btnMega: 'Megaprojects',
     statsHeading: 'As of 31 December 2025',
     stats: {
       0: {
         unit: 'bn',
-        label: 'The EDB\'s current investment portfolio',
+        label: "The EDB's current investment portfolio",
       },
       1: {
         unit: 'projects',
-        label: 'accumulated portfolio across all the Bank\'s member states',
+        label: "accumulated portfolio across all the Bank's member states",
       },
       2: {
         unit: 'bn',
-        label: 'Total amount of the Bank\'s investments in the economies of member states',
+        label:
+          "Total amount of the Bank's investments in the economies of member states",
       },
     },
     megaAria: 'Megaprojects',
     megaTitle: 'Megaprojects',
     megaLead:
-      'Megaprojects as the Bank\'s strategic focus. The EDB implements investment projects aimed at economic growth, the development of integration, and the expansion of trade and economic ties across the Eurasian space.',
+      "Megaprojects as the Bank's strategic focus. The EDB implements investment projects aimed at economic growth, the development of integration, and the expansion of trade and economic ties across the Eurasian space.",
     projectsHeading: 'Projects',
     toolsHeading: 'Project implementation tools',
     toolsCardTitle: 'Information about products',
@@ -813,12 +820,14 @@ export const en = {
     newsHeading: 'News',
   },
   ftsProgram1: {
-    pageTitle: 'Programme I — Preparation of investment projects | Eurasian Development Bank',
+    pageTitle:
+      'Programme I — Preparation of investment projects | Eurasian Development Bank',
     kicker: 'Programme&nbsp;I',
     title: 'Preparation of investment projects',
     lead: 'Aimed at supporting the preparation of investment projects planned for implementation with the participation of the&nbsp;EDB.',
-    taskTitle: 'The programme\'s main objective:',
-    quote: 'To increase the readiness of investment deals for financing by the Bank and its partners.',
+    taskTitle: "The programme's main objective:",
+    quote:
+      'To increase the readiness of investment deals for financing by the Bank and its partners.',
     cofinanceTitle: 'Within the programme, TAF can co-finance:',
     cofinanceList: {
       0: 'Development of feasibility studies, including preliminary ones;',
@@ -832,11 +841,13 @@ export const en = {
     note: 'The programme focuses on projects with a high socio-economic and integration effect for the region. «Nurturing» investment projects makes it possible to improve the quality of their preparation, speed up investment decisions, and create conditions for further financing, including the necessary mobilisation of funds.',
   },
   ftsProgram2: {
-    pageTitle: 'Programme II — Expansion of investment activities | Eurasian Development Bank',
+    pageTitle:
+      'Programme II — Expansion of investment activities | Eurasian Development Bank',
     kicker: 'Programme&nbsp;II',
     title: 'Expansion of investment activities',
-    lead: 'Aimed at developing the institutional environment and creating conditions for the expansion of investment activities in the&nbsp;Bank\'s member states.',
-    initiativesTitle: 'Within the programme, initiatives are implemented that contribute to:',
+    lead: "Aimed at developing the institutional environment and creating conditions for the expansion of investment activities in the&nbsp;Bank's member states.",
+    initiativesTitle:
+      'Within the programme, initiatives are implemented that contribute to:',
     initiativesList: {
       0: 'Institutional development and the improvement of regulation;',
       1: 'Enhancing the investment appeal of industries and regions;',
@@ -857,18 +868,19 @@ export const en = {
   keyProducts: {
     pageTitle: 'EDB key products | Eurasian Development Bank',
     heroTitle: 'A broad range of financial instruments',
-    heroLead: 'We have an extensive list of products&nbsp;— we can mix and apply them in various ways and use virtually everything available in the financial world. We can offer both classic products and more complex structures, including syndicated arrangements.',
+    heroLead:
+      'We have an extensive list of products&nbsp;— we can mix and apply them in various ways and use virtually everything available in the financial world. We can offer both classic products and more complex structures, including syndicated arrangements.',
     breadcrumbCurrent: 'EDB key products',
     titleFull: 'EDB key products',
     titleShort: 'Key products',
     products: {
       0: {
         title: 'Investment financing',
-        body: 'Financing of investment projects at their implementation stage, including the modernisation and expansion of production facilities and the creation of new facilities in the Bank\'s member states.',
+        body: "Financing of investment projects at their implementation stage, including the modernisation and expansion of production facilities and the creation of new facilities in the Bank's member states.",
       },
       1: {
         title: 'Project financing',
-        body: 'Long-term financing of projects with risks secured by the assets and cash flows of the project itself, without full coverage by the originator\'s guarantees.',
+        body: "Long-term financing of projects with risks secured by the assets and cash flows of the project itself, without full coverage by the originator's guarantees.",
       },
       2: {
         title: 'Islamic financing',
@@ -876,11 +888,11 @@ export const en = {
       },
       3: {
         title: 'Working capital financing',
-        body: 'Financing of companies\' working capital to support current operating activities and expand production programmes.',
+        body: "Financing of companies' working capital to support current operating activities and expand production programmes.",
       },
       4: {
         title: 'Documentary operations',
-        body: 'Letters of credit, guarantees, and collections to support international trade operations between companies of the Bank\'s member states and their partners.',
+        body: "Letters of credit, guarantees, and collections to support international trade operations between companies of the Bank's member states and their partners.",
       },
       5: {
         title: 'Public-private partnership',
@@ -888,14 +900,15 @@ export const en = {
       },
     },
     examplesTitle: 'Sample projects by financing type',
-    disclaimer: 'The list of instruments is not exhaustive and may be expanded depending on the specifics and needs of the project',
+    disclaimer:
+      'The list of instruments is not exhaustive and may be expanded depending on the specifics and needs of the project',
     extraTitle: 'Programmes for financial institutions',
     extraSub: 'In the&nbsp;«Bank products» section',
     fundsHeading: 'Funds',
     funds: {
       0: {
         title: 'Technical Assistance Fund (TAF)',
-        body: 'A specialised fund whose purpose is to create favourable conditions for the implementation of investment projects and development in the Bank\'s member states, as well as to strengthen investment projects consistent with its mission for future financing. The Fund\'s resources are formed from contributions out of the Bank\'s net profit and from funds raised from donors, including international organisations.',
+        body: "A specialised fund whose purpose is to create favourable conditions for the implementation of investment projects and development in the Bank's member states, as well as to strengthen investment projects consistent with its mission for future financing. The Fund's resources are formed from contributions out of the Bank's net profit and from funds raised from donors, including international organisations.",
       },
       1: {
         title: 'Digital Initiatives Fund (DIF)',
@@ -907,7 +920,8 @@ export const en = {
     pageTitle: 'All projects | Eurasian Development Bank',
     heroTitle: 'All projects',
     heroSubtitle: 'Eurasian Development Bank (EDB)',
-    heroLead: 'The EDB is a multilateral development bank designed to facilitate the economic growth of its member states, the expansion of trade and economic ties among them, and the development of integration processes across the Eurasian space through investment activities.',
+    heroLead:
+      'The EDB is a multilateral development bank designed to facilitate the economic growth of its member states, the expansion of trade and economic ties among them, and the development of integration processes across the Eurasian space through investment activities.',
     crumbProjects: 'Projects',
     searchPlaceholder: 'Find a project',
     submitBtn: 'Submit a project for consideration',
@@ -940,7 +954,7 @@ export const en = {
       6: 'Infrastructure',
     },
     sumLabel: 'project amount',
-    bankLabel: 'Bank\'s contribution',
+    bankLabel: "Bank's contribution",
     awards: {
       ij: 'IJGlobal Awards 2021',
       esg: 'Green finance projects',
@@ -961,10 +975,23 @@ export const en = {
     pagNext: 'Next',
     analyticsHeading: 'Analytics',
     analyticsBooks: {
-      0: { title: 'EDB Macroeconomic Review. September 2025', date: '16 September 2025' },
-      1: { title: 'Macroeconomic Forecast 2026–2028', date: '18 December 2025' },
-      2: { title: 'China and the Eurasian region: an analysis of investment flows based on&nbsp;...', date: '25 December 2025' },
-      3: { title: 'Macroeconomic Forecast 2026–2028', date: '18 December 2025' },
+      0: {
+        title: 'EDB Macroeconomic Review. September 2025',
+        date: '16 September 2025',
+      },
+      1: {
+        title: 'Macroeconomic Forecast 2026–2028',
+        date: '18 December 2025',
+      },
+      2: {
+        title:
+          'China and the Eurasian region: an analysis of investment flows based on&nbsp;...',
+        date: '25 December 2025',
+      },
+      3: {
+        title: 'Macroeconomic Forecast 2026–2028',
+        date: '18 December 2025',
+      },
     },
     newsHeading: 'News',
   },
@@ -972,7 +999,8 @@ export const en = {
     pageTitle: 'Karaganda CHP-3 — Project | Eurasian Development Bank',
     country: 'Kazakhstan',
     print: 'Print',
-    title: 'Preparation of design and estimate documentation for the modernisation, expansion, and reconstruction of Karaganda CHP-3',
+    title:
+      'Preparation of design and estimate documentation for the modernisation, expansion, and reconstruction of Karaganda CHP-3',
     industryLabel: 'Industry:',
     industryValue: 'Energy',
     progLabel: 'TAF programme:',
@@ -988,9 +1016,11 @@ export const en = {
     sumLabel: 'Project amount',
     edbLabel: 'EDB contribution',
     overviewTitle: 'Project overview',
-    overviewText: 'As part of the project, the design and estimate documentation (DED) required for the Bank to consider financing the related investment project was prepared. The DED was prepared with the involvement of one of the world\'s largest engineering companies.',
+    overviewText:
+      "As part of the project, the design and estimate documentation (DED) required for the Bank to consider financing the related investment project was prepared. The DED was prepared with the involvement of one of the world's largest engineering companies.",
     goalsTitle: 'Project goals and objectives',
-    goalsText: 'Preparation of the DED for the investment project for inclusion in the package of documents required for the Bank to consider financing, conclude financial agreements, and fulfil the conditions precedent before financing of the investment project begins.',
+    goalsText:
+      'Preparation of the DED for the investment project for inclusion in the package of documents required for the Bank to consider financing, conclude financial agreements, and fulfil the conditions precedent before financing of the investment project begins.',
     sdgTitleFull: 'Sustainable Development Goals:',
     sdgTitleShort: 'Sustainable Development Goals',
     sdg: {
@@ -1000,11 +1030,13 @@ export const en = {
     },
     relatedTitle: 'Related investment project',
     relatedIndustry: 'Transport',
-    relatedProjectTitle: 'Investment programme for the modernisation, expansion, reconstruction, and/or renewal of Karaganda CHP-3 of Karaganda Energocentre LLP for 2024–2037',
+    relatedProjectTitle:
+      'Investment programme for the modernisation, expansion, reconstruction, and/or renewal of Karaganda CHP-3 of Karaganda Energocentre LLP for 2024–2037',
     newsTitle: 'News of all projects',
   },
   projectBakad: {
-    pageTitle: 'Expansion and modernisation of Almaty International Airport | EDB',
+    pageTitle:
+      'Expansion and modernisation of Almaty International Airport | EDB',
     country: 'Kazakhstan',
     print: 'Print',
     title: 'Expansion and modernisation of Almaty International Airport',
@@ -1019,15 +1051,26 @@ export const en = {
     sumLabel: 'Project amount',
     edbLabel: 'EDB contribution',
     overviewTitle: 'Project overview',
-    overviewCaption: 'The project provides for the creation of a key section of the Europe&nbsp;— Western China transit transport corridor, which is of paramount importance for developing the regional transport flows of the states of the Eurasian space. The project includes the construction of: 20&nbsp;bridges, 8&nbsp;interchanges, and 22&nbsp;overpasses',
-    overviewP0: 'The Big Almaty Ring Road (BAKAD) is the largest infrastructure project in Kazakhstan outside the oil and gas sector. It is the first project in Kazakhstan and the largest in Central Asia to build a motorway using public-private partnership (PPP) mechanisms.',
-    overviewP1: 'It is being implemented as a 20-year concession; the private partner is a Turkish-Korean consortium comprising: Alsim Alarko Sanayi Tesisleri ve&nbsp;Ticaret A.Ş., Makyol Insaat Sanayi Turizm ve&nbsp;Ticaret A.Ş., Korea Expressway Corporation, SK&nbsp;Engineering &amp; Construction Co.&nbsp;Ltd.',
-    overviewP2: 'Financing for the private partner was provided by a syndicate of multilateral development banks: the European Bank for Reconstruction and Development (arranger, A-loan), Bank of&nbsp;China, PGGM (B-loans), the Islamic Development Bank, and the EDB',
+    overviewCaption:
+      'The project provides for the creation of a key section of the Europe&nbsp;— Western China transit transport corridor, which is of paramount importance for developing the regional transport flows of the states of the Eurasian space. The project includes the construction of: 20&nbsp;bridges, 8&nbsp;interchanges, and 22&nbsp;overpasses',
+    overviewP0:
+      'The Big Almaty Ring Road (BAKAD) is the largest infrastructure project in Kazakhstan outside the oil and gas sector. It is the first project in Kazakhstan and the largest in Central Asia to build a motorway using public-private partnership (PPP) mechanisms.',
+    overviewP1:
+      'It is being implemented as a 20-year concession; the private partner is a Turkish-Korean consortium comprising: Alsim Alarko Sanayi Tesisleri ve&nbsp;Ticaret A.Ş., Makyol Insaat Sanayi Turizm ve&nbsp;Ticaret A.Ş., Korea Expressway Corporation, SK&nbsp;Engineering &amp; Construction Co.&nbsp;Ltd.',
+    overviewP2:
+      'Financing for the private partner was provided by a syndicate of multilateral development banks: the European Bank for Reconstruction and Development (arranger, A-loan), Bank of&nbsp;China, PGGM (B-loans), the Islamic Development Bank, and the EDB',
     goalsTitle: 'Project goals and objectives',
-    goalsSub: 'Contribution to the objectives of the EDB Country Strategy for the Republic of Kazakhstan for 2022–2026',
+    goalsSub:
+      'Contribution to the objectives of the EDB Country Strategy for the Republic of Kazakhstan for 2022–2026',
     tasks: {
-      0: { title: 'Objective&nbsp;1.', body: 'Development of all types of physical infrastructure' },
-      1: { title: 'Objective&nbsp;1.2.', body: 'Development of transport infrastructure that ensures connectivity between countries and regions' },
+      0: {
+        title: 'Objective&nbsp;1.',
+        body: 'Development of all types of physical infrastructure',
+      },
+      1: {
+        title: 'Objective&nbsp;1.2.',
+        body: 'Development of transport infrastructure that ensures connectivity between countries and regions',
+      },
     },
     impactTitle: 'Contribution to development',
     impactSub: 'Improving transport accessibility for',
@@ -1047,7 +1090,7 @@ export const en = {
     coopSub: 'MDB syndicate participation:',
     coopCards: {
       0: 'Development of cross-border infrastructure',
-      1: 'Strengthening production ties between the Bank\'s member states',
+      1: "Strengthening production ties between the Bank's member states",
     },
     synUnit: 'mn&nbsp;$',
     galleryTitle: 'Photos',
@@ -1071,34 +1114,44 @@ export const en = {
     newsAllLink: 'View all news',
     projectsLabels: {
       amount: 'project amount',
-      bankShare: 'Bank\'s contribution',
+      bankShare: "Bank's contribution",
     },
     projects: {
       0: {
         title: 'Full-cycle dairy and meat production in Armenia',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Armenia',
         year: '2024',
       },
       1: {
         title: 'Expansion and modernisation of Almaty International Airport',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Kazakhstan',
         year: '2024',
       },
       2: {
-        title: 'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        title:
+          'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Kyrgyzstan',
         year: '2024',
       },
       3: {
-        title: 'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic',
-        amountNum: '388', amountUnit: 'mn&nbsp;$',
-        bankNum: '300',   bankUnit: 'mn&nbsp;$',
+        title:
+          'Provision of a credit line to Ayil Bank OJSC to implement a microfinance programme in the Kyrgyz Republic',
+        amountNum: '388',
+        amountUnit: 'mn&nbsp;$',
+        bankNum: '300',
+        bankUnit: 'mn&nbsp;$',
         country: 'Armenia',
         year: '2024',
       },
@@ -1146,29 +1199,43 @@ export const en = {
     },
     aboutTitle: 'PPP in the Eurasian space',
     programTitle: 'EDB Programme',
-    programLead: 'The availability, accessibility and connectivity of infrastructure directly affect the socio-economic development of all EDB member states. Under current conditions, the need to build new logistics chains has made the requirements for expanding infrastructure incomparably higher. Yet most states simply cannot bridge their infrastructure gaps using state budget funds alone.',
+    programLead:
+      'The availability, accessibility and connectivity of infrastructure directly affect the socio-economic development of all EDB member states. Under current conditions, the need to build new logistics chains has made the requirements for expanding infrastructure incomparably higher. Yet most states simply cannot bridge their infrastructure gaps using state budget funds alone.',
     benefitsTitle: 'PPP enables states to:',
     benefits: {
       0: 'Accelerate the launch of infrastructure facilities, on the one hand, while on the other deferring the related budget expenditure to a later date — that is, shifting construction start dates to the left and budget spending to the right;',
       1: 'Provide a greater volume of high-quality public services to a greater number of users;',
       2: 'Transfer to the private partner part of the construction, commercial and financial risks, as well as the functions of delivering services to the public, which it often performs far more efficiently than the state itself, and more.',
     },
-    prepText0: 'The number of PPP projects depends directly on the quality of their pre-project preparation and on their attractiveness to private investors and financing institutions. The minimum conditions necessary to build a sustainable pipeline of PPP projects include a favourable PPP legal framework, well-functioning PPP support institutions, and project teams with practical skills in preparing and supporting the implementation of PPP projects, among others.',
-    prepText1: 'Such conditions for the development of PPP in the Eurasian space can be ensured more effectively given the advantages that membership of the Eurasian Economic Union and the Eurasian Development Bank affords states.',
-    rolesIntro: 'The Eurasian Development Bank, as an international financial organisation and a development institution:',
+    prepText0:
+      'The number of PPP projects depends directly on the quality of their pre-project preparation and on their attractiveness to private investors and financing institutions. The minimum conditions necessary to build a sustainable pipeline of PPP projects include a favourable PPP legal framework, well-functioning PPP support institutions, and project teams with practical skills in preparing and supporting the implementation of PPP projects, among others.',
+    prepText1:
+      'Such conditions for the development of PPP in the Eurasian space can be ensured more effectively given the advantages that membership of the Eurasian Economic Union and the Eurasian Development Bank affords states.',
+    rolesIntro:
+      'The Eurasian Development Bank, as an international financial organisation and a development institution:',
     roles: {
       0: 'Offers a broad range of credit and non-credit products for PPP projects',
       1: 'Has the capacity to ensure the availability of financial resources for PPP projects',
       2: 'Provides states with technical assistance in carrying out PPP legislative reforms, strengthening institutional mechanisms, building practical competencies in structuring bankable PPP projects, and preparing the full package of documentation for PPP projects that are significant for the integration and sustainable development of EDB member states and ready for launch and financing',
     },
-    instTitle: 'The institutional environment for PPP in the countries of the Eurasian space',
-    instLead: 'The level of PPP development largely depends on the effectiveness of the public administration system in the field of PPP and on the PPP institutional environment. In all states of the Eurasian space, PPP governance structures (PPP Units) have been established — as authorised bodies within ministries of economy, departments and agencies, and/or as specialised PPP centres.',
-    instLead2: 'However, the existence of a PPP governance structure is not in itself a factor of success. Only a correctly defined organisational and legal form — based on development objectives and the country’s infrastructure needs — together with the scope of its functions and powers, its staffing and funding, and well-established interaction with all parties involved in PPP development and all PPP market participants, can ensure the build-up of PPP capacity at the country level.',
-    centersTitle: 'PPP centres in EDB member states differ in their organisational and legal form:',
+    instTitle:
+      'The institutional environment for PPP in the countries of the Eurasian space',
+    instLead:
+      'The level of PPP development largely depends on the effectiveness of the public administration system in the field of PPP and on the PPP institutional environment. In all states of the Eurasian space, PPP governance structures (PPP Units) have been established — as authorised bodies within ministries of economy, departments and agencies, and/or as specialised PPP centres.',
+    instLead2:
+      'However, the existence of a PPP governance structure is not in itself a factor of success. Only a correctly defined organisational and legal form — based on development objectives and the country’s infrastructure needs — together with the scope of its functions and powers, its staffing and funding, and well-established interaction with all parties involved in PPP development and all PPP market participants, can ensure the build-up of PPP capacity at the country level.',
+    centersTitle:
+      'PPP centres in EDB member states differ in their organisational and legal form:',
     centers: {
       0: { form: 'Joint-stock company', countries: { 0: 'Kazakhstan' } },
-      1: { form: 'Autonomous non-profit organisation', countries: { 0: 'Russia' } },
-      2: { form: 'State institutions', countries: { 0: 'Kyrgyzstan', 1: 'Tajikistan' } },
+      1: {
+        form: 'Autonomous non-profit organisation',
+        countries: { 0: 'Russia' },
+      },
+      2: {
+        form: 'State institutions',
+        countries: { 0: 'Kyrgyzstan', 1: 'Tajikistan' },
+      },
       3: { form: 'Division of an agency', countries: { 0: 'Belarus' } },
     },
     funcsTitle: 'They perform a varying range of functions and powers:',
@@ -1176,48 +1243,123 @@ export const en = {
       0: 'Some have the broadest: developing and implementing a unified PPP policy, improving PPP legislation, drafting and reviewing project documents, selecting PPP projects and private partners, disseminating PPP knowledge and experience, building PPP competencies, ensuring interagency coordination, communicating with investors and lenders, maintaining the register of PPP projects and monitoring them (so-called “Full Service PPP Agencies” in international practice)',
       1: 'Others have a combination of functions and powers related mainly to reviewing PPP project documentation and advising the bodies that take management decisions on PPP projects (“Review PPP Agency”), or a narrow range of functions involving research, knowledge dissemination and the building of PPP competencies (“PPP Center of Excellence”).',
     },
-    funcsNote: 'The role and status of PPP centres are not static; they may change as a country moves from one level of PPP development to another, implements its national PPP programme and meets its infrastructure needs.',
+    funcsNote:
+      'The role and status of PPP centres are not static; they may change as a country moves from one level of PPP development to another, implements its national PPP programme and meets its infrastructure needs.',
     govTitle: 'PPP governance structures:',
     gov: {
-      0: { country: 'Armenia', orgs: { 0: 'Ministry of Finance of the Republic of Armenia' } },
-      1: { country: 'Belarus', orgs: { 0: 'Ministry of Economy of the Republic of Belarus', 1: 'Interagency Infrastructure Coordination Council', 2: 'State Institution “National Agency for Investment and Privatisation”' } },
-      2: { country: 'Kazakhstan', orgs: { 0: 'Ministry of National Economy of the Republic of Kazakhstan', 1: 'JSC “Kazakhstan PPP Centre”' } },
-      3: { country: 'Kyrgyzstan', orgs: { 0: 'Ministry of Economy and Commerce of the Kyrgyz Republic', 1: 'PPP Council under the Cabinet of Ministers of the Kyrgyz Republic', 2: 'National Agency for Investments under the President of the Kyrgyz Republic', 3: 'State Institution “Public-Private Partnership Centre”' } },
-      4: { country: 'Russia', orgs: { 0: 'Ministry of Economic Development of the Russian Federation', 1: 'Autonomous Non-Profit Organisation “National Centre for the Development of Public-Private Partnership”' } },
-      5: { country: 'Tajikistan', orgs: { 0: 'State Committee on Investments and State Property Management of the Republic of Tajikistan', 1: 'PPP Council under the Government of the Republic of Tajikistan', 2: 'State Institution “PPP Project Implementation Centre”' } },
-      6: { country: 'Uzbekistan', orgs: { 0: 'Ministry of Economy and Finance of the Republic of Uzbekistan' } },
+      0: {
+        country: 'Armenia',
+        orgs: { 0: 'Ministry of Finance of the Republic of Armenia' },
+      },
+      1: {
+        country: 'Belarus',
+        orgs: {
+          0: 'Ministry of Economy of the Republic of Belarus',
+          1: 'Interagency Infrastructure Coordination Council',
+          2: 'State Institution “National Agency for Investment and Privatisation”',
+        },
+      },
+      2: {
+        country: 'Kazakhstan',
+        orgs: {
+          0: 'Ministry of National Economy of the Republic of Kazakhstan',
+          1: 'JSC “Kazakhstan PPP Centre”',
+        },
+      },
+      3: {
+        country: 'Kyrgyzstan',
+        orgs: {
+          0: 'Ministry of Economy and Commerce of the Kyrgyz Republic',
+          1: 'PPP Council under the Cabinet of Ministers of the Kyrgyz Republic',
+          2: 'National Agency for Investments under the President of the Kyrgyz Republic',
+          3: 'State Institution “Public-Private Partnership Centre”',
+        },
+      },
+      4: {
+        country: 'Russia',
+        orgs: {
+          0: 'Ministry of Economic Development of the Russian Federation',
+          1: 'Autonomous Non-Profit Organisation “National Centre for the Development of Public-Private Partnership”',
+        },
+      },
+      5: {
+        country: 'Tajikistan',
+        orgs: {
+          0: 'State Committee on Investments and State Property Management of the Republic of Tajikistan',
+          1: 'PPP Council under the Government of the Republic of Tajikistan',
+          2: 'State Institution “PPP Project Implementation Centre”',
+        },
+      },
+      6: {
+        country: 'Uzbekistan',
+        orgs: {
+          0: 'Ministry of Economy and Finance of the Republic of Uzbekistan',
+        },
+      },
     },
     supportInst: {
-      title: 'The EDB contributes to the development of the PPP institutional environment:',
+      title:
+        'The EDB contributes to the development of the PPP institutional environment:',
       tabEurasian: 'Across the Eurasian space as a whole',
       tabCountry: 'At the country level',
-      eurasian: 'By creating a platform and the conditions for interaction between representatives of authorised PPP bodies, PPP centres and the expert community in support of PPP, in order to achieve the Sustainable Development Goals, promote cross-border PPP and create shared PPP databases. As Eurasian integration processes develop, the importance of coordinated, coherent activity in the field of PPP grows. By eliminating duplication of effort and complementing one another’s work, it will become possible to multiply the results of PPP development across the Eurasian space many times more effectively.',
-      country: 'By holding joint events (forums, workshops, road shows) and PPP studies, taking part in pre-project preparation, and building the competencies of representatives of authorised PPP bodies and PPP centres.',
+      eurasian:
+        'By creating a platform and the conditions for interaction between representatives of authorised PPP bodies, PPP centres and the expert community in support of PPP, in order to achieve the Sustainable Development Goals, promote cross-border PPP and create shared PPP databases. As Eurasian integration processes develop, the importance of coordinated, coherent activity in the field of PPP grows. By eliminating duplication of effort and complementing one another’s work, it will become possible to multiply the results of PPP development across the Eurasian space many times more effectively.',
+      country:
+        'By holding joint events (forums, workshops, road shows) and PPP studies, taking part in pre-project preparation, and building the competencies of representatives of authorised PPP bodies and PPP centres.',
     },
     lawTitle: 'PPP legislation in the countries of the Eurasian space',
-    lawLead: 'In all EDB member states, the legal regulation of PPP is set out in dedicated PPP laws that are not of a framework nature but rather regulate a wide range of PPP relations in considerable detail. EDB member states follow similar legislative approaches in defining PPP, the principles of PPP regulation, the legal status of public and private partners as well as lenders, the division of powers among authorised PPP bodies, the list of conditions for PPP agreements, and more. At the same time, the forms of PPP, the procedures for selecting PPP projects and identifying private partners, state support measures, dispute settlement mechanisms and other matters are regulated differently. To a large extent, these differences stem from the varying levels of economic development of the states, the maturity of the PPP market and its attractiveness to private investors for participation in public infrastructure development, the differing views of public partners on their role in PPP projects, and budgetary capacities. However, the differences between PPP laws are not insurmountable. PPP laws can be harmonised on many legal provisions, as evidenced by the uniformity of the principles on which states regulate PPP-related relations.',
-    lawIntro2: 'The PPP laws of EDB member states are assessed differently in terms of their alignment with international standards of PPP regulation (according to assessments by the World Bank and the EBRD, the PPP laws of Russia and Kazakhstan demonstrate a greater degree of alignment).',
-    lawIntro3: 'In the EDB’s assessment, the PPP law of each EDB member state contains a number of effective legal provisions that can serve as a reference point for other states of the Eurasian space in improving their PPP legislation at the country level:',
+    lawLead:
+      'In all EDB member states, the legal regulation of PPP is set out in dedicated PPP laws that are not of a framework nature but rather regulate a wide range of PPP relations in considerable detail. EDB member states follow similar legislative approaches in defining PPP, the principles of PPP regulation, the legal status of public and private partners as well as lenders, the division of powers among authorised PPP bodies, the list of conditions for PPP agreements, and more. At the same time, the forms of PPP, the procedures for selecting PPP projects and identifying private partners, state support measures, dispute settlement mechanisms and other matters are regulated differently. To a large extent, these differences stem from the varying levels of economic development of the states, the maturity of the PPP market and its attractiveness to private investors for participation in public infrastructure development, the differing views of public partners on their role in PPP projects, and budgetary capacities. However, the differences between PPP laws are not insurmountable. PPP laws can be harmonised on many legal provisions, as evidenced by the uniformity of the principles on which states regulate PPP-related relations.',
+    lawIntro2:
+      'The PPP laws of EDB member states are assessed differently in terms of their alignment with international standards of PPP regulation (according to assessments by the World Bank and the EBRD, the PPP laws of Russia and Kazakhstan demonstrate a greater degree of alignment).',
+    lawIntro3:
+      'In the EDB’s assessment, the PPP law of each EDB member state contains a number of effective legal provisions that can serve as a reference point for other states of the Eurasian space in improving their PPP legislation at the country level:',
     laws: {
-      0: { country: 'Armenia’s PPP Law', text: 'Provisions on setting a limit for PPP contingent liabilities; on the types of state support in PPP projects (grants, subsidies, asset allocation, minimum revenue and/or consumption guarantees, demand guarantees, budget guarantees, loans, and reimbursement of PPP project costs and risks); on the possibility of resolving disputes through alternative means as well as in international commercial or investment arbitration; and provisions on immunity;' },
-      1: { country: 'Belarus’s PPP Law', text: 'Guarantees of the rights of public and private partners and lenders;' },
-      2: { country: 'Kazakhstan’s PPP Law', text: 'The PPP principle of “value for the public”, and provisions on payment mechanisms, sources of financing and sources of revenue for PPP entities;' },
-      3: { country: 'Kyrgyzstan’s PPP Law', text: 'The subordination of intergovernmental PPP projects to the regulation of international treaties, and a special “project sandbox” regulatory regime for implementing innovative PPP projects;' },
-      4: { country: 'Russia’s PPP Law', text: 'A detailed elaboration of the conceptual framework, a “constructor” of PPP form elements, and the possibility for two or more public partners to participate in a PPP project;' },
-      5: { country: 'Tajikistan’s PPP Law', text: 'Detailed regulation of the submission and assessment of unsolicited proposals and of the creation of and participation in consortia, as well as provisions allowing foreign law to be applied to a PPP agreement;' },
-      6: { country: 'Uzbekistan’s PPP Law', text: 'Guarantees of the lender’s rights, including compensation paid to lenders in the event of early termination of a PPP agreement, types of PPP support, and more.' },
+      0: {
+        country: 'Armenia’s PPP Law',
+        text: 'Provisions on setting a limit for PPP contingent liabilities; on the types of state support in PPP projects (grants, subsidies, asset allocation, minimum revenue and/or consumption guarantees, demand guarantees, budget guarantees, loans, and reimbursement of PPP project costs and risks); on the possibility of resolving disputes through alternative means as well as in international commercial or investment arbitration; and provisions on immunity;',
+      },
+      1: {
+        country: 'Belarus’s PPP Law',
+        text: 'Guarantees of the rights of public and private partners and lenders;',
+      },
+      2: {
+        country: 'Kazakhstan’s PPP Law',
+        text: 'The PPP principle of “value for the public”, and provisions on payment mechanisms, sources of financing and sources of revenue for PPP entities;',
+      },
+      3: {
+        country: 'Kyrgyzstan’s PPP Law',
+        text: 'The subordination of intergovernmental PPP projects to the regulation of international treaties, and a special “project sandbox” regulatory regime for implementing innovative PPP projects;',
+      },
+      4: {
+        country: 'Russia’s PPP Law',
+        text: 'A detailed elaboration of the conceptual framework, a “constructor” of PPP form elements, and the possibility for two or more public partners to participate in a PPP project;',
+      },
+      5: {
+        country: 'Tajikistan’s PPP Law',
+        text: 'Detailed regulation of the submission and assessment of unsolicited proposals and of the creation of and participation in consortia, as well as provisions allowing foreign law to be applied to a PPP agreement;',
+      },
+      6: {
+        country: 'Uzbekistan’s PPP Law',
+        text: 'Guarantees of the lender’s rights, including compensation paid to lenders in the event of early termination of a PPP agreement, types of PPP support, and more.',
+      },
     },
     supportLegal: {
-      title: 'The EDB contributes to the development of a favourable PPP legal environment:',
+      title:
+        'The EDB contributes to the development of a favourable PPP legal environment:',
       tabEurasian: 'Across the Eurasian space as a whole',
       tabCountry: 'At the country level',
-      eurasian: 'By creating the conditions for harmonisation, reducing the isolation of PPP legislative regulation in the EAEU+ countries, and disseminating uniform legal approaches to cross-border PPP and to PPP for achieving the SDGs.',
-      country: 'By advising public authorities on legislative initiatives aimed at introducing modern legal mechanisms into their PPP laws that safeguard the rights and interests of partners and protect their investments, and at removing excessively burdensome legislative requirements.',
+      eurasian:
+        'By creating the conditions for harmonisation, reducing the isolation of PPP legislative regulation in the EAEU+ countries, and disseminating uniform legal approaches to cross-border PPP and to PPP for achieving the SDGs.',
+      country:
+        'By advising public authorities on legislative initiatives aimed at introducing modern legal mechanisms into their PPP laws that safeguard the rights and interests of partners and protect their investments, and at removing excessively burdensome legislative requirements.',
     },
     marketTitle: 'PPP markets in the countries of the Eurasian space',
-    marketLead: 'PPP markets in EDB member states differ in their quantitative indicators but are largely similar in their sectoral specifics and development trends.',
+    marketLead:
+      'PPP markets in EDB member states differ in their quantitative indicators but are largely similar in their sectoral specifics and development trends.',
     marketNumbersTitle: 'PPP markets in figures',
-    marketNumbers: 'The leading positions in the number of PPP projects and the volume of investment are held by the PPP markets of Russia, Kazakhstan, Uzbekistan and Kyrgyzstan. The Russian PPP market shows the most mature indicators: as of 1 December 2025, around 4,400 PPP projects with a total investment of 7.5 trillion roubles, of which 5.4 trillion roubles is private investment. In Kazakhstan, as of 1 November 2025, 1,249 PPP agreements and concessions worth 3,556 billion tenge had been concluded. In Uzbekistan, as of 1 November 2025, 2,800 PPP projects worth USD 34 billion are at various stages of implementation. The PPP project market in Kyrgyzstan is promising: as of 1 October 2025, the project portfolio comprised 90 PPP projects with a total investment of more than 434 billion soms.',
+    marketNumbers:
+      'The leading positions in the number of PPP projects and the volume of investment are held by the PPP markets of Russia, Kazakhstan, Uzbekistan and Kyrgyzstan. The Russian PPP market shows the most mature indicators: as of 1 December 2025, around 4,400 PPP projects with a total investment of 7.5 trillion roubles, of which 5.4 trillion roubles is private investment. In Kazakhstan, as of 1 November 2025, 1,249 PPP agreements and concessions worth 3,556 billion tenge had been concluded. In Uzbekistan, as of 1 November 2025, 2,800 PPP projects worth USD 34 billion are at various stages of implementation. The PPP project market in Kyrgyzstan is promising: as of 1 October 2025, the project portfolio comprised 90 PPP projects with a total investment of more than 434 billion soms.',
     dbTitle: 'PPP project database',
     db: {
       0: { country: 'Armenia', label: 'PPP project database' },
@@ -1242,8 +1384,10 @@ export const en = {
       title: 'The EDB contributes to creating PPP market growth points:',
       tabEurasian: 'Across the Eurasian space as a whole',
       tabCountry: 'At the country level',
-      eurasian: 'By scaling up best PPP practices and taking part in the implementation of key investment megaprojects with an integration effect for infrastructure facilities of interest to all EDB member states.',
-      country: 'By providing project advisory services and grant financing to “nurture” PPP projects and prepare the full package of pre-project documentation needed to create bankable PPP projects.',
+      eurasian:
+        'By scaling up best PPP practices and taking part in the implementation of key investment megaprojects with an integration effect for infrastructure facilities of interest to all EDB member states.',
+      country:
+        'By providing project advisory services and grant financing to “nurture” PPP projects and prepare the full package of pre-project documentation needed to create bankable PPP projects.',
     },
     statPrefix: '$',
     statValue: '1.4',
@@ -1271,7 +1415,8 @@ export const en = {
     productsTitle: 'Products',
     productsLead:
       'The EDB provides credit products that meet the requirements of large-scale investment projects in terms of tenor, repayment schedule, intended use, tranches and more.',
-    creditTitle: 'The broad range of financial products and instruments comprises:',
+    creditTitle:
+      'The broad range of financial products and instruments comprises:',
     credit: {
       0: 'Debt financing',
       1: 'Equity financing',
@@ -1316,7 +1461,8 @@ export const en = {
   pnews: {
     pageTitle: 'PPP events and news | Eurasian Development Bank',
     watermark: 'PPP',
-    bannerTitle: 'Events and news of the Eurasian Development Bank on public-private partnership',
+    bannerTitle:
+      'Events and news of the Eurasian Development Bank on public-private partnership',
     breadcrumbHome: 'Home',
     breadcrumbActivity: 'Our activities',
     breadcrumbPpp: 'PPP',
@@ -1339,7 +1485,8 @@ export const en = {
   pana: {
     pageTitle: 'PPP reviews and analytics | Eurasian Development Bank',
     watermark: 'PPP',
-    bannerTitle: 'Reviews and analytics of the Eurasian Development Bank on public-private partnership',
+    bannerTitle:
+      'Reviews and analytics of the Eurasian Development Bank on public-private partnership',
     breadcrumbHome: 'Home',
     breadcrumbActivity: 'Our activities',
     breadcrumbPpp: 'PPP',

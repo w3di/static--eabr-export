@@ -1,35 +1,34 @@
 .button-blur {
-	height: r(62);
-	display: flex;
-	font-size: r(24);
-	padding: 0 r(20);
-	width: fit-content;
-	align-items: center;
-	transition: 0.3s all;
-	border-radius: r(100);
-	justify-content: center;
-	border: 1px solid #ffffff;
-	backdrop-filter: blur(12px);
+  height: r(62);
+  display: flex;
+  font-size: r(24);
+  padding: 0 r(20);
+  width: fit-content;
+  align-items: center;
+  transition: 0.3s all;
+  border-radius: r(100);
+  justify-content: center;
+  border: 1px solid #fff;
+  backdrop-filter: blur(12px);
 
-	@media (max-width: 1260px) {
-		height: r(52);
-	}
+  @media (width <= 1260px) {
+    height: r(52);
+  }
 
-	&--fix {
-		min-width: r(260);
+  &--fix {
+    min-width: r(260);
 
-		@media (max-width: 1260px) {
-			min-width: r(220);
-		}
-	}
+    @media (width <= 1260px) {
+      min-width: r(220);
+    }
+  }
 
-	&:hover {
-		color: #111111;
-		background-color: #ffffff;
-	}
+  &:hover {
+    color: #111;
+    background-color: #fff;
+  }
 
-	&:active {
-		opacity: 0.8;
-	}
+  &:active {
+    opacity: 0.8;
+  }
 }
-

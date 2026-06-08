@@ -29,10 +29,27 @@ class IslamicForm {
         errorMessageClass: 'isl-field__error',
       },
       fields: [
-        { input: email, rules: ['email'], errorKey: 'islamicFinance.errors.email' },
-        { input: phone, rules: ['phone'], errorKey: 'islamicFinance.errors.phone', phoneMask: true },
-        { input: name, rules: [{ minLength: 2 }], errorKey: 'islamicFinance.errors.name' },
-        { input: sum, rules: ['number'], errorKey: 'islamicFinance.errors.sum' },
+        {
+          input: email,
+          rules: ['email'],
+          errorKey: 'islamicFinance.errors.email',
+        },
+        {
+          input: phone,
+          rules: ['phone'],
+          errorKey: 'islamicFinance.errors.phone',
+          phoneMask: true,
+        },
+        {
+          input: name,
+          rules: [{ minLength: 2 }],
+          errorKey: 'islamicFinance.errors.name',
+        },
+        {
+          input: sum,
+          rules: ['number'],
+          errorKey: 'islamicFinance.errors.sum',
+        },
         {
           input: desc,
           rules: [{ minLength: 10 }],

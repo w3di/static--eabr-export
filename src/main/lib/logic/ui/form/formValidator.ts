@@ -3,12 +3,7 @@ import { Validators } from './validators';
 import { PhoneFormatter } from './phoneFormatter';
 import { FieldError, type ErrorTheme } from './fieldError';
 
-type Rule =
-  | 'required'
-  | 'email'
-  | 'phone'
-  | 'number'
-  | { minLength: number };
+type Rule = 'required' | 'email' | 'phone' | 'number' | { minLength: number };
 
 type FieldDef = {
   input: HTMLInputElement | HTMLTextAreaElement;
@@ -103,7 +98,9 @@ class FormValidator {
     if (e.key !== 'Enter' || !this.cfg.consent) return;
     e.preventDefault();
     this.cfg.consent.input.checked = !this.cfg.consent.input.checked;
-    this.cfg.consent.input.dispatchEvent(new Event('change', { bubbles: true }));
+    this.cfg.consent.input.dispatchEvent(
+      new Event('change', { bubbles: true }),
+    );
   };
 
   private updateCounter = (f: FieldDef) => {
@@ -144,7 +141,9 @@ class FormValidator {
     let ok = true;
 
     this.cfg.fields.forEach((f) => {
-      const passes = f.rules.every((rule) => this.testRule(rule, f.input.value));
+      const passes = f.rules.every((rule) =>
+        this.testRule(rule, f.input.value),
+      );
       if (!passes) {
         FieldError.set(f.input, i18next.t(f.errorKey), this.cfg.theme);
         ok = false;
@@ -167,7 +166,9 @@ class FormValidator {
       first.focus();
       return;
     }
-    if (this.cfg.consent?.block.classList.contains(this.cfg.consent.errorClass)) {
+    if (
+      this.cfg.consent?.block.classList.contains(this.cfg.consent.errorClass)
+    ) {
       this.cfg.consent.input.focus();
     }
   };

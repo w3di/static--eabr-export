@@ -1,92 +1,97 @@
 .pagination {
-	gap: r(5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  gap: r(5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	&__link {
-		height: r(32);
-		display: flex;
-		min-width: r(32);
-		font-size: r(20);
-		align-items: center;
-		border-radius: r(32);
-		transition: 0.3s all;
-		justify-content: center;
-		color: rgba(17, 17, 17, 0.6);
+  &__link {
+    height: r(32);
+    display: flex;
+    min-width: r(32);
+    font-size: r(20);
+    align-items: center;
+    border-radius: r(32);
+    transition: 0.3s all;
+    justify-content: center;
+    color: rgb(17 17 17 / 60%);
 
-		&--active {
-			background-color: #D9F8FF;
-			color: rgba(17, 17, 17, 1);
-		}
+    &--active {
+      background-color: #d9f8ff;
+      color: rgb(17 17 17 / 100%);
+    }
 
-		&:is(a) {
-			&:hover {
-				background-color: #D9F8FF;
-			}
-		}
+    &:is(a) {
+      &:hover {
+        background-color: #d9f8ff;
+      }
+    }
 
-		@media (max-width: 1260px) {
-			&:not(.pagination__link--first):not(.pagination__link--active):not(.pagination__link--end):not(.pagination__link--static) {
-				display: none;
-			}
-		}
-	}
+    @media (width <= 1260px) {
+      &:not(
+        .pagination__link--first,
+        .pagination__link--active,
+        .pagination__link--end,
+        .pagination__link--static
+      ) {
+        display: none;
+      }
+    }
+  }
 
-	&__button {
-		gap: r(14);
-		height: r(32);
-		display: flex;
-		padding: 0 r(14);
-		align-items: center;
-		border-radius: r(32);
-		transition: 0.3s all;
-		justify-content: center;
+  &__button {
+    gap: r(14);
+    height: r(32);
+    display: flex;
+    padding: 0 r(14);
+    align-items: center;
+    border-radius: r(32);
+    transition: 0.3s all;
+    justify-content: center;
 
-		&--prev {
-			&:is(a) {
-				&:hover {
-					background-color: #A0EDFF;
-				}
-			}
+    &--prev {
+      &:is(a) {
+        &:hover {
+          background-color: #a0edff;
+        }
+      }
 
-			.pagination {
-				&__text {
-					color: rgba(17, 17, 17, 0.6);
-				}
+      .pagination {
+        &__text {
+          color: rgb(17 17 17 / 60%);
+        }
 
-				&__icon {
-					fill: rgba(17, 17, 17, 0.6);
-				}
-			}
-		}
+        &__icon {
+          fill: rgb(17 17 17 / 60%);
+        }
+      }
+    }
 
-		&--next {
-			&:is(a) {
-				&:hover {
-					background-color: #A0EDFF;
-				}
-			}
+    &--next {
+      &:is(a) {
+        &:hover {
+          background-color: #a0edff;
+        }
+      }
 
-			.pagination {
-				&__text {
-					color: rgba(17, 17, 17, 1);
-				}
+      .pagination {
+        &__text {
+          color: rgb(17 17 17 / 100%);
+        }
 
-				&__icon {
-					fill: rgba(17, 17, 17, 1);
-				}
-			}
-		}
-	}
+        &__icon {
+          fill: rgb(17 17 17 / 100%);
+        }
+      }
+    }
+  }
 
-	&__text {
-		font-size: r(16);
-	}
+  &__text {
+    font-size: r(16);
+  }
 
-	&__icon {
-		width: r(10);
-		height: r(16);
-		display: block;
-	}
+  &__icon {
+    width: r(10);
+    height: r(16);
+    display: block;
+  }
 }

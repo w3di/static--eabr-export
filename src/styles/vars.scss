@@ -1,16 +1,16 @@
 :root {
-	--white: #fff;
-	--light: #EDF5F8;
-	--black: #000;
-	--dark: #111111;
-	--dark-light: rgba(17, 17, 17, .6);
-	--dark-white: rgba(17, 17, 17, .4);
-	--blue: #0097D8;
-	--super-blue: #24D6FF;
-	--blue-light: #E7F2F6;
-	--green: #1BCE1B;
-	--teal: #0AAA9B;
-	--super-green: #37EE50;
-	--base-font-size: 16;
-	--font-regular: 'Brown LL Pan', 'Roboto', sans-serif;
+  --white: #fff;
+  --light: #edf5f8;
+  --black: #000;
+  --dark: #111;
+  --dark-light: rgb(17 17 17 / 60%);
+  --dark-white: rgb(17 17 17 / 40%);
+  --blue: #0097d8;
+  --super-blue: #24d6ff;
+  --blue-light: #e7f2f6;
+  --green: #1bce1b;
+  --teal: #0aaa9b;
+  --super-green: #37ee50;
+  --base-font-size: 16;
+  --font-regular: 'Brown LL Pan', 'Roboto', sans-serif;
 }

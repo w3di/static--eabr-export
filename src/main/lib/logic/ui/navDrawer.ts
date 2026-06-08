@@ -11,11 +11,13 @@ class NavDrawer {
     this.drawer = drawer;
     this.toggle = drawer.querySelector<HTMLInputElement>('.nav-drawer__toggle');
     this.labels = Array.from(
-      drawer.querySelectorAll<HTMLLabelElement>('.nav-drawer__pull, .nav-drawer__close'),
+      drawer.querySelectorAll<HTMLLabelElement>(
+        '.nav-drawer__pull, .nav-drawer__close',
+      ),
     );
-    this.siblings = Array.from(
-      drawer.parentElement?.children || [],
-    ).filter((el): el is HTMLElement => el !== drawer && el instanceof HTMLElement);
+    this.siblings = Array.from(drawer.parentElement?.children || []).filter(
+      (el): el is HTMLElement => el !== drawer && el instanceof HTMLElement,
+    );
     this.mql = window.matchMedia(DRAWER_BREAKPOINT);
 
     this.init();

@@ -33,7 +33,9 @@ class CityMapPins {
     const anchor = rect.left + rect.width / 2;
     const vw = window.innerWidth;
     const margin = 8;
-    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const remPx = parseFloat(
+      getComputedStyle(document.documentElement).fontSize,
+    );
     const isMobile = vw <= 1260;
     const openWidth = isMobile ? (216 / 16) * remPx : 283;
     const labelLeft = anchor - openWidth / 2;

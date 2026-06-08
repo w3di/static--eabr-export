@@ -15,8 +15,10 @@
       }
     ],
     "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
     "selector-pseudo-class-no-unknown": null,
-    "max-line-length": null,
+    "selector-class-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": null,
     "function-no-unknown": null
   }
 }

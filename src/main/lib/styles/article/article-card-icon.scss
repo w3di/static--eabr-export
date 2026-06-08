@@ -1,29 +1,29 @@
 .article-card-icon {
-	height: 100%;
-	position: relative;
-	border-radius: r(24);
-	border: 1px solid #E5EEF2;
-	background-color: rgba(229, 238, 242, 0.12);
+  height: 100%;
+  position: relative;
+  border-radius: r(24);
+  border: 1px solid #e5eef2;
+  background-color: rgb(229 238 242 / 12%);
 
-	&__inner {
-		gap: r(8);
-		z-index: 1;
-		height: 100%;
-		display: flex;
-		padding: r(15);
-		position: relative;
-		flex-direction: column;
-		justify-content: space-between;
-	}
+  &__inner {
+    gap: r(8);
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    padding: r(15);
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-	&__icon {
-		width: r(80);
-		height: r(80);
-		display: block;
-	}
+  &__icon {
+    width: r(80);
+    height: r(80);
+    display: block;
+  }
 
-	&__title {
-		font-size: r(20);
-		line-height: 1.2;
-	}
+  &__title {
+    font-size: r(20);
+    line-height: 1.2;
+  }
 }

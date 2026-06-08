@@ -15,7 +15,7 @@
   padding-top: r(105);
   padding-bottom: r(100) !important;
 
-  @media (max-width: 1260px) {
+  @media (width <= 1260px) {
     margin-top: r(-60);
     padding-top: r(60);
     padding-bottom: r(80) !important;
@@ -58,6 +58,7 @@
 
 .hr-pin {
   --open-width: 283px;
+
   position: absolute;
   display: inline-flex;
   flex-direction: column;
@@ -71,10 +72,11 @@
     display: none;
   }
 
-  @media (max-width: 1260px) {
+  @media (width <= 1260px) {
     &.mob-visible {
       display: inline-flex;
     }
+
     &.mob-hidden {
       display: none;
     }
@@ -91,7 +93,7 @@
 
   &__label {
     position: relative;
-    left: var(--shift-x, 0px);
+    left: var(--shift-x, 0);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -170,7 +172,6 @@
   &:focus {
     outline: none;
   }
-
 }
 
 .hr-flags-card {
@@ -183,14 +184,14 @@
   width: r(556);
   background: var(--white);
   border: 1px solid #e5eef2;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 40px rgb(0 0 0 / 12%);
   border-radius: r(20);
   z-index: 3;
 
   &__title {
     font-size: r(24);
     line-height: r(29);
-    color: rgba(17, 17, 17, 0.6);
+    color: rgb(17 17 17 / 60%);
   }
 
   &__list {
@@ -204,7 +205,7 @@
     height: r(60);
     border-radius: 50%;
     background: #d9e3e8 center / cover no-repeat;
-    border: 1px solid rgba(17, 17, 17, .12);
+    border: 1px solid rgb(17 17 17 / 12%);
     flex-shrink: 0;
   }
 }
@@ -236,7 +237,7 @@
   }
 }
 
-@media (max-width: 1260px) {
+@media (width <= 1260px) {
   html:has(.hr-about-main) {
     font-size: calc(100vw / 380 * 16);
   }

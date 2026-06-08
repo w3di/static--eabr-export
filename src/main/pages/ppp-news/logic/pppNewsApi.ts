@@ -53,7 +53,7 @@ class PppNewsApi {
   private static normalize(value: string | null | undefined): string {
     return (value || '')
       .replace(/&nbsp;/g, ' ')
-      .replace(/ /g, ' ')
+      .replace(/\u00A0/g, ' ')
       .trim()
       .toLowerCase();
   }

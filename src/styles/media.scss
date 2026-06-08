@@ -1,16 +1,16 @@
 .mob-visible {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
-@media (max-width: 1260px) {
-    .mob-visible {
-        display: block;
-        visibility: visible;
-    }
+@media (width <= 1260px) {
+  .mob-visible {
+    display: block;
+    visibility: visible;
+  }
 
-    .mob-hidden {
-        display: none;
-        visibility: hidden;
-    }
+  .mob-hidden {
+    display: none;
+    visibility: hidden;
+  }
 }

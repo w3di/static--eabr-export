@@ -1,90 +1,90 @@
 .grid {
-    gap: r(18);
-    width: 100%;
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-rows: minmax(0, 1fr);
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: r(18);
+  width: 100%;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 
-	&--near {
-		gap: r(8);
-	}
+  &--near {
+    gap: r(8);
+  }
 
-	&--center {
-		align-items: center;
-	}
+  &--center {
+    align-items: center;
+  }
 
-    &__col {
-        &--1 {
-            grid-column: span 1;
-        }
-
-        &--2 {
-            grid-column: span 2;
-        }
-
-        &--3 {
-            grid-column: span 3;
-        }
-
-        &--4 {
-            grid-column: span 4;
-        }
-
-        &--5 {
-            grid-column: span 5;
-        }
-
-        &--6 {
-            grid-column: span 6;
-        }
-
-        &--7 {
-            grid-column: span 7;
-        }
-
-        &--8 {
-            grid-column: span 8;
-        }
-
-        &--9 {
-            grid-column: span 9;
-        }
-
-        &--10 {
-            grid-column: span 10;
-        }
-
-        &--11 {
-            grid-column: span 11;
-        }
-
-        &--12 {
-            grid-column: span 12;
-        }
+  &__col {
+    &--1 {
+      grid-column: span 1;
     }
+
+    &--2 {
+      grid-column: span 2;
+    }
+
+    &--3 {
+      grid-column: span 3;
+    }
+
+    &--4 {
+      grid-column: span 4;
+    }
+
+    &--5 {
+      grid-column: span 5;
+    }
+
+    &--6 {
+      grid-column: span 6;
+    }
+
+    &--7 {
+      grid-column: span 7;
+    }
+
+    &--8 {
+      grid-column: span 8;
+    }
+
+    &--9 {
+      grid-column: span 9;
+    }
+
+    &--10 {
+      grid-column: span 10;
+    }
+
+    &--11 {
+      grid-column: span 11;
+    }
+
+    &--12 {
+      grid-column: span 12;
+    }
+  }
 }
 
-@media (max-width: 1260px) {
-    .grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+@media (width <= 1260px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-        &__col-mob {
-            &--1 {
-                grid-column: span 1;
-            }
+    &__col-mob {
+      &--1 {
+        grid-column: span 1;
+      }
 
-            &--2 {
-                grid-column: span 2;
-            }
+      &--2 {
+        grid-column: span 2;
+      }
 
-            &--3 {
-                grid-column: span 3;
-            }
+      &--3 {
+        grid-column: span 3;
+      }
 
-            &--4 {
-                grid-column: span 4;
-            }
-        }
+      &--4 {
+        grid-column: span 4;
+      }
     }
+  }
 }

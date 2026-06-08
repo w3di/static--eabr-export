@@ -1,38 +1,38 @@
 .radiogroup {
-	display: flex;
-	overflow: hidden;
-	border-radius: r(40);
-	background-color: rgba(36, 214, 255, 0.1);
+  display: flex;
+  overflow: hidden;
+  border-radius: r(40);
+  background-color: rgb(36 214 255 / 10%);
 
-	&__label {
-		flex-grow: 1;
-		display: block;
-		cursor: pointer;
-	}
+  &__label {
+    flex-grow: 1;
+    display: block;
+    cursor: pointer;
+  }
 
-	&__input {
-		display: none;
-		visibility: hidden;
+  &__input {
+    display: none;
+    visibility: hidden;
 
-		&:checked {
-			& + .radiogroup__text {
-				background-color: #A0EDFF;
-			}
-		}
-	}
+    &:checked {
+      & + .radiogroup__text {
+        background-color: #a0edff;
+      }
+    }
+  }
 
-	&__text {
-		height: r(40);
-		display: flex;
-		font-size: r(20);
-		padding: 0 r(26);
-		align-items: center;
-		border-radius: r(40);
-		transition: 0.3s all;
-		justify-content: center;
+  &__text {
+    height: r(40);
+    display: flex;
+    font-size: r(20);
+    padding: 0 r(26);
+    align-items: center;
+    border-radius: r(40);
+    transition: 0.3s all;
+    justify-content: center;
 
-		@media (max-width: 1260px) {
-			font-size: r(18);
-		}
-	}
+    @media (width <= 1260px) {
+      font-size: r(18);
+    }
+  }
 }

@@ -1,68 +1,80 @@
 .button-arrow {
-	gap: r(32);
-	height: r(54);
-	display: flex;
-	padding: 0 r(40);
-	overflow: hidden;
-	position: relative;
-	width: fit-content;
-	align-items: center;
-	border-radius: r(24);
-	justify-content: center;
+  gap: r(32);
+  height: r(54);
+  display: flex;
+  padding: 0 r(40);
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  align-items: center;
+  border-radius: r(24);
+  justify-content: center;
 
-	&--mob-full {
-		@media (max-width: 1260px) {
-			width: 100%;
-		}
-	}
+  &--mob-full {
+    @media (width <= 1260px) {
+      width: 100%;
+    }
+  }
 
-	&:after {
-		content: '';
-		inset: 0 -60px;
-		position: absolute;
-		width: calc(300% + 220px);
-		transform: translateX(-66.66%);
-		transition: transform 0.4s ease;
-		background: linear-gradient(15deg, #24D6FF 0%, #24D6FF 33%, #A0EDFF 66%, #A0EDFF 100%);
-	}
+  &::after {
+    content: '';
+    inset: 0 -60px;
+    position: absolute;
+    width: calc(300% + 220px);
+    transform: translateX(-66.66%);
+    transition: transform 0.4s ease;
+    background: linear-gradient(
+      15deg,
+      #24d6ff 0%,
+      #24d6ff 33%,
+      #a0edff 66%,
+      #a0edff 100%
+    );
+  }
 
-	&:hover {
-		&:after {
-			transform: translateX(-33.33%);
-		}
-	}
+  &:hover {
+    &::after {
+      transform: translateX(-33.33%);
+    }
+  }
 
-	&:active {
-		&:after {
-			transform: translateX(0%);
-		}
-	}
+  &:active {
+    &::after {
+      transform: translateX(0%);
+    }
+  }
 
-	&__icon {
-		z-index: 1;
-		width: r(22);
-		height: r(22);
-		fill: #111111;
-		display: block;
-		position: relative;
-		flex-shrink: 0;
-	}
+  &__icon {
+    z-index: 1;
+    width: r(22);
+    height: r(22);
+    fill: #111;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+  }
 
-	&__text {
-		z-index: 1;
-		line-height: 1.2;
-		font-size: r(24);
-		position: relative;
-	}
+  &__text {
+    z-index: 1;
+    line-height: 1.2;
+    font-size: r(24);
+    position: relative;
+  }
 }
 
-@media (max-width: 1260px) {
-	.button-arrow {
-		gap: r(16);
-		padding: 0 r(24);
-		height: r(48);
+@media (width <= 1260px) {
+  .button-arrow {
+    gap: r(16);
+    padding: 0 r(24);
+    height: r(48);
 
-		&__text { font-size: r(18); }
-		&__icon { width: r(18); height: r(18); }
-	}
+    &__text {
+      font-size: r(18);
+    }
+
+    &__icon {
+      width: r(18);
+      height: r(18);
+    }
+  }
 }

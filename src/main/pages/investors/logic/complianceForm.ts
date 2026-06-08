@@ -28,7 +28,11 @@ class ComplianceForm {
         errorMessageClass: 'inv-field__error',
       },
       fields: [
-        { input: name, rules: [{ minLength: 2 }], errorKey: 'inv.compliance.errName' },
+        {
+          input: name,
+          rules: [{ minLength: 2 }],
+          errorKey: 'inv.compliance.errName',
+        },
         {
           input: message,
           rules: [{ minLength: 10 }],

@@ -75,7 +75,7 @@
   }
 }
 
-@media (max-width: 1260px) {
+@media (width <= 1260px) {
   .contacts-card {
     flex-direction: column;
     gap: r(20);

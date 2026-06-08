@@ -81,7 +81,9 @@ class PageInit {
 
   private faqAccordions() {
     document
-      .querySelectorAll<HTMLDetailsElement>('.fts-faq__item, .kp-item, .ppp-acc__item, .inv-faq__item')
+      .querySelectorAll<HTMLDetailsElement>(
+        '.fts-faq__item, .kp-item, .ppp-acc__item, .inv-faq__item',
+      )
       .forEach((el) => new FaqAccordion(el));
   }
 

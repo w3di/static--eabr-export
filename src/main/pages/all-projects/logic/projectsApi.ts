@@ -47,7 +47,10 @@ class ProjectsApi {
     return PROJECTS.filter((p) => {
       if (q && !this.normalize(p.title).includes(q)) return false;
       if (type && p.type !== type) return false;
-      if (industries.length && !industries.some((i) => p.industries.includes(i)))
+      if (
+        industries.length &&
+        !industries.some((i) => p.industries.includes(i))
+      )
         return false;
       if (fromYear !== null && p.year < fromYear) return false;
       if (toYear !== null && p.year > toYear) return false;
@@ -58,7 +61,7 @@ class ProjectsApi {
   private static normalize(value: string | null | undefined): string {
     return (value || '')
       .replace(/&nbsp;/g, ' ')
-      .replace(/ /g, ' ')
+      .replace(/\u00A0/g, ' ')
       .trim()
       .toLowerCase();
   }

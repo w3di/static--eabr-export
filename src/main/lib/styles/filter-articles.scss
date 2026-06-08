@@ -3,7 +3,7 @@
   gap: r(20) r(25);
   justify-content: space-between;
 
-  @media (max-width: 1260px) {
+  @media (width <= 1260px) {
     flex-wrap: wrap;
   }
 
@@ -11,7 +11,7 @@
     flex-grow: 1;
     max-width: r(540);
 
-    @media (max-width: 1260px) {
+    @media (width <= 1260px) {
       width: 100%;
       max-width: 100%;
     }
@@ -28,7 +28,7 @@
   }
 
   &__radios {
-    @media (max-width: 1260px) {
+    @media (width <= 1260px) {
       width: 100%;
     }
   }

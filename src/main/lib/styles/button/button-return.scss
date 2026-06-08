@@ -1,25 +1,25 @@
 .button-return {
-	opacity: 0;
-	width: r(60);
-	height: r(60);
-	display: flex;
-	align-items: center;
-	pointer-events: none;
-	border-radius: r(60);
-	justify-content: center;
-	transition: 0.3s opacity;
-	background-color: #F2FCF2;
+  opacity: 0;
+  width: r(60);
+  height: r(60);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  border-radius: r(60);
+  justify-content: center;
+  transition: 0.3s opacity;
+  background-color: #f2fcf2;
 
-	&.active {
-		opacity: 1;
-		pointer-events: auto;
-	}
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-	&__icon {
-		width: r(34);
-		opacity: 0.6;
-		height: r(34);
-		fill: #1BCE1B;
-		display: block;
-	}
+  &__icon {
+    width: r(34);
+    opacity: 0.6;
+    height: r(34);
+    fill: #1bce1b;
+    display: block;
+  }
 }
