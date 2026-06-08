@@ -39,6 +39,7 @@ export const en = {
   },
   a11y: {
     currentLangAbbr: 'EN',
+    skipToContent: 'Skip to content',
     logoHome: 'Eurasian Development Bank — Home',
     langSwitcher: 'Select language',
     searchLink: 'Search',

@@ -208,6 +208,7 @@ export const ru = {
   },
   a11y: {
     currentLangAbbr: 'РУС',
+    skipToContent: 'Перейти к&nbsp;содержимому',
     logoHome: 'Евразийский банк развития — на главную',
     langSwitcher: 'Выбор языка',
     searchLink: 'Поиск',

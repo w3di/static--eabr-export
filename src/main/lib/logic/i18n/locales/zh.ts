@@ -39,6 +39,7 @@ export const zh = {
   },
   a11y: {
     currentLangAbbr: '中文',
+    skipToContent: '跳到主要内容',
     logoHome: '欧亚开发银行 — 返回首页',
     langSwitcher: '选择语言',
     searchLink: '搜索',
