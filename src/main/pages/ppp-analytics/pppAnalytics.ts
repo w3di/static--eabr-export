@@ -1,7 +1,16 @@
+import { formatSize } from '../../data/fileSize';
+
 type PanaPdf = {
   title: string;
+  file: string;
   size: string;
 };
+
+const pdf = (title: string, file: string): PanaPdf => ({
+  title,
+  file,
+  size: formatSize(file),
+});
 
 type PanaBlock = {
   date: string;
@@ -17,8 +26,14 @@ type PanaYear = {
 const PPP_ANALYTICS: Record<string, PanaYear> = {
   2026: {
     pdfs: [
-      { title: 'Дайджест № 2 март-апрель 2026', size: 'PDF, 236.54 KB' },
-      { title: 'Дайджест № 1 январь-февраль 2026', size: 'PDF, 236.54 KB' },
+      pdf(
+        'Дайджест № 2 март-апрель 2026',
+        '/assets/docs/ppp-analytics/digest-2-2026.pdf',
+      ),
+      pdf(
+        'Дайджест № 1 январь-февраль 2026',
+        '/assets/docs/ppp-analytics/digest-1-2026.pdf',
+      ),
     ],
     analyticsBlocks: [
       {
@@ -37,8 +52,14 @@ const PPP_ANALYTICS: Record<string, PanaYear> = {
   },
   2025: {
     pdfs: [
-      { title: 'Дайджест № 6 ноябрь-декабрь 2025', size: 'PDF, 236.54 KB' },
-      { title: 'Дайджест № 5 сентябрь-октябрь 2025', size: 'PDF, 236.54 KB' },
+      pdf(
+        'Дайджест № 6 ноябрь-декабрь 2025',
+        '/assets/docs/ppp-analytics/digest-6-2025.pdf',
+      ),
+      pdf(
+        'Дайджест № 5 сентябрь-октябрь 2025',
+        '/assets/docs/ppp-analytics/digest-5-2025.pdf',
+      ),
     ],
     analyticsBlocks: [
       {

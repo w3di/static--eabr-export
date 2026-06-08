@@ -5,12 +5,16 @@ import {
 import { BANK_PROGRAMS } from '../../../src/main/pages/bank-programs/bankPrograms';
 import { FTS_PARTNERS } from '../../../src/main/pages/fts/ftsPartners';
 import { PPP_ANALYTICS } from '../../../src/main/pages/ppp-analytics/pppAnalytics';
+import { COMPLIANCE_DOCS } from '../../../src/main/pages/investors/logic/complianceDocs';
 
 type PageData = Record<string, unknown>;
 
 const PAGE_DATA: Record<string, PageData> = {
   'ppp-analytics': {
     analytics: PPP_ANALYTICS,
+  },
+  'investors/compliance': {
+    docs: COMPLIANCE_DOCS,
   },
   'key-products': {
     keyProducts: KEY_PRODUCTS,

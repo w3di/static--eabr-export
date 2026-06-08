@@ -18,7 +18,7 @@
 
     function renderDigest(d) {
 %>
-                                        <a href="#" class="pana-pdf">
+                                        <a href="<%= d.file %>" class="pana-pdf" download>
                                             <span class="pana-pdf__icon" aria-hidden="true">
                                                 <svg viewBox="0 0 38 38" aria-hidden="true">
                                                     <use href="/assets/sprite/sprite-svg.svg#icon-pdf"></use>
@@ -26,7 +26,7 @@
                                             </span>
                                             <span class="pana-pdf__info">
                                                 <span class="pana-pdf__name"><%= d.title %></span>
-                                                <span class="pana-pdf__size"><%= d.size %></span>
+                                                <span class="pana-pdf__size">PDF, <%= d.size %></span>
                                             </span>
                                         </a>
 <%

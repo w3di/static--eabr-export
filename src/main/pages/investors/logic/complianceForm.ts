@@ -2,6 +2,7 @@ import { FormValidator, FormSubmitter } from '../../../lib/logic/ui/form';
 
 class ComplianceForm {
   constructor(form: HTMLFormElement) {
+    const type = form.querySelector<HTMLSelectElement>('#cmpl-type')!;
     const name = form.querySelector<HTMLInputElement>('#cmpl-name')!;
     const message = form.querySelector<HTMLTextAreaElement>('#cmpl-msg')!;
     const email = form.querySelector<HTMLInputElement>('#cmpl-email')!;
@@ -28,6 +29,11 @@ class ComplianceForm {
         errorMessageClass: 'inv-field__error',
       },
       fields: [
+        {
+          input: type,
+          rules: ['required'],
+          errorKey: 'inv.compliance.errType',
+        },
         {
           input: name,
           rules: [{ minLength: 2 }],

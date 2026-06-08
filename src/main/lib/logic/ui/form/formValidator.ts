@@ -6,7 +6,7 @@ import { FieldError, type ErrorTheme } from './fieldError';
 type Rule = 'required' | 'email' | 'phone' | 'number' | { minLength: number };
 
 type FieldDef = {
-  input: HTMLInputElement | HTMLTextAreaElement;
+  input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
   rules: Rule[];
   errorKey: string;
   phoneMask?: boolean;
@@ -47,6 +47,7 @@ class FormValidator {
 
     this.cfg.fields.forEach((f) => {
       f.input.addEventListener('input', () => this.onFieldInput(f));
+      f.input.addEventListener('change', () => this.onFieldInput(f));
       if (f.phoneMask) {
         f.input.addEventListener('input', () => this.onPhoneInput(f));
       }

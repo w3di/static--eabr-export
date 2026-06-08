@@ -1247,32 +1247,37 @@ a.inv-contact__row:hover {
   }
 }
 
-.inv-field__input--select {
-  padding-right: 32px;
-  cursor: pointer;
-
-  &:invalid {
-    color: rgb(17 17 17 / 40%);
-  }
-}
-
 .inv-field__input--area {
   resize: none;
   overflow: hidden;
   min-height: 24px;
 }
 
-.inv-field__chev {
-  position: absolute;
-  top: 0;
-  right: 0;
-  pointer-events: none;
+.inv-field__control--select {
+  border-bottom: 1px solid #1bce1b;
+}
 
-  svg {
-    width: 24px;
-    height: 24px;
-    color: rgb(17 17 17 / 60%);
-  }
+.inv-field__select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 8px;
+  font-family: 'Brown LL Pan', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #111;
+  background: transparent;
+  border: 0;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.inv-field__control--select .ss-main {
+  padding: 0 0 8px;
+  background: transparent;
+  line-height: 24px;
+  color: #111;
+  cursor: pointer;
 }
 
 .inv-form__consent {
