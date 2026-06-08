@@ -17,19 +17,159 @@ const esc = (s: string) =>
 
 const JSON_LD = JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE.name,
-  alternateName: 'ЕАБР',
-  url: `${SITE.baseUrl}/`,
-  logo: `${SITE.baseUrl}/assets/images/logo-main.svg`,
-  sameAs: [
-    'https://www.linkedin.com/company/eurasian-development-bank/',
-    'https://t.me/eabr_bank',
-    'https://www.facebook.com/eabr.org/',
-    'https://www.youtube.com/user/infoEABR',
-    'https://www.instagram.com/eabr_official',
+  '@graph': [
+    {
+      '@type': ['Organization', 'FinancialService'],
+      '@id': `${SITE.baseUrl}/#organization`,
+      name: SITE.name,
+      alternateName: ['ЕАБР', 'EABR', 'Eurasian Development Bank'],
+      url: `${SITE.baseUrl}/`,
+      logo: `${SITE.baseUrl}/assets/images/logo-main.svg`,
+      description: SITE.defaultDescription,
+      foundingDate: '2006',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Алматы',
+        addressCountry: 'KZ',
+      },
+      areaServed: [
+        'Армения',
+        'Беларусь',
+        'Казахстан',
+        'Кыргызстан',
+        'Россия',
+        'Таджикистан',
+        'Узбекистан',
+      ].map((c) => ({ '@type': 'Country', name: c })),
+      knowsAbout: [
+        'Финансирование развития',
+        'Инвестиционные проекты',
+        'Государственно-частное партнёрство',
+        'ESG',
+        'Исламское финансирование',
+        'Техническое содействие',
+      ],
+      sameAs: [
+        'https://www.linkedin.com/company/eurasian-development-bank/',
+        'https://t.me/eabr_bank',
+        'https://www.facebook.com/eabr.org/',
+        'https://www.youtube.com/user/infoEABR',
+        'https://www.instagram.com/eabr_official',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.baseUrl}/#website`,
+      url: `${SITE.baseUrl}/`,
+      name: SITE.name,
+      inLanguage: 'ru',
+      publisher: { '@id': `${SITE.baseUrl}/#organization` },
+    },
   ],
 });
+
+const stripHtml = (s: string) =>
+  s
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&laquo;|&raquo;/g, '"')
+    .replace(/&[a-z]+;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const extractBreadcrumb = (html: string): string[] => {
+  const block = html.match(
+    /<(?:div|nav)[^>]*class="(?:breadcrumbs|ap-crumbs)"[^>]*>([\s\S]*?)<\/(?:div|nav)>/,
+  );
+  if (!block) return [];
+  const items: string[] = [];
+  const re = /<(span|strong)[^>]*>([\s\S]*?)<\/\1>/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(block[1]))) {
+    const text = stripHtml(m[2]);
+    if (text) items.push(text);
+  }
+  return items;
+};
+
+const extractFaq = (html: string): { q: string; a: string }[] => {
+  const qs = [
+    ...html.matchAll(
+      /class="(?:fts-faq__q|inv-faq__q)"[^>]*>([\s\S]*?)<\/span>/g,
+    ),
+  ].map((m) => stripHtml(m[1]));
+  const as = [
+    ...html.matchAll(
+      /class="(?:fts-faq__a|inv-faq__body)"[^>]*>([\s\S]*?)<\/div>/g,
+    ),
+  ].map((m) => stripHtml(m[1]));
+  const out: { q: string; a: string }[] = [];
+  for (let i = 0; i < Math.min(qs.length, as.length); i++) {
+    if (qs[i] && as[i]) out.push({ q: qs[i], a: as[i] });
+  }
+  return out;
+};
+
+// Per-page schema.org graph for AI/answer engines (GEO/AEO): WebPage with a
+// Speakable hint, a BreadcrumbList and a FAQPage built from the page's own DOM.
+const buildPageLd = (
+  html: string,
+  url: string,
+  title: string,
+  desc: string,
+): string => {
+  const page: Record<string, unknown> = {
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: title,
+    description: desc,
+    inLanguage: 'ru',
+    isPartOf: { '@id': `${SITE.baseUrl}/#website` },
+    about: { '@id': `${SITE.baseUrl}/#organization` },
+    primaryImageOfPage: SITE.ogImage,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'main'],
+    },
+  };
+  const graph: Record<string, unknown>[] = [page];
+
+  const crumbs = extractBreadcrumb(html);
+  if (crumbs.length) {
+    page.breadcrumb = { '@id': `${url}#breadcrumb` };
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: crumbs.map((name, i) => {
+        const li: Record<string, unknown> = {
+          '@type': 'ListItem',
+          position: i + 1,
+          name,
+        };
+        if (i === 0) li.item = `${SITE.baseUrl}/`;
+        else if (i === crumbs.length - 1) li.item = url;
+        return li;
+      }),
+    });
+  }
+
+  const faq = extractFaq(html);
+  if (faq.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    });
+  }
+
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+};
 
 // Injects per-page SEO meta (description, canonical, Open Graph, robots,
 // structured data) derived from the page <title> + output path, and adds an id
@@ -52,6 +192,7 @@ class SeoMeta {
               ? PAGE_DESCRIPTIONS[key]
               : SITE.defaultDescription;
           const robots = SITE.indexable ? 'index, follow' : 'noindex, nofollow';
+          const pageLd = buildPageLd(data.html, url, title, desc);
 
           const tags = [
             `<meta name="description" content="${esc(desc)}">`,
@@ -63,16 +204,11 @@ class SeoMeta {
             `<meta property="og:image" content="${esc(SITE.ogImage)}">`,
             `<meta name="twitter:image" content="${esc(SITE.ogImage)}">`,
             `<script type="application/ld+json">${JSON_LD}</script>`,
+            `<script type="application/ld+json">${pageLd}</script>`,
           ].join('\n    ');
 
           if (!data.html.includes('name="description"')) {
             data.html = data.html.replace('</head>', `    ${tags}\n</head>`);
-          }
-          if (!/<main[^>]*\sid=/.test(data.html)) {
-            data.html = data.html.replace(
-              '<main ',
-              '<main id="main-content" tabindex="-1" ',
-            );
           }
           cb(null, data);
         },
@@ -93,18 +229,56 @@ class SiteFiles {
         },
         () => {
           const { RawSource } = webpack.sources;
-          const robots = SITE.indexable
-            ? `User-agent: *\nAllow: /\n\nSitemap: ${SITE.baseUrl}/sitemap.xml\n`
-            : `User-agent: *\nDisallow: /\n`;
+
+          if (!SITE.indexable) {
+            compilation.emitAsset(
+              'robots.txt',
+              new RawSource('User-agent: *\nDisallow: /\n'),
+            );
+            return;
+          }
+
+          // AI / answer-engine crawlers are explicitly welcomed (GEO/AEO).
+          const aiBots = [
+            'GPTBot',
+            'OAI-SearchBot',
+            'ChatGPT-User',
+            'ClaudeBot',
+            'anthropic-ai',
+            'Claude-Web',
+            'PerplexityBot',
+            'Google-Extended',
+            'Applebot-Extended',
+            'CCBot',
+            'Bytespider',
+          ];
+          const aiSection = aiBots
+            .map((b) => `User-agent: ${b}\nAllow: /\n`)
+            .join('\n');
+          const robots =
+            `User-agent: *\nAllow: /\n\n` +
+            `# AI and answer engines are welcome to crawl and cite EABR content\n` +
+            `${aiSection}\n` +
+            `Sitemap: ${SITE.baseUrl}/sitemap.xml\n`;
           compilation.emitAsset('robots.txt', new RawSource(robots));
 
-          if (SITE.indexable) {
-            const urls = SITEMAP_ROUTES.map(
-              (r) => `  <url><loc>${SITE.baseUrl}${r}</loc></url>`,
-            ).join('\n');
-            const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
-            compilation.emitAsset('sitemap.xml', new RawSource(sitemap));
-          }
+          const urls = SITEMAP_ROUTES.map(
+            (r) => `  <url><loc>${SITE.baseUrl}${r}</loc></url>`,
+          ).join('\n');
+          const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+          compilation.emitAsset('sitemap.xml', new RawSource(sitemap));
+
+          // llms.txt — curated, machine-readable site overview for LLMs.
+          const links = Object.entries(PAGE_DESCRIPTIONS)
+            .filter(([key]) => key !== '')
+            .map(([key, d]) => `- ${SITE.baseUrl}/${key}/: ${d}`)
+            .join('\n');
+          const llms =
+            `# ${SITE.name} (ЕАБР)\n\n` +
+            `> ${SITE.defaultDescription}\n\n` +
+            `Официальный сайт: ${SITE.baseUrl}/\n\n` +
+            `## Разделы\n\n${links}\n`;
+          compilation.emitAsset('llms.txt', new RawSource(llms));
         },
       );
     });

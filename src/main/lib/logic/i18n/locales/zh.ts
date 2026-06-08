@@ -1,4 +1,7 @@
 export const zh = {
+  home: {
+    heading: '欧亚开发银行 — 多边开发银行',
+  },
   nav: {
     topAnalytics: '分析',
     topNews: '新闻与活动',
@@ -39,7 +42,6 @@ export const zh = {
   },
   a11y: {
     currentLangAbbr: '中文',
-    skipToContent: '跳到主要内容',
     logoHome: '欧亚开发银行 — 返回首页',
     langSwitcher: '选择语言',
     searchLink: '搜索',

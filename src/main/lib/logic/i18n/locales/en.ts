@@ -1,4 +1,7 @@
 export const en = {
+  home: {
+    heading: 'Eurasian Development Bank — a multilateral development bank',
+  },
   nav: {
     topAnalytics: 'Analytics',
     topNews: 'News &amp;&nbsp;events',
@@ -39,7 +42,6 @@ export const en = {
   },
   a11y: {
     currentLangAbbr: 'EN',
-    skipToContent: 'Skip to content',
     logoHome: 'Eurasian Development Bank — Home',
     langSwitcher: 'Select language',
     searchLink: 'Search',
