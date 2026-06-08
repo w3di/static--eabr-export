@@ -1,0 +1,18 @@
+<div class="ap-analytics__list swiper" data-slider="analytics">
+    <div class="ap-analytics__wrapper swiper-wrapper">
+        <% sharedAnalytics.forEach(function(b, i) { %>
+        <a href="#" class="ap-book swiper-slide">
+            <div class="ap-book__cover" style="background: <%= b.cover %>;">
+                <svg class="ap-book__mask" viewBox="0 0 374 526" preserveAspectRatio="none" aria-hidden="true">
+                    <use href="/assets/sprite/sprite-svg.svg#icon-book-mask"></use>
+                </svg>
+            </div>
+            <div class="ap-book__body">
+                <h3 class="ap-book__title" data-i18n="allProjects.analyticsBooks.<%= i %>.title"><%- b.title %></h3>
+                <div class="ap-book__date" data-i18n="allProjects.analyticsBooks.<%= i %>.date"><%- b.date %></div>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+    <div class="ap-analytics__dots" data-slider-pagination aria-hidden="true"></div>
+</div>

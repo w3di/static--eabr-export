@@ -4,7 +4,7 @@ import { ComplianceForm } from '../../../../pages/investors/logic/complianceForm
 import { CountryAccordion } from '../../../../pages/contacts/logic/countryAccordion';
 import { FilterDropdowns } from '../../../../pages/all-projects/logic/filterDropdowns';
 import { SearchFilter } from '../../../../pages/all-projects/logic/searchFilter';
-import { PaginationState } from '../../../../pages/all-projects/logic/paginationState';
+import { ProjectsList } from '../../../../pages/all-projects/logic/projectsList';
 import { NavDrawer } from '../../ui/navDrawer';
 import { StepsLineFill } from '../../ui/stepsLineFill';
 import { CityMapPins } from '../../ui/cityMapPins';
@@ -27,7 +27,7 @@ class PageInit {
     this.valuesAccordions();
     this.filterDropdowns();
     this.searchFilters();
-    this.paginationState();
+    this.projectsList();
     this.faqAccordions();
     this.photoCarousels();
     this.posterVideos();
@@ -65,10 +65,10 @@ class PageInit {
       .forEach((el) => new SearchFilter(el));
   }
 
-  private paginationState() {
+  private projectsList() {
     document
-      .querySelectorAll<HTMLElement>('.ap-pagination')
-      .forEach((el) => new PaginationState(el));
+      .querySelectorAll<HTMLElement>('.ap-projects')
+      .forEach((el) => new ProjectsList(el));
   }
 
   private faqAccordions() {

@@ -6,20 +6,6 @@
     <%= htmlWebpackPlugin.options.widgets.head %>
 </head>
 <body class="body" id="body" data-body>
-<%
-    const projectCards = [
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Кыргызстан', flag: '/assets/images/flags/flag-kg.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление кредитной линии ОАО "Айыл банк" для реализации программы микрофинансирования в&nbsp;Кыргызской Республике', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Казахстан',  flag: '/assets/images/flags/flag-kz.svg', year: '2024', image: '/assets/images/1200x800.svg' },
-        { title: 'Предоставление ОАО «Араратбанк» невозобновляемой целевой кредитной линии для реализации программы&nbsp;...', sum: { num: '388', unit: 'млн $' }, bank: { num: '300', unit: 'млн $' }, country: 'Армения',   flag: '/assets/images/flags/flag-am.svg', year: '2024', image: '/assets/images/1200x800.svg' }
-    ];
-
-%>
     <div class="page">
         <%= htmlWebpackPlugin.options.widgets.header %>
 
@@ -133,59 +119,10 @@
                         <div class="ap-filters__overlay" data-filters-close aria-hidden="true"></div>
                     </div>
 
-                    <div class="ap-cards">
-                        <% projectCards.forEach(function(p, i) { %>
-                        <article class="ap-card">
-                            <a href="<%= htmlWebpackPlugin.options.routes.projectDetail %>" class="ap-card__photo" style="background-image: url('<%= p.image %>');">
-                                <span class="ap-card__arrow" aria-hidden="true">
-                                    <svg viewBox="0 0 18 18" fill="none">
-                                        <use href="/assets/sprite/sprite-svg.svg#icon-corner"></use>
-                                    </svg>
-                                </span>
-                            </a>
-                            <div class="ap-card__body">
-                                <div class="ap-card__info">
-                                    <h3 class="ap-card__title" data-i18n="allProjects.cards.<%= i %>.title"><%- p.title %></h3>
-                                    <div class="ap-card__sums">
-                                        <div class="ap-card__sum">
-                                            <div class="ap-card__sum-val ap-card__sum-val--dark">
-                                                <span class="ap-card__sum-num"><%= p.sum.num %></span><span class="ap-card__sum-unit" data-i18n="allProjects.mln"><%= p.sum.unit %></span>
-                                            </div>
-                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--dark" data-i18n="allProjects.sumLabel">сумма проекта</div>
-                                        </div>
-                                        <div class="ap-card__sum">
-                                            <div class="ap-card__sum-val ap-card__sum-val--green">
-                                                <span class="ap-card__sum-num"><%= p.bank.num %></span><span class="ap-card__sum-unit" data-i18n="allProjects.mln"><%= p.bank.unit %></span>
-                                            </div>
-                                            <div class="ap-card__sum-lbl ap-card__sum-lbl--green" data-i18n="allProjects.bankLabel">сумма участия банка</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ap-card__meta">
-                                    <div class="ap-card__meta-left">
-                                        <div class="ap-card__country">
-                                            <span class="ap-card__flag" style="background-image: url('<%= p.flag %>');"></span>
-                                            <span data-i18n="allProjects.cards.<%= i %>.country"><%- p.country %></span>
-                                        </div>
-                                        <div class="ap-card__year"><%= p.year %></div>
-                                    </div>
-                                    <div class="ap-card__awards">
-                                        <span class="ap-card__award-wrap" data-tooltip>
-                                            <img class="ap-card__award ap-card__award--ij" src="/assets/images/awards/ij-global.webp" alt="IJ Global Awards 2021" loading="lazy">
-                                            <span class="ap-card__tooltip js-tooltip" data-i18n="allProjects.awards.ij">IJGlobal Awards 2021</span>
-                                        </span>
-                                        <span class="ap-card__award-wrap" data-tooltip>
-                                            <img class="ap-card__award ap-card__award--esg" src="/assets/images/awards/esg.webp" alt="ESG" loading="lazy">
-                                            <span class="ap-card__tooltip js-tooltip" data-i18n="allProjects.awards.esg">Проекты зелёного финансирования</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <% }); %>
-                    </div>
+                    <div class="ap-cards" data-projects-cards></div>
+                    <p class="ap-projects__status" data-projects-status hidden></p>
 
-                    <nav class="ap-pagination" aria-label="Pagination" data-total-pages="10">
+                    <nav class="ap-pagination" aria-label="Pagination" data-total-pages="1">
                         <button class="ap-pagination__nav ap-pagination__nav--prev" type="button">
                             <svg viewBox="0 0 9 16" fill="none" aria-hidden="true">
                                 <use href="/assets/sprite/sprite-svg.svg#icon-chevron-left"></use>
@@ -211,52 +148,7 @@
                         <span class="title__inner" data-i18n="allProjects.analyticsHeading">Аналитика</span>
                     </h2>
 
-                    <%
-                        const analyticsBooks = [
-                            { title: 'Макроэкономический обзор ЕАБР. Сентябрь 2025', date: '16 сентября 2025', cover: 'linear-gradient(135deg, #1BCE1B 0%, #37EE50 100%)' },
-                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #0097D8 0%, #24D6FF 100%)' },
-                            { title: 'Китай и&nbsp;Евразийский регион: анализ инвестиционных потоков на&nbsp;основе&nbsp;...', date: '25 декабря 2025', cover: 'linear-gradient(135deg, #2C3142 0%, #4A5070 100%)' },
-                            { title: 'Макроэкономический прогноз 2026–2028',         date: '18 декабря 2025',  cover: 'linear-gradient(135deg, #A0EDFF 0%, #D9F8FF 100%)' }
-                        ];
-                    %>
-
-                    <div class="ap-analytics__list swiper" data-slider="analytics">
-                        <div class="ap-analytics__wrapper swiper-wrapper">
-                            <% analyticsBooks.forEach(function(b, i) { %>
-                            <a href="#" class="ap-book swiper-slide">
-                                <div class="ap-book__cover" style="background: <%= b.cover %>;">
-                                    <svg class="ap-book__mask" viewBox="0 0 374 526" preserveAspectRatio="none" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="18" height="526" fill="url(#apMaskA<%= i %>)"/>
-                                        <rect width="356" height="526" transform="matrix(-1 0 0 1 374 0)" fill="url(#apMaskB<%= i %>)"/>
-                                        <rect width="356" height="526" transform="matrix(-1 0 0 1 374 0)" fill="url(#apMaskC<%= i %>)"/>
-                                        <defs>
-                                            <linearGradient id="apMaskA<%= i %>" x1="18" y1="263" x2="0" y2="263" gradientUnits="userSpaceOnUse">
-                                                <stop stop-opacity="0.14"/>
-                                                <stop offset="0.0750563" stop-opacity="0.08"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0.06"/>
-                                            </linearGradient>
-                                            <linearGradient id="apMaskB<%= i %>" x1="356" y1="263" x2="0" y2="263" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white" stop-opacity="0.12"/>
-                                                <stop offset="0.00393357" stop-color="white" stop-opacity="0.06"/>
-                                                <stop offset="0.00792303" stop-color="#666666" stop-opacity="0.04"/>
-                                                <stop offset="1" stop-color="#666666" stop-opacity="0"/>
-                                            </linearGradient>
-                                            <linearGradient id="apMaskC<%= i %>" x1="109" y1="315.5" x2="35.5" y2="526" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="white" stop-opacity="0"/>
-                                                <stop offset="1" stop-color="white" stop-opacity="0.12"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div class="ap-book__body">
-                                    <h3 class="ap-book__title" data-i18n="allProjects.analyticsBooks.<%= i %>.title"><%- b.title %></h3>
-                                    <div class="ap-book__date" data-i18n="allProjects.analyticsBooks.<%= i %>.date"><%- b.date %></div>
-                                </div>
-                            </a>
-                            <% }); %>
-                        </div>
-                        <div class="ap-analytics__dots" data-slider-pagination aria-hidden="true"></div>
-                    </div>
+                    <%= htmlWebpackPlugin.options.widgets.analyticsBlock %>
 
                     <a href="#" class="button-arrow ap-analytics__btn">
                         <span class="button-arrow__text" data-i18n="common.watchAll">Смотреть все</span>

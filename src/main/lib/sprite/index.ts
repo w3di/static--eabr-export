@@ -64,6 +64,8 @@ import './icon-cmpl-hotline.svg';
 import './icon-cmpl-docs.svg';
 import './icon-plus-thin.svg';
 import './icon-stat-green.svg';
+import './icon-book-mask.svg';
+import './icon-leaf.svg';
 import './logo-facebook.svg';
 import './logo-inst.svg';
 import './logo-linkedin.svg';
