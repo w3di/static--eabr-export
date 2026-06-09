@@ -154,9 +154,13 @@
     gap: 40px;
   }
 
+  // 5 иконок в первом ряду + 3 во втором (как в макете): max-width = 5×32 + 4×32(gap) = 288
   .footer__meta .social {
     flex-wrap: wrap;
+    align-self: center;
     justify-content: center;
+    gap: 32px;
+    max-width: 288px;
   }
 }
 

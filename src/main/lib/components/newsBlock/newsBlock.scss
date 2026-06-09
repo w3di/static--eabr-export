@@ -21,10 +21,10 @@
   justify-content: flex-start;
 }
 
-// На главной на мобиле скрываем «Смотреть все новости» — остаются только точки
+// На мобиле: точки сверху, под ними кнопка «Смотреть все» во всю ширину (как в блоке аналитики)
 @media (width <= 1260px) {
-  .news-home .fts-controls--news .button-arrow {
-    display: none;
+  .fts-controls.fts-controls--news {
+    flex-direction: column;
   }
 }
 
