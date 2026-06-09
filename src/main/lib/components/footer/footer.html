@@ -5,14 +5,15 @@
                 <div class="grid">
                     <div class="grid__col grid__col--6 grid__col-mob--4 order-mob-2">
                         <nav class="footer__nav">
-                            <a href="#" class="footer__link" data-i18n="footer.procurement">Закупки и уведомления</a>
-                            <a href="#" class="footer__link" data-i18n="footer.careers">Работайте с нами</a>
-                            <a href="#" class="footer__link" data-i18n="footer.disclosure">Раскрытие информации</a>
-                            <a href="#" class="footer__link" data-i18n="footer.notice">Официальное уведомление</a>
-                            <a href="#" class="footer__link" data-i18n="footer.report">Сообщить о нарушении</a>
-                            <a href="#" class="footer__link" data-i18n="footer.sitemap">Карта сайта</a>
-                            <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="footer__link" data-i18n="footer.contacts">Контакты</a>
-
+                            <a href="#" class="footer__link" data-i18n="nav.about">О банке</a>
+                            <a href="#" class="footer__link" data-i18n="nav.activity">Наша деятельность</a>
+                            <a href="/investors/" class="footer__link" data-i18n="nav.investors">Инвесторам</a>
+                            <a href="#" class="footer__link" data-i18n="nav.impact">Наш вклад</a>
+                            <a href="#" class="footer__link" data-i18n="nav.careers">Работайте с нами</a>
+                            <a href="#" class="footer__link" data-i18n="nav.topAnalytics">Аналитика</a>
+                            <a href="#" class="footer__link" data-i18n="nav.topNews">Новости и события</a>
+                            <a href="<%= htmlWebpackPlugin.options.routes.contacts %>" class="footer__link" data-i18n="nav.topContacts">Контакты</a>
+                            <a href="#" class="footer__link footer__link--purchases" data-i18n="footer.purchases">Закупки</a>
                         </nav>
                     </div>
                     <div class="grid__col grid__col--2 mob-hidden"></div>
@@ -34,26 +35,36 @@
             <div class="footer__meta">
                 <div class="social">
                     <a href="https://www.linkedin.com/company/eurasian-development-bank/" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialLinkedin" aria-label="ЕАБР в LinkedIn">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/sprite/sprite-svg.svg#logo-linkedin"></use></svg>
+                        <img class="social__img" src="/assets/images/social/linkedin.webp" width="32" height="32" alt="" loading="lazy">
                     </a>
                     <a href="https://t.me/eabr_bank" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialTelegram" aria-label="ЕАБР в Telegram">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/sprite/sprite-svg.svg#logo-tg"></use></svg>
+                        <img class="social__img" src="/assets/images/social/telegram.webp" width="32" height="32" alt="" loading="lazy">
                     </a>
                     <a href="https://www.facebook.com/eabr.org/" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialFacebook" aria-label="ЕАБР в Facebook">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/sprite/sprite-svg.svg#logo-facebook"></use></svg>
+                        <img class="social__img" src="/assets/images/social/facebook.webp" width="32" height="32" alt="" loading="lazy">
                     </a>
                     <a href="https://www.youtube.com/user/infoEABR" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialYoutube" aria-label="ЕАБР на YouTube">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/sprite/sprite-svg.svg#logo-yt"></use></svg>
+                        <img class="social__img" src="/assets/images/social/youtube.webp" width="32" height="32" alt="" loading="lazy">
                     </a>
                     <a href="https://www.instagram.com/eabr_official?igsh=Z2hpcGw3endyOGth" class="social__link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="a11y.socialInstagram" aria-label="ЕАБР в Instagram">
-                        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/sprite/sprite-svg.svg#logo-inst"></use></svg>
+                        <img class="social__img" src="/assets/images/social/instagram.webp" width="32" height="32" alt="" loading="lazy">
+                    </a>
+                    <a href="https://x.com/eabr_official" class="social__link" target="_blank" rel="noopener noreferrer" aria-label="ЕАБР в X">
+                        <img class="social__img" src="/assets/images/social/x.webp" width="32" height="32" alt="" loading="lazy">
+                    </a>
+                    <a href="https://www.reddit.com/" class="social__link" target="_blank" rel="noopener noreferrer" aria-label="ЕАБР в Reddit">
+                        <img class="social__img" src="/assets/images/social/reddit.webp" width="32" height="32" alt="" loading="lazy">
+                    </a>
+                    <a href="https://www.wechat.com/" class="social__link" target="_blank" rel="noopener noreferrer" aria-label="ЕАБР в WeChat">
+                        <img class="social__img" src="/assets/images/social/wechat.webp" width="32" height="32" alt="" loading="lazy">
                     </a>
                 </div>
                 <a href="mailto:info@eabr.org" class="footer__link">info@eabr.org</a>
                 <div class="footer__languages">
-                    <a href="/en/" class="footer__link">EN</a>
-                    <a href="/" class="footer__link">РУС</a>
-                    <a href="/cn/" class="footer__link">中文</a>
+                    <a href="#" class="footer__link" data-i18n-lang="en">EN</a>
+                    <a href="#" class="footer__link" data-i18n-lang="ru">РУС</a>
+                    <a href="#" class="footer__link" data-i18n-lang="zh">中文</a>
+                    <span class="footer__link footer__link--disabled" lang="ar" dir="rtl" aria-disabled="true">الفصحى</span>
                 </div>
             </div>
         </div>

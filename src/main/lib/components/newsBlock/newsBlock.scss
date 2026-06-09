@@ -2,14 +2,35 @@
   position: relative;
 
   &__swiper {
+    box-sizing: border-box;
     overflow: hidden;
     width: 100%;
+    padding: r(32) r(24);
+  }
+}
+
+// На главной во всю ширину вьюпорта выходит ТОЛЬКО лента карточек,
+// а контролы (стрелки/точки/кнопка) остаются в пределах контейнера
+.news-home .fts-news-slider__swiper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+// Точки пагинации новостей — по левому краю, а не по центру
+.fts-controls--news .fts-controls__pagination {
+  justify-content: flex-start;
+}
+
+// На главной на мобиле скрываем «Смотреть все новости» — остаются только точки
+@media (width <= 1260px) {
+  .news-home .fts-controls--news .button-arrow {
+    display: none;
   }
 }
 
 .fts-news__card {
   box-sizing: border-box;
-  width: r(388);
+  width: r(364);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;

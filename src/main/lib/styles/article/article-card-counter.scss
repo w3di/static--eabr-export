@@ -5,7 +5,7 @@
   border-radius: r(24);
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0 r(4) r(40) 0 rgb(0 0 0 / 12%);
+  border: r(2) solid #e5eef2;
 
   &__text {
     font-size: r(20);

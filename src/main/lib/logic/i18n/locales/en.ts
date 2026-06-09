@@ -38,6 +38,7 @@ export const en = {
   },
   footer: {
     procurement: 'Procurement and&nbsp;notices',
+    purchases: 'Procurement',
     careers: 'Work with us',
     disclosure: 'Information disclosure',
     notice: 'Legal notice',

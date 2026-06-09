@@ -38,6 +38,7 @@ export const zh = {
   },
   footer: {
     procurement: '采购与通知',
+    purchases: '采购',
     careers: '加入我们',
     disclosure: '信息披露',
     notice: '法律声明',

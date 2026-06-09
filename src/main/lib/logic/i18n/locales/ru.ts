@@ -207,6 +207,7 @@ export const ru = {
   },
   footer: {
     procurement: 'Закупки и&nbsp;уведомления',
+    purchases: 'Закупки',
     careers: 'Работайте с&nbsp;нами',
     disclosure: 'Раскрытие информации',
     notice: 'Официальное уведомление',

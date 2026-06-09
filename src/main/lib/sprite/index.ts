@@ -66,8 +66,3 @@ import './icon-plus-thin.svg';
 import './icon-stat-green.svg';
 import './icon-book-mask.svg';
 import './icon-leaf.svg';
-import './logo-facebook.svg';
-import './logo-inst.svg';
-import './logo-linkedin.svg';
-import './logo-tg.svg';
-import './logo-yt.svg';

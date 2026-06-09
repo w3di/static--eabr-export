@@ -43,8 +43,16 @@
 .footer__nav {
   display: grid;
   grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
   justify-content: space-between;
-  gap: 20px;
+  gap: 20px 80px;
+}
+
+// «Закупки» — низ первой колонки (десктоп); остальные ссылки раскладываются сами
+.footer__link--purchases {
+  grid-column: 1;
+  grid-row: 5;
 }
 
 @media screen and (width <= 1260px) {
@@ -65,6 +73,13 @@
 
 .footer__link:hover {
   opacity: 0.7;
+}
+
+// отключённый язык (арабский) — некликабельный, приглушённый
+.footer__link--disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 @media screen and (width <= 1260px) {
@@ -137,6 +152,11 @@
   .footer__meta {
     flex-direction: column;
     gap: 40px;
+  }
+
+  .footer__meta .social {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
